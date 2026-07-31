@@ -35,7 +35,7 @@ jobs:
         uses: actions/configure-
     uses: actions/configure-pages@v5
         
-      - name: Upload artifact
+       - nameartifact: Upload
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository

@@ -4,17 +4,20 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>MP Education | Learn, Study & Improve</title>
 
     <meta name="description"
-        content="MP Education is an online learning platform for Sri Lankan students with notes, videos, past papers and quizzes.">
+          content="MP Education is an online learning platform for Sri Lankan students with notes, videos, past papers and quizzes.">
 
     <meta name="keywords"
-        content="MP Education, Sri Lanka education, O/L, A/L, Commerce, Science, Technology, Accounting, Business Studies, Economics, ICT">
+          content="MP Education, Sri Lanka education, O/L, A/L, Commerce, Science, Technology">
 
-    <meta name="author" content="MP Education">
+    <meta name="author"
+          content="MP Education">
 
     <style>
 
@@ -28,6 +31,8 @@
             background: #f5f7fb;
             color: #222;
         }
+
+        /* ================= HEADER ================= */
 
         header {
             background: #1e3a8a;
@@ -45,17 +50,15 @@
             margin: 8px 0 0;
         }
 
+        /* ================= CONTAINER ================= */
+
         .container {
             max-width: 900px;
             margin: auto;
             padding: 20px;
         }
 
-        /* HOME PAGE */
-
-        #homePage {
-            display: block;
-        }
+        /* ================= HERO BANNER ================= */
 
         .hero-banner {
             width: 100%;
@@ -69,10 +72,18 @@
             border-radius: 15px;
         }
 
+        /* ================= HOME ================= */
+
+        #homePage {
+            display: block;
+        }
+
         h2 {
             text-align: center;
             margin: 20px 0;
         }
+
+        /* ================= BUTTONS ================= */
 
         .categories,
         .subjects,
@@ -98,6 +109,8 @@
             transform: translateY(-2px);
         }
 
+        /* ================= PAGES ================= */
+
         .page {
             display: none;
             margin-top: 25px;
@@ -119,13 +132,31 @@
             font-size: 17px;
         }
 
+        /* ================= FOOTER ================= */
+
         footer {
             text-align: center;
-            padding: 25px;
+            padding: 30px 20px;
             margin-top: 40px;
             background: #1e3a8a;
             color: white;
         }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ================= MOBILE ================= */
 
         @media (max-width: 600px) {
 
@@ -149,7 +180,11 @@
 
 </head>
 
+
 <body>
+
+
+<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -160,19 +195,31 @@
 </header>
 
 
+<!-- ================= MAIN CONTAINER ================= -->
+
 <div class="container">
 
-    <!-- ================= HOME ================= -->
+
+    <!-- ================= HOME PAGE ================= -->
 
     <div id="homePage">
 
+        <!-- BANNER -->
+
         <div class="hero-banner">
 
-            <img src="IMG-20260802-WA0000.jpg" alt="MP Education Banner">
+            <img src="IMG-20260802-WA0000.jpg"
+                 alt="MP Education Banner">
 
         </div>
 
+
+        <!-- CATEGORY TITLE -->
+
         <h2>🎓 Choose Your Learning Category</h2>
+
+
+        <!-- CATEGORY BUTTONS -->
 
         <div class="categories">
 
@@ -205,11 +252,12 @@
     </div>
 
 
-    <!-- ================= O/L ================= -->
+    <!-- ================= O/L PAGE ================= -->
 
     <div id="olPage" class="page">
 
-        <button class="back" onclick="showHome()">
+        <button class="back"
+                onclick="showHome()">
             ← Back
         </button>
 
@@ -217,21 +265,33 @@
 
         <div class="subjects">
 
-            <button class="subject">📚 Subjects</button>
-            <button class="subject">📝 Notes</button>
-            <button class="subject">📄 Past Papers</button>
-            <button class="subject">🎯 Quizzes</button>
+            <button class="subject">
+                📚 Subjects
+            </button>
+
+            <button class="subject">
+                📝 Notes
+            </button>
+
+            <button class="subject">
+                📄 Past Papers
+            </button>
+
+            <button class="subject">
+                🎯 Quizzes
+            </button>
 
         </div>
 
     </div>
 
 
-    <!-- ================= A/L ================= -->
+    <!-- ================= A/L PAGE ================= -->
 
     <div id="alPage" class="page">
 
-        <button class="back" onclick="showHome()">
+        <button class="back"
+                onclick="showHome()">
             ← Back
         </button>
 
@@ -239,21 +299,33 @@
 
         <div class="subjects">
 
-            <button class="subject">📚 Subjects</button>
-            <button class="subject">📝 Notes</button>
-            <button class="subject">📄 Past Papers</button>
-            <button class="subject">🎯 Quizzes</button>
+            <button class="subject">
+                📚 Subjects
+            </button>
+
+            <button class="subject">
+                📝 Notes
+            </button>
+
+            <button class="subject">
+                📄 Past Papers
+            </button>
+
+            <button class="subject">
+                🎯 Quizzes
+            </button>
 
         </div>
 
     </div>
 
 
-    <!-- ================= COMMERCE ================= -->
+    <!-- ================= COMMERCE PAGE ================= -->
 
     <div id="commercePage" class="page">
 
-        <button class="back" onclick="showHome()">
+        <button class="back"
+                onclick="showHome()">
             ← Back
         </button>
 
@@ -281,7 +353,7 @@
     </div>
 
 
-    <!-- ACCOUNTING -->
+    <!-- ================= ACCOUNTING ================= -->
 
     <div id="accountingPage" class="page">
 
@@ -294,17 +366,28 @@
 
         <div class="resources">
 
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-            <button class="resource">📄 Past Papers</button>
-            <button class="resource">🎯 Quizzes</button>
+            <button class="resource">
+                📝 Notes
+            </button>
+
+            <button class="resource">
+                🎥 Videos
+            </button>
+
+            <button class="resource">
+                📄 Past Papers
+            </button>
+
+            <button class="resource">
+                🎯 Quizzes
+            </button>
 
         </div>
 
     </div>
 
 
-    <!-- BUSINESS -->
+    <!-- ================= BUSINESS STUDIES ================= -->
 
     <div id="businessPage" class="page">
 
@@ -317,17 +400,28 @@
 
         <div class="resources">
 
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-            <button class="resource">📄 Past Papers</button>
-            <button class="resource">🎯 Quizzes</button>
+            <button class="resource">
+                📝 Notes
+            </button>
+
+            <button class="resource">
+                🎥 Videos
+            </button>
+
+            <button class="resource">
+                📄 Past Papers
+            </button>
+
+            <button class="resource">
+                🎯 Quizzes
+            </button>
 
         </div>
 
     </div>
 
 
-    <!-- ECONOMICS -->
+    <!-- ================= ECONOMICS ================= -->
 
     <div id="economicsPage" class="page">
 
@@ -340,21 +434,33 @@
 
         <div class="resources">
 
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-            <button class="resource">📄 Past Papers</button>
-            <button class="resource">🎯 Quizzes</button>
+            <button class="resource">
+                📝 Notes
+            </button>
+
+            <button class="resource">
+                🎥 Videos
+            </button>
+
+            <button class="resource">
+                📄 Past Papers
+            </button>
+
+            <button class="resource">
+                🎯 Quizzes
+            </button>
 
         </div>
 
     </div>
 
 
-    <!-- ================= SCIENCE ================= -->
+    <!-- ================= SCIENCE PAGE ================= -->
 
     <div id="sciencePage" class="page">
 
-        <button class="back" onclick="showHome()">
+        <button class="back"
+                onclick="showHome()">
             ← Back
         </button>
 
@@ -382,7 +488,7 @@
     </div>
 
 
-    <!-- PHYSICS -->
+    <!-- ================= PHYSICS ================= -->
 
     <div id="physicsPage" class="page">
 
@@ -395,17 +501,28 @@
 
         <div class="resources">
 
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-            <button class="resource">📄 Past Papers</button>
-            <button class="resource">🎯 Quizzes</button>
+            <button class="resource">
+                📝 Notes
+            </button>
+
+            <button class="resource">
+                🎥 Videos
+            </button>
+
+            <button class="resource">
+                📄 Past Papers
+            </button>
+
+            <button class="resource">
+                🎯 Quizzes
+            </button>
 
         </div>
 
     </div>
 
 
-    <!-- CHEMISTRY -->
+    <!-- ================= CHEMISTRY ================= -->
 
     <div id="chemistryPage" class="page">
 
@@ -418,17 +535,28 @@
 
         <div class="resources">
 
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-            <button class="resource">📄 Past Papers</button>
-            <button class="resource">🎯 Quizzes</button>
+            <button class="resource">
+                📝 Notes
+            </button>
+
+            <button class="resource">
+                🎥 Videos
+            </button>
+
+            <button class="resource">
+                📄 Past Papers
+            </button>
+
+            <button class="resource">
+                🎯 Quizzes
+            </button>
 
         </div>
 
     </div>
 
 
-    <!-- BIOLOGY -->
+    <!-- ================= BIOLOGY ================= -->
 
     <div id="biologyPage" class="page">
 
@@ -441,10 +569,21 @@
 
         <div class="resources">
 
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-            <button class="resource">📄 Past Papers</button>
-            <button class="resource">🎯 Quizzes</button>
+            <button class="resource">
+                📝 Notes
+            </button>
+
+            <button class="resource">
+                🎥 Videos
+            </button>
+
+            <button class="resource">
+                📄 Past Papers
+            </button>
+
+            <button class="resource">
+                🎯 Quizzes
+            </button>
 
         </div>
 
@@ -455,7 +594,8 @@
 
     <div id="technologyPage" class="page">
 
-        <button class="back" onclick="showHome()">
+        <button class="back"
+                onclick="showHome()">
             ← Back
         </button>
 
@@ -488,7 +628,7 @@
     </div>
 
 
-    <!-- SFT -->
+    <!-- ================= SFT ================= -->
 
     <div id="sftPage" class="page">
 
@@ -501,17 +641,28 @@
 
         <div class="resources">
 
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-            <button class="resource">📄 Past Papers</button>
-            <button class="resource">🎯 Quizzes</button>
+            <button class="resource">
+                📝 Notes
+            </button>
+
+            <button class="resource">
+                🎥 Videos
+            </button>
+
+            <button class="resource">
+                📄 Past Papers
+            </button>
+
+            <button class="resource">
+                🎯 Quizzes
+            </button>
 
         </div>
 
     </div>
 
 
-    <!-- ICT -->
+    <!-- ================= ICT ================= -->
 
     <div id="ictPage" class="page">
 
@@ -524,17 +675,28 @@
 
         <div class="resources">
 
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-            <button class="resource">📄 Past Papers</button>
-            <button class="resource">🎯 Quizzes</button>
+            <button class="resource">
+                📝 Notes
+            </button>
+
+            <button class="resource">
+                🎥 Videos
+            </button>
+
+            <button class="resource">
+                📄 Past Papers
+            </button>
+
+            <button class="resource">
+                🎯 Quizzes
+            </button>
 
         </div>
 
     </div>
 
 
-    <!-- ENGINEERING TECHNOLOGY -->
+    <!-- ================= ENGINEERING ================= -->
 
     <div id="engineeringPage" class="page">
 
@@ -547,17 +709,28 @@
 
         <div class="resources">
 
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-            <button class="resource">📄 Past Papers</button>
-            <button class="resource">🎯 Quizzes</button>
+            <button class="resource">
+                📝 Notes
+            </button>
+
+            <button class="resource">
+                🎥 Videos
+            </button>
+
+            <button class="resource">
+                📄 Past Papers
+            </button>
+
+            <button class="resource">
+                🎯 Quizzes
+            </button>
 
         </div>
 
     </div>
 
 
-    <!-- BIO SYSTEMS TECHNOLOGY -->
+    <!-- ================= BIO SYSTEMS ================= -->
 
     <div id="bioTechnologyPage" class="page">
 
@@ -570,10 +743,21 @@
 
         <div class="resources">
 
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-            <button class="resource">📄 Past Papers</button>
-            <button class="resource">🎯 Quizzes</button>
+            <button class="resource">
+                📝 Notes
+            </button>
+
+            <button class="resource">
+                🎥 Videos
+            </button>
+
+            <button class="resource">
+                📄 Past Papers
+            </button>
+
+            <button class="resource">
+                🎯 Quizzes
+            </button>
 
         </div>
 
@@ -584,7 +768,8 @@
 
     <div id="artsPage" class="page">
 
-        <button class="back" onclick="showHome()">
+        <button class="back"
+                onclick="showHome()">
             ← Back
         </button>
 
@@ -592,60 +777,90 @@
 
         <div class="subjects">
 
-            <button class="subject">📚 Subjects</button>
-            <button class="subject">📝 Notes</button>
-            <button class="subject">📄 Past Papers</button>
-            <button class="subject">🎯 Quizzes</button>
+            <button class="subject">
+                📚 Subjects
+            </button>
+
+            <button class="subject">
+                📝 Notes
+            </button>
+
+            <button class="subject">
+                📄 Past Papers
+            </button>
+
+            <button class="subject">
+                🎯 Quizzes
+            </button>
 
         </div>
 
     </div>
 
+
 </div>
 
 
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
-    <p>© 2026 MP Education</p>
+    <p>📞 Contact Us</p>
+
+    <p>
+        📱
+        <a href="tel:0759205338">
+            0759205338
+        </a>
+    </p>
+
+    <p>
+        📧
+        <a href="mailto:mpeducation4@gmail.com">
+            mpeducation4@gmail.com
+        </a>
+    </p>
+
+    <p>
+        © 2026 MP Education
+    </p>
 
 </footer>
 
 
+<!-- ================= JAVASCRIPT ================= -->
+
 <script>
-
-function hideAllPages() {
-
-    document.querySelectorAll(".page").forEach(function(page) {
-        page.style.display = "none";
-    });
-
-    document.getElementById("homePage").style.display = "block";
-}
-
 
 function showPage(pageId) {
 
     document.getElementById("homePage").style.display = "none";
 
     document.querySelectorAll(".page").forEach(function(page) {
+
         page.style.display = "none";
+
     });
 
     document.getElementById(pageId).style.display = "block";
 
     window.scrollTo(0, 0);
+
 }
 
 
 function showHome() {
 
     document.querySelectorAll(".page").forEach(function(page) {
+
         page.style.display = "none";
+
     });
 
     document.getElementById("homePage").style.display = "block";
 
     window.scrollTo(0, 0);
+
 }
 
 

@@ -190,3 +190,207 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Hub</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .categories,
+        .subjects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        button {
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #e8efff;
+        }
+
+        .resources {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        .resource {
+            padding: 15px 25px;
+        }
+
+        .page {
+            display: none;
+            margin-top: 25px;
+        }
+
+        .subject {
+            padding: 20px;
+            font-size: 18px;
+        }
+
+        .back {
+            background: #1e3a8a;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+            background: #1e3a8a;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            .categories,
+            .subjects {
+                grid-template-columns: 1fr;
+            }
+
+            .resources {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>📚 Education Hub</h1>
+    <p>Learn • Study • Improve</p>
+</header>
+
+<div class="container">
+
+    <!-- Home -->
+    <div id="homePage">
+
+        <h2>Choose Your Category</h2>
+
+        <div class="categories">
+
+            <button>📘 O/L</button>
+            <button>📖 A/L</button>
+
+            <button onclick="showPage('commercePage')">
+                💼 Commerce
+            </button>
+
+            <button onclick="showPage('sciencePage')">
+                🔬 Science
+            </button>
+
+            <button>🎨 Arts</button>
+            <button>⚙️ Technology</button>
+
+        </div>
+
+        <h2>Learning Resources</h2>
+
+        <div class="resources">
+            <button class="resource">📝 Notes</button>
+            <button class="resource">🎥 Videos</button>
+        </div>
+
+    </div>
+
+    <!-- Commerce -->
+    <div id="commercePage" class="page">
+
+        <button class="back" onclick="showHome()">← Back</button>
+
+        <h2>💼 Commerce</h2>
+
+        <div class="subjects">
+
+            <button class="subject">📘 Accounting</button>
+            <button class="subject">📗 Business Studies</button>
+            <button class="subject">📙 Economics</button>
+
+        </div>
+
+    </div>
+
+    <!-- Science -->
+    <div id="sciencePage" class="page">
+
+        <button class="back" onclick="showHome()">← Back</button>
+
+        <h2>🔬 Science</h2>
+
+        <div class="subjects">
+
+            <button class="subject">⚛️ Physics</button>
+            <button class="subject">🧪 Chemistry</button>
+            <button class="subject">🧬 Biology</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Education Hub</p>
+</footer>
+
+<script>
+    function showPage(pageId) {
+        document.getElementById("homePage").style.display = "none";
+        document.getElementById("commercePage").style.display = "none";
+        document.getElementById("sciencePage").style.display = "none";
+
+        document.getElementById(pageId).style.display = "block";
+    }
+
+    function showHome() {
+        document.getElementById("commercePage").style.display = "none";
+        document.getElementById("sciencePage").style.display = "none";
+        document.getElementById("homePage").style.display = "block";
+    }
+</script>
+
+</body>
+</html>

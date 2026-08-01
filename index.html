@@ -326,78 +326,126 @@
 </div>
     
     <!-- TECHNOLOGY -->
-    <div id="technologyPage" class="page">
 
-        <button class="back" onclick="showHome()">← Back</button>
+<div id="technologyPage" class="page">
 
-        <h2>⚙️ Technology</h2>
+    <button class="back" onclick="showHome()">← Back</button>
 
-        <div class="subjects">
+    <h2>⚙️ Technology</h2>
 
-            <button class="subject">🔬 Science for Technology</button>
-            <button class="subject">💻 ICT</button>
-            <button class="subject">🔧 Engineering Technology</button>
-            <button class="subject">🌱 Bio Systems Technology</button>
+    <div class="subjects">
 
-        </div>
+        <button class="subject"
+            onclick="showSubject('sftPage')">
+            🔬 Science for Technology
+        </button>
+
+        <button class="subject"
+            onclick="showSubject('ictPage')">
+            💻 ICT
+        </button>
+
+        <button class="subject"
+            onclick="showSubject('engineeringPage')">
+            🔧 Engineering Technology
+        </button>
+
+        <button class="subject"
+            onclick="showSubject('bioTechnologyPage')">
+            🌱 Bio Systems Technology
+        </button>
 
     </div>
 
 </div>
 
 
-<footer>
-    <p>© 2026 MP Education</p>
-</footer>
+<!-- SCIENCE FOR TECHNOLOGY -->
+
+<div id="sftPage" class="page">
+
+    <button class="back" onclick="showPage('technologyPage')">
+        ← Back
+    </button>
+
+    <h2>🔬 Science for Technology</h2>
+
+    <div class="resources">
+
+        <button class="resource">📝 Notes</button>
+        <button class="resource">🎥 Videos</button>
+        <button class="resource">📄 Past Papers</button>
+        <button class="resource">🎯 Quizzes</button>
+
+    </div>
+
+</div>
 
 
-<script>
+<!-- ICT -->
 
-    function hideAllPages() {
+<div id="ictPage" class="page">
 
-        const pages = document.querySelectorAll(".page");
+    <button class="back" onclick="showPage('technologyPage')">
+        ← Back
+    </button>
 
-        pages.forEach(function(page) {
-            page.style.display = "none";
-        });
+    <h2>💻 ICT</h2>
 
-        document.getElementById("homePage").style.display = "none";
-    }
+    <div class="resources">
 
+        <button class="resource">📝 Notes</button>
+        <button class="resource">🎥 Videos</button>
+        <button class="resource">📄 Past Papers</button>
+        <button class="resource">🎯 Quizzes</button>
 
-    function showPage(pageId) {
+    </div>
 
-        hideAllPages();
-
-        document.getElementById(pageId).style.display = "block";
-
-        window.scrollTo(0, 0);
-    }
+</div>
 
 
-    function showSubject(pageId) {
+<!-- ENGINEERING TECHNOLOGY -->
 
-        hideAllPages();
+<div id="engineeringPage" class="page">
 
-        document.getElementById(pageId).style.display = "block";
+    <button class="back" onclick="showPage('technologyPage')">
+        ← Back
+    </button>
 
-        window.scrollTo(0, 0);
-    }
+    <h2>🔧 Engineering Technology</h2>
+
+    <div class="resources">
+
+        <button class="resource">📝 Notes</button>
+        <button class="resource">🎥 Videos</button>
+        <button class="resource">📄 Past Papers</button>
+        <button class="resource">🎯 Quizzes</button>
+
+    </div>
+
+</div>
 
 
-    function showHome() {
+<!-- BIO SYSTEMS TECHNOLOGY -->
 
-        hideAllPages();
+<div id="bioTechnologyPage" class="page">
 
-        document.getElementById("homePage").style.display = "block";
+    <button class="back" onclick="showPage('technologyPage')">
+        ← Back
+    </button>
 
-        window.scrollTo(0, 0);
-    }
+    <h2>🌱 Bio Systems Technology</h2>
+
+    <div class="resources">
+
+        <button class="resource">📝 Notes</button>
+        <button class="resource">🎥 Videos</button>
+        <button class="resource">📄 Past Papers</button>
+        <button class="resource">🎯 Quizzes</button>
+
+    </div>
+
+</div>
 
 
-    showHome();
 
-</script>
-
-</body>
-</html>

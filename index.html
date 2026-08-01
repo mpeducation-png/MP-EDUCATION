@@ -67,6 +67,32 @@
             border-radius: 10px;
         }
 
+        .commerce-page {
+            display: none;
+            margin-top: 25px;
+        }
+
+        .subjects {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .subject {
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .back {
+            background: #1e3a8a;
+            color: white;
+            margin-bottom: 20px;
+        }
+
         footer {
             text-align: center;
             padding: 25px;
@@ -92,22 +118,56 @@
 
 <div class="container">
 
-    <h2>Choose Your Category</h2>
+    <!-- Home Page -->
+    <div id="homePage">
 
-    <div class="categories">
-        <button>📘 O/L</button>
-        <button>📖 A/L</button>
-        <button>💼 Commerce</button>
-        <button>🔬 Science</button>
-        <button>🎨 Arts</button>
-        <button>⚙️ Technology</button>
+        <h2>Choose Your Category</h2>
+
+        <div class="categories">
+            <button>📘 O/L</button>
+            <button>📖 A/L</button>
+
+            <button onclick="showCommerce()">
+                💼 Commerce
+            </button>
+
+            <button>🔬 Science</button>
+            <button>🎨 Arts</button>
+            <button>⚙️ Technology</button>
+        </div>
+
+        <h2>Learning Resources</h2>
+
+        <div class="resources">
+            <button class="resource">📝 Notes</button>
+            <button class="resource">🎥 Videos</button>
+        </div>
+
     </div>
 
-    <h2>Learning Resources</h2>
+    <!-- Commerce Page -->
+    <div id="commercePage" class="commerce-page">
 
-    <div class="resources">
-        <button class="resource">📝 Notes</button>
-        <button class="resource">🎥 Videos</button>
+        <button class="back" onclick="showHome()">← Back</button>
+
+        <h2>💼 Commerce</h2>
+
+        <div class="subjects">
+
+            <button class="subject">
+                📘 Accounting
+            </button>
+
+            <button class="subject">
+                📗 Business Studies
+            </button>
+
+            <button class="subject">
+                📙 Economics
+            </button>
+
+        </div>
+
     </div>
 
 </div>
@@ -115,6 +175,18 @@
 <footer>
     <p>© 2026 Education Hub</p>
 </footer>
+
+<script>
+    function showCommerce() {
+        document.getElementById("homePage").style.display = "none";
+        document.getElementById("commercePage").style.display = "block";
+    }
+
+    function showHome() {
+        document.getElementById("commercePage").style.display = "none";
+        document.getElementById("homePage").style.display = "block";
+    }
+</script>
 
 </body>
 </html>

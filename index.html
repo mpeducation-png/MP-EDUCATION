@@ -1,195 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education Hub</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f5f7fb;
-            color: #222;
-        }
-
-        header {
-            background: #1e3a8a;
-            color: white;
-            text-align: center;
-            padding: 25px 15px;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        h2 {
-            text-align: center;
-        }
-
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-
-        button {
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            background: white;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #e8efff;
-        }
-
-        .resources {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 25px;
-        }
-
-        .resource {
-            padding: 15px 25px;
-            background: white;
-            border-radius: 10px;
-        }
-
-        .commerce-page {
-            display: none;
-            margin-top: 25px;
-        }
-
-        .subjects {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-
-        .subject {
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            text-align: center;
-            font-size: 18px;
-        }
-
-        .back {
-            background: #1e3a8a;
-            color: white;
-            margin-bottom: 20px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            margin-top: 30px;
-            background: #1e3a8a;
-            color: white;
-        }
-
-        @media (max-width: 600px) {
-            .categories {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-<header>
-    <h1>📚 Education Hub</h1>
-    <p>Learn • Study • Improve</p>
-</header>
-
-<div class="container">
-
-    <!-- Home Page -->
-    <div id="homePage">
-
-        <h2>Choose Your Category</h2>
-
-        <div class="categories">
-            <button>📘 O/L</button>
-            <button>📖 A/L</button>
-
-            <button onclick="showCommerce()">
-                💼 Commerce
-            </button>
-
-            <button>🔬 Science</button>
-            <button>🎨 Arts</button>
-            <button>⚙️ Technology</button>
-        </div>
-
-        <h2>Learning Resources</h2>
-
-        <div class="resources">
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-        </div>
-
-    </div>
-
-    <!-- Commerce Page -->
-    <div id="commercePage" class="commerce-page">
-
-        <button class="back" onclick="showHome()">← Back</button>
-
-        <h2>💼 Commerce</h2>
-
-        <div class="subjects">
-
-            <button class="subject">
-                📘 Accounting
-            </button>
-
-            <button class="subject">
-                📗 Business Studies
-            </button>
-
-            <button class="subject">
-                📙 Economics
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-<footer>
-    <p>© 2026 Education Hub</p>
-</footer>
-
-<script>
-    function showCommerce() {
-        document.getElementById("homePage").style.display = "none";
-        document.getElementById("commercePage").style.display = "block";
-    }
-
-    function showHome() {
-        document.getElementById("commercePage").style.display = "none";
-        document.getElementById("homePage").style.display = "block";
-    }
-</script>
-
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -304,7 +113,7 @@
 
 <div class="container">
 
-    <!-- Home -->
+    <!-- Home Page -->
     <div id="homePage">
 
         <h2>Choose Your Category</h2>
@@ -323,7 +132,10 @@
             </button>
 
             <button>🎨 Arts</button>
-            <button>⚙️ Technology</button>
+
+            <button onclick="showPage('technologyPage')">
+                ⚙️ Technology
+            </button>
 
         </div>
 
@@ -336,7 +148,7 @@
 
     </div>
 
-    <!-- Commerce -->
+    <!-- Commerce Page -->
     <div id="commercePage" class="page">
 
         <button class="back" onclick="showHome()">← Back</button>
@@ -353,7 +165,7 @@
 
     </div>
 
-    <!-- Science -->
+    <!-- Science Page -->
     <div id="sciencePage" class="page">
 
         <button class="back" onclick="showHome()">← Back</button>
@@ -370,6 +182,24 @@
 
     </div>
 
+    <!-- Technology Page -->
+    <div id="technologyPage" class="page">
+
+        <button class="back" onclick="showHome()">← Back</button>
+
+        <h2>⚙️ Technology</h2>
+
+        <div class="subjects">
+
+            <button class="subject">🔬 Science for Technology (SFT)</button>
+            <button class="subject">💻 ICT</button>
+            <button class="subject">🔧 Engineering Technology</button>
+            <button class="subject">🌱 Bio Systems Technology</button>
+
+        </div>
+
+    </div>
+
 </div>
 
 <footer>
@@ -378,16 +208,21 @@
 
 <script>
     function showPage(pageId) {
+
         document.getElementById("homePage").style.display = "none";
         document.getElementById("commercePage").style.display = "none";
         document.getElementById("sciencePage").style.display = "none";
+        document.getElementById("technologyPage").style.display = "none";
 
         document.getElementById(pageId).style.display = "block";
     }
 
     function showHome() {
+
         document.getElementById("commercePage").style.display = "none";
         document.getElementById("sciencePage").style.display = "none";
+        document.getElementById("technologyPage").style.display = "none";
+
         document.getElementById("homePage").style.display = "block";
     }
 </script>

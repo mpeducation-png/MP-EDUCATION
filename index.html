@@ -1,22 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head><title>MP Education | Learn, Study & Improve</title>
-<meta name="description" content="MP Education is an online education platform for O/L, A/L, Commerce, Science, Arts and Technology students. Find notes, lessons and learning resources.">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education Hub</title>
-<meta name="description" content="MP Education is an online learning platform for Sri Lankan students, providing educational resources for O/L, A/L, Commerce, Science, Arts and Technology.">
 
-<meta name="keywords" content="MP Education, Sri Lanka education, O/L, A/L, Commerce, Science, Arts, Technology, Accounting, Business Studies, Economics, ICT">
+    <title>MP Education | Learn, Study & Improve</title>
 
-<meta name="author" content="MP Education">
+    <meta name="description" content="MP Education is an online learning platform for Sri Lankan students, providing notes, videos, past papers and quizzes for Commerce, Science and Technology.">
 
-<meta name="robots" content="index, follow">
+    <meta name="keywords" content="MP Education, Sri Lanka education, O/L, A/L, Commerce, Science, Technology, Accounting, Business Studies, Economics, ICT">
 
-<meta property="og:title" content="MP Education | Online Learning Platform">
-<meta property="og:description" content="Learn, study and improve with MP Education.">
-<meta property="og:type" content="website">
+    <meta name="author" content="MP Education">
+    <meta name="robots" content="index, follow">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,11 +25,16 @@
             background: #1e3a8a;
             color: white;
             text-align: center;
-            padding: 25px 15px;
+            padding: 30px 15px;
         }
 
         header h1 {
             margin: 0;
+            font-size: 30px;
+        }
+
+        header p {
+            margin-bottom: 0;
         }
 
         .container {
@@ -44,38 +45,31 @@
 
         h2 {
             text-align: center;
+            margin-bottom: 20px;
         }
 
         .categories,
-        .subjects {
+        .subjects,
+        .resources {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
         }
 
         button {
-            padding: 15px;
+            padding: 18px;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             background: white;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             font-size: 16px;
             cursor: pointer;
+            transition: 0.2s;
         }
 
         button:hover {
             background: #e8efff;
-        }
-
-        .resources {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 25px;
-        }
-
-        .resource {
-            padding: 15px 25px;
+            transform: translateY(-2px);
         }
 
         .page {
@@ -84,7 +78,7 @@
         }
 
         .subject {
-            padding: 20px;
+            padding: 22px;
             font-size: 18px;
         }
 
@@ -94,22 +88,28 @@
             margin-bottom: 20px;
         }
 
+        .resource {
+            padding: 20px;
+            font-size: 17px;
+        }
+
         footer {
             text-align: center;
             padding: 25px;
-            margin-top: 30px;
+            margin-top: 40px;
             background: #1e3a8a;
             color: white;
         }
 
         @media (max-width: 600px) {
             .categories,
-            .subjects {
+            .subjects,
+            .resources {
                 grid-template-columns: 1fr;
             }
 
-            .resources {
-                flex-direction: column;
+            header h1 {
+                font-size: 25px;
             }
         }
     </style>
@@ -118,13 +118,13 @@
 <body>
 
 <header>
-    <h1>📚 Education Hub</h1>
+    <h1>📚 MP Education</h1>
     <p>Learn • Study • Improve</p>
 </header>
 
 <div class="container">
 
-    <!-- Home Page -->
+    <!-- HOME -->
     <div id="homePage">
 
         <h2>Choose Your Category</h2>
@@ -150,16 +150,10 @@
 
         </div>
 
-        <h2>Learning Resources</h2>
-
-        <div class="resources">
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-        </div>
-
     </div>
 
-    <!-- Commerce Page -->
+
+    <!-- COMMERCE -->
     <div id="commercePage" class="page">
 
         <button class="back" onclick="showHome()">← Back</button>
@@ -168,15 +162,90 @@
 
         <div class="subjects">
 
-            <button class="subject">📘 Accounting</button>
-            <button class="subject">📗 Business Studies</button>
-            <button class="subject">📙 Economics</button>
+            <button class="subject"
+                onclick="showSubject('accountingPage')">
+                📘 Accounting
+            </button>
+
+            <button class="subject"
+                onclick="showSubject('businessPage')">
+                📗 Business Studies
+            </button>
+
+            <button class="subject"
+                onclick="showSubject('economicsPage')">
+                📙 Economics
+            </button>
 
         </div>
 
     </div>
 
-    <!-- Science Page -->
+
+    <!-- ACCOUNTING -->
+    <div id="accountingPage" class="page">
+
+        <button class="back" onclick="showPage('commercePage')">
+            ← Back
+        </button>
+
+        <h2>📘 Accounting</h2>
+
+        <div class="resources">
+
+            <button class="resource">📝 Notes</button>
+            <button class="resource">🎥 Videos</button>
+            <button class="resource">📄 Past Papers</button>
+            <button class="resource">🎯 Quizzes</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- BUSINESS STUDIES -->
+    <div id="businessPage" class="page">
+
+        <button class="back" onclick="showPage('commercePage')">
+            ← Back
+        </button>
+
+        <h2>📗 Business Studies</h2>
+
+        <div class="resources">
+
+            <button class="resource">📝 Notes</button>
+            <button class="resource">🎥 Videos</button>
+            <button class="resource">📄 Past Papers</button>
+            <button class="resource">🎯 Quizzes</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ECONOMICS -->
+    <div id="economicsPage" class="page">
+
+        <button class="back" onclick="showPage('commercePage')">
+            ← Back
+        </button>
+
+        <h2>📙 Economics</h2>
+
+        <div class="resources">
+
+            <button class="resource">📝 Notes</button>
+            <button class="resource">🎥 Videos</button>
+            <button class="resource">📄 Past Papers</button>
+            <button class="resource">🎯 Quizzes</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCIENCE -->
     <div id="sciencePage" class="page">
 
         <button class="back" onclick="showHome()">← Back</button>
@@ -193,7 +262,8 @@
 
     </div>
 
-    <!-- Technology Page -->
+
+    <!-- TECHNOLOGY -->
     <div id="technologyPage" class="page">
 
         <button class="back" onclick="showHome()">← Back</button>
@@ -202,7 +272,7 @@
 
         <div class="subjects">
 
-            <button class="subject">🔬 Science for Technology (SFT)</button>
+            <button class="subject">🔬 Science for Technology</button>
             <button class="subject">💻 ICT</button>
             <button class="subject">🔧 Engineering Technology</button>
             <button class="subject">🌱 Bio Systems Technology</button>
@@ -213,29 +283,58 @@
 
 </div>
 
+
 <footer>
-    <p>© 2026 Education Hub</p>
+    <p>© 2026 MP Education</p>
 </footer>
 
+
 <script>
-    function showPage(pageId) {
+
+    function hideAllPages() {
+
+        const pages = document.querySelectorAll(".page");
+
+        pages.forEach(function(page) {
+            page.style.display = "none";
+        });
 
         document.getElementById("homePage").style.display = "none";
-        document.getElementById("commercePage").style.display = "none";
-        document.getElementById("sciencePage").style.display = "none";
-        document.getElementById("technologyPage").style.display = "none";
+    }
+
+
+    function showPage(pageId) {
+
+        hideAllPages();
 
         document.getElementById(pageId).style.display = "block";
+
+        window.scrollTo(0, 0);
     }
+
+
+    function showSubject(pageId) {
+
+        hideAllPages();
+
+        document.getElementById(pageId).style.display = "block";
+
+        window.scrollTo(0, 0);
+    }
+
 
     function showHome() {
 
-        document.getElementById("commercePage").style.display = "none";
-        document.getElementById("sciencePage").style.display = "none";
-        document.getElementById("technologyPage").style.display = "none";
+        hideAllPages();
 
         document.getElementById("homePage").style.display = "block";
+
+        window.scrollTo(0, 0);
     }
+
+
+    showHome();
+
 </script>
 
 </body>

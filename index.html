@@ -42,7 +42,7 @@
         }
 
         header p {
-            margin-bottom: 0;
+            margin: 8px 0 0;
         }
 
         .container {
@@ -51,12 +51,11 @@
             padding: 20px;
         }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+        /* HOME PAGE */
 
-        /* ================= HERO BANNER ================= */
+        #homePage {
+            display: block;
+        }
 
         .hero-banner {
             width: 100%;
@@ -67,11 +66,13 @@
             width: 100%;
             height: auto;
             display: block;
-            object-fit: cover;
             border-radius: 15px;
         }
 
-        /* ================= CATEGORIES ================= */
+        h2 {
+            text-align: center;
+            margin: 20px 0;
+        }
 
         .categories,
         .subjects,
@@ -126,8 +127,6 @@
             color: white;
         }
 
-        /* ================= MOBILE ================= */
-
         @media (max-width: 600px) {
 
             .categories,
@@ -150,10 +149,7 @@
 
 </head>
 
-
 <body>
-
-<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -166,20 +162,18 @@
 
 <div class="container">
 
-
     <!-- ================= HOME ================= -->
 
     <div id="homePage">
 
-        <!-- HERO BANNER -->
-
         <div class="hero-banner">
-            <img src="mp-education-banner.png" alt="MP Education Banner">
+
+            <img src="mp-education-banner.png"
+                 alt="MP Education Banner">
+
         </div>
 
-
         <h2>🎓 Choose Your Learning Category</h2>
-
 
         <div class="categories">
 
@@ -206,337 +200,6 @@
             <button onclick="showPage('technologyPage')">
                 ⚙️ Technology
             </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- ================= COMMERCE ================= -->
-
-    <div id="commercePage" class="page">
-
-        <button class="back" onclick="showHome()">
-            ← Back
-        </button>
-
-        <h2>💼 Commerce</h2>
-
-        <div class="subjects">
-
-            <button class="subject"
-                onclick="showSubject('accountingPage')">
-                📘 Accounting
-            </button>
-
-            <button class="subject"
-                onclick="showSubject('businessPage')">
-                📗 Business Studies
-            </button>
-
-            <button class="subject"
-                onclick="showSubject('economicsPage')">
-                📙 Economics
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- ================= ACCOUNTING ================= -->
-
-    <div id="accountingPage" class="page">
-
-        <button class="back"
-            onclick="showPage('commercePage')">
-            ← Back
-        </button>
-
-        <h2>📘 Accounting</h2>
-
-        <div class="resources">
-
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-            <button class="resource">📄 Past Papers</button>
-            <button class="resource">🎯 Quizzes</button>
-
-        </div>
-
-    </div>
-
-
-    <!-- ================= BUSINESS STUDIES ================= -->
-
-    <div id="businessPage" class="page">
-
-        <button class="back"
-            onclick="showPage('commercePage')">
-            ← Back
-        </button>
-
-        <h2>📗 Business Studies</h2>
-
-        <div class="resources">
-
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-            <button class="resource">📄 Past Papers</button>
-            <button class="resource">🎯 Quizzes</button>
-
-        </div>
-
-    </div>
-
-
-    <!-- ================= ECONOMICS ================= -->
-
-    <div id="economicsPage" class="page">
-
-        <button class="back"
-            onclick="showPage('commercePage')">
-            ← Back
-        </button>
-
-        <h2>📙 Economics</h2>
-
-        <div class="resources">
-
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-            <button class="resource">📄 Past Papers</button>
-            <button class="resource">🎯 Quizzes</button>
-
-        </div>
-
-    </div>
-
-
-    <!-- ================= SCIENCE ================= -->
-
-    <div id="sciencePage" class="page">
-
-        <button class="back" onclick="showHome()">
-            ← Back
-        </button>
-
-        <h2>🔬 Science</h2>
-
-        <div class="subjects">
-
-            <button class="subject"
-                onclick="showSubject('physicsPage')">
-                ⚛️ Physics
-            </button>
-
-            <button class="subject"
-                onclick="showSubject('chemistryPage')">
-                🧪 Chemistry
-            </button>
-
-            <button class="subject"
-                onclick="showSubject('biologyPage')">
-                🧬 Biology
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- ================= PHYSICS ================= -->
-
-    <div id="physicsPage" class="page">
-
-        <button class="back"
-            onclick="showPage('sciencePage')">
-            ← Back
-        </button>
-
-        <h2>⚛️ Physics</h2>
-
-        <div class="resources">
-
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-            <button class="resource">📄 Past Papers</button>
-            <button class="resource">🎯 Quizzes</button>
-
-        </div>
-
-    </div>
-
-
-    <!-- ================= CHEMISTRY ================= -->
-
-    <div id="chemistryPage" class="page">
-
-        <button class="back"
-            onclick="showPage('sciencePage')">
-            ← Back
-        </button>
-
-        <h2>🧪 Chemistry</h2>
-
-        <div class="resources">
-
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-            <button class="resource">📄 Past Papers</button>
-            <button class="resource">🎯 Quizzes</button>
-
-        </div>
-
-    </div>
-
-
-    <!-- ================= BIOLOGY ================= -->
-
-    <div id="biologyPage" class="page">
-
-        <button class="back"
-            onclick="showPage('sciencePage')">
-            ← Back
-        </button>
-
-        <h2>🧬 Biology</h2>
-
-        <div class="resources">
-
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-            <button class="resource">📄 Past Papers</button>
-            <button class="resource">🎯 Quizzes</button>
-
-        </div>
-
-    </div>
-
-
-    <!-- ================= TECHNOLOGY ================= -->
-
-    <div id="technologyPage" class="page">
-
-        <button class="back" onclick="showHome()">
-            ← Back
-        </button>
-
-        <h2>⚙️ Technology</h2>
-
-        <div class="subjects">
-
-            <button class="subject"
-                onclick="showSubject('sftPage')">
-                🔬 Science for Technology
-            </button>
-
-            <button class="subject"
-                onclick="showSubject('ictPage')">
-                💻 ICT
-            </button>
-
-            <button class="subject"
-                onclick="showSubject('engineeringPage')">
-                🔧 Engineering Technology
-            </button>
-
-            <button class="subject"
-                onclick="showSubject('bioTechnologyPage')">
-                🌱 Bio Systems Technology
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- ================= SFT ================= -->
-
-    <div id="sftPage" class="page">
-
-        <button class="back"
-            onclick="showPage('technologyPage')">
-            ← Back
-        </button>
-
-        <h2>🔬 Science for Technology</h2>
-
-        <div class="resources">
-
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-            <button class="resource">📄 Past Papers</button>
-            <button class="resource">🎯 Quizzes</button>
-
-        </div>
-
-    </div>
-
-
-    <!-- ================= ICT ================= -->
-
-    <div id="ictPage" class="page">
-
-        <button class="back"
-            onclick="showPage('technologyPage')">
-            ← Back
-        </button>
-
-        <h2>💻 ICT</h2>
-
-        <div class="resources">
-
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-            <button class="resource">📄 Past Papers</button>
-            <button class="resource">🎯 Quizzes</button>
-
-        </div>
-
-    </div>
-
-
-    <!-- ================= ENGINEERING TECHNOLOGY ================= -->
-
-    <div id="engineeringPage" class="page">
-
-        <button class="back"
-            onclick="showPage('technologyPage')">
-            ← Back
-        </button>
-
-        <h2>🔧 Engineering Technology</h2>
-
-        <div class="resources">
-
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-            <button class="resource">📄 Past Papers</button>
-            <button class="resource">🎯 Quizzes</button>
-
-        </div>
-
-    </div>
-
-
-    <!-- ================= BIO SYSTEMS TECHNOLOGY ================= -->
-
-    <div id="bioTechnologyPage" class="page">
-
-        <button class="back"
-            onclick="showPage('technologyPage')">
-            ← Back
-        </button>
-
-        <h2>🌱 Bio Systems Technology</h2>
-
-        <div class="resources">
-
-            <button class="resource">📝 Notes</button>
-            <button class="resource">🎥 Videos</button>
-            <button class="resource">📄 Past Papers</button>
-            <button class="resource">🎯 Quizzes</button>
 
         </div>
 
@@ -587,6 +250,337 @@
     </div>
 
 
+    <!-- ================= COMMERCE ================= -->
+
+    <div id="commercePage" class="page">
+
+        <button class="back" onclick="showHome()">
+            ← Back
+        </button>
+
+        <h2>💼 Commerce</h2>
+
+        <div class="subjects">
+
+            <button class="subject"
+                    onclick="showPage('accountingPage')">
+                📘 Accounting
+            </button>
+
+            <button class="subject"
+                    onclick="showPage('businessPage')">
+                📗 Business Studies
+            </button>
+
+            <button class="subject"
+                    onclick="showPage('economicsPage')">
+                📙 Economics
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ACCOUNTING -->
+
+    <div id="accountingPage" class="page">
+
+        <button class="back"
+                onclick="showPage('commercePage')">
+            ← Back
+        </button>
+
+        <h2>📘 Accounting</h2>
+
+        <div class="resources">
+
+            <button class="resource">📝 Notes</button>
+            <button class="resource">🎥 Videos</button>
+            <button class="resource">📄 Past Papers</button>
+            <button class="resource">🎯 Quizzes</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- BUSINESS -->
+
+    <div id="businessPage" class="page">
+
+        <button class="back"
+                onclick="showPage('commercePage')">
+            ← Back
+        </button>
+
+        <h2>📗 Business Studies</h2>
+
+        <div class="resources">
+
+            <button class="resource">📝 Notes</button>
+            <button class="resource">🎥 Videos</button>
+            <button class="resource">📄 Past Papers</button>
+            <button class="resource">🎯 Quizzes</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ECONOMICS -->
+
+    <div id="economicsPage" class="page">
+
+        <button class="back"
+                onclick="showPage('commercePage')">
+            ← Back
+        </button>
+
+        <h2>📙 Economics</h2>
+
+        <div class="resources">
+
+            <button class="resource">📝 Notes</button>
+            <button class="resource">🎥 Videos</button>
+            <button class="resource">📄 Past Papers</button>
+            <button class="resource">🎯 Quizzes</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= SCIENCE ================= -->
+
+    <div id="sciencePage" class="page">
+
+        <button class="back" onclick="showHome()">
+            ← Back
+        </button>
+
+        <h2>🔬 Science</h2>
+
+        <div class="subjects">
+
+            <button class="subject"
+                    onclick="showPage('physicsPage')">
+                ⚛️ Physics
+            </button>
+
+            <button class="subject"
+                    onclick="showPage('chemistryPage')">
+                🧪 Chemistry
+            </button>
+
+            <button class="subject"
+                    onclick="showPage('biologyPage')">
+                🧬 Biology
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- PHYSICS -->
+
+    <div id="physicsPage" class="page">
+
+        <button class="back"
+                onclick="showPage('sciencePage')">
+            ← Back
+        </button>
+
+        <h2>⚛️ Physics</h2>
+
+        <div class="resources">
+
+            <button class="resource">📝 Notes</button>
+            <button class="resource">🎥 Videos</button>
+            <button class="resource">📄 Past Papers</button>
+            <button class="resource">🎯 Quizzes</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- CHEMISTRY -->
+
+    <div id="chemistryPage" class="page">
+
+        <button class="back"
+                onclick="showPage('sciencePage')">
+            ← Back
+        </button>
+
+        <h2>🧪 Chemistry</h2>
+
+        <div class="resources">
+
+            <button class="resource">📝 Notes</button>
+            <button class="resource">🎥 Videos</button>
+            <button class="resource">📄 Past Papers</button>
+            <button class="resource">🎯 Quizzes</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- BIOLOGY -->
+
+    <div id="biologyPage" class="page">
+
+        <button class="back"
+                onclick="showPage('sciencePage')">
+            ← Back
+        </button>
+
+        <h2>🧬 Biology</h2>
+
+        <div class="resources">
+
+            <button class="resource">📝 Notes</button>
+            <button class="resource">🎥 Videos</button>
+            <button class="resource">📄 Past Papers</button>
+            <button class="resource">🎯 Quizzes</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TECHNOLOGY ================= -->
+
+    <div id="technologyPage" class="page">
+
+        <button class="back" onclick="showHome()">
+            ← Back
+        </button>
+
+        <h2>⚙️ Technology</h2>
+
+        <div class="subjects">
+
+            <button class="subject"
+                    onclick="showPage('sftPage')">
+                🔬 Science for Technology
+            </button>
+
+            <button class="subject"
+                    onclick="showPage('ictPage')">
+                💻 ICT
+            </button>
+
+            <button class="subject"
+                    onclick="showPage('engineeringPage')">
+                🔧 Engineering Technology
+            </button>
+
+            <button class="subject"
+                    onclick="showPage('bioTechnologyPage')">
+                🌱 Bio Systems Technology
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SFT -->
+
+    <div id="sftPage" class="page">
+
+        <button class="back"
+                onclick="showPage('technologyPage')">
+            ← Back
+        </button>
+
+        <h2>🔬 Science for Technology</h2>
+
+        <div class="resources">
+
+            <button class="resource">📝 Notes</button>
+            <button class="resource">🎥 Videos</button>
+            <button class="resource">📄 Past Papers</button>
+            <button class="resource">🎯 Quizzes</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ICT -->
+
+    <div id="ictPage" class="page">
+
+        <button class="back"
+                onclick="showPage('technologyPage')">
+            ← Back
+        </button>
+
+        <h2>💻 ICT</h2>
+
+        <div class="resources">
+
+            <button class="resource">📝 Notes</button>
+            <button class="resource">🎥 Videos</button>
+            <button class="resource">📄 Past Papers</button>
+            <button class="resource">🎯 Quizzes</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ENGINEERING TECHNOLOGY -->
+
+    <div id="engineeringPage" class="page">
+
+        <button class="back"
+                onclick="showPage('technologyPage')">
+            ← Back
+        </button>
+
+        <h2>🔧 Engineering Technology</h2>
+
+        <div class="resources">
+
+            <button class="resource">📝 Notes</button>
+            <button class="resource">🎥 Videos</button>
+            <button class="resource">📄 Past Papers</button>
+            <button class="resource">🎯 Quizzes</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- BIO SYSTEMS TECHNOLOGY -->
+
+    <div id="bioTechnologyPage" class="page">
+
+        <button class="back"
+                onclick="showPage('technologyPage')">
+            ← Back
+        </button>
+
+        <h2>🌱 Bio Systems Technology</h2>
+
+        <div class="resources">
+
+            <button class="resource">📝 Notes</button>
+            <button class="resource">🎥 Videos</button>
+            <button class="resource">📄 Past Papers</button>
+            <button class="resource">🎯 Quizzes</button>
+
+        </div>
+
+    </div>
+
+
     <!-- ================= ARTS ================= -->
 
     <div id="artsPage" class="page">
@@ -608,11 +602,8 @@
 
     </div>
 
-
 </div>
 
-
-<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -621,53 +612,49 @@
 </footer>
 
 
-<!-- ================= JAVASCRIPT ================= -->
-
 <script>
 
-    function hideAllPages() {
+function hideAllPages() {
 
-        const pages = document.querySelectorAll(".page");
+    document.querySelectorAll(".page").forEach(function(page) {
+        page.style.display = "none";
+    });
 
-        pages.forEach(function(page) {
-            page.style.display = "none";
-        });
-
-        document.getElementById("homePage").style.display = "none";
-    }
+    document.getElementById("homePage").style.display = "block";
+}
 
 
-    function showPage(pageId) {
+function showPage(pageId) {
 
-        hideAllPages();
+    document.getElementById("homePage").style.display = "none";
 
-        document.getElementById(pageId).style.display = "block";
+    document.querySelectorAll(".page").forEach(function(page) {
+        page.style.display = "none";
+    });
 
-        window.scrollTo(0, 0);
-    }
+    document.getElementById(pageId).style.display = "block";
 
-
-    function showSubject(pageId) {
-
-        hideAllPages();
-
-        document.getElementById(pageId).style.display = "block";
-
-        window.scrollTo(0, 0);
-    }
+    window.scrollTo(0, 0);
+}
 
 
-    function showHome() {
+function showHome() {
 
-        hideAllPages();
+    document.querySelectorAll(".page").forEach(function(page) {
+        page.style.display = "none";
+    });
 
-        document.getElementById("homePage").style.display = "block";
+    document.getElementById("homePage").style.display = "block";
 
-        window.scrollTo(0, 0);
-    }
+    window.scrollTo(0, 0);
+}
 
+
+window.addEventListener("load", function() {
 
     showHome();
+
+});
 
 </script>
 
@@ -675,6 +662,3 @@
 </body>
 
 </html>
-
-
-

@@ -15,9 +15,12 @@
         content="MP Education, Sri Lanka education, O/L, A/L, Commerce, Science, Technology, Accounting, Business Studies, Economics, ICT">
 
     <meta name="author" content="MP Education">
-    <meta name="robots" content="index, follow">
 
     <style>
+
+        * {
+            box-sizing: border-box;
+        }
 
         body {
             font-family: Arial, sans-serif;
@@ -52,6 +55,23 @@
             text-align: center;
             margin-bottom: 20px;
         }
+
+        /* ================= HERO BANNER ================= */
+
+        .hero-banner {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        /* ================= CATEGORIES ================= */
 
         .categories,
         .subjects,
@@ -106,6 +126,8 @@
             color: white;
         }
 
+        /* ================= MOBILE ================= */
+
         @media (max-width: 600px) {
 
             .categories,
@@ -118,6 +140,10 @@
                 font-size: 25px;
             }
 
+            .container {
+                padding: 15px;
+            }
+
         }
 
     </style>
@@ -126,6 +152,8 @@
 
 
 <body>
+
+<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -142,11 +170,16 @@
     <!-- ================= HOME ================= -->
 
     <div id="homePage">
-<div class="hero-banner">
-    <img src="mp-education-banner.png" alt="MP Education Banner">
-</div>
+
+        <!-- HERO BANNER -->
+
+        <div class="hero-banner">
+            <img src="mp-education-banner.png" alt="MP Education Banner">
+        </div>
+
 
         <h2>🎓 Choose Your Learning Category</h2>
+
 
         <div class="categories">
 
@@ -177,7 +210,6 @@
         </div>
 
     </div>
-
 
 
     <!-- ================= COMMERCE ================= -->
@@ -212,8 +244,7 @@
     </div>
 
 
-
-    <!-- ACCOUNTING -->
+    <!-- ================= ACCOUNTING ================= -->
 
     <div id="accountingPage" class="page">
 
@@ -236,8 +267,7 @@
     </div>
 
 
-
-    <!-- BUSINESS STUDIES -->
+    <!-- ================= BUSINESS STUDIES ================= -->
 
     <div id="businessPage" class="page">
 
@@ -260,8 +290,7 @@
     </div>
 
 
-
-    <!-- ECONOMICS -->
+    <!-- ================= ECONOMICS ================= -->
 
     <div id="economicsPage" class="page">
 
@@ -282,7 +311,6 @@
         </div>
 
     </div>
-
 
 
     <!-- ================= SCIENCE ================= -->
@@ -317,8 +345,7 @@
     </div>
 
 
-
-    <!-- PHYSICS -->
+    <!-- ================= PHYSICS ================= -->
 
     <div id="physicsPage" class="page">
 
@@ -341,8 +368,7 @@
     </div>
 
 
-
-    <!-- CHEMISTRY -->
+    <!-- ================= CHEMISTRY ================= -->
 
     <div id="chemistryPage" class="page">
 
@@ -365,8 +391,7 @@
     </div>
 
 
-
-    <!-- BIOLOGY -->
+    <!-- ================= BIOLOGY ================= -->
 
     <div id="biologyPage" class="page">
 
@@ -387,7 +412,6 @@
         </div>
 
     </div>
-
 
 
     <!-- ================= TECHNOLOGY ================= -->
@@ -427,8 +451,7 @@
     </div>
 
 
-
-    <!-- SFT -->
+    <!-- ================= SFT ================= -->
 
     <div id="sftPage" class="page">
 
@@ -451,8 +474,7 @@
     </div>
 
 
-
-    <!-- ICT -->
+    <!-- ================= ICT ================= -->
 
     <div id="ictPage" class="page">
 
@@ -475,8 +497,7 @@
     </div>
 
 
-
-    <!-- ENGINEERING TECHNOLOGY -->
+    <!-- ================= ENGINEERING TECHNOLOGY ================= -->
 
     <div id="engineeringPage" class="page">
 
@@ -499,8 +520,7 @@
     </div>
 
 
-
-    <!-- BIO SYSTEMS TECHNOLOGY -->
+    <!-- ================= BIO SYSTEMS TECHNOLOGY ================= -->
 
     <div id="bioTechnologyPage" class="page">
 
@@ -523,7 +543,6 @@
     </div>
 
 
-
     <!-- ================= O/L ================= -->
 
     <div id="olPage" class="page">
@@ -537,17 +556,13 @@
         <div class="subjects">
 
             <button class="subject">📚 Subjects</button>
-
             <button class="subject">📝 Notes</button>
-
             <button class="subject">📄 Past Papers</button>
-
             <button class="subject">🎯 Quizzes</button>
 
         </div>
 
     </div>
-
 
 
     <!-- ================= A/L ================= -->
@@ -563,17 +578,13 @@
         <div class="subjects">
 
             <button class="subject">📚 Subjects</button>
-
             <button class="subject">📝 Notes</button>
-
             <button class="subject">📄 Past Papers</button>
-
             <button class="subject">🎯 Quizzes</button>
 
         </div>
 
     </div>
-
 
 
     <!-- ================= ARTS ================= -->
@@ -589,11 +600,8 @@
         <div class="subjects">
 
             <button class="subject">📚 Subjects</button>
-
             <button class="subject">📝 Notes</button>
-
             <button class="subject">📄 Past Papers</button>
-
             <button class="subject">🎯 Quizzes</button>
 
         </div>
@@ -622,13 +630,10 @@
         const pages = document.querySelectorAll(".page");
 
         pages.forEach(function(page) {
-
             page.style.display = "none";
-
         });
 
         document.getElementById("homePage").style.display = "none";
-
     }
 
 
@@ -639,7 +644,6 @@
         document.getElementById(pageId).style.display = "block";
 
         window.scrollTo(0, 0);
-
     }
 
 
@@ -650,7 +654,6 @@
         document.getElementById(pageId).style.display = "block";
 
         window.scrollTo(0, 0);
-
     }
 
 
@@ -661,7 +664,6 @@
         document.getElementById("homePage").style.display = "block";
 
         window.scrollTo(0, 0);
-
     }
 
 

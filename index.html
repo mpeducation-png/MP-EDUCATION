@@ -3,535 +3,851 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <title>MP Education | Learn, Study & Improve</title>
+<title>MP Education | Learn, Study & Improve</title>
 
-    <meta name="description"
-          content="MP Education is an online learning platform for Sri Lankan students.">
+<meta name="description"
+      content="MP Education is an online learning platform for Sri Lankan students.">
 
-    <style>
 
-        * {
-            box-sizing: border-box;
+<style>
+
+/* ================= GENERAL ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    margin:0;
+    background:#f5f7fb;
+    color:#222;
+}
+
+
+/* ================= LOGIN PAGE ================= */
+
+#authPage{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.25),
+            rgba(0,0,0,0.25)
+        ),
+        url("mp-education-background.png")
+        no-repeat
+        center center;
+
+    background-size:cover;
+
+}
+
+
+/* ================= LOGIN BOX ================= */
+
+.auth-box{
+
+    width:350px;
+
+    max-width:100%;
+
+    background:rgba(255,255,255,0.95);
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25);
+
+}
+
+
+.auth-box h2{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    color:#0b4ea2;
+
+}
+
+
+.auth-box input{
+
+    width:100%;
+
+    padding:12px;
+
+    margin:10px 0;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+}
+
+
+.auth-button{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-top:10px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#0b4ea2;
+
+    color:#fff;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}
+
+
+.auth-button:hover{
+
+    background:#083b7d;
+
+}
+
+
+.switch-button{
+
+    border:none;
+
+    background:none;
+
+    color:#0b4ea2;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    margin-top:12px;
+
+}
+
+
+.switch-button:hover{
+
+    text-decoration:underline;
+
+}
+
+
+.forgot-button{
+
+    display:block;
+
+    margin:12px auto;
+
+}
+
+
+.auth-message{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-weight:bold;
+
+}
+
+
+/* ================= MAIN HEADER ================= */
+
+header{
+
+    background:#1e3a8a;
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px 15px;
+
+}
+
+
+header h1{
+
+    margin:0;
+
+    font-size:30px;
+
+}
+
+
+header p{
+
+    margin:8px 0 0;
+
+}
+
+
+/* ================= CONTAINER ================= */
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:20px;
+
+}
+
+
+/* ================= USER BAR ================= */
+
+#userBar{
+
+    background:#e8efff;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+}
+
+
+#logoutButton{
+
+    background:#dc2626;
+
+    color:white;
+
+    padding:10px 18px;
+
+    margin-left:10px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+
+/* ================= HERO ================= */
+
+.hero-banner{
+
+    width:100%;
+
+    margin-bottom:25px;
+
+}
+
+
+.hero-banner img{
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+
+    border-radius:15px;
+
+}
+
+
+/* ================= HOME ================= */
+
+h2{
+
+    text-align:center;
+
+    margin:20px 0;
+
+}
+
+
+.categories,
+.subjects,
+.resources{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:15px;
+
+}
+
+
+button{
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:white;
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.1);
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+
+button:hover{
+
+    background:#e8efff;
+
+    transform:translateY(-2px);
+
+}
+
+
+.page{
+
+    display:none;
+
+    margin-top:25px;
+
+}
+
+
+.subject{
+
+    padding:22px;
+
+    font-size:18px;
+
+}
+
+
+.back{
+
+    background:#1e3a8a;
+
+    color:white;
+
+    margin-bottom:20px;
+
+}
+
+
+.resource{
+
+    padding:20px;
+
+    font-size:17px;
+
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    text-align:center;
+
+    padding:30px 20px;
+
+    margin-top:40px;
+
+    background:#1e3a8a;
+
+    color:white;
+
+}
+
+
+footer p{
+
+    margin:10px 0;
+
+}
+
+
+footer a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .categories,
+    .subjects,
+    .resources{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    header h1{
+
+        font-size:25px;
+
+    }
+
+
+    .container{
+
+        padding:15px;
+
+    }
+
+
+    .auth-box{
+
+        width:100%;
+
+        max-width:350px;
+
+    }
+
+
+    #logoutButton{
+
+        display:block;
+
+        margin:10px auto 0;
+
+    }
+
+}
+
+</style>
+
+
+<!-- ================= FIREBASE ================= -->
+
+<script type="module">
+
+import { initializeApp }
+
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+
+
+import {
+
+    getAuth,
+
+    createUserWithEmailAndPassword,
+
+    signInWithEmailAndPassword,
+
+    signOut,
+
+    onAuthStateChanged,
+
+    sendPasswordResetEmail
+
+}
+
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
+
+/* ================= FIREBASE CONFIG ================= */
+
+const firebaseConfig = {
+
+    apiKey:
+    "AIzaSyD1ibHY0BqBPEoj8kVG_5KLHiCiclzw7W4",
+
+    authDomain:
+    "mp-education-47e46.firebaseapp.com",
+
+    projectId:
+    "mp-education-47e46",
+
+    storageBucket:
+    "mp-education-47e46.firebasestorage.app",
+
+    messagingSenderId:
+    "225987667440",
+
+    appId:
+    "1:225987667440:web:2943cb26965510c2d4e935",
+
+    measurementId:
+    "G-HD5GPFLQ3N"
+
+};
+
+
+const app =
+    initializeApp(firebaseConfig);
+
+
+const auth =
+    getAuth(app);
+
+
+/* ================= REGISTER ================= */
+
+window.registerUser =
+async function(){
+
+    const email =
+        document
+        .getElementById("registerEmail")
+        .value
+        .trim();
+
+
+    const password =
+        document
+        .getElementById("registerPassword")
+        .value;
+
+
+    const confirmPassword =
+        document
+        .getElementById("confirmPassword")
+        .value;
+
+
+    const message =
+        document
+        .getElementById("registerMessage");
+
+
+    if(
+        !email ||
+        !password ||
+        !confirmPassword
+    ){
+
+        message.textContent =
+            "Please fill all fields.";
+
+        return;
+
+    }
+
+
+    if(password !== confirmPassword){
+
+        message.textContent =
+            "Passwords do not match.";
+
+        return;
+
+    }
+
+
+    if(password.length < 6){
+
+        message.textContent =
+            "Password must be at least 6 characters.";
+
+        return;
+
+    }
+
+
+    try{
+
+        await
+        createUserWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
+
+
+        message.textContent =
+            "Registration successful!";
+
+
+    }
+
+    catch(error){
+
+        if(
+            error.code ===
+            "auth/email-already-in-use"
+        ){
+
+            message.textContent =
+                "This email is already registered.";
+
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f5f7fb;
-            color: #222;
-        }
+        else{
 
-        header {
-            background: #1e3a8a;
-            color: white;
-            text-align: center;
-            padding: 25px 15px;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 30px;
-        }
-
-        header p {
-            margin: 8px 0 0;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        /* ================= LOGIN / REGISTER ================= */
-
-        #authPage {
-            max-width: 450px;
-            margin: 30px auto;
-        }
-
-        .auth-box {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .auth-box h2 {
-            text-align: center;
-            margin-top: 0;
-        }
-
-        .auth-box input {
-            width: 100%;
-            padding: 14px;
-            margin: 8px 0;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-
-        .auth-button {
-            width: 100%;
-            padding: 14px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 8px;
-            background: #1e3a8a;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .auth-button:hover {
-            background: #163276;
-        }
-
-        .switch-button {
-            background: none;
-            border: none;
-            color: #1e3a8a;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 12px;
-            padding: 5px;
-        }
-
-        .forgot-button {
-            display: block;
-            margin: 12px auto 0;
-        }
-
-        .authMessage {
-            text-align: center;
-            margin-top: 12px;
-            font-weight: bold;
-        }
-
-        /* ================= HERO ================= */
-
-        .hero-banner {
-            width: 100%;
-            margin-bottom: 25px;
-        }
-
-        .hero-banner img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 15px;
-        }
-
-        /* ================= HOME ================= */
-
-        h2 {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .categories,
-        .subjects,
-        .resources {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-
-        button {
-            padding: 18px;
-            border: none;
-            border-radius: 12px;
-            background: white;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        button:hover {
-            background: #e8efff;
-            transform: translateY(-2px);
-        }
-
-        .page {
-            display: none;
-            margin-top: 25px;
-        }
-
-        .subject {
-            padding: 22px;
-            font-size: 18px;
-        }
-
-        .back {
-            background: #1e3a8a;
-            color: white;
-            margin-bottom: 20px;
-        }
-
-        .resource {
-            padding: 20px;
-            font-size: 17px;
-        }
-
-        /* ================= USER BAR ================= */
-
-        #userBar {
-            display: none;
-            background: #e8efff;
-            padding: 12px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        #logoutButton {
-            background: #dc2626;
-            color: white;
-            padding: 10px 18px;
-            margin-left: 10px;
-        }
-
-        /* ================= FOOTER ================= */
-
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 40px;
-            background: #1e3a8a;
-            color: white;
-        }
-
-        footer p {
-            margin: 10px 0;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* ================= MOBILE ================= */
-
-        @media (max-width: 600px) {
-
-            .categories,
-            .subjects,
-            .resources {
-                grid-template-columns: 1fr;
-            }
-
-            header h1 {
-                font-size: 25px;
-            }
-
-            .container {
-                padding: 15px;
-            }
-
-            #logoutButton {
-                display: block;
-                margin: 10px auto 0;
-            }
+            message.textContent =
+                "Registration failed. Please try again.";
 
         }
 
-    </style>
+    }
+
+};
 
 
-    <!-- ================= FIREBASE ================= -->
+/* ================= LOGIN ================= */
 
-    <script type="module">
+window.loginUser =
+async function(){
 
-        import { initializeApp }
-        from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+    const email =
+        document
+        .getElementById("loginEmail")
+        .value
+        .trim();
 
-        import {
-            getAuth,
-            createUserWithEmailAndPassword,
-            signInWithEmailAndPassword,
-            signOut,
-            onAuthStateChanged,
-            sendPasswordResetEmail
+
+    const password =
+        document
+        .getElementById("loginPassword")
+        .value;
+
+
+    const message =
+        document
+        .getElementById("loginMessage");
+
+
+    if(!email || !password){
+
+        message.textContent =
+            "Please enter email and password.";
+
+        return;
+
+    }
+
+
+    try{
+
+        await
+        signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
+
+
+        message.textContent =
+            "Login successful!";
+
+
+    }
+
+    catch(error){
+
+        message.textContent =
+            "Login failed. Please check your email and password.";
+
+    }
+
+};
+
+
+/* ================= FORGOT PASSWORD ================= */
+
+window.forgotPassword =
+async function(){
+
+    const email =
+        document
+        .getElementById("loginEmail")
+        .value
+        .trim();
+
+
+    const message =
+        document
+        .getElementById("loginMessage");
+
+
+    if(!email){
+
+        message.textContent =
+            "Please enter your email first.";
+
+        return;
+
+    }
+
+
+    try{
+
+        await
+        sendPasswordResetEmail(
+            auth,
+            email
+        );
+
+
+        message.textContent =
+            "Password reset email sent. Please check your email.";
+
+    }
+
+
+    catch(error){
+
+        message.textContent =
+            "Unable to send reset email. Please check your email.";
+
+    }
+
+};
+
+
+/* ================= LOGOUT ================= */
+
+window.logoutUser =
+async function(){
+
+    await signOut(auth);
+
+};
+
+
+/* ================= SHOW REGISTER ================= */
+
+window.showRegister =
+function(){
+
+    document
+    .getElementById("loginBox")
+    .style.display="none";
+
+
+    document
+    .getElementById("registerBox")
+    .style.display="block";
+
+
+    document
+    .getElementById("loginMessage")
+    .textContent="";
+
+};
+
+
+/* ================= SHOW LOGIN ================= */
+
+window.showLogin =
+function(){
+
+    document
+    .getElementById("registerBox")
+    .style.display="none";
+
+
+    document
+    .getElementById("loginBox")
+    .style.display="block";
+
+
+    document
+    .getElementById("registerMessage")
+    .textContent="";
+
+};
+
+
+/* ================= AUTH STATE ================= */
+
+onAuthStateChanged(
+    auth,
+    function(user){
+
+        if(user){
+
+            document
+            .getElementById("authPage")
+            .style.display="none";
+
+
+            document
+            .getElementById("mainWebsite")
+            .style.display="block";
+
+
+            document
+            .getElementById("userBar")
+            .style.display="block";
+
+
+            document
+            .getElementById("userEmail")
+            .textContent=user.email;
+
         }
-        from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
+        else{
 
-        const firebaseConfig = {
+            document
+            .getElementById("authPage")
+            .style.display="flex";
 
-            apiKey: "AIzaSyD1ibHY0BqPEoj8kVG_5KLHiCiclzw7W4",
 
-            authDomain: "mp-education-47e46.firebaseapp.com",
+            document
+            .getElementById("mainWebsite")
+            .style.display="none";
 
-            projectId: "mp-education-47e46",
 
-            storageBucket: "mp-education-47e46.firebasestorage.app",
+            document
+            .getElementById("userBar")
+            .style.display="none";
 
-            messagingSenderId: "225987667440",
+        }
 
-            appId: "1:225987667440:web:2943cb26965510c2d4e935",
+    }
 
-            measurementId: "G-HD5GPFLQ3N"
+);
 
-        };
-
-
-        const app = initializeApp(firebaseConfig);
-
-        const auth = getAuth(app);
-
-
-        /* ================= REGISTER ================= */
-
-        window.registerUser = async function() {
-
-            const email =
-                document.getElementById("registerEmail").value.trim();
-
-            const password =
-                document.getElementById("registerPassword").value;
-
-            const confirmPassword =
-                document.getElementById("confirmPassword").value;
-
-            const message =
-                document.getElementById("registerMessage");
-
-
-            if (!email || !password || !confirmPassword) {
-
-                message.textContent =
-                    "Please fill all fields.";
-
-                return;
-
-            }
-
-
-            if (password !== confirmPassword) {
-
-                message.textContent =
-                    "Passwords do not match.";
-
-                return;
-
-            }
-
-
-            if (password.length < 6) {
-
-                message.textContent =
-                    "Password must be at least 6 characters.";
-
-                return;
-
-            }
-
-
-            try {
-
-                await createUserWithEmailAndPassword(
-                    auth,
-                    email,
-                    password
-                );
-
-                message.textContent =
-                    "Registration successful!";
-
-            }
-
-            catch (error) {
-
-                if (error.code === "auth/email-already-in-use") {
-
-                    message.textContent =
-                        "This email is already registered.";
-
-                }
-
-                else {
-
-                    message.textContent =
-                        "Registration failed. Please try again.";
-
-                }
-
-            }
-
-        };
-
-
-        /* ================= LOGIN ================= */
-
-        window.loginUser = async function() {
-
-            const email =
-                document.getElementById("loginEmail").value.trim();
-
-            const password =
-                document.getElementById("loginPassword").value;
-
-            const message =
-                document.getElementById("loginMessage");
-
-
-            if (!email || !password) {
-
-                message.textContent =
-                    "Please enter email and password.";
-
-                return;
-
-            }
-
-
-            try {
-
-                await signInWithEmailAndPassword(
-                    auth,
-                    email,
-                    password
-                );
-
-                message.textContent =
-                    "Login successful!";
-
-            }
-
-            catch (error) {
-
-                message.textContent =
-                    "Login failed. Please check your email and password.";
-
-            }
-
-        };
-
-
-        /* ================= FORGOT PASSWORD ================= */
-
-        window.forgotPassword = async function() {
-
-            const email =
-                document.getElementById("loginEmail").value.trim();
-
-            const message =
-                document.getElementById("loginMessage");
-
-
-            if (!email) {
-
-                message.textContent =
-                    "Please enter your email first.";
-
-                return;
-
-            }
-
-
-            try {
-
-                await sendPasswordResetEmail(
-                    auth,
-                    email
-                );
-
-                message.textContent =
-                    "Password reset email sent. Please check your email.";
-
-            }
-
-            catch (error) {
-
-                message.textContent =
-                    "Unable to send reset email. Please check your email.";
-
-            }
-
-        };
-
-
-        /* ================= LOGOUT ================= */
-
-        window.logoutUser = async function() {
-
-            await signOut(auth);
-
-        };
-
-
-        /* ================= AUTH STATE ================= */
-
-        onAuthStateChanged(auth, function(user) {
-
-            if (user) {
-
-                document.getElementById("authPage").style.display =
-                    "none";
-
-                document.getElementById("mainWebsite").style.display =
-                    "block";
-
-                document.getElementById("userBar").style.display =
-                    "block";
-
-                document.getElementById("userEmail").textContent =
-                    user.email;
-
-            }
-
-            else {
-
-                document.getElementById("authPage").style.display =
-                    "block";
-
-                document.getElementById("mainWebsite").style.display =
-                    "none";
-
-                document.getElementById("userBar").style.display =
-                    "none";
-
-            }
-
-        });
-
-
-        /* ================= SWITCH LOGIN / REGISTER ================= */
-
-        window.showRegister = function() {
-
-            document.getElementById("loginBox").style.display =
-                "none";
-
-            document.getElementById("registerBox").style.display =
-                "block";
-
-            document.getElementById("loginMessage").textContent =
-                "";
-
-        };
-
-
-        window.showLogin = function() {
-
-            document.getElementById("registerBox").style.display =
-                "none";
-
-            document.getElementById("loginBox").style.display =
-                "block";
-
-            document.getElementById("registerMessage").textContent =
-                "";
-
-        };
-
-    </script>
+</script>
 
 </head>
 
@@ -539,27 +855,23 @@
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- ================================================= -->
+<!-- LOGIN / REGISTER PAGE -->
+<!-- ================================================= -->
 
-<header>
-
-    <h1>📚 MP Education</h1>
-
-    <p>Learn • Study • Improve</p>
-
-</header>
-
-
-<!-- ================= LOGIN / REGISTER ================= -->
-
-<div id="authPage" class="container">
+<div id="authPage">
 
 
     <!-- ================= LOGIN ================= -->
 
-    <div id="loginBox" class="auth-box">
+    <div
+        id="loginBox"
+        class="auth-box">
 
-        <h2>🔐 Login</h2>
+
+        <h2>
+            📚 MP Education
+        </h2>
 
 
         <input
@@ -596,6 +908,7 @@
 
             Don't have an account?
 
+
             <button
                 class="switch-button"
                 onclick="showRegister()">
@@ -609,19 +922,24 @@
 
         <p
             id="loginMessage"
-            class="authMessage">
+            class="auth-message">
         </p>
+
 
     </div>
 
 
     <!-- ================= REGISTER ================= -->
 
-    <div id="registerBox"
-         class="auth-box"
-         style="display:none;">
+    <div
+        id="registerBox"
+        class="auth-box"
+        style="display:none;">
 
-        <h2>📝 Register</h2>
+
+        <h2>
+            📝 Create Account
+        </h2>
 
 
         <input
@@ -655,6 +973,7 @@
 
             Already have an account?
 
+
             <button
                 class="switch-button"
                 onclick="showLogin()">
@@ -668,803 +987,1057 @@
 
         <p
             id="registerMessage"
-            class="authMessage">
+            class="auth-message">
         </p>
+
 
     </div>
 
 </div>
 
 
-<!-- ================= MAIN WEBSITE ================= -->
+<!-- ================================================= -->
+<!-- MAIN WEBSITE -->
+<!-- ================================================= -->
 
-<div id="mainWebsite"
-     style="display:none;">
+<div
+    id="mainWebsite"
+    style="display:none;">
 
-    <div class="container">
+
+<header>
+
+    <h1>
+        📚 MP Education
+    </h1>
+
+    <p>
+        Learn • Study • Improve
+    </p>
+
+</header>
 
 
-        <!-- ================= USER BAR ================= -->
+<div class="container">
 
-        <div id="userBar">
 
-            👤 Logged in as:
+    <!-- ================= USER ================= -->
 
-            <strong id="userEmail"></strong>
+    <div id="userBar">
+
+        👤 Logged in as:
+
+        <strong id="userEmail"></strong>
+
+
+        <button
+            id="logoutButton"
+            onclick="logoutUser()">
+
+            Logout
+
+        </button>
+
+    </div>
+
+
+    <!-- ================= HOME ================= -->
+
+    <div id="homePage">
+
+
+        <div class="hero-banner">
+
+            <img
+                src="IMG-20260802-WA0000.jpg"
+                alt="MP Education Banner">
+
+        </div>
+
+
+        <h2>
+            🎓 Choose Your Learning Category
+        </h2>
+
+
+        <div class="categories">
 
 
             <button
-                id="logoutButton"
-                onclick="logoutUser()">
+                onclick="showPage('olPage')">
 
-                Logout
-
-            </button>
-
-        </div>
-
-
-        <!-- ================= HOME ================= -->
-
-        <div id="homePage">
-
-            <div class="hero-banner">
-
-                <img
-                    src="IMG-20260802-WA0000.jpg"
-                    alt="MP Education Banner">
-
-            </div>
-
-
-            <h2>
-                🎓 Choose Your Learning Category
-            </h2>
-
-
-            <div class="categories">
-
-                <button onclick="showPage('olPage')">
-                    📘 O/L
-                </button>
-
-                <button onclick="showPage('alPage')">
-                    📖 A/L
-                </button>
-
-                <button onclick="showPage('commercePage')">
-                    💼 Commerce
-                </button>
-
-                <button onclick="showPage('sciencePage')">
-                    🔬 Science
-                </button>
-
-                <button onclick="showPage('artsPage')">
-                    🎨 Arts
-                </button>
-
-                <button onclick="showPage('technologyPage')">
-                    ⚙️ Technology
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- ================= O/L ================= -->
-
-        <div id="olPage" class="page">
-
-            <button class="back"
-                    onclick="showHome()">
-
-                ← Back
+                📘 O/L
 
             </button>
 
-            <h2>📘 O/L</h2>
 
-            <div class="subjects">
+            <button
+                onclick="showPage('alPage')">
 
-                <button class="subject">
-                    📚 Subjects
-                </button>
-
-                <button class="subject">
-                    📝 Notes
-                </button>
-
-                <button class="subject">
-                    📄 Past Papers
-                </button>
-
-                <button class="subject">
-                    🎯 Quizzes
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- ================= A/L ================= -->
-
-        <div id="alPage" class="page">
-
-            <button class="back"
-                    onclick="showHome()">
-
-                ← Back
+                📖 A/L
 
             </button>
 
-            <h2>📖 A/L</h2>
 
-            <div class="subjects">
+            <button
+                onclick="showPage('commercePage')">
 
-                <button class="subject">
-                    📚 Subjects
-                </button>
-
-                <button class="subject">
-                    📝 Notes
-                </button>
-
-                <button class="subject">
-                    📄 Past Papers
-                </button>
-
-                <button class="subject">
-                    🎯 Quizzes
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- ================= COMMERCE ================= -->
-
-        <div id="commercePage" class="page">
-
-            <button class="back"
-                    onclick="showHome()">
-
-                ← Back
+                💼 Commerce
 
             </button>
 
-            <h2>💼 Commerce</h2>
 
+            <button
+                onclick="showPage('sciencePage')">
 
-            <div class="subjects">
-
-                <button
-                    class="subject"
-                    onclick="showPage('accountingPage')">
-
-                    📘 Accounting
-
-                </button>
-
-
-                <button
-                    class="subject"
-                    onclick="showPage('businessPage')">
-
-                    📗 Business Studies
-
-                </button>
-
-
-                <button
-                    class="subject"
-                    onclick="showPage('economicsPage')">
-
-                    📙 Economics
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- ================= ACCOUNTING ================= -->
-
-        <div id="accountingPage" class="page">
-
-            <button class="back"
-                    onclick="showPage('commercePage')">
-
-                ← Back
+                🔬 Science
 
             </button>
 
-            <h2>📘 Accounting</h2>
 
+            <button
+                onclick="showPage('artsPage')">
 
-            <div class="resources">
-
-                <button class="resource">
-                    📝 Notes
-                </button>
-
-                <button class="resource">
-                    🎥 Videos
-                </button>
-
-                <button class="resource">
-                    📄 Past Papers
-                </button>
-
-                <button class="resource">
-                    🎯 Quizzes
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- ================= BUSINESS STUDIES ================= -->
-
-        <div id="businessPage" class="page">
-
-            <button class="back"
-                    onclick="showPage('commercePage')">
-
-                ← Back
+                🎨 Arts
 
             </button>
 
-            <h2>📗 Business Studies</h2>
 
+            <button
+                onclick="showPage('technologyPage')">
 
-            <div class="resources">
-
-                <button class="resource">
-                    📝 Notes
-                </button>
-
-                <button class="resource">
-                    🎥 Videos
-                </button>
-
-                <button class="resource">
-                    📄 Past Papers
-                </button>
-
-                <button class="resource">
-                    🎯 Quizzes
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- ================= ECONOMICS ================= -->
-
-        <div id="economicsPage" class="page">
-
-            <button class="back"
-                    onclick="showPage('commercePage')">
-
-                ← Back
+                ⚙️ Technology
 
             </button>
 
-            <h2>📙 Economics</h2>
-
-
-            <div class="resources">
-
-
-                <button
-                    class="resource"
-                    onclick="window.location.href='https://drive.google.com/file/d/17gL2uzlz0qjchuP0XUqe55xoBR3V-Ftt/view?usp=drivesdk'">
-
-                    📝 Notes
-
-                </button>
-
-
-                <button class="resource">
-
-                    🎥 Videos
-
-                </button>
-
-
-                <button class="resource">
-
-                    📄 Past Papers
-
-                </button>
-
-
-                <button class="resource">
-
-                    🎯 Quizzes
-
-                </button>
-
-            </div>
 
         </div>
-
-
-        <!-- ================= SCIENCE ================= -->
-
-        <div id="sciencePage" class="page">
-
-            <button class="back"
-                    onclick="showHome()">
-
-                ← Back
-
-            </button>
-
-            <h2>🔬 Science</h2>
-
-
-            <div class="subjects">
-
-                <button
-                    class="subject"
-                    onclick="showPage('physicsPage')">
-
-                    ⚛️ Physics
-
-                </button>
-
-
-                <button
-                    class="subject"
-                    onclick="showPage('chemistryPage')">
-
-                    🧪 Chemistry
-
-                </button>
-
-
-                <button
-                    class="subject"
-                    onclick="showPage('biologyPage')">
-
-                    🧬 Biology
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- ================= PHYSICS ================= -->
-
-        <div id="physicsPage" class="page">
-
-            <button class="back"
-                    onclick="showPage('sciencePage')">
-
-                ← Back
-
-            </button>
-
-            <h2>⚛️ Physics</h2>
-
-
-            <div class="resources">
-
-                <button class="resource">
-                    📝 Notes
-                </button>
-
-                <button class="resource">
-                    🎥 Videos
-                </button>
-
-                <button class="resource">
-                    📄 Past Papers
-                </button>
-
-                <button class="resource">
-                    🎯 Quizzes
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- ================= CHEMISTRY ================= -->
-
-        <div id="chemistryPage" class="page">
-
-            <button class="back"
-                    onclick="showPage('sciencePage')">
-
-                ← Back
-
-            </button>
-
-            <h2>🧪 Chemistry</h2>
-
-
-            <div class="resources">
-
-                <button class="resource">
-                    📝 Notes
-                </button>
-
-                <button class="resource">
-                    🎥 Videos
-                </button>
-
-                <button class="resource">
-                    📄 Past Papers
-                </button>
-
-                <button class="resource">
-                    🎯 Quizzes
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- ================= BIOLOGY ================= -->
-
-        <div id="biologyPage" class="page">
-
-            <button class="back"
-                    onclick="showPage('sciencePage')">
-
-                ← Back
-
-            </button>
-
-            <h2>🧬 Biology</h2>
-
-
-            <div class="resources">
-
-                <button class="resource">
-                    📝 Notes
-                </button>
-
-                <button class="resource">
-                    🎥 Videos
-                </button>
-
-                <button class="resource">
-                    📄 Past Papers
-                </button>
-
-                <button class="resource">
-                    🎯 Quizzes
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- ================= TECHNOLOGY ================= -->
-
-        <div id="technologyPage" class="page">
-
-            <button class="back"
-                    onclick="showHome()">
-
-                ← Back
-
-            </button>
-
-            <h2>⚙️ Technology</h2>
-
-
-            <div class="subjects">
-
-                <button
-                    class="subject"
-                    onclick="showPage('sftPage')">
-
-                    🔬 Science for Technology
-
-                </button>
-
-
-                <button
-                    class="subject"
-                    onclick="showPage('ictPage')">
-
-                    💻 ICT
-
-                </button>
-
-
-                <button
-                    class="subject"
-                    onclick="showPage('engineeringPage')">
-
-                    🔧 Engineering Technology
-
-                </button>
-
-
-                <button
-                    class="subject"
-                    onclick="showPage('bioTechnologyPage')">
-
-                    🌱 Bio Systems Technology
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- ================= SFT ================= -->
-
-        <div id="sftPage" class="page">
-
-            <button class="back"
-                    onclick="showPage('technologyPage')">
-
-                ← Back
-
-            </button>
-
-            <h2>🔬 Science for Technology</h2>
-
-
-            <div class="resources">
-
-                <button class="resource">
-                    📝 Notes
-                </button>
-
-                <button class="resource">
-                    🎥 Videos
-                </button>
-
-                <button class="resource">
-                    📄 Past Papers
-                </button>
-
-                <button class="resource">
-                    🎯 Quizzes
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- ================= ICT ================= -->
-
-        <div id="ictPage" class="page">
-
-            <button class="back"
-                    onclick="showPage('technologyPage')">
-
-                ← Back
-
-            </button>
-
-            <h2>💻 ICT</h2>
-
-
-            <div class="resources">
-
-                <button class="resource">
-                    📝 Notes
-                </button>
-
-                <button class="resource">
-                    🎥 Videos
-                </button>
-
-                <button class="resource">
-                    📄 Past Papers
-                </button>
-
-                <button class="resource">
-                    🎯 Quizzes
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- ================= ENGINEERING ================= -->
-
-        <div id="engineeringPage" class="page">
-
-            <button class="back"
-                    onclick="showPage('technologyPage')">
-
-                ← Back
-
-            </button>
-
-            <h2>🔧 Engineering Technology</h2>
-
-
-            <div class="resources">
-
-                <button class="resource">
-                    📝 Notes
-                </button>
-
-                <button class="resource">
-                    🎥 Videos
-                </button>
-
-                <button class="resource">
-                    📄 Past Papers
-                </button>
-
-                <button class="resource">
-                    🎯 Quizzes
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- ================= BIO SYSTEMS ================= -->
-
-        <div id="bioTechnologyPage" class="page">
-
-            <button class="back"
-                    onclick="showPage('technologyPage')">
-
-                ← Back
-
-            </button>
-
-            <h2>🌱 Bio Systems Technology</h2>
-
-
-            <div class="resources">
-
-                <button class="resource">
-                    📝 Notes
-                </button>
-
-                <button class="resource">
-                    🎥 Videos
-                </button>
-
-                <button class="resource">
-                    📄 Past Papers
-                </button>
-
-                <button class="resource">
-                    🎯 Quizzes
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- ================= ARTS ================= -->
-
-        <div id="artsPage" class="page">
-
-            <button class="back"
-                    onclick="showHome()">
-
-                ← Back
-
-            </button>
-
-            <h2>🎨 Arts</h2>
-
-
-            <div class="subjects">
-
-                <button class="subject">
-                    📚 Subjects
-                </button>
-
-                <button class="subject">
-                    📝 Notes
-                </button>
-
-                <button class="subject">
-                    📄 Past Papers
-                </button>
-
-                <button class="subject">
-                    🎯 Quizzes
-                </button>
-
-            </div>
-
-        </div>
-
 
     </div>
 
 
-    <!-- ================= FOOTER ================= -->
+    <!-- ================= O/L ================= -->
 
-    <footer>
+    <div
+        id="olPage"
+        class="page">
 
-        <p>📞 Contact Us</p>
 
-        <p>
-            📱
-            <a href="tel:0759205338">
-                0759205338
-            </a>
-        </p>
+        <button
+            class="back"
+            onclick="showHome()">
 
-        <p>
-            📧
-            <a href="mailto:mpeducation4@gmail.com">
-                mpeducation4@gmail.com
-            </a>
-        </p>
+            ← Back
 
-        <p>
-            © 2026 MP Education
-        </p>
+        </button>
 
-    </footer>
+
+        <h2>
+            📘 O/L
+        </h2>
+
+
+        <div class="subjects">
+
+
+            <button class="subject">
+                📚 Subjects
+            </button>
+
+
+            <button class="subject">
+                📝 Notes
+            </button>
+
+
+            <button class="subject">
+                📄 Past Papers
+            </button>
+
+
+            <button class="subject">
+                🎯 Quizzes
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= A/L ================= -->
+
+    <div
+        id="alPage"
+        class="page">
+
+
+        <button
+            class="back"
+            onclick="showHome()">
+
+            ← Back
+
+        </button>
+
+
+        <h2>
+            📖 A/L
+        </h2>
+
+
+        <div class="subjects">
+
+
+            <button class="subject">
+                📚 Subjects
+            </button>
+
+
+            <button class="subject">
+                📝 Notes
+            </button>
+
+
+            <button class="subject">
+                📄 Past Papers
+            </button>
+
+
+            <button class="subject">
+                🎯 Quizzes
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= COMMERCE ================= -->
+
+    <div
+        id="commercePage"
+        class="page">
+
+
+        <button
+            class="back"
+            onclick="showHome()">
+
+            ← Back
+
+        </button>
+
+
+        <h2>
+            💼 Commerce
+        </h2>
+
+
+        <div class="subjects">
+
+
+            <button
+                class="subject"
+                onclick="showPage('accountingPage')">
+
+                📘 Accounting
+
+            </button>
+
+
+            <button
+                class="subject"
+                onclick="showPage('businessPage')">
+
+                📗 Business Studies
+
+            </button>
+
+
+            <button
+                class="subject"
+                onclick="showPage('economicsPage')">
+
+                📙 Economics
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= ACCOUNTING ================= -->
+
+    <div
+        id="accountingPage"
+        class="page">
+
+
+        <button
+            class="back"
+            onclick="showPage('commercePage')">
+
+            ← Back
+
+        </button>
+
+
+        <h2>
+            📘 Accounting
+        </h2>
+
+
+        <div class="resources">
+
+
+            <button class="resource">
+                📝 Notes
+            </button>
+
+
+            <button class="resource">
+                🎥 Videos
+            </button>
+
+
+            <button class="resource">
+                📄 Past Papers
+            </button>
+
+
+            <button class="resource">
+                🎯 Quizzes
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= BUSINESS ================= -->
+
+    <div
+        id="businessPage"
+        class="page">
+
+
+        <button
+            class="back"
+            onclick="showPage('commercePage')">
+
+            ← Back
+
+        </button>
+
+
+        <h2>
+            📗 Business Studies
+        </h2>
+
+
+        <div class="resources">
+
+
+            <button class="resource">
+                📝 Notes
+            </button>
+
+
+            <button class="resource">
+                🎥 Videos
+            </button>
+
+
+            <button class="resource">
+                📄 Past Papers
+            </button>
+
+
+            <button class="resource">
+                🎯 Quizzes
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= ECONOMICS ================= -->
+
+    <div
+        id="economicsPage"
+        class="page">
+
+
+        <button
+            class="back"
+            onclick="showPage('commercePage')">
+
+            ← Back
+
+        </button>
+
+
+        <h2>
+            📙 Economics
+        </h2>
+
+
+        <div class="resources">
+
+
+            <button
+                class="resource"
+                onclick="window.open(
+                'https://drive.google.com/file/d/17gL2uzlz0qjchuP0XUqe55xoBR3V-Ftt/view?usp=drivesdk',
+                '_blank'
+                )">
+
+                📝 Notes
+
+            </button>
+
+
+            <button class="resource">
+                🎥 Videos
+            </button>
+
+
+            <button class="resource">
+                📄 Past Papers
+            </button>
+
+
+            <button class="resource">
+                🎯 Quizzes
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= SCIENCE ================= -->
+
+    <div
+        id="sciencePage"
+        class="page">
+
+
+        <button
+            class="back"
+            onclick="showHome()">
+
+            ← Back
+
+        </button>
+
+
+        <h2>
+            🔬 Science
+        </h2>
+
+
+        <div class="subjects">
+
+
+            <button
+                class="subject"
+                onclick="showPage('physicsPage')">
+
+                ⚛️ Physics
+
+            </button>
+
+
+            <button
+                class="subject"
+                onclick="showPage('chemistryPage')">
+
+                🧪 Chemistry
+
+            </button>
+
+
+            <button
+                class="subject"
+                onclick="showPage('biologyPage')">
+
+                🧬 Biology
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= PHYSICS ================= -->
+
+    <div
+        id="physicsPage"
+        class="page">
+
+
+        <button
+            class="back"
+            onclick="showPage('sciencePage')">
+
+            ← Back
+
+        </button>
+
+
+        <h2>
+            ⚛️ Physics
+        </h2>
+
+
+        <div class="resources">
+
+
+            <button class="resource">
+                📝 Notes
+            </button>
+
+
+            <button class="resource">
+                🎥 Videos
+            </button>
+
+
+            <button class="resource">
+                📄 Past Papers
+            </button>
+
+
+            <button class="resource">
+                🎯 Quizzes
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= CHEMISTRY ================= -->
+
+    <div
+        id="chemistryPage"
+        class="page">
+
+
+        <button
+            class="back"
+            onclick="showPage('sciencePage')">
+
+            ← Back
+
+        </button>
+
+
+        <h2>
+            🧪 Chemistry
+        </h2>
+
+
+        <div class="resources">
+
+
+            <button class="resource">
+                📝 Notes
+            </button>
+
+
+            <button class="resource">
+                🎥 Videos
+            </button>
+
+
+            <button class="resource">
+                📄 Past Papers
+            </button>
+
+
+            <button class="resource">
+                🎯 Quizzes
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= BIOLOGY ================= -->
+
+    <div
+        id="biologyPage"
+        class="page">
+
+
+        <button
+            class="back"
+            onclick="showPage('sciencePage')">
+
+            ← Back
+
+        </button>
+
+
+        <h2>
+            🧬 Biology
+        </h2>
+
+
+        <div class="resources">
+
+
+            <button class="resource">
+                📝 Notes
+            </button>
+
+
+            <button class="resource">
+                🎥 Videos
+            </button>
+
+
+            <button class="resource">
+                📄 Past Papers
+            </button>
+
+
+            <button class="resource">
+                🎯 Quizzes
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TECHNOLOGY ================= -->
+
+    <div
+        id="technologyPage"
+        class="page">
+
+
+        <button
+            class="back"
+            onclick="showHome()">
+
+            ← Back
+
+        </button>
+
+
+        <h2>
+            ⚙️ Technology
+        </h2>
+
+
+        <div class="subjects">
+
+
+            <button
+                class="subject"
+                onclick="showPage('sftPage')">
+
+                🔬 Science for Technology
+
+            </button>
+
+
+            <button
+                class="subject"
+                onclick="showPage('ictPage')">
+
+                💻 ICT
+
+            </button>
+
+
+            <button
+                class="subject"
+                onclick="showPage('engineeringPage')">
+
+                🔧 Engineering Technology
+
+            </button>
+
+
+            <button
+                class="subject"
+                onclick="showPage('bioTechnologyPage')">
+
+                🌱 Bio Systems Technology
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= SFT ================= -->
+
+    <div
+        id="sftPage"
+        class="page">
+
+
+        <button
+            class="back"
+            onclick="showPage('technologyPage')">
+
+            ← Back
+
+        </button>
+
+
+        <h2>
+            🔬 Science for Technology
+        </h2>
+
+
+        <div class="resources">
+
+
+            <button class="resource">
+                📝 Notes
+            </button>
+
+
+            <button class="resource">
+                🎥 Videos
+            </button>
+
+
+            <button class="resource">
+                📄 Past Papers
+            </button>
+
+
+            <button class="resource">
+                🎯 Quizzes
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= ICT ================= -->
+
+    <div
+        id="ictPage"
+        class="page">
+
+
+        <button
+            class="back"
+            onclick="showPage('technologyPage')">
+
+            ← Back
+
+        </button>
+
+
+        <h2>
+            💻 ICT
+        </h2>
+
+
+        <div class="resources">
+
+
+            <button class="resource">
+                📝 Notes
+            </button>
+
+
+            <button class="resource">
+                🎥 Videos
+            </button>
+
+
+            <button class="resource">
+                📄 Past Papers
+            </button>
+
+
+            <button class="resource">
+                🎯 Quizzes
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= ENGINEERING ================= -->
+
+    <div
+        id="engineeringPage"
+        class="page">
+
+
+        <button
+            class="back"
+            onclick="showPage('technologyPage')">
+
+            ← Back
+
+        </button>
+
+
+        <h2>
+            🔧 Engineering Technology
+        </h2>
+
+
+        <div class="resources">
+
+
+            <button class="resource">
+                📝 Notes
+            </button>
+
+
+            <button class="resource">
+                🎥 Videos
+            </button>
+
+
+            <button class="resource">
+                📄 Past Papers
+            </button>
+
+
+            <button class="resource">
+                🎯 Quizzes
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= BIO SYSTEMS ================= -->
+
+    <div
+        id="bioTechnologyPage"
+        class="page">
+
+
+        <button
+            class="back"
+            onclick="showPage('technologyPage')">
+
+            ← Back
+
+        </button>
+
+
+        <h2>
+            🌱 Bio Systems Technology
+        </h2>
+
+
+        <div class="resources">
+
+
+            <button class="resource">
+                📝 Notes
+            </button>
+
+
+            <button class="resource">
+                🎥 Videos
+            </button>
+
+
+            <button class="resource">
+                📄 Past Papers
+            </button>
+
+
+            <button class="resource">
+                🎯 Quizzes
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= ARTS ================= -->
+
+    <div
+        id="artsPage"
+        class="page">
+
+
+        <button
+            class="back"
+            onclick="showHome()">
+
+            ← Back
+
+        </button>
+
+
+        <h2>
+            🎨 Arts
+        </h2>
+
+
+        <div class="subjects">
+
+
+            <button class="subject">
+                📚 Subjects
+            </button>
+
+
+            <button class="subject">
+                📝 Notes
+            </button>
+
+
+            <button class="subject">
+                📄 Past Papers
+            </button>
+
+
+            <button class="subject">
+                🎯 Quizzes
+            </button>
+
+
+        </div>
+
+    </div>
+
 
 </div>
 
 
-<!-- ================= WEBSITE JAVASCRIPT ================= -->
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        📞 Contact Us
+    </p>
+
+
+    <p>
+
+        📱
+
+        <a href="tel:0759205338">
+
+            0759205338
+
+        </a>
+
+    </p>
+
+
+    <p>
+
+        📧
+
+        <a href="mailto:mpeducation4@gmail.com">
+
+            mpeducation4@gmail.com
+
+        </a>
+
+    </p>
+
+
+    <p>
+        © 2026 MP Education
+    </p>
+
+</footer>
+
+
+</div>
+
+
+<!-- ================= PAGE JAVASCRIPT ================= -->
 
 <script>
 
-    function showPage(pageId) {
+function showPage(pageId){
 
-        document.getElementById("homePage").style.display =
-            "none";
-
-        document.querySelectorAll(".page").forEach(function(page) {
-
-            page.style.display = "none";
-
-        });
-
-        document.getElementById(pageId).style.display =
-            "block";
-
-        window.scrollTo(0, 0);
-
-    }
+    document
+    .getElementById("homePage")
+    .style.display="none";
 
 
-    function showHome() {
+    document
+    .querySelectorAll(".page")
+    .forEach(
+        function(page){
 
-        document.querySelectorAll(".page").forEach(function(page) {
+            page.style.display="none";
 
-            page.style.display = "none";
+        }
+    );
 
-        });
 
-        document.getElementById("homePage").style.display =
-            "block";
+    document
+    .getElementById(pageId)
+    .style.display="block";
 
-        window.scrollTo(0, 0);
 
-    }
+    window.scrollTo(0,0);
+
+}
+
+
+function showHome(){
+
+    document
+    .querySelectorAll(".page")
+    .forEach(
+        function(page){
+
+            page.style.display="none";
+
+        }
+    );
+
+
+    document
+    .getElementById("homePage")
+    .style.display="block";
+
+
+    window.scrollTo(0,0);
+
+}
 
 </script>
 
@@ -1472,3 +2045,5 @@
 </body>
 
 </html>
+
+         

@@ -32,6 +32,8 @@
             color: #222;
         }
 
+        /* ================= HEADER ================= */
+
         header {
             background: #1e3a8a;
             color: white;
@@ -48,11 +50,15 @@
             margin: 8px 0 0;
         }
 
+        /* ================= CONTAINER ================= */
+
         .container {
             max-width: 900px;
             margin: auto;
             padding: 20px;
         }
+
+        /* ================= HERO BANNER ================= */
 
         .hero-banner {
             width: 100%;
@@ -66,6 +72,8 @@
             border-radius: 15px;
         }
 
+        /* ================= HOME ================= */
+
         #homePage {
             display: block;
         }
@@ -74,6 +82,8 @@
             text-align: center;
             margin: 20px 0;
         }
+
+        /* ================= BUTTONS ================= */
 
         .categories,
         .subjects,
@@ -99,6 +109,8 @@
             transform: translateY(-2px);
         }
 
+        /* ================= PAGES ================= */
+
         .page {
             display: none;
             margin-top: 25px;
@@ -119,6 +131,8 @@
             padding: 20px;
             font-size: 17px;
         }
+
+        /* ================= FOOTER ================= */
 
         footer {
             text-align: center;
@@ -141,6 +155,8 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        /* ================= MOBILE ================= */
 
         @media (max-width: 600px) {
 
@@ -168,6 +184,8 @@
 <body>
 
 
+<!-- ================= HEADER ================= -->
+
 <header>
 
     <h1>📚 MP Education</h1>
@@ -177,10 +195,12 @@
 </header>
 
 
+<!-- ================= MAIN CONTAINER ================= -->
+
 <div class="container">
 
 
-    <!-- ================= HOME ================= -->
+    <!-- ================= HOME PAGE ================= -->
 
     <div id="homePage">
 
@@ -224,11 +244,12 @@
     </div>
 
 
-    <!-- ================= O/L ================= -->
+    <!-- ================= O/L PAGE ================= -->
 
     <div id="olPage" class="page">
 
-        <button class="back" onclick="showHome()">
+        <button class="back"
+                onclick="showHome()">
             ← Back
         </button>
 
@@ -257,11 +278,12 @@
     </div>
 
 
-    <!-- ================= A/L ================= -->
+    <!-- ================= A/L PAGE ================= -->
 
     <div id="alPage" class="page">
 
-        <button class="back" onclick="showHome()">
+        <button class="back"
+                onclick="showHome()">
             ← Back
         </button>
 
@@ -290,11 +312,12 @@
     </div>
 
 
-    <!-- ================= COMMERCE ================= -->
+    <!-- ================= COMMERCE PAGE ================= -->
 
     <div id="commercePage" class="page">
 
-        <button class="back" onclick="showHome()">
+        <button class="back"
+                onclick="showHome()">
             ← Back
         </button>
 
@@ -405,16 +428,10 @@
 
             <!-- GOOGLE DRIVE PDF -->
 
-            <a href="https://drive.google.com/file/d/17gL2uzlz0qjchuP0XUqe55xoBR3V-Ftt/view"
-               target="_blank"
-               style="text-decoration:none; color:#222;">
-
-                <button class="resource">
-                    📝 Notes
-                </button>
-
-            </a>
-
+            <button class="resource"
+                    onclick="window.location.href='https://drive.google.com/file/d/17gL2uzlz0qjchuP0XUqe55xoBR3V-Ftt/view?usp=drivesdk'">
+                📝 Notes
+            </button>
 
             <button class="resource">
                 🎥 Videos
@@ -433,11 +450,12 @@
     </div>
 
 
-    <!-- ================= SCIENCE ================= -->
+    <!-- ================= SCIENCE PAGE ================= -->
 
     <div id="sciencePage" class="page">
 
-        <button class="back" onclick="showHome()">
+        <button class="back"
+                onclick="showHome()">
             ← Back
         </button>
 
@@ -571,7 +589,8 @@
 
     <div id="technologyPage" class="page">
 
-        <button class="back" onclick="showHome()">
+        <button class="back"
+                onclick="showHome()">
             ← Back
         </button>
 
@@ -744,7 +763,8 @@
 
     <div id="artsPage" class="page">
 
-        <button class="back" onclick="showHome()">
+        <button class="back"
+                onclick="showHome()">
             ← Back
         </button>
 

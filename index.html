@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+      content="width=device-width, initial-scale=1.0">
 
 <title>MP Education | Learn, Study & Improve</title>
 
@@ -108,7 +108,9 @@ button{
     justify-content:center;
     align-items:center;
     text-align:center;
+
     background:linear-gradient(135deg,#1e3a8a,#2563eb);
+
     color:white;
     padding:30px;
 }
@@ -143,6 +145,7 @@ button{
         opacity:1;
         transform:translateY(0);
     }
+
 }
 
 /* ================= PAGES ================= */
@@ -213,8 +216,12 @@ header p{
 .categories,
 .subjects,
 .resources{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+
     gap:15px;
 }
 
@@ -223,11 +230,15 @@ header p{
 .resource{
 
     padding:20px;
+
     background:white;
+
     color:#1e3a8a;
+
     border:2px solid #dbeafe;
 
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
 
     transition:.2s;
 }
@@ -237,6 +248,7 @@ header p{
 .resource:hover{
 
     transform:translateY(-3px);
+
     background:#eff6ff;
 }
 
@@ -259,13 +271,17 @@ header p{
 .lesson-button{
 
     width:100%;
+
     text-align:left;
+
     padding:16px;
+
     background:white;
 
     border-left:5px solid #1e3a8a;
 
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    box-shadow:
+    0 3px 10px rgba(0,0,0,.08);
 }
 
 .lesson-button:hover{
@@ -277,10 +293,13 @@ header p{
 .lesson-detail{
 
     background:white;
+
     padding:25px;
+
     border-radius:15px;
 
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    box-shadow:
+    0 5px 18px rgba(0,0,0,.08);
 }
 
 /* ================= FOOTER ================= */
@@ -288,9 +307,11 @@ header p{
 footer{
 
     margin-top:40px;
+
     padding:30px 20px;
 
     background:#172554;
+
     color:white;
 
     text-align:center;
@@ -312,18 +333,20 @@ footer a{
     z-index:9999;
 
     background:#1e3a8a;
+
     color:white;
 
     padding:15px 20px;
 
     border-radius:50px;
 
-    box-shadow:0 5px 20px rgba(0,0,0,.25);
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.25);
 
     font-weight:bold;
 }
 
-/* ================= AI CHAT ================= */
+/* ================= AI CHAT BOX ================= */
 
 #aiChatBox{
 
@@ -335,6 +358,7 @@ footer a{
     bottom:85px;
 
     width:350px;
+
     max-width:calc(100% - 40px);
 
     height:500px;
@@ -343,7 +367,8 @@ footer a{
 
     border-radius:18px;
 
-    box-shadow:0 10px 35px rgba(0,0,0,.25);
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.25);
 
     z-index:9998;
 
@@ -353,6 +378,7 @@ footer a{
 .ai-header{
 
     background:#1e3a8a;
+
     color:white;
 
     padding:16px;
@@ -360,12 +386,14 @@ footer a{
     font-weight:bold;
 
     display:flex;
+
     justify-content:space-between;
 }
 
 .ai-header button{
 
     background:transparent;
+
     color:white;
 
     font-size:18px;
@@ -428,12 +456,14 @@ footer a{
 .ai-input-area input{
 
     margin:0;
+
     flex:1;
 }
 
 .ai-input-area button{
 
     background:#1e3a8a;
+
     color:white;
 
     padding:10px 15px;
@@ -454,15 +484,19 @@ footer a{
     #aiChatBox{
 
         right:10px;
+
         bottom:80px;
 
         width:calc(100% - 20px);
+
     }
 
     #aiChatButton{
 
         right:10px;
+
         bottom:10px;
+
     }
 
 }
@@ -487,27 +521,27 @@ footer a{
         <input
             type="email"
             id="loginEmail"
-            placeholder="Email"
-        >
+            placeholder="Email">
 
         <input
             type="password"
             id="loginPassword"
-            placeholder="Password"
-        >
+            placeholder="Password">
 
         <button
             class="auth-button"
-            onclick="loginUser()"
-        >
+            onclick="loginUser()">
+
             Login
+
         </button>
 
         <button
             class="switch-button forgot-button"
-            onclick="forgotPassword()"
-        >
+            onclick="forgotPassword()">
+
             Forgot Password?
+
         </button>
 
         <p style="text-align:center;">
@@ -516,9 +550,10 @@ footer a{
 
             <button
                 class="switch-button"
-                onclick="showRegister()"
-            >
+                onclick="showRegister()">
+
                 Register
+
             </button>
 
         </p>
@@ -536,40 +571,36 @@ footer a{
     <div
         id="registerBox"
         class="auth-box"
-        style="display:none;"
-    >
+        style="display:none;">
 
         <h2>📝 Create Account</h2>
 
         <input
             type="text"
             id="registerName"
-            placeholder="Full Name"
-        >
+            placeholder="Full Name">
 
         <input
             type="email"
             id="registerEmail"
-            placeholder="Email"
-        >
+            placeholder="Email">
 
         <input
             type="password"
             id="registerPassword"
-            placeholder="Password"
-        >
+            placeholder="Password">
 
         <input
             type="password"
             id="confirmPassword"
-            placeholder="Confirm Password"
-        >
+            placeholder="Confirm Password">
 
         <button
             class="auth-button"
-            onclick="registerUser()"
-        >
+            onclick="registerUser()">
+
             Register
+
         </button>
 
         <p style="text-align:center;">
@@ -578,9 +609,10 @@ footer a{
 
             <button
                 class="switch-button"
-                onclick="showLogin()"
-            >
+                onclick="showLogin()">
+
                 Login
+
             </button>
 
         </p>
@@ -647,9 +679,10 @@ footer a{
 
         <button
             id="logoutButton"
-            onclick="logoutUser()"
-        >
+            onclick="logoutUser()">
+
             Logout
+
         </button>
 
     </div>
@@ -659,8 +692,7 @@ footer a{
 
         <img
             src="IMG-20260802-WA0000.jpg"
-            alt="MP Education Banner"
-        >
+            alt="MP Education Banner">
 
     </div>
 
@@ -709,9 +741,10 @@ footer a{
 
     <button
         class="back"
-        onclick="showHome()"
-    >
+        onclick="showHome()">
+
         ← Back
+
     </button>
 
     <h2>📘 O/L</h2>
@@ -747,9 +780,10 @@ footer a{
 
     <button
         class="back"
-        onclick="showHome()"
-    >
+        onclick="showHome()">
+
         ← Back
+
     </button>
 
     <h2>📖 A/L</h2>
@@ -785,9 +819,10 @@ footer a{
 
     <button
         class="back"
-        onclick="showHome()"
-    >
+        onclick="showHome()">
+
         ← Back
+
     </button>
 
     <h2>💼 Commerce</h2>
@@ -796,23 +831,26 @@ footer a{
 
         <button
             class="subject"
-            onclick="openSubject('Accounting')"
-        >
+            onclick="openSubject('Accounting')">
+
             📘 Accounting
+
         </button>
 
         <button
             class="subject"
-            onclick="openSubject('Business Studies')"
-        >
+            onclick="openSubject('Business Studies')">
+
             📗 Business Studies
+
         </button>
 
         <button
             class="subject"
-            onclick="openSubject('Economics')"
-        >
+            onclick="openSubject('Economics')">
+
             📙 Economics
+
         </button>
 
     </div>
@@ -828,9 +866,10 @@ footer a{
 
     <button
         class="back"
-        onclick="showHome()"
-    >
+        onclick="showHome()">
+
         ← Back
+
     </button>
 
     <h2>🔬 Science</h2>
@@ -839,23 +878,26 @@ footer a{
 
         <button
             class="subject"
-            onclick="openSubject('Physics')"
-        >
+            onclick="openSubject('Physics')">
+
             ⚛️ Physics
+
         </button>
 
         <button
             class="subject"
-            onclick="openSubject('Chemistry')"
-        >
+            onclick="openSubject('Chemistry')">
+
             🧪 Chemistry
+
         </button>
 
         <button
             class="subject"
-            onclick="openSubject('Biology')"
-        >
+            onclick="openSubject('Biology')">
+
             🧬 Biology
+
         </button>
 
     </div>
@@ -871,9 +913,10 @@ footer a{
 
     <button
         class="back"
-        onclick="showHome()"
-    >
+        onclick="showHome()">
+
         ← Back
+
     </button>
 
     <h2>⚙️ Technology</h2>
@@ -882,30 +925,34 @@ footer a{
 
         <button
             class="subject"
-            onclick="openSubject('Science for Technology')"
-        >
+            onclick="openSubject('Science for Technology')">
+
             🔬 Science for Technology
+
         </button>
 
         <button
             class="subject"
-            onclick="openSubject('ICT')"
-        >
+            onclick="openSubject('ICT')">
+
             💻 ICT
+
         </button>
 
         <button
             class="subject"
-            onclick="openSubject('Engineering Technology')"
-        >
+            onclick="openSubject('Engineering Technology')">
+
             🔧 Engineering Technology
+
         </button>
 
         <button
             class="subject"
-            onclick="openSubject('Bio Systems Technology')"
-        >
+            onclick="openSubject('Bio Systems Technology')">
+
             🌱 Bio Systems Technology
+
         </button>
 
     </div>
@@ -921,9 +968,10 @@ footer a{
 
     <button
         class="back"
-        onclick="showHome()"
-    >
+        onclick="showHome()">
+
         ← Back
+
     </button>
 
     <h2>🎨 Arts</h2>
@@ -959,17 +1007,18 @@ footer a{
 
     <button
         class="back"
-        onclick="goBackToCategory()"
-    >
+        onclick="goBackToCategory()">
+
         ← Back
+
     </button>
 
     <h2 id="subjectTitle"></h2>
 
     <div
         id="lessonList"
-        class="lessons"
-    ></div>
+        class="lessons">
+    </div>
 
 </div>
 
@@ -982,9 +1031,10 @@ footer a{
 
     <button
         class="back"
-        onclick="goBackToLessons()"
-    >
+        onclick="goBackToLessons()">
+
         ← Back
+
     </button>
 
     <div class="lesson-detail">
@@ -999,30 +1049,34 @@ footer a{
 
             <button
                 class="resource"
-                onclick="openNote()"
-            >
+                onclick="openNote()">
+
                 📝 Notes
+
             </button>
 
             <button
                 class="resource"
-                onclick="openVideo()"
-            >
+                onclick="openVideo()">
+
                 🎥 Video
+
             </button>
 
             <button
                 class="resource"
-                onclick="openPaper()"
-            >
+                onclick="openPaper()">
+
                 📄 Papers
+
             </button>
 
             <button
                 class="resource"
-                onclick="openQuiz()"
-            >
+                onclick="openQuiz()">
+
                 🎯 Quiz
+
             </button>
 
         </div>
@@ -1043,17 +1097,23 @@ footer a{
     </p>
 
     <p>
+
         📱
+
         <a href="tel:0759205338">
             0759205338
         </a>
+
     </p>
 
     <p>
+
         📧
+
         <a href="mailto:mpeducation4@gmail.com">
             mpeducation4@gmail.com
         </a>
+
     </p>
 
     <p>
@@ -1069,9 +1129,10 @@ footer a{
 
 <button
     id="aiChatButton"
-    onclick="toggleAIChat()"
->
+    onclick="toggleAIChat()">
+
     🤖 AI Tutor
+
 </button>
 
 
@@ -1087,9 +1148,7 @@ footer a{
             🤖 MP Education AI
         </span>
 
-        <button
-            onclick="toggleAIChat()"
-        >
+        <button onclick="toggleAIChat()">
             ✕
         </button>
 
@@ -1117,17 +1176,13 @@ footer a{
         <input
             type="text"
             id="aiInput"
-            placeholder="Ask your question..."
-            onkeydown="
-            if(event.key==='Enter')
-            sendAIMessage()
-            "
-        >
+            placeholder="Ask your question...">
 
         <button
-            onclick="sendAIMessage()"
-        >
+            onclick="sendAIMessage()">
+
             ➤
+
         </button>
 
     </div>
@@ -1136,7 +1191,7 @@ footer a{
 
 
 <!-- ================================================= -->
-<!-- FIREBASE -->
+<!-- FIREBASE + MAIN JAVASCRIPT -->
 <!-- ================================================= -->
 
 <script type="module">
@@ -1194,8 +1249,17 @@ const firebaseConfig = {
 const app =
 initializeApp(firebaseConfig);
 
+
 const auth =
 getAuth(app);
+
+
+/* ================================================= */
+/* APPS SCRIPT AI URL */
+/* ================================================= */
+
+const AI_BACKEND_URL =
+"https://script.google.com/macros/s/AKfycbys7-peWxfvTOHfYVK9dbmNLKYKOT7vDws35I-JbadOl-oe4MKUbfGtCD0iRrxp6II6Xw/exec";
 
 
 /* ================================================= */
@@ -1303,12 +1367,7 @@ window.registerUser = async function(){
     .getElementById("registerMessage");
 
 
-    if(
-        !name ||
-        !email ||
-        !password ||
-        !confirm
-    ){
+    if(!name || !email || !password || !confirm){
 
         message.innerText =
         "Please fill all fields.";
@@ -1457,9 +1516,7 @@ window.loginUser = async function(){
         if(!userName){
 
             userName =
-            localStorage.getItem(
-                "mpUserName"
-            );
+            localStorage.getItem("mpUserName");
 
         }
 
@@ -1658,7 +1715,7 @@ onAuthStateChanged(
 
 
 /* ================================================= */
-/* ERROR */
+/* ERROR HANDLER */
 /* ================================================= */
 
 function friendlyError(error){
@@ -1928,7 +1985,9 @@ let currentLesson = "";
 
 window.openSubject = function(subject){
 
-    currentSubject = subject;
+    currentSubject =
+    subject;
+
 
     document
     .getElementById("subjectTitle")
@@ -1937,9 +1996,8 @@ window.openSubject = function(subject){
 
 
     const list =
-    document.getElementById(
-        "lessonList"
-    );
+    document
+    .getElementById("lessonList");
 
 
     list.innerHTML = "";
@@ -1961,9 +2019,7 @@ window.openSubject = function(subject){
         function(lesson,index){
 
             const button =
-            document.createElement(
-                "button"
-            );
+            document.createElement("button");
 
 
             button.className =
@@ -2001,7 +2057,8 @@ window.openSubject = function(subject){
 
 window.openLesson = function(lesson){
 
-    currentLesson = lesson;
+    currentLesson =
+    lesson;
 
 
     document
@@ -2014,10 +2071,6 @@ window.openLesson = function(lesson){
 
 };
 
-
-/* ================================================= */
-/* BACK */
-/* ================================================= */
 
 window.goBackToLessons = function(){
 
@@ -2039,11 +2092,9 @@ window.goBackToCategory = function(){
     }
 
     else if(
-
         currentSubject === "Physics" ||
         currentSubject === "Chemistry" ||
         currentSubject === "Biology"
-
     ){
 
         showPage("sciencePage");
@@ -2114,9 +2165,7 @@ window.openQuiz = function(){
 window.toggleAIChat = function(){
 
     const box =
-    document.getElementById(
-        "aiChatBox"
-    );
+    document.getElementById("aiChatBox");
 
 
     if(
@@ -2143,10 +2192,7 @@ window.toggleAIChat = function(){
 /* ADD AI MESSAGE */
 /* ================================================= */
 
-function addAIMessage(
-    text,
-    type
-){
+function addAIMessage(text,type){
 
     const messages =
     document.getElementById(
@@ -2155,9 +2201,7 @@ function addAIMessage(
 
 
     const message =
-    document.createElement(
-        "div"
-    );
+    document.createElement("div");
 
 
     message.className =
@@ -2170,9 +2214,7 @@ function addAIMessage(
     text;
 
 
-    messages.appendChild(
-        message
-    );
+    messages.appendChild(message);
 
 
     messages.scrollTop =
@@ -2182,7 +2224,7 @@ function addAIMessage(
 
 
 /* ================================================= */
-/* GEMINI AI MESSAGE */
+/* AI QUESTION */
 /* ================================================= */
 
 window.sendAIMessage = async function(){
@@ -2214,120 +2256,93 @@ window.sendAIMessage = async function(){
 
 
     addAIMessage(
-        "🤔 Thinking...",
+        "🤖 Thinking...",
         "ai"
     );
 
 
-    /*
-      IMPORTANT:
-      This is your Google Apps Script
-      Web App URL.
-    */
+    const messages =
+    document.getElementById(
+        "aiMessages"
+    );
 
-    const API_URL =
-    "https://script.google.com/macros/s/AKfycbyLtfQy8zrEzS3aKwABE_jmn18MmL1OoDM1ol-C-0DhrB6qh7a62nXUnC1bE1iPais/exec";
+
+    const thinkingMessage =
+    messages.lastElementChild;
 
 
     try{
 
+        const url =
+        AI_BACKEND_URL +
+        "?question=" +
+        encodeURIComponent(question);
+
+
         const response =
-        await fetch(
-            API_URL,
-            {
-
-                method:"POST",
-
-                headers:{
-                    "Content-Type":
-                    "text/plain;charset=utf-8"
-                },
-
-                body:
-                JSON.stringify({
-                    question:question
-                })
-
-            }
-        );
+        await fetch(url);
 
 
-        const result =
-        await response.json();
+        if(!response.ok){
 
-
-        const messages =
-        document.getElementById(
-            "aiMessages"
-        );
-
-
-        const thinkingMessage =
-        messages.lastElementChild;
-
-
-        if(thinkingMessage){
-
-            thinkingMessage.remove();
-
-        }
-
-
-        if(result.success){
-
-            addAIMessage(
-                result.answer,
-                "ai"
+            throw new Error(
+                "Server error: " +
+                response.status
             );
 
         }
-        else{
 
-            addAIMessage(
-                "❌ " +
-                (
-                    result.error ||
-                    "Something went wrong."
-                ),
-                "ai"
-            );
 
-        }
+        const answer =
+        await response.text();
+
+
+        thinkingMessage.innerText =
+        answer || "AI response එකක් ලැබුණේ නැහැ.";
 
 
     }
     catch(error){
 
-        const messages =
-        document.getElementById(
-            "aiMessages"
-        );
-
-
-        const thinkingMessage =
-        messages.lastElementChild;
-
-
-        if(thinkingMessage){
-
-            thinkingMessage.remove();
-
-        }
-
-
-        addAIMessage(
-            "❌ AI Tutor connection error. Please try again.",
-            "ai"
-        );
-
-
         console.error(error);
+
+
+        thinkingMessage.innerText =
+        "❌ AI Tutor connect වෙන්න බැරි වුණා. " +
+        "කරුණාකර ටික වේලාවකින් නැවත උත්සාහ කරන්න.";
 
     }
 
+
+    messages.scrollTop =
+    messages.scrollHeight;
+
 };
+
+
+/* ================================================= */
+/* ENTER KEY FOR AI */
+/* ================================================= */
+
+document
+.getElementById("aiInput")
+.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+
+            event.preventDefault();
+
+            sendAIMessage();
+
+        }
+
+    }
+);
 
 </script>
 
 </body>
+
 </html>

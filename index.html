@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MP Education | Learn, Study & Improve</title>
 
 <style>
-
 *{
     box-sizing:border-box;
 }
@@ -53,8 +50,7 @@ p{
     display:block;
 }
 
-
-/* ================= LOGIN ================= */
+/* LOGIN */
 
 .auth-container{
     min-height:100vh;
@@ -115,10 +111,10 @@ button{
 .auth-message{
     text-align:center;
     font-weight:bold;
+    min-height:25px;
 }
 
-
-/* ================= WELCOME ================= */
+/* WELCOME */
 
 #welcomeSection{
     display:none;
@@ -138,8 +134,7 @@ button{
     margin:10px 0;
 }
 
-
-/* ================= USER BAR ================= */
+/* USER BAR */
 
 .user-bar{
     max-width:1100px;
@@ -157,8 +152,7 @@ button{
     margin-left:10px;
 }
 
-
-/* ================= HERO ================= */
+/* HERO */
 
 .hero-banner{
     width:100%;
@@ -172,8 +166,7 @@ button{
     display:block;
 }
 
-
-/* ================= GRID ================= */
+/* CATEGORIES */
 
 .categories,
 .subjects,
@@ -201,8 +194,7 @@ button{
     background:#eff6ff;
 }
 
-
-/* ================= BACK ================= */
+/* BACK */
 
 .back{
     background:#64748b;
@@ -211,8 +203,7 @@ button{
     margin-bottom:10px;
 }
 
-
-/* ================= LESSONS ================= */
+/* LESSONS */
 
 .lessons{
     display:grid;
@@ -226,14 +217,14 @@ button{
     background:white;
     border-left:5px solid #1e3a8a;
     box-shadow:0 3px 10px rgba(0,0,0,.08);
+    line-height:1.5;
 }
 
 .lesson-button:hover{
     background:#eff6ff;
 }
 
-
-/* ================= LESSON DETAIL ================= */
+/* LESSON DETAIL */
 
 .lesson-detail{
     background:white;
@@ -242,8 +233,7 @@ button{
     box-shadow:0 5px 18px rgba(0,0,0,.08);
 }
 
-
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer{
     margin-top:40px;
@@ -257,8 +247,7 @@ footer a{
     color:white;
 }
 
-
-/* ================= AI ================= */
+/* AI BUTTON */
 
 #aiChatButton{
     position:fixed;
@@ -272,6 +261,8 @@ footer a{
     box-shadow:0 5px 20px rgba(0,0,0,.25);
     font-weight:bold;
 }
+
+/* AI CHAT */
 
 #aiChatBox{
     display:none;
@@ -348,9 +339,6 @@ footer a{
     padding:10px 15px;
 }
 
-
-/* ================= MOBILE ================= */
-
 @media(max-width:600px){
 
     #welcomeSection h1{
@@ -371,25 +359,17 @@ footer a{
         right:10px;
         bottom:10px;
     }
-
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- ================================================= -->
-<!-- LOGIN / REGISTER -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- LOGIN -->
+<!-- ========================= -->
 
 <div id="loginPage" class="auth-container">
-
-
-    <!-- LOGIN BOX -->
 
     <div id="loginBox" class="auth-box">
 
@@ -398,115 +378,107 @@ footer a{
         <input
             type="email"
             id="loginEmail"
-            placeholder="Email">
+            placeholder="Email"
+        >
 
         <input
             type="password"
             id="loginPassword"
-            placeholder="Password">
+            placeholder="Password"
+        >
 
         <button
             class="auth-button"
-            onclick="loginUser()">
-
+            onclick="loginUser()"
+        >
             Login
-
         </button>
 
         <button
             class="switch-button forgot-button"
-            onclick="forgotPassword()">
-
+            onclick="forgotPassword()"
+        >
             Forgot Password?
-
         </button>
 
         <p style="text-align:center;">
-
             Don't have an account?
 
             <button
                 class="switch-button"
-                onclick="showRegister()">
-
+                onclick="showRegister()"
+            >
                 Register
-
             </button>
-
         </p>
 
-        <p
-            id="loginMessage"
-            class="auth-message">
-        </p>
+        <p id="loginMessage" class="auth-message"></p>
 
     </div>
 
 
-    <!-- REGISTER BOX -->
+    <!-- REGISTER -->
 
     <div
         id="registerBox"
         class="auth-box"
-        style="display:none;">
+        style="display:none;"
+    >
 
         <h2>📝 Create Account</h2>
 
         <input
             type="text"
             id="registerName"
-            placeholder="Full Name">
+            placeholder="Full Name"
+        >
 
         <input
             type="email"
             id="registerEmail"
-            placeholder="Email">
+            placeholder="Email"
+        >
 
         <input
             type="password"
             id="registerPassword"
-            placeholder="Password">
+            placeholder="Password"
+        >
 
         <input
             type="password"
             id="confirmPassword"
-            placeholder="Confirm Password">
+            placeholder="Confirm Password"
+        >
 
         <button
             class="auth-button"
-            onclick="registerUser()">
-
+            onclick="registerUser()"
+        >
             Register
-
         </button>
 
         <p style="text-align:center;">
-
             Already have an account?
 
             <button
                 class="switch-button"
-                onclick="showLogin()">
-
+                onclick="showLogin()"
+            >
                 Login
-
             </button>
-
         </p>
 
-        <p
-            id="registerMessage"
-            class="auth-message">
-        </p>
+        <p id="registerMessage" class="auth-message"></p>
 
     </div>
 
 </div>
 
 
-<!-- ================================================= -->
+<!-- ========================= -->
 <!-- WELCOME -->
-<!-- ================================================= -->
+<!-- ========================= -->
 
 <div id="welcomeSection">
 
@@ -523,18 +495,15 @@ footer a{
 </div>
 
 
-<!-- ================================================= -->
+<!-- ========================= -->
 <!-- HOME -->
-<!-- ================================================= -->
+<!-- ========================= -->
 
 <div id="homePage" class="page">
 
-
     <header>
 
-        <h1>
-            📚 MP Education
-        </h1>
+        <h1>📚 MP Education</h1>
 
         <p>
             Learn • Study • Improve
@@ -551,10 +520,9 @@ footer a{
 
         <button
             id="logoutButton"
-            onclick="logoutUser()">
-
+            onclick="logoutUser()"
+        >
             Logout
-
         </button>
 
     </div>
@@ -564,7 +532,8 @@ footer a{
 
         <img
             src="IMG-20260802-WA0000.jpg"
-            alt="MP Education Banner">
+            alt="MP Education Banner"
+        >
 
     </div>
 
@@ -605,18 +574,14 @@ footer a{
 </div>
 
 
-<!-- ================================================= -->
+<!-- ========================= -->
 <!-- O/L -->
-<!-- ================================================= -->
+<!-- ========================= -->
 
 <div id="olPage" class="page">
 
-    <button
-        class="back"
-        onclick="showHome()">
-
+    <button class="back" onclick="showHome()">
         ← Back
-
     </button>
 
     <h2>📘 O/L</h2>
@@ -644,18 +609,14 @@ footer a{
 </div>
 
 
-<!-- ================================================= -->
+<!-- ========================= -->
 <!-- A/L -->
-<!-- ================================================= -->
+<!-- ========================= -->
 
 <div id="alPage" class="page">
 
-    <button
-        class="back"
-        onclick="showHome()">
-
+    <button class="back" onclick="showHome()">
         ← Back
-
     </button>
 
     <h2>📖 A/L</h2>
@@ -683,18 +644,14 @@ footer a{
 </div>
 
 
-<!-- ================================================= -->
+<!-- ========================= -->
 <!-- COMMERCE -->
-<!-- ================================================= -->
+<!-- ========================= -->
 
 <div id="commercePage" class="page">
 
-    <button
-        class="back"
-        onclick="showHome()">
-
+    <button class="back" onclick="showHome()">
         ← Back
-
     </button>
 
     <h2>💼 Commerce</h2>
@@ -703,26 +660,23 @@ footer a{
 
         <button
             class="subject"
-            onclick="openSubject('Accounting')">
-
+            onclick="openSubject('Accounting')"
+        >
             📘 Accounting
-
         </button>
 
         <button
             class="subject"
-            onclick="openSubject('Business Studies')">
-
+            onclick="openSubject('Business Studies')"
+        >
             📗 Business Studies
-
         </button>
 
         <button
             class="subject"
-            onclick="openSubject('Economics')">
-
+            onclick="openSubject('Economics')"
+        >
             📙 Economics
-
         </button>
 
     </div>
@@ -730,18 +684,14 @@ footer a{
 </div>
 
 
-<!-- ================================================= -->
+<!-- ========================= -->
 <!-- SCIENCE -->
-<!-- ================================================= -->
+<!-- ========================= -->
 
 <div id="sciencePage" class="page">
 
-    <button
-        class="back"
-        onclick="showHome()">
-
+    <button class="back" onclick="showHome()">
         ← Back
-
     </button>
 
     <h2>🔬 Science</h2>
@@ -750,26 +700,23 @@ footer a{
 
         <button
             class="subject"
-            onclick="openSubject('Physics')">
-
+            onclick="openSubject('Physics')"
+        >
             ⚛️ Physics
-
         </button>
 
         <button
             class="subject"
-            onclick="openSubject('Chemistry')">
-
+            onclick="openSubject('Chemistry')"
+        >
             🧪 Chemistry
-
         </button>
 
         <button
             class="subject"
-            onclick="openSubject('Biology')">
-
+            onclick="openSubject('Biology')"
+        >
             🧬 Biology
-
         </button>
 
     </div>
@@ -777,18 +724,14 @@ footer a{
 </div>
 
 
-<!-- ================================================= -->
+<!-- ========================= -->
 <!-- TECHNOLOGY -->
-<!-- ================================================= -->
+<!-- ========================= -->
 
 <div id="technologyPage" class="page">
 
-    <button
-        class="back"
-        onclick="showHome()">
-
+    <button class="back" onclick="showHome()">
         ← Back
-
     </button>
 
     <h2>⚙️ Technology</h2>
@@ -797,34 +740,30 @@ footer a{
 
         <button
             class="subject"
-            onclick="openSubject('Science for Technology')">
-
+            onclick="openSubject('Science for Technology')"
+        >
             🔬 Science for Technology
-
         </button>
 
         <button
             class="subject"
-            onclick="openSubject('ICT')">
-
+            onclick="openSubject('ICT')"
+        >
             💻 ICT
-
         </button>
 
         <button
             class="subject"
-            onclick="openSubject('Engineering Technology')">
-
+            onclick="openSubject('Engineering Technology')"
+        >
             🔧 Engineering Technology
-
         </button>
 
         <button
             class="subject"
-            onclick="openSubject('Bio Systems Technology')">
-
+            onclick="openSubject('Bio Systems Technology')"
+        >
             🌱 Bio Systems Technology
-
         </button>
 
     </div>
@@ -832,18 +771,14 @@ footer a{
 </div>
 
 
-<!-- ================================================= -->
+<!-- ========================= -->
 <!-- ARTS -->
-<!-- ================================================= -->
+<!-- ========================= -->
 
 <div id="artsPage" class="page">
 
-    <button
-        class="back"
-        onclick="showHome()">
-
+    <button class="back" onclick="showHome()">
         ← Back
-
     </button>
 
     <h2>🎨 Arts</h2>
@@ -871,42 +806,40 @@ footer a{
 </div>
 
 
-<!-- ================================================= -->
-<!-- SUBJECT LESSONS -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- SUBJECT PAGE -->
+<!-- ========================= -->
 
 <div id="subjectPage" class="page">
 
     <button
         class="back"
-        onclick="goBackToCategory()">
-
+        onclick="goBackToCategory()"
+    >
         ← Back
-
     </button>
 
     <h2 id="subjectTitle"></h2>
 
     <div
         id="lessonList"
-        class="lessons">
-    </div>
+        class="lessons"
+    ></div>
 
 </div>
 
 
-<!-- ================================================= -->
-<!-- LESSON -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- LESSON PAGE -->
+<!-- ========================= -->
 
 <div id="lessonPage" class="page">
 
     <button
         class="back"
-        onclick="goBackToLessons()">
-
+        onclick="goBackToLessons()"
+    >
         ← Back
-
     </button>
 
     <div class="lesson-detail">
@@ -914,41 +847,37 @@ footer a{
         <h3 id="lessonDetailTitle"></h3>
 
         <p>
-            Study resources for this lesson
+            Select a learning resource:
         </p>
 
         <div class="resources">
 
             <button
                 class="resource"
-                onclick="openNote()">
-
+                onclick="openNote()"
+            >
                 📝 Notes
-
             </button>
 
             <button
                 class="resource"
-                onclick="openVideo()">
-
+                onclick="openVideo()"
+            >
                 🎥 Video
-
             </button>
 
             <button
                 class="resource"
-                onclick="openPaper()">
-
+                onclick="openPaper()"
+            >
                 📄 Papers
-
             </button>
 
             <button
                 class="resource"
-                onclick="openQuiz()">
-
+                onclick="openQuiz()"
+            >
                 🎯 Quiz
-
             </button>
 
         </div>
@@ -958,15 +887,13 @@ footer a{
 </div>
 
 
-<!-- ================================================= -->
+<!-- ========================= -->
 <!-- FOOTER -->
-<!-- ================================================= -->
+<!-- ========================= -->
 
 <footer>
 
-    <p>
-        📞 Contact Us
-    </p>
+    <p>📞 Contact Us</p>
 
     <p>
         📱
@@ -989,18 +916,21 @@ footer a{
 </footer>
 
 
-<!-- ================================================= -->
-<!-- AI -->
-<!-- ================================================= -->
+<!-- ========================= -->
+<!-- AI BUTTON -->
+<!-- ========================= -->
 
 <button
     id="aiChatButton"
-    onclick="toggleAIChat()">
-
+    onclick="toggleAIChat()"
+>
     🤖 AI Tutor
-
 </button>
 
+
+<!-- ========================= -->
+<!-- AI CHAT -->
+<!-- ========================= -->
 
 <div id="aiChatBox">
 
@@ -1015,7 +945,6 @@ footer a{
         </button>
 
     </div>
-
 
     <div id="aiMessages">
 
@@ -1032,7 +961,6 @@ footer a{
 
     </div>
 
-
     <div class="ai-input-area">
 
         <input
@@ -1040,8 +968,9 @@ footer a{
             id="aiInput"
             placeholder="Ask your question..."
             onkeydown="
-            if(event.key === 'Enter')
-            sendAIMessage()">
+                if(event.key==='Enter') sendAIMessage()
+            "
+        >
 
         <button onclick="sendAIMessage()">
             ➤
@@ -1058,15 +987,9 @@ footer a{
 
 <script type="module">
 
-
-/* =====================================================
-   FIREBASE
-===================================================== */
-
 import {
     initializeApp
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-
 
 import {
     getAuth,
@@ -1074,15 +997,19 @@ import {
     signInWithEmailAndPassword,
     sendPasswordResetEmail,
     onAuthStateChanged,
-    updateProfile,
-    signOut
+    signOut,
+    updateProfile
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
+
+/* ========================= */
+/* FIREBASE CONFIG */
+/* ========================= */
 
 const firebaseConfig = {
 
     apiKey:
-        "AIzaSyD1ibHY0BqPEoj8kVG_5KLHiCiclzw7W4",
+        "AIzaSyD1ibHY0BqBPEoj8kVG_5KLHiCiclzw7W4",
 
     authDomain:
         "mp-education-47e46.firebaseapp.com",
@@ -1101,39 +1028,346 @@ const firebaseConfig = {
 
     measurementId:
         "G-HD5GPFLQ3N"
+};
+
+
+/* ========================= */
+/* INITIALIZE FIREBASE */
+/* ========================= */
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+
+/* ========================= */
+/* VARIABLES */
+/* ========================= */
+
+let currentSubject = "";
+let currentLesson = "";
+let previousCategory = "commercePage";
+
+
+/* ========================= */
+/* LESSONS */
+/* ========================= */
+
+const lessons = {
+
+    "Accounting": [
+
+        "ගිණුම්කරණය හා එහි අවශ්‍යතාව",
+
+        "ගිණුම්කරණ සමීකරණය",
+
+        "ද්විත්ව සටහන්",
+
+        "මූලික සටහන් පොත්",
+
+        "පාලන ගිණුම්",
+
+        "වැරදි නිවැරදි කිරීම්",
+
+        "ගිණුම්කරණ සංකල්ප",
+
+        "කේවල ස්වාමි ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන",
+
+        "නිෂ්පාදන ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන",
+
+        "ලාභ අරමුණු කර නොගත් සංවිධානයක මූල්‍ය ප්‍රකාශන",
+
+        "අසම්පූර්ණ සටහන්",
+
+        "හවුල් ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන",
+
+        "ගිණුම්කරණ ප්‍රමිත",
+
+        "සමාගම් ගිණුම්කරණය",
+
+        "මුදල් ප්‍රවාහ ප්‍රකාශනය",
+
+        "අනුපාත විශ්ලේෂණය",
+
+        "කළමනාකරණ ගිණුම්කරණය",
+
+        "පිරිවැය හැසිරීම හා පිරිවැය පරිමා ලාභ විශ්ලේෂණය",
+
+        "ප්‍රාග්ධන ආයෝජන තීරණ"
+
+    ],
+
+
+    "Business Studies": [
+
+        "ව්‍යාපාර පදනම හා පරිසරය",
+
+        "සමාජ වගකීම්",
+
+        "රජය හා ව්‍යාපාර",
+
+        "ව්‍යාපාර සංවිධාන",
+
+        "ව්‍යවසායකත්වය",
+
+        "සුළු හා මධ්‍ය පරිමාණ ව්‍යාපාර",
+
+        "මුදල් හා මූල්‍ය ආයතන",
+
+        "රක්ෂණය හා එහි වැදගත්කම",
+
+        "සන්නිවේදනය හා එහි වැදගත්කම",
+
+        "ප්‍රවාහනය හා එහි වැදගත්කම",
+
+        "වෙළඳාම හා එහි වැදගත්කම",
+
+        "කළමනාකරණයේ අවශ්‍යතාව හා එහි වැදගත්කම",
+
+        "මෙහෙයුම් කළමනාකරණය",
+
+        "අලෙවිකරණය",
+
+        "මූල්‍ය කළමනාකරණය",
+
+        "මානව සම්පත් කළමනාකරණය",
+
+        "තොරතුරු පද්ධති",
+
+        "ව්‍යාපාර සැලැස්ම"
+
+    ],
+
+
+    "Economics": [
+
+        "ආර්ථික විද්‍යාව හැඳින්වීම, ආර්ථික පද්ධති, නිෂ්පාදන හැකියා මායිම්",
+
+        "ඉල්ලුම, සැපයුම, නම්‍යතාව හා වෙළෙඳපොළ සමතුලිතය",
+
+        "වෙළඳපොළට රජය මැදිහත් වීම",
+
+        "වෙළඳපොළ තුළ නිෂ්පාදන ආයතන තාර්කිකව හැසිරෙන ආකාරය",
+
+        "ජාතික ගිණුම්කරණය",
+
+        "සර්ව ආර්ථික සමතුලිතය",
+
+        "මුදල් හා මිල මට්ටම්, බැංකු පද්ධතිය",
+
+        "රාජ්‍ය ආර්ථිකය",
+
+        "විදේශීය වෙළඳාම",
+
+        "විදේශීය මූල්‍ය",
+
+        "ආර්ථික සංවර්ධනය",
+
+        "ශ්‍රී ලංකාවේ ආර්ථික ව්‍යුහය හා ප්‍රතිපත්ති"
+
+    ],
+
+
+    "Physics": [
+
+        "මිනුම්",
+
+        "යාන්ත්‍ර විද්‍යාව",
+
+        "තරංග",
+
+        "ශබ්දය",
+
+        "ආලෝකය",
+
+        "තාප භෞතික විද්‍යාව",
+
+        "විද්‍යුතය",
+
+        "චුම්බකත්වය",
+
+        "විද්‍යුත් චුම්බක ප්‍රේරණය",
+
+        "ද්‍රව්‍යවල යාන්ත්‍රික ගුණ",
+
+        "දෝලන හා තරංග",
+
+        "විද්‍යුත් ධාරාව",
+
+        "අර්ධ සන්නායක",
+
+        "විකිරණශීලීතාව"
+
+    ],
+
+
+    "Chemistry": [
+
+        "රසායන විද්‍යාවේ මූලික සංකල්ප",
+
+        "පරමාණුක ව්‍යුහය",
+
+        "රසායනික බැඳීම්",
+
+        "රසායනික ප්‍රතික්‍රියා",
+
+        "මවුල සංකල්පය",
+
+        "වායු",
+
+        "ද්‍රාවණ",
+
+        "තාප රසායන විද්‍යාව",
+
+        "රසායනික සමතුලිතය",
+
+        "අම්ල හා භෂ්ම",
+
+        "විද්‍යුත් රසායනය",
+
+        "කාබනික රසායනය",
+
+        "කාර්මික රසායනය"
+
+    ],
+
+
+    "Biology": [
+
+        "ජීව විද්‍යාව හැඳින්වීම",
+
+        "සෛල ජීව විද්‍යාව",
+
+        "ජෛව අණු",
+
+        "සෛල බෙදීම",
+
+        "ශාක ව්‍යුහය",
+
+        "ශාක කායික විද්‍යාව",
+
+        "සත්ත්ව ව්‍යුහය",
+
+        "මිනිස් කායික විද්‍යාව",
+
+        "ප්‍රවේණි විද්‍යාව",
+
+        "පරිණාමය",
+
+        "පරිසර විද්‍යාව",
+
+        "ක්ෂුද්‍ර ජීව විද්‍යාව",
+
+        "ජෛව තාක්ෂණය"
+
+    ],
+
+
+    "Science for Technology": [
+
+        "විද්‍යාව හැඳින්වීම",
+
+        "පදාර්ථය",
+
+        "ශක්තිය",
+
+        "චලිතය",
+
+        "බල හා යන්ත්‍ර",
+
+        "විදුලිය",
+
+        "ආලෝකය",
+
+        "තාපය",
+
+        "පරිසරය හා තාක්ෂණය"
+
+    ],
+
+
+    "ICT": [
+
+        "ICT හැඳින්වීම",
+
+        "පරිගණක පද්ධති",
+
+        "දත්ත නිරූපණය",
+
+        "පරිගණක ජාල",
+
+        "දත්ත සමුදා පද්ධති",
+
+        "ක්‍රමලේඛනය",
+
+        "වෙබ් සංවර්ධනය",
+
+        "තොරතුරු පද්ධති",
+
+        "පද්ධති විශ්ලේෂණය",
+
+        "බහුමාධ්‍ය",
+
+        "තොරතුරු ආරක්ෂාව"
+
+    ],
+
+
+    "Engineering Technology": [
+
+        "ඉංජිනේරු තාක්ෂණය හැඳින්වීම",
+
+        "ඉංජිනේරු මූලධර්ම",
+
+        "ද්‍රව්‍ය",
+
+        "යාන්ත්‍රික පද්ධති",
+
+        "විද්‍යුත් පද්ධති",
+
+        "ඉලෙක්ට්‍රොනික පද්ධති",
+
+        "මිනුම් හා උපකරණ",
+
+        "නිෂ්පාදන තාක්ෂණය"
+
+    ],
+
+
+    "Bio Systems Technology": [
+
+        "ජෛව පද්ධති තාක්ෂණය හැඳින්වීම",
+
+        "කෘෂිකාර්මික තාක්ෂණය",
+
+        "ශාක නිෂ්පාදනය",
+
+        "සත්ත්ව නිෂ්පාදනය",
+
+        "ආහාර තාක්ෂණය",
+
+        "පසු අස්වනු තාක්ෂණය",
+
+        "පරිසර තාක්ෂණය",
+
+        "ජල කළමනාකරණය"
+
+    ]
 
 };
 
 
-const app =
-    initializeApp(firebaseConfig);
-
-
-const auth =
-    getAuth(app);
-
-
-/* =====================================================
-   VARIABLES
-===================================================== */
-
-let currentSubject = "";
-let currentLesson = "";
-
-
-/* =====================================================
-   PAGE CONTROL
-===================================================== */
+/* ========================= */
+/* PAGE CONTROL */
+/* ========================= */
 
 window.hideAllPages = function(){
 
-    document
-        .querySelectorAll(".page")
-        .forEach(function(page){
+    document.querySelectorAll(".page").forEach(function(page){
 
-            page.classList.remove("active");
+        page.classList.remove("active");
 
-        });
+    });
 
 };
 
@@ -1167,31 +1401,7 @@ window.showHome = function(){
 
 window.goBackToCategory = function(){
 
-    if(
-        currentSubject === "Accounting" ||
-        currentSubject === "Business Studies" ||
-        currentSubject === "Economics"
-    ){
-
-        showPage("commercePage");
-
-    }
-
-    else if(
-        currentSubject === "Physics" ||
-        currentSubject === "Chemistry" ||
-        currentSubject === "Biology"
-    ){
-
-        showPage("sciencePage");
-
-    }
-
-    else{
-
-        showPage("technologyPage");
-
-    }
+    showPage(previousCategory);
 
 };
 
@@ -1203,213 +1413,40 @@ window.goBackToLessons = function(){
 };
 
 
-/* =====================================================
-   COMPLETE LESSONS
-===================================================== */
-
-const lessons = {
-
-
-"Accounting":[
-
-"ගිණුම්කරණය හා එහි අවශ්‍යතාව",
-"ගිණුම්කරණ සමීකරණය",
-"ද්විත්ව සටහන්",
-"මූලික සටහන් පොත්",
-"පාලන ගිණුම්",
-"වැරදි නිවැරදි කිරීම්",
-"ගිණුම්කරණ සංකල්ප",
-"කේවල ස්වාමි ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන",
-"නිෂ්පාදන ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන",
-"ලාභ අරමුණු කර නොගත් සංවිධානයක මූල්‍ය ප්‍රකාශන",
-"අසම්පූර්ණ සටහන්",
-"හවුල් ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන",
-"ගිණුම්කරණ ප්‍රමිත",
-"සමාගම් ගිණුම්කරණය",
-"මුදල් ප්‍රවාහ ප්‍රකාශනය",
-"අනුපාත විශ්ලේෂණය",
-"කළමනාකරණ ගිණුම්කරණය",
-"පිරිවැය හැසිරීම හා පිරිවැය පරිමා ලාභ විශ්ලේෂණය",
-"ප්‍රාග්ධන ආයෝජන තීරණ"
-
-],
-
-
-"Business Studies":[
-
-"ව්‍යාපාර පදනම හා පරිසරය",
-"සමාජ වගකීම්",
-"රජය හා ව්‍යාපාර",
-"ව්‍යාපාර සංවිධාන",
-"ව්‍යවසායකත්වය",
-"සුළු හා මධ්‍ය පරිමාණ ව්‍යාපාර",
-"මුදල් හා මූල්‍ය ආයතන",
-"රක්ෂණය හා එහි වැදගත්කම",
-"සන්නිවේදනය හා එහි වැදගත්කම",
-"ප්‍රවාහනය හා එහි වැදගත්කම",
-"වෙළඳාම හා එහි වැදගත්කම",
-"කළමනාකරණයේ අවශ්‍යතාව හා එහි වැදගත්කම",
-"මෙහෙයුම් කළමනාකරණය",
-"අලෙවිකරණය",
-"මූල්‍ය කළමනාකරණය",
-"මානව සම්පත් කළමනාකරණය",
-"තොරතුරු පද්ධති",
-"ව්‍යාපාර සැලැස්ම"
-
-],
-
-
-"Economics":[
-
-"ආර්ථික විද්‍යාව හැඳින්වීම, ආර්ථික පද්ධති, නිෂ්පාදන හැකියා මායිම්",
-"ඉල්ලුම, සැපයුම, නම්‍යතාව හා වෙළෙඳපොළ සමතුලිතය",
-"වෙළඳපොළට රජය මැදිහත් වීම",
-"වෙළඳපොළ තුළ නිෂ්පාදන ආයතන තාර්කිකව හැසිරෙන ආකාරය",
-"ජාතික ගිණුම්කරණය",
-"සර්ව ආර්ථික සමතුලිතය",
-"මුදල් හා මිල මට්ටම්, බැංකු පද්ධතිය",
-"රාජ්‍ය ආර්ථිකය",
-"විදේශීය වෙළඳාම",
-"විදේශීය මූල්‍ය",
-"ආර්ථික සංවර්ධනය",
-"ශ්‍රී ලංකාවේ ආර්ථික ව්‍යුහය හා ප්‍රතිපත්ති"
-
-],
-
-
-"Physics":[
-
-"Measurement",
-"Mechanics",
-"Properties of Matter",
-"Oscillations",
-"Gravitation",
-"Electricity",
-"Magnetism",
-"Electromagnetic Induction",
-"Electronics",
-"Thermal Physics",
-"Wave Motion",
-"Geometrical Optics",
-"Physical Optics",
-"Quantum Physics",
-"Atomic Physics",
-"Nuclear Physics"
-
-],
-
-
-"Chemistry":[
-
-"Basic Chemistry",
-"Atomic Structure",
-"Chemical Bonding",
-"Chemical Calculations",
-"Chemical Energetics",
-"Chemical Kinetics",
-"Equilibrium",
-"Acids and Bases",
-"Electrochemistry",
-"Inorganic Chemistry",
-"Organic Chemistry",
-"Environmental Chemistry"
-
-],
-
-
-"Biology":[
-
-"Introduction to Biology",
-"Chemical Basis of Life",
-"Cell Biology",
-"Enzymes",
-"Plant Physiology",
-"Animal Physiology",
-"Genetics",
-"Evolution",
-"Ecology",
-"Microbiology",
-"Applied Biology",
-"Environmental Biology"
-
-],
-
-
-"Science for Technology":[
-
-"Introduction to Science",
-"Scientific Method",
-"Matter",
-"Energy",
-"Force and Motion",
-"Electricity",
-"Materials",
-"Environmental Technology",
-"Biotechnology",
-"Technology and Society"
-
-],
-
-
-"ICT":[
-
-"Introduction to ICT",
-"Computer Systems",
-"Data Representation",
-"Logic Gates",
-"Operating Systems",
-"Computer Networks",
-"Internet and Web",
-"Database Systems",
-"Programming",
-"Information Systems",
-"Web Development",
-"Software Development"
-
-],
-
-
-"Engineering Technology":[
-
-"Introduction to Engineering Technology",
-"Engineering Drawing",
-"Engineering Materials",
-"Mechanical Systems",
-"Electrical Systems",
-"Electronic Systems",
-"Thermodynamics",
-"Fluid Systems",
-"Manufacturing Technology",
-"Construction Technology"
-
-],
-
-
-"Bio Systems Technology":[
-
-"Introduction to Bio Systems Technology",
-"Agricultural Technology",
-"Soil and Water Management",
-"Plant Production",
-"Animal Production",
-"Food Technology",
-"Environmental Technology",
-"Biotechnology",
-"Farm Machinery",
-"Bio Systems Management"
-
-]
-
-};
-
-
-/* =====================================================
-   OPEN SUBJECT
-===================================================== */
+/* ========================= */
+/* SUBJECT */
+/* ========================= */
 
 window.openSubject = function(subject){
 
     currentSubject = subject;
+
+    if(
+        subject === "Accounting" ||
+        subject === "Business Studies" ||
+        subject === "Economics"
+    ){
+
+        previousCategory = "commercePage";
+
+    }
+
+    else if(
+        subject === "Physics" ||
+        subject === "Chemistry" ||
+        subject === "Biology"
+    ){
+
+        previousCategory = "sciencePage";
+
+    }
+
+    else{
+
+        previousCategory = "technologyPage";
+
+    }
+
 
     document.getElementById(
         "subjectTitle"
@@ -1420,39 +1457,38 @@ window.openSubject = function(subject){
     const lessonList =
         document.getElementById("lessonList");
 
-
     lessonList.innerHTML = "";
 
 
-    lessons[subject].forEach(
-        function(lesson,index){
+    if(lessons[subject]){
 
-            const button =
-                document.createElement("button");
+        lessons[subject].forEach(
+            function(lesson,index){
 
+                const button =
+                    document.createElement("button");
 
-            button.className =
-                "lesson-button";
+                button.className =
+                    "lesson-button";
 
+                button.innerText =
+                    (index + 1) +
+                    ". " +
+                    lesson;
 
-            button.innerText =
-                (index + 1) +
-                ". " +
-                lesson;
+                button.onclick =
+                    function(){
 
+                        openLesson(lesson);
 
-            button.onclick =
-                function(){
+                    };
 
-                    openLesson(lesson);
+                lessonList.appendChild(button);
 
-                };
+            }
+        );
 
-
-            lessonList.appendChild(button);
-
-        }
-    );
+    }
 
 
     showPage("subjectPage");
@@ -1460,36 +1496,32 @@ window.openSubject = function(subject){
 };
 
 
-/* =====================================================
-   OPEN LESSON
-===================================================== */
+/* ========================= */
+/* LESSON */
+/* ========================= */
 
-function openLesson(lesson){
+window.openLesson = function(lesson){
 
     currentLesson = lesson;
-
 
     document.getElementById(
         "lessonDetailTitle"
     ).innerText =
         "📖 " + lesson;
 
-
     showPage("lessonPage");
 
-}
+};
 
 
-/* =====================================================
-   RESOURCES
-===================================================== */
+/* ========================= */
+/* RESOURCES */
+/* ========================= */
 
 window.openNote = function(){
 
     alert(
-        "📝 Notes for " +
-        currentLesson +
-        " will be added here."
+        "📝 Notes සඳහා PDF එක පසුව මෙතැනට connect කරමු."
     );
 
 };
@@ -1498,9 +1530,7 @@ window.openNote = function(){
 window.openVideo = function(){
 
     alert(
-        "🎥 Video for " +
-        currentLesson +
-        " will be added here."
+        "🎥 Video එක පසුව මෙතැනට connect කරමු."
     );
 
 };
@@ -1509,9 +1539,7 @@ window.openVideo = function(){
 window.openPaper = function(){
 
     alert(
-        "📄 Papers for " +
-        currentLesson +
-        " will be added here."
+        "📄 Past Papers පසුව මෙතැනට connect කරමු."
     );
 
 };
@@ -1520,24 +1548,21 @@ window.openPaper = function(){
 window.openQuiz = function(){
 
     alert(
-        "🎯 Quiz for " +
-        currentLesson +
-        " will be added here."
+        "🎯 Quiz එක පසුව මෙතැනට connect කරමු."
     );
 
 };
 
 
-/* =====================================================
-   LOGIN / REGISTER UI
-===================================================== */
+/* ========================= */
+/* AUTH UI */
+/* ========================= */
 
 window.showRegister = function(){
 
     document.getElementById(
         "loginBox"
     ).style.display = "none";
-
 
     document.getElementById(
         "registerBox"
@@ -1552,7 +1577,6 @@ window.showLogin = function(){
         "registerBox"
     ).style.display = "none";
 
-
     document.getElementById(
         "loginBox"
     ).style.display = "block";
@@ -1560,37 +1584,33 @@ window.showLogin = function(){
 };
 
 
-/* =====================================================
-   FIREBASE REGISTER
-===================================================== */
+/* ========================= */
+/* REGISTER */
+/* ========================= */
 
 window.registerUser = async function(){
 
     const name =
         document
-        .getElementById("registerName")
-        .value
-        .trim();
-
+            .getElementById("registerName")
+            .value
+            .trim();
 
     const email =
         document
-        .getElementById("registerEmail")
-        .value
-        .trim();
-
+            .getElementById("registerEmail")
+            .value
+            .trim();
 
     const password =
         document
-        .getElementById("registerPassword")
-        .value;
-
+            .getElementById("registerPassword")
+            .value;
 
     const confirm =
         document
-        .getElementById("confirmPassword")
-        .value;
-
+            .getElementById("confirmPassword")
+            .value;
 
     const message =
         document.getElementById(
@@ -1641,12 +1661,8 @@ window.registerUser = async function(){
             );
 
 
-        const user =
-            userCredential.user;
-
-
         await updateProfile(
-            user,
+            userCredential.user,
             {
                 displayName:name
             }
@@ -1656,98 +1672,65 @@ window.registerUser = async function(){
         message.innerText =
             "Account created successfully!";
 
+        message.style.color =
+            "green";
+
 
         document.getElementById(
             "registerName"
         ).value = "";
 
-
         document.getElementById(
             "registerEmail"
         ).value = "";
 
-
         document.getElementById(
             "registerPassword"
         ).value = "";
-
 
         document.getElementById(
             "confirmPassword"
         ).value = "";
 
 
-        setTimeout(
-            function(){
+        setTimeout(function(){
 
-                showLogin();
+            showHome();
 
-                document.getElementById(
-                    "loginEmail"
-                ).value = email;
+        },1000);
 
-            },
-            1000
-        );
 
-    }
-
-    catch(error){
+    }catch(error){
 
         console.error(error);
 
+        message.style.color =
+            "red";
 
-        if(error.code === "auth/email-already-in-use"){
-
-            message.innerText =
-                "This email is already registered.";
-
-        }
-
-        else if(error.code === "auth/invalid-email"){
-
-            message.innerText =
-                "Invalid email address.";
-
-        }
-
-        else if(error.code === "auth/weak-password"){
-
-            message.innerText =
-                "Password is too weak.";
-
-        }
-
-        else{
-
-            message.innerText =
-                error.message;
-
-        }
+        message.innerText =
+            getFirebaseError(error);
 
     }
 
 };
 
 
-/* =====================================================
-   FIREBASE LOGIN
-===================================================== */
+/* ========================= */
+/* LOGIN */
+/* ========================= */
 
 window.loginUser = async function(){
 
     const email =
         document
-        .getElementById("loginEmail")
-        .value
-        .trim();
-
+            .getElementById("loginEmail")
+            .value
+            .trim();
 
     const password =
         document
-        .getElementById("loginPassword")
-        .value;
-
+            .getElementById("loginPassword")
+            .value;
 
     const message =
         document.getElementById(
@@ -1770,150 +1753,46 @@ window.loginUser = async function(){
 
     try{
 
-        const userCredential =
-            await signInWithEmailAndPassword(
-                auth,
-                email,
-                password
-            );
-
-
-        const user =
-            userCredential.user;
-
-
-        showWelcome(
-            user
+        await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
         );
 
-    }
 
-    catch(error){
+    }catch(error){
 
         console.error(error);
 
+        message.style.color =
+            "red";
 
-        if(
-            error.code ===
-            "auth/invalid-credential"
-        ){
-
-            message.innerText =
-                "Incorrect email or password.";
-
-        }
-
-        else if(
-            error.code ===
-            "auth/user-not-found"
-        ){
-
-            message.innerText =
-                "Account not found.";
-
-        }
-
-        else if(
-            error.code ===
-            "auth/wrong-password"
-        ){
-
-            message.innerText =
-                "Incorrect password.";
-
-        }
-
-        else{
-
-            message.innerText =
-                error.message;
-
-        }
+        message.innerText =
+            getFirebaseError(error);
 
     }
 
 };
 
 
-/* =====================================================
-   WELCOME
-===================================================== */
-
-function showWelcome(user){
-
-    document.getElementById(
-        "loginPage"
-    ).style.display = "none";
-
-
-    document.getElementById(
-        "welcomeSection"
-    ).style.display = "block";
-
-
-    const name =
-        user.displayName ||
-        user.email.split("@")[0] ||
-        "STUDENT";
-
-
-    document.getElementById(
-        "welcomeName"
-    ).innerText =
-        name;
-
-
-    document.getElementById(
-        "userEmail"
-    ).innerText =
-        user.email;
-
-
-    /*
-      Welcome එක තත්පර 2.5ක් පෙන්වලා
-      Home එකට යනවා.
-    */
-
-    setTimeout(
-        function(){
-
-            document.getElementById(
-                "welcomeSection"
-            ).style.display = "none";
-
-
-            showHome();
-
-        },
-        2500
-    );
-
-}
-
-
-/* =====================================================
-   FORGOT PASSWORD
-===================================================== */
+/* ========================= */
+/* FORGOT PASSWORD */
+/* ========================= */
 
 window.forgotPassword = async function(){
 
     const email =
         document
-        .getElementById("loginEmail")
-        .value
-        .trim();
-
-
-    const message =
-        document.getElementById(
-            "loginMessage"
-        );
+            .getElementById("loginEmail")
+            .value
+            .trim();
 
 
     if(!email){
 
-        message.innerText =
-            "Enter your email first.";
+        alert(
+            "Please enter your email first."
+        );
 
         return;
 
@@ -1927,27 +1806,24 @@ window.forgotPassword = async function(){
             email
         );
 
+        alert(
+            "Password reset email sent. Check your email."
+        );
 
-        message.innerText =
-            "Password reset email sent.";
+    }catch(error){
 
-    }
-
-    catch(error){
-
-        console.error(error);
-
-        message.innerText =
-            error.message;
+        alert(
+            getFirebaseError(error)
+        );
 
     }
 
 };
 
 
-/* =====================================================
-   LOGOUT
-===================================================== */
+/* ========================= */
+/* LOGOUT */
+/* ========================= */
 
 window.logoutUser = async function(){
 
@@ -1957,37 +1833,25 @@ window.logoutUser = async function(){
 
         hideAllPages();
 
-
         document.getElementById(
             "welcomeSection"
         ).style.display = "none";
-
 
         document.getElementById(
             "loginPage"
         ).style.display = "flex";
 
+        showLogin();
 
         document.getElementById(
             "loginEmail"
         ).value = "";
 
-
         document.getElementById(
             "loginPassword"
         ).value = "";
 
-
-        document.getElementById(
-            "loginMessage"
-        ).innerText = "";
-
-
-        showLogin();
-
-    }
-
-    catch(error){
+    }catch(error){
 
         console.error(error);
 
@@ -1996,21 +1860,15 @@ window.logoutUser = async function(){
 };
 
 
-/* =====================================================
-   AUTH STATE
-===================================================== */
+/* ========================= */
+/* AUTH STATE */
+/* ========================= */
 
 onAuthStateChanged(
     auth,
     function(user){
 
         if(user){
-
-            /*
-              Already logged in.
-              Welcome screen නැවත හැම refresh එකකම
-              පෙන්වන්නේ නැහැ.
-            */
 
             document.getElementById(
                 "loginPage"
@@ -2019,12 +1877,11 @@ onAuthStateChanged(
 
             document.getElementById(
                 "welcomeSection"
-            ).style.display = "none";
+            ).style.display = "block";
 
 
             const name =
                 user.displayName ||
-                user.email.split("@")[0] ||
                 "STUDENT";
 
 
@@ -2037,7 +1894,21 @@ onAuthStateChanged(
             document.getElementById(
                 "userEmail"
             ).innerText =
-                user.email;
+                user.email || "";
+
+
+            /*
+              Welcome screen එක
+              තත්පර 2කට පස්සේ hide වෙනවා.
+            */
+
+            setTimeout(function(){
+
+                document.getElementById(
+                    "welcomeSection"
+                ).style.display = "none";
+
+            },2000);
 
 
             showHome();
@@ -2050,11 +1921,9 @@ onAuthStateChanged(
                 "loginPage"
             ).style.display = "flex";
 
-
             document.getElementById(
                 "welcomeSection"
             ).style.display = "none";
-
 
             hideAllPages();
 
@@ -2064,122 +1933,53 @@ onAuthStateChanged(
 );
 
 
-/* =====================================================
-   AI CHAT UI
-===================================================== */
+/* ========================= */
+/* FIREBASE ERROR MESSAGE */
+/* ========================= */
 
-window.toggleAIChat = function(){
+function getFirebaseError(error){
 
-    const box =
-        document.getElementById(
-            "aiChatBox"
-        );
+    const code =
+        error.code || "";
 
 
     if(
-        box.style.display === "block"
+        code.includes(
+            "auth/invalid-api-key"
+        )
     ){
 
-        box.style.display = "none";
-
-    }
-
-    else{
-
-        box.style.display = "block";
-
-
-        document
-            .getElementById("aiInput")
-            .focus();
-
-    }
-
-};
-
-
-function addAIMessage(
-    text,
-    type
-){
-
-    const messages =
-        document.getElementById(
-            "aiMessages"
-        );
-
-
-    const message =
-        document.createElement(
-            "div"
-        );
-
-
-    message.className =
-        type === "user"
-        ? "user-message"
-        : "ai-message";
-
-
-    message.innerText =
-        text;
-
-
-    messages.appendChild(
-        message
-    );
-
-
-    messages.scrollTop =
-        messages.scrollHeight;
-
-}
-
-
-window.sendAIMessage = function(){
-
-    const input =
-        document.getElementById(
-            "aiInput"
-        );
-
-
-    const question =
-        input.value.trim();
-
-
-    if(!question){
-
-        return;
+        return "Firebase API key is invalid. Please check the Firebase Web App configuration.";
 
     }
 
 
-    addAIMessage(
-        question,
-        "user"
-    );
+    if(
+        code.includes(
+            "auth/email-already-in-use"
+        )
+    ){
+
+        return "This email is already registered. Please Login.";
+
+    }
 
 
-    input.value = "";
+    if(
+        code.includes(
+            "auth/invalid-email"
+        )
+    ){
+
+        return "Please enter a valid email address.";
+
+    }
 
 
-    setTimeout(
-        function(){
+    if(
+        code.includes(
+            "auth/weak-password"
+        )
+    ){
 
-            addAIMessage(
-                "🤖 MP Education AI is ready to be connected with Gemini.",
-                "ai"
-            );
-
-        },
-        500
-    );
-
-};
-
-
-</script>
-
-</body>
-</html>
+        return "Password must contain at least 6

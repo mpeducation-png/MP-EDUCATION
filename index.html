@@ -124,30 +124,33 @@ body{
 }
 
 #welcomeScreen h1{
-    font-size:clamp(55px,10vw,110px);
+    font-size:clamp(45px,8vw,80px);
     font-weight:900;
     text-align:center;
     letter-spacing:2px;
 
-    margin:10px 20px;
+    margin:8px 15px;
 
     animation:welcomeZoom 1s ease;
 }
 
 #welcomeScreen h2{
-    font-size:clamp(55px,10vw,110px);
+    font-size:clamp(45px,8vw,80px);
     font-weight:900;
     text-align:center;
     letter-spacing:2px;
 
-    margin:10px 20px;
+    margin:8px 15px;
 
     animation:welcomeZoom 1.2s ease;
+
+    max-width:90%;
+    word-break:break-word;
 }
 
 #welcomeScreen p{
-    font-size:22px;
-    margin-top:20px;
+    font-size:20px;
+    margin-top:18px;
     opacity:.9;
     text-align:center;
 }
@@ -392,9 +395,38 @@ footer a{
         margin:10px auto 0;
     }
 
+
+    /* ================= WELCOME PHONE ================= */
+
     #welcomeScreen h1,
     #welcomeScreen h2{
-        font-size:55px;
+        font-size:42px;
+        margin:8px 15px;
+        word-break:break-word;
+        text-align:center;
+        max-width:90%;
+    }
+
+    #welcomeScreen p{
+        font-size:17px;
+        margin:10px 20px;
+        text-align:center;
+    }
+
+}
+
+
+/* ================= SMALL PHONES ================= */
+
+@media(max-width:380px){
+
+    #welcomeScreen h1,
+    #welcomeScreen h2{
+        font-size:38px;
+    }
+
+    #welcomeScreen p{
+        font-size:16px;
     }
 
 }
@@ -505,8 +537,6 @@ window.registerUser = async function(){
             password
         );
 
-
-        /* SAVE USER NAME */
 
         await updateProfile(
             userCredential.user,
@@ -692,8 +722,6 @@ function showWelcome(user){
     user.displayName;
 
 
-    /* If old account has no name */
-
     if(!name){
 
         name =
@@ -749,11 +777,6 @@ onAuthStateChanged(
             user.email;
 
 
-            /*
-            Show Welcome only when
-            user actually logs in / registers
-            */
-
             if(
                 sessionStorage.getItem("mpWelcomeShown") !== "yes"
             ){
@@ -785,7 +808,9 @@ onAuthStateChanged(
 
 );
 
-</script></head><body><!-- ================================================= --><!-- WELCOME SCREEN --><!-- ================================================= --><div id="welcomeScreen"><h1>WELCOME 👋</h1>
+</script></head><body><!-- ================================================= --><!-- WELCOME SCREEN --><!-- ================================================= --><div id="welcomeScreen"><h1>
+    WELCOME 👋
+</h1>
 
 <h2 id="welcomeName">
     STUDENT
@@ -875,8 +900,6 @@ onAuthStateChanged(
     </h2>
 
 
-    <!-- NEW NAME FIELD -->
-
     <input
         type="text"
         id="registerName"
@@ -949,7 +972,7 @@ onAuthStateChanged(
     Learn • Study • Improve
 </p>
 
-</header><div class="container"><!-- ================================================= --><!-- USER --><!-- ================================================= --><div id="userBar">👤 Logged in as:
+</header><div class="container"><!-- ================= USER ================= --><div id="userBar">👤 Logged in as:
 
 <strong id="userEmail"></strong>
 
@@ -963,7 +986,7 @@ onAuthStateChanged(
 
 </button>
 
-</div><!-- ================================================= --><!-- HOME --><!-- ================================================= --><div id="homePage"><div class="hero-banner">
+</div><!-- ================= HOME ================= --><div id="homePage"><div class="hero-banner">
 
     <img
         src="IMG-20260802-WA0000.jpg"
@@ -982,50 +1005,38 @@ onAuthStateChanged(
 
 
     <button onclick="showPage('olPage')">
-
         📘 O/L
-
     </button>
 
 
     <button onclick="showPage('alPage')">
-
         📖 A/L
-
     </button>
 
 
     <button onclick="showPage('commercePage')">
-
         💼 Commerce
-
     </button>
 
 
     <button onclick="showPage('sciencePage')">
-
         🔬 Science
-
     </button>
 
 
     <button onclick="showPage('artsPage')">
-
         🎨 Arts
-
     </button>
 
 
     <button onclick="showPage('technologyPage')">
-
         ⚙️ Technology
-
     </button>
 
 
 </div>
 
-</div><!-- ================================================= --><!-- O/L --><!-- ================================================= --><div id="olPage" class="page"><button
+</div><!-- ================= O/L ================= --><div id="olPage" class="page"><button
     class="back"
     onclick="showHome()"
 >
@@ -1042,30 +1053,25 @@ onAuthStateChanged(
 
 <div class="subjects">
 
-
     <button class="subject">
         📚 Subjects
     </button>
-
 
     <button class="subject">
         📝 Notes
     </button>
 
-
     <button class="subject">
         📄 Past Papers
     </button>
-
 
     <button class="subject">
         🎯 Quizzes
     </button>
 
-
 </div>
 
-</div><!-- ================================================= --><!-- A/L --><!-- ================================================= --><div id="alPage" class="page"><button
+</div><!-- ================= A/L ================= --><div id="alPage" class="page"><button
     class="back"
     onclick="showHome()"
 >
@@ -1082,30 +1088,25 @@ onAuthStateChanged(
 
 <div class="subjects">
 
-
     <button class="subject">
         📚 Subjects
     </button>
-
 
     <button class="subject">
         📝 Notes
     </button>
 
-
     <button class="subject">
         📄 Past Papers
     </button>
-
 
     <button class="subject">
         🎯 Quizzes
     </button>
 
-
 </div>
 
-</div><!-- ================================================= --><!-- COMMERCE --><!-- ================================================= --><div id="commercePage" class="page"><button
+</div><!-- ================= COMMERCE ================= --><div id="commercePage" class="page"><button
     class="back"
     onclick="showHome()"
 >
@@ -1127,9 +1128,7 @@ onAuthStateChanged(
         class="subject"
         onclick="openSubject('Accounting')"
     >
-
         📘 Accounting
-
     </button>
 
 
@@ -1137,9 +1136,7 @@ onAuthStateChanged(
         class="subject"
         onclick="openSubject('Business Studies')"
     >
-
         📗 Business Studies
-
     </button>
 
 
@@ -1147,15 +1144,13 @@ onAuthStateChanged(
         class="subject"
         onclick="openSubject('Economics')"
     >
-
         📙 Economics
-
     </button>
 
 
 </div>
 
-</div><!-- ================================================= --><!-- SCIENCE --><!-- ================================================= --><div id="sciencePage" class="page"><button
+</div><!-- ================= SCIENCE ================= --><div id="sciencePage" class="page"><button
     class="back"
     onclick="showHome()"
 >
@@ -1177,9 +1172,7 @@ onAuthStateChanged(
         class="subject"
         onclick="openSubject('Physics')"
     >
-
         ⚛️ Physics
-
     </button>
 
 
@@ -1187,9 +1180,7 @@ onAuthStateChanged(
         class="subject"
         onclick="openSubject('Chemistry')"
     >
-
         🧪 Chemistry
-
     </button>
 
 
@@ -1197,15 +1188,13 @@ onAuthStateChanged(
         class="subject"
         onclick="openSubject('Biology')"
     >
-
         🧬 Biology
-
     </button>
 
 
 </div>
 
-</div><!-- ================================================= --><!-- TECHNOLOGY --><!-- ================================================= --><div id="technologyPage" class="page"><button
+</div><!-- ================= TECHNOLOGY ================= --><div id="technologyPage" class="page"><button
     class="back"
     onclick="showHome()"
 >
@@ -1227,9 +1216,7 @@ onAuthStateChanged(
         class="subject"
         onclick="openSubject('Science for Technology')"
     >
-
         🔬 Science for Technology
-
     </button>
 
 
@@ -1237,9 +1224,7 @@ onAuthStateChanged(
         class="subject"
         onclick="openSubject('ICT')"
     >
-
         💻 ICT
-
     </button>
 
 
@@ -1247,9 +1232,7 @@ onAuthStateChanged(
         class="subject"
         onclick="openSubject('Engineering Technology')"
     >
-
         🔧 Engineering Technology
-
     </button>
 
 
@@ -1257,15 +1240,13 @@ onAuthStateChanged(
         class="subject"
         onclick="openSubject('Bio Systems Technology')"
     >
-
         🌱 Bio Systems Technology
-
     </button>
 
 
 </div>
 
-</div><!-- ================================================= --><!-- SUBJECT LESSONS --><!-- ================================================= --><div id="subjectPage" class="page"><button
+</div><!-- ================= SUBJECT ================= --><div id="subjectPage" class="page"><button
     class="back"
     onclick="goBackToCategory()"
 >
@@ -1283,7 +1264,7 @@ onAuthStateChanged(
     class="lessons"
 ></div>
 
-</div><!-- ================================================= --><!-- LESSON DETAIL --><!-- ================================================= --><div id="lessonDetailPage" class="page"><button
+</div><!-- ================= LESSON DETAIL ================= --><div id="lessonDetailPage" class="page"><button
     class="back"
     onclick="goBackToLessons()"
 >
@@ -1311,9 +1292,7 @@ onAuthStateChanged(
             class="resource"
             onclick="openNote()"
         >
-
             📝 Notes
-
         </button>
 
 
@@ -1321,9 +1300,7 @@ onAuthStateChanged(
             class="resource"
             onclick="openVideo()"
         >
-
             🎥 Video
-
         </button>
 
 
@@ -1331,9 +1308,7 @@ onAuthStateChanged(
             class="resource"
             onclick="openPaper()"
         >
-
             📄 Papers
-
         </button>
 
 
@@ -1341,9 +1316,7 @@ onAuthStateChanged(
             class="resource"
             onclick="openQuiz()"
         >
-
             🎯 Quiz
-
         </button>
 
 
@@ -1351,7 +1324,7 @@ onAuthStateChanged(
 
 </div>
 
-</div><!-- ================================================= --><!-- ARTS --><!-- ================================================= --><div id="artsPage" class="page"><button
+</div><!-- ================= ARTS ================= --><div id="artsPage" class="page"><button
     class="back"
     onclick="showHome()"
 >
@@ -1391,30 +1364,24 @@ onAuthStateChanged(
 
 </div>
 
-</div></div><!-- ================================================= --><!-- FOOTER --><!-- ================================================= --><footer><p>
+</div></div><!-- ================= FOOTER ================= --><footer><p>
     📞 Contact Us
 </p>
 
 
 <p>
-
     📱
-
     <a href="tel:0759205338">
         0759205338
     </a>
-
 </p>
 
 
 <p>
-
     📧
-
     <a href="mailto:mpeducation4@gmail.com">
         mpeducation4@gmail.com
     </a>
-
 </p>
 
 
@@ -1425,9 +1392,7 @@ onAuthStateChanged(
 </footer></div><!-- ================================================= --><!-- LESSON JAVASCRIPT --><!-- ================================================= --><script>
 
 
-/* ================================================= */
-/* COMMERCE */
-/* ================================================= */
+/* ================= COMMERCE ================= */
 
 const accountingLessons = [
 
@@ -1496,9 +1461,7 @@ const economicsLessons = [
 ];
 
 
-/* ================================================= */
-/* SCIENCE */
-/* ================================================= */
+/* ================= SCIENCE ================= */
 
 const physicsLessons = [
 
@@ -1560,9 +1523,7 @@ const biologyLessons = [
 ];
 
 
-/* ================================================= */
-/* TECHNOLOGY */
-/* ================================================= */
+/* ================= TECHNOLOGY ================= */
 
 const sftLessons = [
 
@@ -1662,30 +1623,19 @@ const bioSystemsLessons = [
 ];
 
 
-/* ================================================= */
-/* SUBJECT DATA */
-/* ================================================= */
+/* ================= SUBJECT DATA ================= */
 
 const subjectData = {
 
     "Accounting":accountingLessons,
-
     "Business Studies":businessLessons,
-
     "Economics":economicsLessons,
-
     "Physics":physicsLessons,
-
     "Chemistry":chemistryLessons,
-
     "Biology":biologyLessons,
-
     "Science for Technology":sftLessons,
-
     "ICT":ictLessons,
-
     "Engineering Technology":engineeringLessons,
-
     "Bio Systems Technology":bioSystemsLessons
 
 };
@@ -1696,9 +1646,7 @@ let currentLesson="";
 let currentCategory="";
 
 
-/* ================================================= */
-/* OPEN SUBJECT */
-/* ================================================= */
+/* ================= OPEN SUBJECT ================= */
 
 function openSubject(subject){
 
@@ -1776,11 +1724,9 @@ function openSubject(subject){
 
 
         button.innerHTML=
-
         '<span class="lesson-number">'+
         'පාඩම '+(index+1)+
         '</span>'+
-
         '<span class="lesson-title">'+
         lesson+
         '</span>';
@@ -1807,9 +1753,7 @@ function openSubject(subject){
 }
 
 
-/* ================================================= */
-/* ICONS */
-/* ================================================= */
+/* ================= ICONS ================= */
 
 function getSubjectIcon(subject){
 
@@ -1848,9 +1792,7 @@ function getSubjectIcon(subject){
 }
 
 
-/* ================================================= */
-/* OPEN LESSON */
-/* ================================================= */
+/* ================= OPEN LESSON ================= */
 
 function openLesson(
     subject,
@@ -1859,7 +1801,6 @@ function openLesson(
 ){
 
     currentSubject=subject;
-
     currentLesson=title;
 
 
@@ -1880,7 +1821,6 @@ function openLesson(
     document
     .getElementById("lessonDetailTitle")
     .textContent=
-
     "පාඩම "+
     number+
     " - "+
@@ -1892,9 +1832,7 @@ function openLesson(
 }
 
 
-/* ================================================= */
-/* BACK TO LESSONS */
-/* ================================================= */
+/* ================= BACK ================= */
 
 function goBackToLessons(){
 
@@ -1903,10 +1841,6 @@ function goBackToLessons(){
 }
 
 
-/* ================================================= */
-/* BACK TO CATEGORY */
-/* ================================================= */
-
 function goBackToCategory(){
 
     showPage(currentCategory);
@@ -1914,9 +1848,7 @@ function goBackToCategory(){
 }
 
 
-/* ================================================= */
-/* NOTES */
-/* ================================================= */
+/* ================= NOTES ================= */
 
 function openNote(){
 
@@ -1942,9 +1874,7 @@ function openNote(){
 }
 
 
-/* ================================================= */
-/* VIDEO */
-/* ================================================= */
+/* ================= VIDEO ================= */
 
 function openVideo(){
 
@@ -1955,9 +1885,7 @@ function openVideo(){
 }
 
 
-/* ================================================= */
-/* PAPERS */
-/* ================================================= */
+/* ================= PAPERS ================= */
 
 function openPaper(){
 
@@ -1968,9 +1896,7 @@ function openPaper(){
 }
 
 
-/* ================================================= */
-/* QUIZ */
-/* ================================================= */
+/* ================= QUIZ ================= */
 
 function openQuiz(){
 
@@ -1981,9 +1907,7 @@ function openQuiz(){
 }
 
 
-/* ================================================= */
-/* PAGE NAVIGATION */
-/* ================================================= */
+/* ================= PAGE NAVIGATION ================= */
 
 function showPage(pageId){
 

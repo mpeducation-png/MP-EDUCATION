@@ -7,7 +7,9 @@
 <title>MP Education | Learn, Study & Improve</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+    box-sizing:border-box;
+}
 
 body{
     margin:0;
@@ -16,46 +18,37 @@ body{
     color:#172554;
 }
 
-header{
-    background:#1e3a8a;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
+/* ================= LOGIN ================= */
 
-h1{margin:5px 0;font-size:30px}
-h2{text-align:center;margin:25px 0}
-p{line-height:1.6}
-
-.page{
-    display:none;
-    padding:20px;
-    max-width:1100px;
-    margin:auto;
-}
-
-.active{display:block}
-
-/* LOGIN */
-
-.auth-container{
+#loginPage{
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     padding:20px;
+
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("mp education - background.png");
+
+    background-size:cover;
+    background-position:center;
 }
 
 .auth-box{
     width:100%;
     max-width:420px;
-    background:white;
-    padding:25px;
-    border-radius:18px;
-    box-shadow:0 8px 25px rgba(0,0,0,.12);
+    background:rgba(255,255,255,.96);
+    padding:28px;
+    border-radius:20px;
+    box-shadow:0 10px 35px rgba(0,0,0,.3);
 }
 
-.auth-box h2{margin-top:0}
+.auth-box h2{
+    text-align:center;
+    color:#1e3a8a;
+    margin-top:0;
+}
 
 input{
     width:100%;
@@ -81,6 +74,10 @@ button{
     color:white;
 }
 
+.auth-button:hover{
+    background:#2563eb;
+}
+
 .switch-button{
     background:none;
     color:#1e3a8a;
@@ -97,30 +94,90 @@ button{
     font-weight:bold;
 }
 
-/* WELCOME */
+/* ================= WELCOME ================= */
 
 #welcomeSection{
     display:none;
+    min-height:100vh;
+    justify-content:center;
+    align-items:center;
     text-align:center;
-    background:linear-gradient(135deg,#1e3a8a,#2563eb);
+
+    background:
+    linear-gradient(135deg,#1e3a8a,#2563eb);
+
     color:white;
-    padding:45px 20px;
-    border-radius:0 0 25px 25px;
+    padding:30px;
+}
+
+.welcome-content{
+    animation:welcomeAnimation 1s ease;
 }
 
 #welcomeSection h1{
-    font-size:42px;
-}
-
-#welcomeName{
-    font-size:38px;
+    font-size:52px;
     margin:10px 0;
 }
 
-/* USER */
+#welcomeName{
+    font-size:45px;
+    margin:15px 0;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+#welcomeSection p{
+    font-size:20px;
+}
+
+@keyframes welcomeAnimation{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ================= PAGES ================= */
+
+.page{
+    display:none;
+    padding:20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.active{
+    display:block;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    background:#1e3a8a;
+    color:white;
+    text-align:center;
+    padding:20px;
+    border-radius:0 0 18px 18px;
+}
+
+header h1{
+    margin:5px 0;
+    font-size:30px;
+}
+
+header p{
+    margin:5px;
+}
+
+/* ================= USER BAR ================= */
 
 .user-bar{
-    max-width:1100px;
     margin:20px auto;
     padding:15px;
     background:white;
@@ -135,7 +192,7 @@ button{
     margin-left:10px;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero-banner{
     width:100%;
@@ -149,7 +206,7 @@ button{
     display:block;
 }
 
-/* GRID */
+/* ================= GRID ================= */
 
 .categories,
 .subjects,
@@ -177,7 +234,7 @@ button{
     background:#eff6ff;
 }
 
-/* BACK */
+/* ================= BACK ================= */
 
 .back{
     background:#64748b;
@@ -186,7 +243,7 @@ button{
     margin-bottom:10px;
 }
 
-/* LESSONS */
+/* ================= LESSONS ================= */
 
 .lessons{
     display:grid;
@@ -202,6 +259,12 @@ button{
     box-shadow:0 3px 10px rgba(0,0,0,.08);
 }
 
+.lesson-button:hover{
+    background:#eff6ff;
+}
+
+/* ================= LESSON DETAIL ================= */
+
 .lesson-detail{
     background:white;
     padding:25px;
@@ -209,7 +272,7 @@ button{
     box-shadow:0 5px 18px rgba(0,0,0,.08);
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
     margin-top:40px;
@@ -219,9 +282,11 @@ footer{
     text-align:center;
 }
 
-footer a{color:white}
+footer a{
+    color:white;
+}
 
-/* AI */
+/* ================= AI ================= */
 
 #aiChatButton{
     position:fixed;
@@ -311,14 +376,16 @@ footer a{color:white}
     padding:10px 15px;
 }
 
+/* ================= MOBILE ================= */
+
 @media(max-width:600px){
 
     #welcomeSection h1{
-        font-size:32px;
+        font-size:38px;
     }
 
     #welcomeName{
-        font-size:30px;
+        font-size:32px;
     }
 
     #aiChatBox{
@@ -337,9 +404,11 @@ footer a{color:white}
 
 <body>
 
-<!-- LOGIN -->
+<!-- ================================================= -->
+<!-- LOGIN / REGISTER -->
+<!-- ================================================= -->
 
-<div id="loginPage" class="auth-container">
+<div id="loginPage">
 
 <div id="loginBox" class="auth-box">
 
@@ -367,7 +436,7 @@ onclick="forgotPassword()">
 Forgot Password?
 </button>
 
-<p style="text-align:center">
+<p style="text-align:center;">
 Don't have an account?
 
 <button
@@ -377,7 +446,10 @@ Register
 </button>
 </p>
 
-<p id="loginMessage" class="auth-message"></p>
+<p
+id="loginMessage"
+class="auth-message">
+</p>
 
 </div>
 
@@ -387,7 +459,7 @@ Register
 <div
 id="registerBox"
 class="auth-box"
-style="display:none">
+style="display:none;">
 
 <h2>📝 Create Account</h2>
 
@@ -417,7 +489,7 @@ onclick="registerUser()">
 Register
 </button>
 
-<p style="text-align:center">
+<p style="text-align:center;">
 
 Already have an account?
 
@@ -439,11 +511,17 @@ class="auth-message">
 </div>
 
 
-<!-- WELCOME -->
+<!-- ================================================= -->
+<!-- WELCOME SCREEN -->
+<!-- ================================================= -->
 
 <div id="welcomeSection">
 
-<h1>WELCOME 👋</h1>
+<div class="welcome-content">
+
+<h1>
+WELCOME 👋
+</h1>
 
 <h2 id="welcomeName">
 STUDENT
@@ -455,18 +533,27 @@ Welcome back to MP Education!
 
 </div>
 
+</div>
 
+
+<!-- ================================================= -->
 <!-- HOME -->
+<!-- ================================================= -->
 
 <div id="homePage" class="page">
 
 <header>
 
-<h1>📚 MP Education</h1>
+<h1>
+📚 MP Education
+</h1>
 
-<p>Learn • Study • Improve</p>
+<p>
+Learn • Study • Improve
+</p>
 
 </header>
+
 
 <div class="user-bar">
 
@@ -482,6 +569,7 @@ Logout
 
 </div>
 
+
 <div class="hero-banner">
 
 <img
@@ -490,9 +578,11 @@ alt="MP Education Banner">
 
 </div>
 
+
 <h2>
 🎓 Choose Your Learning Category
 </h2>
+
 
 <div class="categories">
 
@@ -525,7 +615,9 @@ alt="MP Education Banner">
 </div>
 
 
+<!-- ================================================= -->
 <!-- O/L -->
+<!-- ================================================= -->
 
 <div id="olPage" class="page">
 
@@ -537,17 +629,30 @@ alt="MP Education Banner">
 
 <div class="subjects">
 
-<button class="subject">📚 Subjects</button>
-<button class="subject">📝 Notes</button>
-<button class="subject">📄 Past Papers</button>
-<button class="subject">🎯 Quizzes</button>
+<button class="subject">
+📚 Subjects
+</button>
+
+<button class="subject">
+📝 Notes
+</button>
+
+<button class="subject">
+📄 Past Papers
+</button>
+
+<button class="subject">
+🎯 Quizzes
+</button>
 
 </div>
 
 </div>
 
 
+<!-- ================================================= -->
 <!-- A/L -->
+<!-- ================================================= -->
 
 <div id="alPage" class="page">
 
@@ -559,17 +664,30 @@ alt="MP Education Banner">
 
 <div class="subjects">
 
-<button class="subject">📚 Subjects</button>
-<button class="subject">📝 Notes</button>
-<button class="subject">📄 Past Papers</button>
-<button class="subject">🎯 Quizzes</button>
+<button class="subject">
+📚 Subjects
+</button>
+
+<button class="subject">
+📝 Notes
+</button>
+
+<button class="subject">
+📄 Past Papers
+</button>
+
+<button class="subject">
+🎯 Quizzes
+</button>
 
 </div>
 
 </div>
 
 
+<!-- ================================================= -->
 <!-- COMMERCE -->
+<!-- ================================================= -->
 
 <div id="commercePage" class="page">
 
@@ -604,7 +722,9 @@ onclick="openSubject('Economics')">
 </div>
 
 
+<!-- ================================================= -->
 <!-- SCIENCE -->
+<!-- ================================================= -->
 
 <div id="sciencePage" class="page">
 
@@ -639,7 +759,9 @@ onclick="openSubject('Biology')">
 </div>
 
 
+<!-- ================================================= -->
 <!-- TECHNOLOGY -->
+<!-- ================================================= -->
 
 <div id="technologyPage" class="page">
 
@@ -680,7 +802,9 @@ onclick="openSubject('Bio Systems Technology')">
 </div>
 
 
+<!-- ================================================= -->
 <!-- ARTS -->
+<!-- ================================================= -->
 
 <div id="artsPage" class="page">
 
@@ -692,17 +816,30 @@ onclick="openSubject('Bio Systems Technology')">
 
 <div class="subjects">
 
-<button class="subject">📚 Subjects</button>
-<button class="subject">📝 Notes</button>
-<button class="subject">📄 Past Papers</button>
-<button class="subject">🎯 Quizzes</button>
+<button class="subject">
+📚 Subjects
+</button>
+
+<button class="subject">
+📝 Notes
+</button>
+
+<button class="subject">
+📄 Past Papers
+</button>
+
+<button class="subject">
+🎯 Quizzes
+</button>
 
 </div>
 
 </div>
 
 
-<!-- SUBJECT PAGE -->
+<!-- ================================================= -->
+<!-- SUBJECT LESSONS -->
+<!-- ================================================= -->
 
 <div id="subjectPage" class="page">
 
@@ -722,7 +859,9 @@ class="lessons">
 </div>
 
 
-<!-- LESSON -->
+<!-- ================================================= -->
+<!-- LESSON DETAIL -->
+<!-- ================================================= -->
 
 <div id="lessonPage" class="page">
 
@@ -773,11 +912,15 @@ onclick="openQuiz()">
 </div>
 
 
+<!-- ================================================= -->
 <!-- FOOTER -->
+<!-- ================================================= -->
 
 <footer>
 
-<p>📞 Contact Us</p>
+<p>
+📞 Contact Us
+</p>
 
 <p>
 📱
@@ -800,7 +943,9 @@ mpeducation4@gmail.com
 </footer>
 
 
-<!-- AI -->
+<!-- ================================================= -->
+<!-- AI BUTTON -->
+<!-- ================================================= -->
 
 <button
 id="aiChatButton"
@@ -809,11 +954,17 @@ onclick="toggleAIChat()">
 </button>
 
 
+<!-- ================================================= -->
+<!-- AI CHAT -->
+<!-- ================================================= -->
+
 <div id="aiChatBox">
 
 <div class="ai-header">
 
-<span>🤖 MP Education AI</span>
+<span>
+🤖 MP Education AI
+</span>
 
 <button onclick="toggleAIChat()">
 ✕
@@ -842,7 +993,10 @@ subjects or studies.
 type="text"
 id="aiInput"
 placeholder="Ask your question..."
-onkeydown="if(event.key==='Enter')sendAIMessage()">
+onkeydown="
+if(event.key==='Enter')
+sendAIMessage()
+">
 
 <button onclick="sendAIMessage()">
 ➤
@@ -853,7 +1007,9 @@ onkeydown="if(event.key==='Enter')sendAIMessage()">
 </div>
 
 
-<!-- FIREBASE + JAVASCRIPT -->
+<!-- ================================================= -->
+<!-- FIREBASE -->
+<!-- ================================================= -->
 
 <script type="module">
 
@@ -862,7 +1018,6 @@ initializeApp
 }
 from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-
 
 import {
 getAuth,
@@ -876,7 +1031,7 @@ from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
-const firebaseConfig = {
+const firebaseConfig={
 
 apiKey:
 "AIzaSyD1ibHY0BqBPEoj8kVG_5KLHiCiclzw7W4",
@@ -902,31 +1057,33 @@ measurementId:
 };
 
 
-const app =
+const app=
 initializeApp(firebaseConfig);
 
-const auth =
+const auth=
 getAuth(app);
 
 
-/* PAGE CONTROL */
+/* ================= PAGE CONTROL ================= */
 
-window.hideAllPages = function(){
+window.hideAllPages=function(){
 
 document
 .querySelectorAll(".page")
-.forEach(page=>{
+.forEach(
+page=>{
 page.classList.remove("active");
-});
+}
+);
 
 };
 
 
-window.showPage = function(pageId){
+window.showPage=function(pageId){
 
 hideAllPages();
 
-const page =
+const page=
 document.getElementById(pageId);
 
 if(page){
@@ -936,7 +1093,7 @@ page.classList.add("active");
 };
 
 
-window.showHome = function(){
+window.showHome=function(){
 
 hideAllPages();
 
@@ -947,7 +1104,9 @@ document
 };
 
 
-window.showRegister = function(){
+/* ================= LOGIN / REGISTER UI ================= */
+
+window.showRegister=function(){
 
 document
 .getElementById("loginBox")
@@ -960,7 +1119,7 @@ document
 };
 
 
-window.showLogin = function(){
+window.showLogin=function(){
 
 document
 .getElementById("registerBox")
@@ -973,39 +1132,39 @@ document
 };
 
 
-/* REGISTER */
+/* ================= REGISTER ================= */
 
-window.registerUser =
+window.registerUser=
 async function(){
 
-const name =
+const name=
 document
 .getElementById("registerName")
 .value.trim();
 
-const email =
+const email=
 document
 .getElementById("registerEmail")
 .value.trim();
 
-const password =
+const password=
 document
 .getElementById("registerPassword")
 .value;
 
-const confirm =
+const confirm=
 document
 .getElementById("confirmPassword")
 .value;
 
-const message =
+const message=
 document
 .getElementById("registerMessage");
 
 
 if(!name || !email || !password || !confirm){
 
-message.innerText =
+message.innerText=
 "Please fill all fields.";
 
 return;
@@ -1013,9 +1172,9 @@ return;
 }
 
 
-if(password !== confirm){
+if(password!==confirm){
 
-message.innerText =
+message.innerText=
 "Passwords do not match.";
 
 return;
@@ -1023,9 +1182,9 @@ return;
 }
 
 
-if(password.length < 6){
+if(password.length<6){
 
-message.innerText =
+message.innerText=
 "Password must be at least 6 characters.";
 
 return;
@@ -1042,21 +1201,25 @@ password
 );
 
 
+/*
+Save only the name.
+Password is NOT saved in localStorage.
+*/
+
 localStorage.setItem(
 "mpUserName",
 name
 );
 
-
-message.innerText =
+message.innerText=
 "Account created successfully!";
 
 
 setTimeout(
 ()=>{
-showHome();
+showLogin();
 },
-800
+1000
 );
 
 
@@ -1064,37 +1227,37 @@ showHome();
 
 console.error(error);
 
-message.innerText =
-getFriendlyError(error);
+message.innerText=
+friendlyError(error);
 
 }
 
 };
 
 
-/* LOGIN */
+/* ================= LOGIN ================= */
 
-window.loginUser =
+window.loginUser=
 async function(){
 
-const email =
+const email=
 document
 .getElementById("loginEmail")
 .value.trim();
 
-const password =
+const password=
 document
 .getElementById("loginPassword")
 .value;
 
-const message =
+const message=
 document
 .getElementById("loginMessage");
 
 
 if(!email || !password){
 
-message.innerText =
+message.innerText=
 "Please enter email and password.";
 
 return;
@@ -1104,65 +1267,92 @@ return;
 
 try{
 
-const result =
+const result=
 await signInWithEmailAndPassword(
 auth,
 email,
 password
 );
 
-const user =
+const user=
 result.user;
 
 
-const name =
-localStorage.getItem("mpUserName")
-|| "STUDENT";
+/*
+Get user's name.
+*/
 
+const name=
+localStorage.getItem("mpUserName")
+||"STUDENT";
+
+
+/*
+REMOVE LOGIN PAGE
+*/
 
 document
 .getElementById("loginPage")
 .style.display="none";
 
 
+/*
+SHOW WELCOME SCREEN
+*/
+
 document
 .getElementById("welcomeSection")
-.style.display="block";
+.style.display="flex";
 
 
 document
 .getElementById("welcomeName")
-.innerText =
+.innerText=
 name;
 
 
+/*
+After 2.5 seconds,
+go to Home.
+*/
+
+setTimeout(
+function(){
+
+document
+.getElementById("welcomeSection")
+.style.display="none";
+
 document
 .getElementById("userEmail")
-.innerText =
+.innerText=
 user.email;
 
-
 showHome();
+
+},
+2500
+);
 
 
 }catch(error){
 
 console.error(error);
 
-message.innerText =
-getFriendlyError(error);
+message.innerText=
+friendlyError(error);
 
 }
 
 };
 
 
-/* PASSWORD RESET */
+/* ================= FORGOT PASSWORD ================= */
 
-window.forgotPassword =
+window.forgotPassword=
 async function(){
 
-const email =
+const email=
 document
 .getElementById("loginEmail")
 .value.trim();
@@ -1193,7 +1383,7 @@ alert(
 }catch(error){
 
 alert(
-getFriendlyError(error)
+friendlyError(error)
 );
 
 }
@@ -1201,14 +1391,14 @@ getFriendlyError(error)
 };
 
 
-/* LOGOUT */
+/* ================= LOGOUT ================= */
 
-window.logoutUser =
+window.logoutUser=
 async function(){
 
-try{
-
 await signOut(auth);
+
+hideAllPages();
 
 document
 .getElementById("welcomeSection")
@@ -1218,20 +1408,12 @@ document
 .getElementById("loginPage")
 .style.display="flex";
 
-hideAllPages();
-
 showLogin();
-
-}catch(error){
-
-console.error(error);
-
-}
 
 };
 
 
-/* AUTH STATE */
+/* ================= AUTO LOGIN ================= */
 
 onAuthStateChanged(
 auth,
@@ -1239,33 +1421,24 @@ auth,
 
 if(user){
 
-const name =
-localStorage.getItem(
-"mpUserName"
-) || "STUDENT";
-
+/*
+If already logged in after refresh,
+go directly to Home.
+Do NOT show Welcome again.
+*/
 
 document
 .getElementById("loginPage")
 .style.display="none";
 
-
 document
 .getElementById("welcomeSection")
-.style.display="block";
-
-
-document
-.getElementById("welcomeName")
-.innerText =
-name;
-
+.style.display="none";
 
 document
 .getElementById("userEmail")
-.innerText =
+.innerText=
 user.email;
-
 
 showHome();
 
@@ -1277,29 +1450,25 @@ document
 .getElementById("loginPage")
 .style.display="flex";
 
-document
-.getElementById("welcomeSection")
-.style.display="none";
-
 }
 
 });
 
 
-function getFriendlyError(error){
+/* ================= ERROR ================= */
+
+function friendlyError(error){
 
 if(
-error.code ===
-"auth/invalid-api-key"
+error.code==="auth/invalid-api-key"
 ){
 
-return "Firebase API key is invalid. Please check Firebase Web App configuration.";
+return "Firebase API key is invalid.";
 
 }
 
 if(
-error.code ===
-"auth/invalid-credential"
+error.code==="auth/invalid-credential"
 ){
 
 return "Incorrect email or password.";
@@ -1307,8 +1476,7 @@ return "Incorrect email or password.";
 }
 
 if(
-error.code ===
-"auth/email-already-in-use"
+error.code==="auth/email-already-in-use"
 ){
 
 return "This email is already registered.";
@@ -1316,8 +1484,7 @@ return "This email is already registered.";
 }
 
 if(
-error.code ===
-"auth/weak-password"
+error.code==="auth/weak-password"
 ){
 
 return "Password must be at least 6 characters.";
@@ -1325,8 +1492,7 @@ return "Password must be at least 6 characters.";
 }
 
 if(
-error.code ===
-"auth/invalid-email"
+error.code==="auth/invalid-email"
 ){
 
 return "Invalid email address.";
@@ -1338,9 +1504,11 @@ return error.message;
 }
 
 
-/* LESSON DATA */
+/* ================================================= */
+/* LESSONS */
+/* ================================================= */
 
-const lessons = {
+const lessons={
 
 
 "Accounting":[
@@ -1457,112 +1625,73 @@ const lessons = {
 
 
 "Physics":[
-
 "මිනුම්",
-
 "යාන්ත්‍ර විද්‍යාව",
-
 "තරංග",
-
 "විදුලිය",
-
 "තාප භෞතික විද්‍යාව"
-
 ],
 
 
 "Chemistry":[
-
 "මූලික රසායන විද්‍යාව",
-
 "පරමාණුක ව්‍යුහය",
-
 "රසායනික බන්ධන",
-
 "රසායනික ප්‍රතික්‍රියා"
-
 ],
 
 
 "Biology":[
-
 "ජීව විද්‍යාව හැඳින්වීම",
-
 "සෛල ජීව විද්‍යාව",
-
 "ජාන විද්‍යාව",
-
 "පරිසර විද්‍යාව"
-
 ],
 
 
 "Science for Technology":[
-
 "විද්‍යාව හැඳින්වීම",
-
 "පදාර්ථය",
-
 "ශක්තිය",
-
 "තාක්ෂණය හා සමාජය"
-
 ],
 
 
 "ICT":[
-
 "තොරතුරු හා සන්නිවේදන තාක්ෂණය හැඳින්වීම",
-
 "පරිගණක පද්ධති",
-
 "දත්ත නිරූපණය",
-
 "ජාලකරණය",
-
 "දත්ත සමුදා පද්ධති",
-
 "වෙබ් සංවර්ධනය"
-
 ],
 
 
 "Engineering Technology":[
-
 "ඉංජිනේරු තාක්ෂණය හැඳින්වීම",
-
 "ද්‍රව්‍ය",
-
 "යාන්ත්‍රික පද්ධති",
-
 "විදුලි පද්ධති"
-
 ],
 
 
 "Bio Systems Technology":[
-
 "ජෛව පද්ධති තාක්ෂණය හැඳින්වීම",
-
 "කෘෂිකාර්මික තාක්ෂණය",
-
 "ආහාර තාක්ෂණය",
-
 "පාරිසරික තාක්ෂණය"
-
 ]
 
 };
 
 
-/* SUBJECT */
+/* ================= SUBJECT ================= */
 
 let currentSubject="";
 let currentLesson="";
 
 
-window.openSubject =
-function(subject){
+window.openSubject=function(subject){
 
 currentSubject=subject;
 
@@ -1570,7 +1699,7 @@ document
 .getElementById("subjectTitle")
 .innerText="📚 "+subject;
 
-const list =
+const list=
 document.getElementById("lessonList");
 
 list.innerHTML="";
@@ -1579,7 +1708,7 @@ list.innerHTML="";
 lessons[subject].forEach(
 (lesson,index)=>{
 
-const button =
+const button=
 document.createElement("button");
 
 button.className=
@@ -1605,8 +1734,9 @@ showPage("subjectPage");
 };
 
 
-window.openLesson =
-function(lesson){
+/* ================= LESSON ================= */
+
+window.openLesson=function(lesson){
 
 currentLesson=lesson;
 
@@ -1620,16 +1750,16 @@ showPage("lessonPage");
 };
 
 
-window.goBackToLessons =
-function(){
+/* ================= BACK ================= */
+
+window.goBackToLessons=function(){
 
 showPage("subjectPage");
 
 };
 
 
-window.goBackToCategory =
-function(){
+window.goBackToCategory=function(){
 
 if(
 currentSubject==="Accounting" ||
@@ -1660,10 +1790,9 @@ showPage("technologyPage");
 };
 
 
-/* RESOURCES */
+/* ================= RESOURCES ================= */
 
-window.openNote =
-function(){
+window.openNote=function(){
 
 alert(
 "📝 Notes for "+currentLesson+
@@ -1673,8 +1802,7 @@ alert(
 };
 
 
-window.openVideo =
-function(){
+window.openVideo=function(){
 
 alert(
 "🎥 Video for "+currentLesson+
@@ -1684,19 +1812,17 @@ alert(
 };
 
 
-window.openPaper =
-function(){
+window.openPaper=function(){
 
 alert(
-"📄 Past Papers for "+currentLesson+
+"📄 Papers for "+currentLesson+
 " will be available here."
 );
 
 };
 
 
-window.openQuiz =
-function(){
+window.openQuiz=function(){
 
 alert(
 "🎯 Quiz for "+currentLesson+
@@ -1706,17 +1832,18 @@ alert(
 };
 
 
-/* AI UI */
+/* ================= AI ================= */
 
-window.toggleAIChat =
-function(){
+window.toggleAIChat=function(){
 
-const box =
+const box=
 document.getElementById(
 "aiChatBox"
 );
 
-if(box.style.display==="block"){
+if(
+box.style.display==="block"
+){
 
 box.style.display="none";
 
@@ -1740,22 +1867,22 @@ text,
 type
 ){
 
-const messages =
+const messages=
 document.getElementById(
 "aiMessages"
 );
 
-const div =
+const message=
 document.createElement("div");
 
-div.className=
+message.className=
 type==="user"
 ?"user-message"
 :"ai-message";
 
-div.innerText=text;
+message.innerText=text;
 
-messages.appendChild(div);
+messages.appendChild(message);
 
 messages.scrollTop=
 messages.scrollHeight;
@@ -1763,15 +1890,14 @@ messages.scrollHeight;
 }
 
 
-window.sendAIMessage =
-function(){
+window.sendAIMessage=function(){
 
-const input =
+const input=
 document.getElementById(
 "aiInput"
 );
 
-const question =
+const question=
 input.value.trim();
 
 if(!question)return;
@@ -1788,7 +1914,7 @@ setTimeout(
 function(){
 
 addAIMessage(
-"🤖 AI Tutor connection is not enabled yet. Firebase AI/Gemini connection can be added next.",
+"🤖 MP Education AI Tutor is not connected to Gemini yet.",
 "ai"
 );
 

@@ -13,7 +13,6 @@
 <meta name="description"
       content="MP Education is an online learning platform for Sri Lankan students.">
 
-
 <style>
 
 /* ================= GENERAL ================= */
@@ -35,15 +34,10 @@ body{
 /* ================= LOGIN PAGE ================= */
 
 #authPage{
-
     min-height:100vh;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     padding:20px;
 
     background:
@@ -56,362 +50,278 @@ body{
         center center;
 
     background-size:cover;
-
 }
 
 
 /* ================= LOGIN BOX ================= */
 
 .auth-box{
-
     width:350px;
-
     max-width:100%;
-
     background:rgba(255,255,255,0.95);
-
     padding:30px;
-
     border-radius:15px;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.25);
-
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
-
 
 .auth-box h2{
-
     text-align:center;
-
     margin-bottom:20px;
-
     color:#0b4ea2;
-
 }
-
 
 .auth-box input{
-
     width:100%;
-
     padding:12px;
-
     margin:10px 0;
-
     border:1px solid #ccc;
-
     border-radius:8px;
-
     font-size:15px;
-
 }
-
 
 .auth-button{
-
     width:100%;
-
     padding:12px;
-
     margin-top:10px;
-
     border:none;
-
     border-radius:8px;
-
     background:#0b4ea2;
-
     color:#fff;
-
     font-size:16px;
-
     cursor:pointer;
-
 }
-
 
 .auth-button:hover{
-
     background:#083b7d;
-
 }
-
 
 .switch-button{
-
     border:none;
-
     background:none;
-
     color:#0b4ea2;
-
     font-weight:bold;
-
     cursor:pointer;
-
     margin-top:12px;
-
 }
-
 
 .switch-button:hover{
-
     text-decoration:underline;
-
 }
-
 
 .forgot-button{
-
     display:block;
-
     margin:12px auto;
-
 }
 
-
 .auth-message{
-
     text-align:center;
-
     margin-top:12px;
-
     font-weight:bold;
-
 }
 
 
 /* ================= MAIN HEADER ================= */
 
 header{
-
     background:#1e3a8a;
-
     color:white;
-
     text-align:center;
-
     padding:30px 15px;
-
 }
-
 
 header h1{
-
     margin:0;
-
     font-size:30px;
-
 }
 
-
 header p{
-
     margin:8px 0 0;
-
 }
 
 
 /* ================= CONTAINER ================= */
 
 .container{
-
     max-width:900px;
-
     margin:auto;
-
     padding:20px;
-
 }
 
 
 /* ================= USER BAR ================= */
 
 #userBar{
-
     background:#e8efff;
-
     padding:12px;
-
     border-radius:10px;
-
     margin-bottom:20px;
-
     text-align:center;
-
 }
 
-
 #logoutButton{
-
     background:#dc2626;
-
     color:white;
-
     padding:10px 18px;
-
     margin-left:10px;
-
     border:none;
-
     border-radius:8px;
-
     cursor:pointer;
-
 }
 
 
 /* ================= HERO ================= */
 
 .hero-banner{
-
     width:100%;
-
     margin-bottom:25px;
-
 }
-
 
 .hero-banner img{
-
     width:100%;
-
     height:auto;
-
     display:block;
-
     border-radius:15px;
-
 }
 
 
-/* ================= HOME ================= */
+/* ================= HEADINGS ================= */
 
 h2{
-
     text-align:center;
-
     margin:20px 0;
-
 }
 
+
+/* ================= GRIDS ================= */
 
 .categories,
 .subjects,
-.resources{
-
+.resources,
+.lessons{
     display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
+    grid-template-columns:repeat(2,1fr);
     gap:15px;
-
 }
 
 
+/* ================= BUTTONS ================= */
+
 button{
-
     padding:18px;
-
     border:none;
-
     border-radius:12px;
-
     background:white;
 
     box-shadow:
         0 2px 8px rgba(0,0,0,0.1);
 
     font-size:16px;
-
     cursor:pointer;
-
     transition:.2s;
-
 }
-
 
 button:hover{
-
     background:#e8efff;
-
     transform:translateY(-2px);
-
 }
 
+
+/* ================= PAGE ================= */
 
 .page{
-
     display:none;
-
     margin-top:25px;
-
 }
 
+
+/* ================= SUBJECT BUTTON ================= */
 
 .subject{
-
     padding:22px;
-
     font-size:18px;
-
 }
 
+
+/* ================= BACK BUTTON ================= */
 
 .back{
-
     background:#1e3a8a;
-
     color:white;
-
     margin-bottom:20px;
-
 }
 
 
-.resource{
+/* ================= LESSON BUTTON ================= */
 
+.lesson{
     padding:20px;
+    font-size:16px;
+    text-align:left;
+    background:white;
+}
 
+.lesson-number{
+    font-weight:bold;
+    color:#1e3a8a;
+    display:block;
+    margin-bottom:7px;
+}
+
+.lesson-title{
+    line-height:1.5;
+}
+
+
+/* ================= RESOURCE BUTTON ================= */
+
+.resource{
+    padding:20px;
     font-size:17px;
+}
 
+
+/* ================= LESSON DETAIL ================= */
+
+.lesson-detail{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    margin-bottom:20px;
+}
+
+.lesson-detail h3{
+    text-align:center;
+    color:#1e3a8a;
+    margin-bottom:10px;
+    line-height:1.5;
+}
+
+.lesson-detail p{
+    text-align:center;
+    color:#666;
+    margin-bottom:20px;
 }
 
 
 /* ================= FOOTER ================= */
 
 footer{
-
     text-align:center;
-
     padding:30px 20px;
-
     margin-top:40px;
-
     background:#1e3a8a;
-
     color:white;
-
 }
-
 
 footer p{
-
     margin:10px 0;
-
 }
 
-
 footer a{
-
     color:white;
-
     text-decoration:none;
-
     font-weight:bold;
-
 }
 
 
@@ -421,42 +331,27 @@ footer a{
 
     .categories,
     .subjects,
-    .resources{
-
+    .resources,
+    .lessons{
         grid-template-columns:1fr;
-
     }
-
 
     header h1{
-
         font-size:25px;
-
     }
-
 
     .container{
-
         padding:15px;
-
     }
-
 
     .auth-box{
-
         width:100%;
-
         max-width:350px;
-
     }
 
-
     #logoutButton{
-
         display:block;
-
         margin:10px auto 0;
-
     }
 
 }
@@ -476,15 +371,10 @@ from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 import {
 
     getAuth,
-
     createUserWithEmailAndPassword,
-
     signInWithEmailAndPassword,
-
     signOut,
-
     onAuthStateChanged,
-
     sendPasswordResetEmail
 
 }
@@ -530,8 +420,7 @@ const auth =
 
 /* ================= REGISTER ================= */
 
-window.registerUser =
-async function(){
+window.registerUser = async function(){
 
     const email =
         document
@@ -539,18 +428,15 @@ async function(){
         .value
         .trim();
 
-
     const password =
         document
         .getElementById("registerPassword")
         .value;
 
-
     const confirmPassword =
         document
         .getElementById("confirmPassword")
         .value;
-
 
     const message =
         document
@@ -567,7 +453,6 @@ async function(){
             "Please fill all fields.";
 
         return;
-
     }
 
 
@@ -577,7 +462,6 @@ async function(){
             "Passwords do not match.";
 
         return;
-
     }
 
 
@@ -587,23 +471,19 @@ async function(){
             "Password must be at least 6 characters.";
 
         return;
-
     }
 
 
     try{
 
-        await
-        createUserWithEmailAndPassword(
+        await createUserWithEmailAndPassword(
             auth,
             email,
             password
         );
 
-
         message.textContent =
             "Registration successful!";
-
 
     }
 
@@ -633,8 +513,7 @@ async function(){
 
 /* ================= LOGIN ================= */
 
-window.loginUser =
-async function(){
+window.loginUser = async function(){
 
     const email =
         document
@@ -642,12 +521,10 @@ async function(){
         .value
         .trim();
 
-
     const password =
         document
         .getElementById("loginPassword")
         .value;
-
 
     const message =
         document
@@ -660,23 +537,19 @@ async function(){
             "Please enter email and password.";
 
         return;
-
     }
 
 
     try{
 
-        await
-        signInWithEmailAndPassword(
+        await signInWithEmailAndPassword(
             auth,
             email,
             password
         );
 
-
         message.textContent =
             "Login successful!";
-
 
     }
 
@@ -692,15 +565,13 @@ async function(){
 
 /* ================= FORGOT PASSWORD ================= */
 
-window.forgotPassword =
-async function(){
+window.forgotPassword = async function(){
 
     const email =
         document
         .getElementById("loginEmail")
         .value
         .trim();
-
 
     const message =
         document
@@ -713,24 +584,20 @@ async function(){
             "Please enter your email first.";
 
         return;
-
     }
 
 
     try{
 
-        await
-        sendPasswordResetEmail(
+        await sendPasswordResetEmail(
             auth,
             email
         );
-
 
         message.textContent =
             "Password reset email sent. Please check your email.";
 
     }
-
 
     catch(error){
 
@@ -744,8 +611,7 @@ async function(){
 
 /* ================= LOGOUT ================= */
 
-window.logoutUser =
-async function(){
+window.logoutUser = async function(){
 
     await signOut(auth);
 
@@ -754,18 +620,15 @@ async function(){
 
 /* ================= SHOW REGISTER ================= */
 
-window.showRegister =
-function(){
+window.showRegister = function(){
 
     document
     .getElementById("loginBox")
     .style.display="none";
 
-
     document
     .getElementById("registerBox")
     .style.display="block";
-
 
     document
     .getElementById("loginMessage")
@@ -776,18 +639,15 @@ function(){
 
 /* ================= SHOW LOGIN ================= */
 
-window.showLogin =
-function(){
+window.showLogin = function(){
 
     document
     .getElementById("registerBox")
     .style.display="none";
 
-
     document
     .getElementById("loginBox")
     .style.display="block";
-
 
     document
     .getElementById("registerMessage")
@@ -808,16 +668,13 @@ onAuthStateChanged(
             .getElementById("authPage")
             .style.display="none";
 
-
             document
             .getElementById("mainWebsite")
             .style.display="block";
 
-
             document
             .getElementById("userBar")
             .style.display="block";
-
 
             document
             .getElementById("userEmail")
@@ -831,11 +688,9 @@ onAuthStateChanged(
             .getElementById("authPage")
             .style.display="flex";
 
-
             document
             .getElementById("mainWebsite")
             .style.display="none";
-
 
             document
             .getElementById("userBar")
@@ -856,35 +711,31 @@ onAuthStateChanged(
 
 
 <!-- ================================================= -->
-<!-- LOGIN / REGISTER PAGE -->
+<!-- LOGIN / REGISTER -->
 <!-- ================================================= -->
 
 <div id="authPage">
 
 
-    <!-- ================= LOGIN ================= -->
+    <!-- LOGIN -->
 
     <div
         id="loginBox"
         class="auth-box">
 
-
         <h2>
             📚 MP Education
         </h2>
-
 
         <input
             type="email"
             id="loginEmail"
             placeholder="Email">
 
-
         <input
             type="password"
             id="loginPassword"
             placeholder="Password">
-
 
         <button
             class="auth-button"
@@ -894,7 +745,6 @@ onAuthStateChanged(
 
         </button>
 
-
         <button
             class="switch-button forgot-button"
             onclick="forgotPassword()">
@@ -903,11 +753,9 @@ onAuthStateChanged(
 
         </button>
 
-
         <p style="text-align:center;">
 
             Don't have an account?
-
 
             <button
                 class="switch-button"
@@ -919,46 +767,39 @@ onAuthStateChanged(
 
         </p>
 
-
         <p
             id="loginMessage"
             class="auth-message">
         </p>
 
-
     </div>
 
 
-    <!-- ================= REGISTER ================= -->
+    <!-- REGISTER -->
 
     <div
         id="registerBox"
         class="auth-box"
         style="display:none;">
 
-
         <h2>
             📝 Create Account
         </h2>
-
 
         <input
             type="email"
             id="registerEmail"
             placeholder="Email">
 
-
         <input
             type="password"
             id="registerPassword"
             placeholder="Password">
 
-
         <input
             type="password"
             id="confirmPassword"
             placeholder="Confirm Password">
-
 
         <button
             class="auth-button"
@@ -968,11 +809,9 @@ onAuthStateChanged(
 
         </button>
 
-
         <p style="text-align:center;">
 
             Already have an account?
-
 
             <button
                 class="switch-button"
@@ -984,12 +823,10 @@ onAuthStateChanged(
 
         </p>
 
-
         <p
             id="registerMessage"
             class="auth-message">
         </p>
-
 
     </div>
 
@@ -1021,14 +858,13 @@ onAuthStateChanged(
 <div class="container">
 
 
-    <!-- ================= USER ================= -->
+    <!-- USER -->
 
     <div id="userBar">
 
         👤 Logged in as:
 
         <strong id="userEmail"></strong>
-
 
         <button
             id="logoutButton"
@@ -1045,7 +881,6 @@ onAuthStateChanged(
 
     <div id="homePage">
 
-
         <div class="hero-banner">
 
             <img
@@ -1061,7 +896,6 @@ onAuthStateChanged(
 
 
         <div class="categories">
-
 
             <button
                 onclick="showPage('olPage')">
@@ -1110,7 +944,6 @@ onAuthStateChanged(
 
             </button>
 
-
         </div>
 
     </div>
@@ -1122,7 +955,6 @@ onAuthStateChanged(
         id="olPage"
         class="page">
 
-
         <button
             class="back"
             onclick="showHome()">
@@ -1131,34 +963,27 @@ onAuthStateChanged(
 
         </button>
 
-
         <h2>
             📘 O/L
         </h2>
 
-
         <div class="subjects">
-
 
             <button class="subject">
                 📚 Subjects
             </button>
 
-
             <button class="subject">
                 📝 Notes
             </button>
-
 
             <button class="subject">
                 📄 Past Papers
             </button>
 
-
             <button class="subject">
                 🎯 Quizzes
             </button>
-
 
         </div>
 
@@ -1171,7 +996,6 @@ onAuthStateChanged(
         id="alPage"
         class="page">
 
-
         <button
             class="back"
             onclick="showHome()">
@@ -1180,46 +1004,40 @@ onAuthStateChanged(
 
         </button>
 
-
         <h2>
             📖 A/L
         </h2>
 
-
         <div class="subjects">
-
 
             <button class="subject">
                 📚 Subjects
             </button>
 
-
             <button class="subject">
                 📝 Notes
             </button>
-
 
             <button class="subject">
                 📄 Past Papers
             </button>
 
-
             <button class="subject">
                 🎯 Quizzes
             </button>
-
 
         </div>
 
     </div>
 
 
-    <!-- ================= COMMERCE ================= -->
+    <!-- ================================================= -->
+    <!-- COMMERCE -->
+    <!-- ================================================= -->
 
     <div
         id="commercePage"
         class="page">
-
 
         <button
             class="back"
@@ -1228,7 +1046,6 @@ onAuthStateChanged(
             ← Back
 
         </button>
-
 
         <h2>
             💼 Commerce
@@ -1240,7 +1057,7 @@ onAuthStateChanged(
 
             <button
                 class="subject"
-                onclick="showPage('accountingPage')">
+                onclick="openSubject('Accounting')">
 
                 📘 Accounting
 
@@ -1249,7 +1066,7 @@ onAuthStateChanged(
 
             <button
                 class="subject"
-                onclick="showPage('businessPage')">
+                onclick="openSubject('Business Studies')">
 
                 📗 Business Studies
 
@@ -1258,7 +1075,7 @@ onAuthStateChanged(
 
             <button
                 class="subject"
-                onclick="showPage('economicsPage')">
+                onclick="openSubject('Economics')">
 
                 📙 Economics
 
@@ -1270,10 +1087,12 @@ onAuthStateChanged(
     </div>
 
 
-    <!-- ================= ACCOUNTING ================= -->
+    <!-- ================================================= -->
+    <!-- DYNAMIC COMMERCE SUBJECT PAGE -->
+    <!-- ================================================= -->
 
     <div
-        id="accountingPage"
+        id="subjectPage"
         class="page">
 
 
@@ -1286,140 +1105,92 @@ onAuthStateChanged(
         </button>
 
 
-        <h2>
-            📘 Accounting
-        </h2>
+        <h2 id="subjectTitle"></h2>
 
 
-        <div class="resources">
-
-
-            <button class="resource">
-                📝 Notes
-            </button>
-
-
-            <button class="resource">
-                🎥 Videos
-            </button>
-
-
-            <button class="resource">
-                📄 Past Papers
-            </button>
-
-
-            <button class="resource">
-                🎯 Quizzes
-            </button>
-
+        <div
+            id="lessonList"
+            class="lessons">
 
         </div>
+
 
     </div>
 
 
-    <!-- ================= BUSINESS ================= -->
+    <!-- ================================================= -->
+    <!-- LESSON DETAIL PAGE -->
+    <!-- ================================================= -->
 
     <div
-        id="businessPage"
+        id="lessonDetailPage"
         class="page">
 
 
         <button
             class="back"
-            onclick="showPage('commercePage')">
+            onclick="goBackToLessons()">
 
             ← Back
 
         </button>
 
 
-        <h2>
-            📗 Business Studies
-        </h2>
+        <div class="lesson-detail">
 
 
-        <div class="resources">
+            <h3 id="lessonDetailTitle"></h3>
 
 
-            <button class="resource">
-                📝 Notes
-            </button>
+            <p>
+                මෙම පාඩමට අදාළ අධ්‍යයන සම්පත්
+            </p>
 
 
-            <button class="resource">
-                🎥 Videos
-            </button>
+            <div class="resources">
 
 
-            <button class="resource">
-                📄 Past Papers
-            </button>
+                <button
+                    class="resource"
+                    onclick="openNote()">
+
+                    📝 Notes
+
+                </button>
 
 
-            <button class="resource">
-                🎯 Quizzes
-            </button>
+                <button
+                    class="resource"
+                    onclick="openVideo()">
+
+                    🎥 Video
+
+                </button>
 
 
-        </div>
+                <button
+                    class="resource"
+                    onclick="openPaper()">
 
-    </div>
+                    📄 Papers
 
-
-    <!-- ================= ECONOMICS ================= -->
-
-    <div
-        id="economicsPage"
-        class="page">
+                </button>
 
 
-        <button
-            class="back"
-            onclick="showPage('commercePage')">
+                <button
+                    class="resource"
+                    onclick="openQuiz()">
 
-            ← Back
+                    🎯 Quiz
 
-        </button>
-
-
-        <h2>
-            📙 Economics
-        </h2>
+                </button>
 
 
-        <div class="resources">
-
-
-            <button
-                class="resource"
-                onclick="window.open(
-                'https://drive.google.com/file/d/17gL2uzlz0qjchuP0XUqe55xoBR3V-Ftt/view?usp=drivesdk',
-                '_blank'
-                )">
-
-                📝 Notes
-
-            </button>
-
-
-            <button class="resource">
-                🎥 Videos
-            </button>
-
-
-            <button class="resource">
-                📄 Past Papers
-            </button>
-
-
-            <button class="resource">
-                🎯 Quizzes
-            </button>
+            </div>
 
 
         </div>
+
 
     </div>
 
@@ -1430,7 +1201,6 @@ onAuthStateChanged(
         id="sciencePage"
         class="page">
 
-
         <button
             class="back"
             onclick="showHome()">
@@ -1439,14 +1209,11 @@ onAuthStateChanged(
 
         </button>
 
-
         <h2>
             🔬 Science
         </h2>
 
-
         <div class="subjects">
-
 
             <button
                 class="subject"
@@ -1456,7 +1223,6 @@ onAuthStateChanged(
 
             </button>
 
-
             <button
                 class="subject"
                 onclick="showPage('chemistryPage')">
@@ -1464,7 +1230,6 @@ onAuthStateChanged(
                 🧪 Chemistry
 
             </button>
-
 
             <button
                 class="subject"
@@ -1474,19 +1239,17 @@ onAuthStateChanged(
 
             </button>
 
-
         </div>
 
     </div>
 
 
-    <!-- ================= PHYSICS ================= -->
+    <!-- PHYSICS -->
 
     <div
         id="physicsPage"
         class="page">
 
-
         <button
             class="back"
             onclick="showPage('sciencePage')">
@@ -1494,48 +1257,40 @@ onAuthStateChanged(
             ← Back
 
         </button>
-
 
         <h2>
             ⚛️ Physics
         </h2>
 
-
         <div class="resources">
-
 
             <button class="resource">
                 📝 Notes
             </button>
 
-
             <button class="resource">
                 🎥 Videos
             </button>
-
 
             <button class="resource">
                 📄 Past Papers
             </button>
 
-
             <button class="resource">
                 🎯 Quizzes
             </button>
-
 
         </div>
 
     </div>
 
 
-    <!-- ================= CHEMISTRY ================= -->
+    <!-- CHEMISTRY -->
 
     <div
         id="chemistryPage"
         class="page">
 
-
         <button
             class="back"
             onclick="showPage('sciencePage')">
@@ -1544,46 +1299,38 @@ onAuthStateChanged(
 
         </button>
 
-
         <h2>
             🧪 Chemistry
         </h2>
 
-
         <div class="resources">
-
 
             <button class="resource">
                 📝 Notes
             </button>
 
-
             <button class="resource">
                 🎥 Videos
             </button>
-
 
             <button class="resource">
                 📄 Past Papers
             </button>
 
-
             <button class="resource">
                 🎯 Quizzes
             </button>
-
 
         </div>
 
     </div>
 
 
-    <!-- ================= BIOLOGY ================= -->
+    <!-- BIOLOGY -->
 
     <div
         id="biologyPage"
         class="page">
-
 
         <button
             class="back"
@@ -1593,34 +1340,27 @@ onAuthStateChanged(
 
         </button>
 
-
         <h2>
             🧬 Biology
         </h2>
 
-
         <div class="resources">
-
 
             <button class="resource">
                 📝 Notes
             </button>
 
-
             <button class="resource">
                 🎥 Videos
             </button>
-
 
             <button class="resource">
                 📄 Past Papers
             </button>
 
-
             <button class="resource">
                 🎯 Quizzes
             </button>
-
 
         </div>
 
@@ -1633,7 +1373,6 @@ onAuthStateChanged(
         id="technologyPage"
         class="page">
 
-
         <button
             class="back"
             onclick="showHome()">
@@ -1642,14 +1381,11 @@ onAuthStateChanged(
 
         </button>
 
-
         <h2>
             ⚙️ Technology
         </h2>
 
-
         <div class="subjects">
-
 
             <button
                 class="subject"
@@ -1659,7 +1395,6 @@ onAuthStateChanged(
 
             </button>
 
-
             <button
                 class="subject"
                 onclick="showPage('ictPage')">
@@ -1667,7 +1402,6 @@ onAuthStateChanged(
                 💻 ICT
 
             </button>
-
 
             <button
                 class="subject"
@@ -1677,7 +1411,6 @@ onAuthStateChanged(
 
             </button>
 
-
             <button
                 class="subject"
                 onclick="showPage('bioTechnologyPage')">
@@ -1686,19 +1419,17 @@ onAuthStateChanged(
 
             </button>
 
-
         </div>
 
     </div>
 
 
-    <!-- ================= SFT ================= -->
+    <!-- SFT -->
 
     <div
         id="sftPage"
         class="page">
 
-
         <button
             class="back"
             onclick="showPage('technologyPage')">
@@ -1706,48 +1437,40 @@ onAuthStateChanged(
             ← Back
 
         </button>
-
 
         <h2>
             🔬 Science for Technology
         </h2>
 
-
         <div class="resources">
-
 
             <button class="resource">
                 📝 Notes
             </button>
 
-
             <button class="resource">
                 🎥 Videos
             </button>
-
 
             <button class="resource">
                 📄 Past Papers
             </button>
 
-
             <button class="resource">
                 🎯 Quizzes
             </button>
-
 
         </div>
 
     </div>
 
 
-    <!-- ================= ICT ================= -->
+    <!-- ICT -->
 
     <div
         id="ictPage"
         class="page">
 
-
         <button
             class="back"
             onclick="showPage('technologyPage')">
@@ -1755,48 +1478,40 @@ onAuthStateChanged(
             ← Back
 
         </button>
-
 
         <h2>
             💻 ICT
         </h2>
 
-
         <div class="resources">
-
 
             <button class="resource">
                 📝 Notes
             </button>
 
-
             <button class="resource">
                 🎥 Videos
             </button>
-
 
             <button class="resource">
                 📄 Past Papers
             </button>
 
-
             <button class="resource">
                 🎯 Quizzes
             </button>
-
 
         </div>
 
     </div>
 
 
-    <!-- ================= ENGINEERING ================= -->
+    <!-- ENGINEERING -->
 
     <div
         id="engineeringPage"
         class="page">
 
-
         <button
             class="back"
             onclick="showPage('technologyPage')">
@@ -1805,46 +1520,38 @@ onAuthStateChanged(
 
         </button>
 
-
         <h2>
             🔧 Engineering Technology
         </h2>
 
-
         <div class="resources">
-
 
             <button class="resource">
                 📝 Notes
             </button>
 
-
             <button class="resource">
                 🎥 Videos
             </button>
-
 
             <button class="resource">
                 📄 Past Papers
             </button>
 
-
             <button class="resource">
                 🎯 Quizzes
             </button>
-
 
         </div>
 
     </div>
 
 
-    <!-- ================= BIO SYSTEMS ================= -->
+    <!-- BIO SYSTEMS -->
 
     <div
         id="bioTechnologyPage"
         class="page">
-
 
         <button
             class="back"
@@ -1854,34 +1561,27 @@ onAuthStateChanged(
 
         </button>
 
-
         <h2>
             🌱 Bio Systems Technology
         </h2>
 
-
         <div class="resources">
-
 
             <button class="resource">
                 📝 Notes
             </button>
 
-
             <button class="resource">
                 🎥 Videos
             </button>
-
 
             <button class="resource">
                 📄 Past Papers
             </button>
 
-
             <button class="resource">
                 🎯 Quizzes
             </button>
-
 
         </div>
 
@@ -1894,7 +1594,6 @@ onAuthStateChanged(
         id="artsPage"
         class="page">
 
-
         <button
             class="back"
             onclick="showHome()">
@@ -1903,34 +1602,27 @@ onAuthStateChanged(
 
         </button>
 
-
         <h2>
             🎨 Arts
         </h2>
 
-
         <div class="subjects">
-
 
             <button class="subject">
                 📚 Subjects
             </button>
 
-
             <button class="subject">
                 📝 Notes
             </button>
-
 
             <button class="subject">
                 📄 Past Papers
             </button>
 
-
             <button class="subject">
                 🎯 Quizzes
             </button>
-
 
         </div>
 
@@ -1948,32 +1640,19 @@ onAuthStateChanged(
         📞 Contact Us
     </p>
 
-
     <p>
-
         📱
-
         <a href="tel:0759205338">
-
             0759205338
-
         </a>
-
     </p>
-
 
     <p>
-
         📧
-
         <a href="mailto:mpeducation4@gmail.com">
-
             mpeducation4@gmail.com
-
         </a>
-
     </p>
-
 
     <p>
         © 2026 MP Education
@@ -1985,9 +1664,413 @@ onAuthStateChanged(
 </div>
 
 
-<!-- ================= PAGE JAVASCRIPT ================= -->
+<!-- ================================================= -->
+<!-- PAGE JAVASCRIPT -->
+<!-- ================================================= -->
 
 <script>
+
+
+/* ================================================= */
+/* COMMERCE LESSON DATA */
+/* ================================================= */
+
+
+/* ================= ACCOUNTING ================= */
+
+const accountingLessons = [
+
+    "ගිණුම්කරණය හා එහි අවශ්‍යතාව",
+
+    "ගිණුම්කරණ සමීකරණය",
+
+    "ද්විත්ව සටහන්",
+
+    "මූලික සටහන් පොත්",
+
+    "පාලන ගිණුම්",
+
+    "වැරදි නිවැරදි කිරීම්",
+
+    "ගිණුම්කරණය සංකල්ප",
+
+    "කේවල ස්වාමි ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන",
+
+    "නිෂ්පාදන ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන",
+
+    "ලාභ අරමුණු කර නොගත් සංවිධානයක මූල්‍ය ප්‍රකාශන",
+
+    "අසම්පූර්ණ සටහන්",
+
+    "හවුල් ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන",
+
+    "ගිණුම්කරණ ප්‍රමිත",
+
+    "සමාගම් ගිණුම්කරණය",
+
+    "මුදල් ප්‍රවාහා ප්‍රකාශනය",
+
+    "අනුපාත විශ්ලේෂණය",
+
+    "කළමනාකරණ ගිණුම්කරණය",
+
+    "පිරිවැය හැසිරීම හා පිරිවැය පරිමා ලාභ විශ්ලේෂණය",
+
+    "ප්‍රාග්ධන ආයෝජන තීරණ"
+
+];
+
+
+/* ================= BUSINESS STUDIES ================= */
+
+const businessLessons = [
+
+    "ව්‍යාපාර පදනම හා පරිසරය",
+
+    "සමාජ වගකීම්",
+
+    "රජය හා ව්‍යාපාර",
+
+    "ව්‍යාපාර සංවිධාන",
+
+    "ව්‍යවසායකත්වය",
+
+    "සුළු හා මධ්‍ය පරිමාණ ව්‍යාපාර",
+
+    "මුදල් හා මූල්‍ය ආයතන",
+
+    "රක්ෂණය හා එහි වැදගත්කම",
+
+    "සන්නිවේදනය හා එහි වැදගත්කම",
+
+    "ප්‍රවාහනය හා එහි වැදගත්කම",
+
+    "වෙළඳාම හා එහි වැදගත්කම",
+
+    "කළමනාකරණයේ අවශ්‍යතාව හා එහි වැදගත්කම",
+
+    "මෙහෙයුම් කළමනාකරණය",
+
+    "අලෙවිකරණය",
+
+    "මූල්‍ය කළමනාකරණය",
+
+    "මානව සම්පත් කළමනාකරණය",
+
+    "තොරතුරු පද්ධති",
+
+    "ව්‍යාපාර සැලැස්ම"
+
+];
+
+
+/* ================= ECONOMICS ================= */
+
+const economicsLessons = [
+
+    "ආර්ථික විද්‍යාව හැඳින්වීම, ආර්ථික පද්ධති, නිෂ්පාදන හැකියා මායිම්",
+
+    "ඉල්ලුම, සැපයුම, නම්‍යතාව හා වෙළෙඳපොළ සමතුලිතය",
+
+    "වෙළඳපොළට රජය මැදිහත් වීම",
+
+    "වෙළෙඳපොළ තුළ නිෂ්පාදන ආයතන තාර්කිකව හැසිරෙන ආකාරය",
+
+    "ජාතික ගිණුම්කරණය",
+
+    "සර්ව ආර්ථික සමතුලිතය",
+
+    "මුදල් හා මිල මට්ටම්, බැංකු පද්ධතිය",
+
+    "රාජ්‍ය ආර්ථිකය",
+
+    "විදේශීය වෙළඳාම",
+
+    "විදේශීය මූල්‍ය",
+
+    "ආර්ථික සංවර්ධනය",
+
+    "ශ්‍රී ලංකාවේ ආර්ථික ව්‍යුහය හා ප්‍රතිපත්ති"
+
+];
+
+
+/* ================================================= */
+/* CURRENT SUBJECT / LESSON */
+/* ================================================= */
+
+let currentSubject = "";
+
+let currentLesson = "";
+
+
+/* ================================================= */
+/* SUBJECT OPEN */
+/* ================================================= */
+
+function openSubject(subject){
+
+    currentSubject = subject;
+
+
+    document
+    .getElementById("homePage")
+    .style.display="none";
+
+
+    document
+    .querySelectorAll(".page")
+    .forEach(function(page){
+
+        page.style.display="none";
+
+    });
+
+
+    document
+    .getElementById("subjectPage")
+    .style.display="block";
+
+
+    document
+    .getElementById("subjectTitle")
+    .textContent =
+        getSubjectIcon(subject) + " " + subject;
+
+
+    const lessonList =
+        document.getElementById("lessonList");
+
+
+    lessonList.innerHTML = "";
+
+
+    let lessons = [];
+
+
+    if(subject === "Accounting"){
+
+        lessons = accountingLessons;
+
+    }
+
+    else if(subject === "Business Studies"){
+
+        lessons = businessLessons;
+
+    }
+
+    else if(subject === "Economics"){
+
+        lessons = economicsLessons;
+
+    }
+
+
+    lessons.forEach(function(lesson,index){
+
+        const button =
+            document.createElement("button");
+
+
+        button.className = "lesson";
+
+
+        button.innerHTML =
+
+            '<span class="lesson-number">' +
+
+            'පාඩම ' + (index + 1) +
+
+            '</span>' +
+
+            '<span class="lesson-title">' +
+
+            lesson +
+
+            '</span>';
+
+
+        button.onclick = function(){
+
+            openLesson(
+                subject,
+                index + 1,
+                lesson
+            );
+
+        };
+
+
+        lessonList.appendChild(button);
+
+    });
+
+
+    window.scrollTo(0,0);
+
+}
+
+
+/* ================================================= */
+/* SUBJECT ICON */
+/* ================================================= */
+
+function getSubjectIcon(subject){
+
+    if(subject === "Accounting"){
+
+        return "📘";
+
+    }
+
+    if(subject === "Business Studies"){
+
+        return "📗";
+
+    }
+
+    if(subject === "Economics"){
+
+        return "📙";
+
+    }
+
+    return "📚";
+
+}
+
+
+/* ================================================= */
+/* OPEN LESSON */
+/* ================================================= */
+
+function openLesson(
+    subject,
+    lessonNumber,
+    lessonTitle
+){
+
+    currentSubject = subject;
+
+    currentLesson = lessonTitle;
+
+
+    document
+    .getElementById("subjectPage")
+    .style.display="none";
+
+
+    document
+    .getElementById("lessonDetailPage")
+    .style.display="block";
+
+
+    document
+    .getElementById("lessonDetailTitle")
+    .textContent =
+
+        "පාඩම " +
+        lessonNumber +
+        " - " +
+        lessonTitle;
+
+
+    window.scrollTo(0,0);
+
+}
+
+
+/* ================================================= */
+/* BACK TO LESSONS */
+/* ================================================= */
+
+function goBackToLessons(){
+
+    openSubject(currentSubject);
+
+}
+
+
+/* ================================================= */
+/* NOTES */
+/* ================================================= */
+
+function openNote(){
+
+    /*
+       දැනට Economics පාඩම 1 සඳහා
+       ඔයා දුන්න Google Drive PDF එක
+       example එකක් ලෙස connect කරලා තියෙනවා.
+    */
+
+    if(
+        currentSubject === "Economics" &&
+        currentLesson === economicsLessons[0]
+    ){
+
+        window.open(
+
+            "https://drive.google.com/file/d/17gL2uzlz0qjchuP0XUqe55xoBR3V-Ftt/view?usp=drivesdk",
+
+            "_blank"
+
+        );
+
+        return;
+
+    }
+
+
+    alert(
+        "මෙම පාඩමට Notes තවම upload කර නැත."
+    );
+
+}
+
+
+/* ================================================= */
+/* VIDEO */
+/* ================================================= */
+
+function openVideo(){
+
+    alert(
+        "මෙම පාඩමට Video තවම එකතු කර නැත."
+    );
+
+}
+
+
+/* ================================================= */
+/* PAPERS */
+/* ================================================= */
+
+function openPaper(){
+
+    alert(
+        "මෙම පාඩමට Papers තවම එකතු කර නැත."
+    );
+
+}
+
+
+/* ================================================= */
+/* QUIZ */
+/* ================================================= */
+
+function openQuiz(){
+
+    alert(
+        "මෙම පාඩමට Quiz තවම එකතු කර නැත."
+    );
+
+}
+
+
+/* ================================================= */
+/* GENERAL PAGE NAVIGATION */
+/* ================================================= */
 
 function showPage(pageId){
 
@@ -1998,13 +2081,11 @@ function showPage(pageId){
 
     document
     .querySelectorAll(".page")
-    .forEach(
-        function(page){
+    .forEach(function(page){
 
-            page.style.display="none";
+        page.style.display="none";
 
-        }
-    );
+    });
 
 
     document
@@ -2017,17 +2098,19 @@ function showPage(pageId){
 }
 
 
+/* ================================================= */
+/* HOME */
+/* ================================================= */
+
 function showHome(){
 
     document
     .querySelectorAll(".page")
-    .forEach(
-        function(page){
+    .forEach(function(page){
 
-            page.style.display="none";
+        page.style.display="none";
 
-        }
-    );
+    });
 
 
     document
@@ -2046,4 +2129,5 @@ function showHome(){
 
 </html>
 
-         
+
+        

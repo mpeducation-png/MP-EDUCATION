@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MP Education | Learn, Study & Improve</title><meta name="description" content="MP Education is an online learning platform for Sri Lankan students."><style>
 
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>MP Education | Learn, Study & Improve</title>
-
-<meta name="description"
-content="MP Education is an online learning platform for Sri Lankan students.">
-
-<style>
+/* ================= GENERAL ================= */
 
 *{
     margin:0;
@@ -25,6 +14,7 @@ body{
     background:#f5f7fb;
     color:#222;
 }
+
 
 /* ================= LOGIN ================= */
 
@@ -102,6 +92,109 @@ body{
     font-weight:bold;
 }
 
+
+/* ================= WELCOME SCREEN ================= */
+
+#welcomeScreen{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0b4ea2,
+        #1e3a8a
+    );
+
+    color:white;
+
+    z-index:9999;
+
+    animation:welcomeFadeIn .7s ease;
+}
+
+#welcomeScreen h1{
+    font-size:clamp(55px,10vw,110px);
+    font-weight:900;
+    text-align:center;
+    letter-spacing:2px;
+
+    margin:10px 20px;
+
+    animation:welcomeZoom 1s ease;
+}
+
+#welcomeScreen h2{
+    font-size:clamp(55px,10vw,110px);
+    font-weight:900;
+    text-align:center;
+    letter-spacing:2px;
+
+    margin:10px 20px;
+
+    animation:welcomeZoom 1.2s ease;
+}
+
+#welcomeScreen p{
+    font-size:22px;
+    margin-top:20px;
+    opacity:.9;
+    text-align:center;
+}
+
+@keyframes welcomeFadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+@keyframes welcomeZoom{
+
+    from{
+        opacity:0;
+        transform:scale(.7);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+@keyframes welcomeFadeOut{
+
+    from{
+        opacity:1;
+    }
+
+    to{
+        opacity:0;
+    }
+
+}
+
+#welcomeScreen.hide{
+    animation:welcomeFadeOut .7s ease forwards;
+}
+
+
 /* ================= HEADER ================= */
 
 header{
@@ -119,6 +212,7 @@ header p{
     margin-top:8px;
 }
 
+
 /* ================= CONTAINER ================= */
 
 .container{
@@ -126,6 +220,7 @@ header p{
     margin:auto;
     padding:20px;
 }
+
 
 /* ================= USER BAR ================= */
 
@@ -147,6 +242,7 @@ header p{
     cursor:pointer;
 }
 
+
 /* ================= HERO ================= */
 
 .hero-banner{
@@ -160,6 +256,7 @@ header p{
     display:block;
     border-radius:15px;
 }
+
 
 /* ================= GENERAL ================= */
 
@@ -249,6 +346,7 @@ button:hover{
     padding:20px;
 }
 
+
 /* ================= FOOTER ================= */
 
 footer{
@@ -268,6 +366,7 @@ footer a{
     text-decoration:none;
     font-weight:bold;
 }
+
 
 /* ================= MOBILE ================= */
 
@@ -292,17 +391,19 @@ footer a{
         display:block;
         margin:10px auto 0;
     }
+
+    #welcomeScreen h1,
+    #welcomeScreen h2{
+        font-size:55px;
+    }
+
 }
 
-</style>
+</style><!-- ================= FIREBASE ================= --><script type="module">
 
-
-<!-- ================= FIREBASE ================= -->
-
-<script type="module">
-
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import {
+    initializeApp
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 
 import {
     getAuth,
@@ -310,9 +411,9 @@ import {
     signInWithEmailAndPassword,
     signOut,
     onAuthStateChanged,
-    sendPasswordResetEmail
-}
-from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+    sendPasswordResetEmail,
+    updateProfile
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
 
 const firebaseConfig = {
@@ -337,6 +438,7 @@ const firebaseConfig = {
 
     measurementId:
     "G-HD5GPFLQ3N"
+
 };
 
 
@@ -345,9 +447,14 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 
-/* ================= REGISTER ================= */
+/* ================================================= */
+/* REGISTER */
+/* ================================================= */
 
 window.registerUser = async function(){
+
+    const name =
+    document.getElementById("registerName").value.trim();
 
     const email =
     document.getElementById("registerEmail").value.trim();
@@ -362,7 +469,7 @@ window.registerUser = async function(){
     document.getElementById("registerMessage");
 
 
-    if(!email || !password || !confirmPassword){
+    if(!name || !email || !password || !confirmPassword){
 
         message.textContent =
         "Please fill all fields.";
@@ -391,37 +498,57 @@ window.registerUser = async function(){
 
     try{
 
+        const userCredential =
         await createUserWithEmailAndPassword(
             auth,
             email,
             password
         );
 
+
+        /* SAVE USER NAME */
+
+        await updateProfile(
+            userCredential.user,
+            {
+                displayName:name
+            }
+        );
+
+
         message.textContent =
         "Registration successful!";
+
 
     }
 
     catch(error){
 
-        if(error.code ===
-        "auth/email-already-in-use"){
+        if(
+            error.code ===
+            "auth/email-already-in-use"
+        ){
 
             message.textContent =
             "This email is already registered.";
 
         }
+
         else{
 
             message.textContent =
             "Registration failed. Please try again.";
 
         }
+
     }
+
 };
 
 
-/* ================= LOGIN ================= */
+/* ================================================= */
+/* LOGIN */
+/* ================================================= */
 
 window.loginUser = async function(){
 
@@ -463,10 +590,13 @@ window.loginUser = async function(){
         "Login failed. Please check your email and password.";
 
     }
+
 };
 
 
-/* ================= FORGOT PASSWORD ================= */
+/* ================================================= */
+/* FORGOT PASSWORD */
+/* ================================================= */
 
 window.forgotPassword = async function(){
 
@@ -504,10 +634,13 @@ window.forgotPassword = async function(){
         "Unable to send reset email.";
 
     }
+
 };
 
 
-/* ================= LOGOUT ================= */
+/* ================================================= */
+/* LOGOUT */
+/* ================================================= */
 
 window.logoutUser = async function(){
 
@@ -516,7 +649,9 @@ window.logoutUser = async function(){
 };
 
 
-/* ================= LOGIN / REGISTER ================= */
+/* ================================================= */
+/* LOGIN / REGISTER SWITCH */
+/* ================================================= */
 
 window.showRegister = function(){
 
@@ -540,7 +675,63 @@ window.showLogin = function(){
 };
 
 
-/* ================= AUTH STATE ================= */
+/* ================================================= */
+/* WELCOME SCREEN */
+/* ================================================= */
+
+function showWelcome(user){
+
+    const welcomeScreen =
+    document.getElementById("welcomeScreen");
+
+    const welcomeName =
+    document.getElementById("welcomeName");
+
+
+    let name =
+    user.displayName;
+
+
+    /* If old account has no name */
+
+    if(!name){
+
+        name =
+        user.email
+        ? user.email.split("@")[0]
+        : "Student";
+
+    }
+
+
+    welcomeName.textContent =
+    name.toUpperCase();
+
+
+    welcomeScreen.style.display="flex";
+
+
+    setTimeout(function(){
+
+        welcomeScreen.classList.add("hide");
+
+
+        setTimeout(function(){
+
+            welcomeScreen.style.display="none";
+
+            welcomeScreen.classList.remove("hide");
+
+        },700);
+
+    },3000);
+
+}
+
+
+/* ================================================= */
+/* AUTH STATE */
+/* ================================================= */
 
 onAuthStateChanged(
     auth,
@@ -554,9 +745,30 @@ onAuthStateChanged(
 
             document.getElementById("userBar").style.display="block";
 
-            document.getElementById("userEmail").textContent=user.email;
+            document.getElementById("userEmail").textContent =
+            user.email;
+
+
+            /*
+            Show Welcome only when
+            user actually logs in / registers
+            */
+
+            if(
+                sessionStorage.getItem("mpWelcomeShown") !== "yes"
+            ){
+
+                showWelcome(user);
+
+                sessionStorage.setItem(
+                    "mpWelcomeShown",
+                    "yes"
+                );
+
+            }
 
         }
+
         else{
 
             document.getElementById("authPage").style.display="flex";
@@ -565,746 +777,652 @@ onAuthStateChanged(
 
             document.getElementById("userBar").style.display="none";
 
+            sessionStorage.removeItem("mpWelcomeShown");
+
         }
+
     }
+
 );
 
-</script>
+</script></head><body><!-- ================================================= --><!-- WELCOME SCREEN --><!-- ================================================= --><div id="welcomeScreen"><h1>WELCOME 👋</h1>
 
-</head>
+<h2 id="welcomeName">
+    STUDENT
+</h2>
 
+<p>
+    Welcome back to MP Education!
+</p>
 
-<body>
+</div><!-- ================================================= --><!-- LOGIN --><!-- ================================================= --><div id="authPage"><div id="loginBox" class="auth-box">
 
-
-<!-- ================================================= -->
-<!-- LOGIN -->
-<!-- ================================================= -->
-
-<div id="authPage">
-
-
-    <div id="loginBox" class="auth-box">
-
-        <h2>
-            📚 MP Education
-        </h2>
+    <h2>
+        📚 MP Education
+    </h2>
 
 
-        <input
+    <input
         type="email"
         id="loginEmail"
-        placeholder="Email">
+        placeholder="Email"
+    >
 
 
-        <input
+    <input
         type="password"
         id="loginPassword"
-        placeholder="Password">
+        placeholder="Password"
+    >
 
 
-        <button
+    <button
         class="auth-button"
-        onclick="loginUser()">
+        onclick="loginUser()"
+    >
 
         Login
 
-        </button>
+    </button>
 
 
-        <button
+    <button
         class="switch-button forgot-button"
-        onclick="forgotPassword()">
+        onclick="forgotPassword()"
+    >
 
         Forgot Password?
 
-        </button>
+    </button>
 
 
-        <p style="text-align:center;">
+    <p style="text-align:center;">
 
         Don't have an account?
 
         <button
-        class="switch-button"
-        onclick="showRegister()">
+            class="switch-button"
+            onclick="showRegister()"
+        >
 
-        Register
+            Register
 
         </button>
 
-        </p>
+    </p>
 
 
-        <p
+    <p
         id="loginMessage"
-        class="auth-message">
-        </p>
+        class="auth-message"
+    ></p>
 
-    </div>
+</div>
 
 
-    <div
+<!-- ================================================= -->
+<!-- REGISTER -->
+<!-- ================================================= -->
+
+<div
     id="registerBox"
     class="auth-box"
-    style="display:none;">
+    style="display:none;"
+>
 
-        <h2>
-            📝 Create Account
-        </h2>
+    <h2>
+        📝 Create Account
+    </h2>
 
 
-        <input
+    <!-- NEW NAME FIELD -->
+
+    <input
+        type="text"
+        id="registerName"
+        placeholder="Full Name"
+    >
+
+
+    <input
         type="email"
         id="registerEmail"
-        placeholder="Email">
+        placeholder="Email"
+    >
 
 
-        <input
+    <input
         type="password"
         id="registerPassword"
-        placeholder="Password">
+        placeholder="Password"
+    >
 
 
-        <input
+    <input
         type="password"
         id="confirmPassword"
-        placeholder="Confirm Password">
+        placeholder="Confirm Password"
+    >
 
 
-        <button
+    <button
         class="auth-button"
-        onclick="registerUser()">
+        onclick="registerUser()"
+    >
 
         Register
 
-        </button>
+    </button>
 
 
-        <p style="text-align:center;">
+    <p style="text-align:center;">
 
         Already have an account?
 
         <button
-        class="switch-button"
-        onclick="showLogin()">
+            class="switch-button"
+            onclick="showLogin()"
+        >
 
-        Login
+            Login
 
         </button>
 
-        </p>
+    </p>
 
 
-        <p
+    <p
         id="registerMessage"
-        class="auth-message">
-        </p>
-
-    </div>
+        class="auth-message"
+    ></p>
 
 </div>
 
+</div><!-- ================================================= --><!-- MAIN WEBSITE --><!-- ================================================= --><div
+    id="mainWebsite"
+    style="display:none;"
+><header><h1>
+    📚 MP Education
+</h1>
 
-<!-- ================================================= -->
-<!-- MAIN WEBSITE -->
-<!-- ================================================= -->
+<p>
+    Learn • Study • Improve
+</p>
 
-<div
-id="mainWebsite"
-style="display:none;">
+</header><div class="container"><!-- ================================================= --><!-- USER --><!-- ================================================= --><div id="userBar">👤 Logged in as:
 
-
-<header>
-
-    <h1>
-        📚 MP Education
-    </h1>
-
-    <p>
-        Learn • Study • Improve
-    </p>
-
-</header>
+<strong id="userEmail"></strong>
 
 
-<div class="container">
-
-
-<!-- ================= USER ================= -->
-
-<div id="userBar">
-
-    👤 Logged in as:
-
-    <strong id="userEmail"></strong>
-
-
-    <button
+<button
     id="logoutButton"
-    onclick="logoutUser()">
+    onclick="logoutUser()"
+>
 
     Logout
 
-    </button>
+</button>
 
-</div>
+</div><!-- ================================================= --><!-- HOME --><!-- ================================================= --><div id="homePage"><div class="hero-banner">
 
-
-<!-- ================================================= -->
-<!-- HOME -->
-<!-- ================================================= -->
-
-<div id="homePage">
-
-
-    <div class="hero-banner">
-
-        <img
+    <img
         src="IMG-20260802-WA0000.jpg"
-        alt="MP Education Banner">
-
-    </div>
-
-
-    <h2>
-        🎓 Choose Your Learning Category
-    </h2>
-
-
-    <div class="categories">
-
-
-        <button onclick="showPage('olPage')">
-
-            📘 O/L
-
-        </button>
-
-
-        <button onclick="showPage('alPage')">
-
-            📖 A/L
-
-        </button>
-
-
-        <button onclick="showPage('commercePage')">
-
-            💼 Commerce
-
-        </button>
-
-
-        <button onclick="showPage('sciencePage')">
-
-            🔬 Science
-
-        </button>
-
-
-        <button onclick="showPage('artsPage')">
-
-            🎨 Arts
-
-        </button>
-
-
-        <button onclick="showPage('technologyPage')">
-
-            ⚙️ Technology
-
-        </button>
-
-
-    </div>
+        alt="MP Education Banner"
+    >
 
 </div>
 
 
-<!-- ================================================= -->
-<!-- O/L -->
-<!-- ================================================= -->
-
-<div
-id="olPage"
-class="page">
+<h2>
+    🎓 Choose Your Learning Category
+</h2>
 
 
-    <button
-    class="back"
-    onclick="showHome()">
-
-    ← Back
-
-    </button>
+<div class="categories">
 
 
-    <h2>
+    <button onclick="showPage('olPage')">
+
         📘 O/L
-    </h2>
-
-
-    <div class="subjects">
-
-        <button class="subject">
-            📚 Subjects
-        </button>
-
-        <button class="subject">
-            📝 Notes
-        </button>
-
-        <button class="subject">
-            📄 Past Papers
-        </button>
-
-        <button class="subject">
-            🎯 Quizzes
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- A/L -->
-<!-- ================================================= -->
-
-<div
-id="alPage"
-class="page">
-
-
-    <button
-    class="back"
-    onclick="showHome()">
-
-    ← Back
 
     </button>
 
 
-    <h2>
+    <button onclick="showPage('alPage')">
+
         📖 A/L
-    </h2>
-
-
-    <div class="subjects">
-
-        <button class="subject">
-            📚 Subjects
-        </button>
-
-        <button class="subject">
-            📝 Notes
-        </button>
-
-        <button class="subject">
-            📄 Past Papers
-        </button>
-
-        <button class="subject">
-            🎯 Quizzes
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- COMMERCE -->
-<!-- ================================================= -->
-
-<div
-id="commercePage"
-class="page">
-
-
-    <button
-    class="back"
-    onclick="showHome()">
-
-    ← Back
 
     </button>
 
 
-    <h2>
+    <button onclick="showPage('commercePage')">
+
         💼 Commerce
-    </h2>
+
+    </button>
 
 
-    <div class="subjects">
+    <button onclick="showPage('sciencePage')">
+
+        🔬 Science
+
+    </button>
 
 
-        <button
+    <button onclick="showPage('artsPage')">
+
+        🎨 Arts
+
+    </button>
+
+
+    <button onclick="showPage('technologyPage')">
+
+        ⚙️ Technology
+
+    </button>
+
+
+</div>
+
+</div><!-- ================================================= --><!-- O/L --><!-- ================================================= --><div id="olPage" class="page"><button
+    class="back"
+    onclick="showHome()"
+>
+
+    ← Back
+
+</button>
+
+
+<h2>
+    📘 O/L
+</h2>
+
+
+<div class="subjects">
+
+
+    <button class="subject">
+        📚 Subjects
+    </button>
+
+
+    <button class="subject">
+        📝 Notes
+    </button>
+
+
+    <button class="subject">
+        📄 Past Papers
+    </button>
+
+
+    <button class="subject">
+        🎯 Quizzes
+    </button>
+
+
+</div>
+
+</div><!-- ================================================= --><!-- A/L --><!-- ================================================= --><div id="alPage" class="page"><button
+    class="back"
+    onclick="showHome()"
+>
+
+    ← Back
+
+</button>
+
+
+<h2>
+    📖 A/L
+</h2>
+
+
+<div class="subjects">
+
+
+    <button class="subject">
+        📚 Subjects
+    </button>
+
+
+    <button class="subject">
+        📝 Notes
+    </button>
+
+
+    <button class="subject">
+        📄 Past Papers
+    </button>
+
+
+    <button class="subject">
+        🎯 Quizzes
+    </button>
+
+
+</div>
+
+</div><!-- ================================================= --><!-- COMMERCE --><!-- ================================================= --><div id="commercePage" class="page"><button
+    class="back"
+    onclick="showHome()"
+>
+
+    ← Back
+
+</button>
+
+
+<h2>
+    💼 Commerce
+</h2>
+
+
+<div class="subjects">
+
+
+    <button
         class="subject"
-        onclick="openSubject('Accounting')">
+        onclick="openSubject('Accounting')"
+    >
 
         📘 Accounting
 
-        </button>
+    </button>
 
 
-        <button
+    <button
         class="subject"
-        onclick="openSubject('Business Studies')">
+        onclick="openSubject('Business Studies')"
+    >
 
         📗 Business Studies
 
-        </button>
+    </button>
 
 
-        <button
+    <button
         class="subject"
-        onclick="openSubject('Economics')">
+        onclick="openSubject('Economics')"
+    >
 
         📙 Economics
 
-        </button>
-
-
-    </div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- SCIENCE -->
-<!-- ================================================= -->
-
-<div
-id="sciencePage"
-class="page">
-
-
-    <button
-    class="back"
-    onclick="showHome()">
-
-    ← Back
-
     </button>
 
 
-    <h2>
-        🔬 Science
-    </h2>
+</div>
+
+</div><!-- ================================================= --><!-- SCIENCE --><!-- ================================================= --><div id="sciencePage" class="page"><button
+    class="back"
+    onclick="showHome()"
+>
+
+    ← Back
+
+</button>
 
 
-    <div class="subjects">
+<h2>
+    🔬 Science
+</h2>
 
 
-        <button
+<div class="subjects">
+
+
+    <button
         class="subject"
-        onclick="openSubject('Physics')">
+        onclick="openSubject('Physics')"
+    >
 
         ⚛️ Physics
 
-        </button>
+    </button>
 
 
-        <button
+    <button
         class="subject"
-        onclick="openSubject('Chemistry')">
+        onclick="openSubject('Chemistry')"
+    >
 
         🧪 Chemistry
 
-        </button>
+    </button>
 
 
-        <button
+    <button
         class="subject"
-        onclick="openSubject('Biology')">
+        onclick="openSubject('Biology')"
+    >
 
         🧬 Biology
 
-        </button>
-
-
-    </div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- TECHNOLOGY -->
-<!-- ================================================= -->
-
-<div
-id="technologyPage"
-class="page">
-
-
-    <button
-    class="back"
-    onclick="showHome()">
-
-    ← Back
-
     </button>
 
 
-    <h2>
-        ⚙️ Technology
-    </h2>
+</div>
+
+</div><!-- ================================================= --><!-- TECHNOLOGY --><!-- ================================================= --><div id="technologyPage" class="page"><button
+    class="back"
+    onclick="showHome()"
+>
+
+    ← Back
+
+</button>
 
 
-    <div class="subjects">
+<h2>
+    ⚙️ Technology
+</h2>
 
 
-        <button
+<div class="subjects">
+
+
+    <button
         class="subject"
-        onclick="openSubject('Science for Technology')">
+        onclick="openSubject('Science for Technology')"
+    >
 
         🔬 Science for Technology
 
-        </button>
+    </button>
 
 
-        <button
+    <button
         class="subject"
-        onclick="openSubject('ICT')">
+        onclick="openSubject('ICT')"
+    >
 
         💻 ICT
 
-        </button>
+    </button>
 
 
-        <button
+    <button
         class="subject"
-        onclick="openSubject('Engineering Technology')">
+        onclick="openSubject('Engineering Technology')"
+    >
 
         🔧 Engineering Technology
 
+    </button>
+
+
+    <button
+        class="subject"
+        onclick="openSubject('Bio Systems Technology')"
+    >
+
+        🌱 Bio Systems Technology
+
+    </button>
+
+
+</div>
+
+</div><!-- ================================================= --><!-- SUBJECT LESSONS --><!-- ================================================= --><div id="subjectPage" class="page"><button
+    class="back"
+    onclick="goBackToCategory()"
+>
+
+    ← Back
+
+</button>
+
+
+<h2 id="subjectTitle"></h2>
+
+
+<div
+    id="lessonList"
+    class="lessons"
+></div>
+
+</div><!-- ================================================= --><!-- LESSON DETAIL --><!-- ================================================= --><div id="lessonDetailPage" class="page"><button
+    class="back"
+    onclick="goBackToLessons()"
+>
+
+    ← Back
+
+</button>
+
+
+<div class="lesson-detail">
+
+
+    <h3 id="lessonDetailTitle"></h3>
+
+
+    <p>
+        මෙම පාඩමට අදාළ අධ්‍යයන සම්පත්
+    </p>
+
+
+    <div class="resources">
+
+
+        <button
+            class="resource"
+            onclick="openNote()"
+        >
+
+            📝 Notes
+
         </button>
 
 
         <button
-        class="subject"
-        onclick="openSubject('Bio Systems Technology')">
-
-        🌱 Bio Systems Technology
-
-        </button>
-
-
-    </div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- SUBJECT LESSONS -->
-<!-- ================================================= -->
-
-<div
-id="subjectPage"
-class="page">
-
-
-    <button
-    class="back"
-    onclick="goBackToCategory()">
-
-    ← Back
-
-    </button>
-
-
-    <h2 id="subjectTitle"></h2>
-
-
-    <div
-    id="lessonList"
-    class="lessons">
-
-    </div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- LESSON DETAIL -->
-<!-- ================================================= -->
-
-<div
-id="lessonDetailPage"
-class="page">
-
-
-    <button
-    class="back"
-    onclick="goBackToLessons()">
-
-    ← Back
-
-    </button>
-
-
-    <div class="lesson-detail">
-
-
-        <h3
-        id="lessonDetailTitle">
-        </h3>
-
-
-        <p>
-            මෙම පාඩමට අදාළ අධ්‍යයන සම්පත්
-        </p>
-
-
-        <div class="resources">
-
-
-            <button
             class="resource"
-            onclick="openNote()">
-
-            📝 Notes
-
-            </button>
-
-
-            <button
-            class="resource"
-            onclick="openVideo()">
+            onclick="openVideo()"
+        >
 
             🎥 Video
 
-            </button>
+        </button>
 
 
-            <button
+        <button
             class="resource"
-            onclick="openPaper()">
+            onclick="openPaper()"
+        >
 
             📄 Papers
 
-            </button>
+        </button>
 
 
-            <button
+        <button
             class="resource"
-            onclick="openQuiz()">
+            onclick="openQuiz()"
+        >
 
             🎯 Quiz
 
-            </button>
+        </button>
 
-
-        </div>
 
     </div>
 
 </div>
 
-
-<!-- ================================================= -->
-<!-- ARTS -->
-<!-- ================================================= -->
-
-<div
-id="artsPage"
-class="page">
-
-
-    <button
+</div><!-- ================================================= --><!-- ARTS --><!-- ================================================= --><div id="artsPage" class="page"><button
     class="back"
-    onclick="showHome()">
+    onclick="showHome()"
+>
 
     ← Back
 
+</button>
+
+
+<h2>
+    🎨 Arts
+</h2>
+
+
+<div class="subjects">
+
+
+    <button class="subject">
+        📚 Subjects
     </button>
 
 
-    <h2>
-        🎨 Arts
-    </h2>
+    <button class="subject">
+        📝 Notes
+    </button>
 
 
-    <div class="subjects">
-
-        <button class="subject">
-            📚 Subjects
-        </button>
-
-        <button class="subject">
-            📝 Notes
-        </button>
-
-        <button class="subject">
-            📄 Past Papers
-        </button>
-
-        <button class="subject">
-            🎯 Quizzes
-        </button>
-
-    </div>
-
-</div>
+    <button class="subject">
+        📄 Past Papers
+    </button>
 
 
-<!-- ================================================= -->
-<!-- FOOTER -->
-<!-- ================================================= -->
-
-</div>
-
-
-<footer>
-
-    <p>
-        📞 Contact Us
-    </p>
-
-
-    <p>
-
-        📱
-
-        <a href="tel:0759205338">
-
-            0759205338
-
-        </a>
-
-    </p>
-
-
-    <p>
-
-        📧
-
-        <a href="mailto:mpeducation4@gmail.com">
-
-            mpeducation4@gmail.com
-
-        </a>
-
-    </p>
-
-
-    <p>
-        © 2026 MP Education
-    </p>
-
-</footer>
+    <button class="subject">
+        🎯 Quizzes
+    </button>
 
 
 </div>
 
+</div></div><!-- ================================================= --><!-- FOOTER --><!-- ================================================= --><footer><p>
+    📞 Contact Us
+</p>
 
-<!-- ================================================= -->
-<!-- LESSON JAVASCRIPT -->
-<!-- ================================================= -->
 
-<script>
+<p>
+
+    📱
+
+    <a href="tel:0759205338">
+        0759205338
+    </a>
+
+</p>
+
+
+<p>
+
+    📧
+
+    <a href="mailto:mpeducation4@gmail.com">
+        mpeducation4@gmail.com
+    </a>
+
+</p>
+
+
+<p>
+    © 2026 MP Education
+</p>
+
+</footer></div><!-- ================================================= --><!-- LESSON JAVASCRIPT --><!-- ================================================= --><script>
 
 
 /* ================================================= */
@@ -1550,34 +1668,32 @@ const bioSystemsLessons = [
 
 const subjectData = {
 
-    "Accounting": accountingLessons,
+    "Accounting":accountingLessons,
 
-    "Business Studies": businessLessons,
+    "Business Studies":businessLessons,
 
-    "Economics": economicsLessons,
+    "Economics":economicsLessons,
 
-    "Physics": physicsLessons,
+    "Physics":physicsLessons,
 
-    "Chemistry": chemistryLessons,
+    "Chemistry":chemistryLessons,
 
-    "Biology": biologyLessons,
+    "Biology":biologyLessons,
 
-    "Science for Technology": sftLessons,
+    "Science for Technology":sftLessons,
 
-    "ICT": ictLessons,
+    "ICT":ictLessons,
 
-    "Engineering Technology": engineeringLessons,
+    "Engineering Technology":engineeringLessons,
 
-    "Bio Systems Technology": bioSystemsLessons
+    "Bio Systems Technology":bioSystemsLessons
 
 };
 
 
-let currentSubject = "";
-
-let currentLesson = "";
-
-let currentCategory = "";
+let currentSubject="";
+let currentLesson="";
+let currentCategory="";
 
 
 /* ================================================= */
@@ -1586,32 +1702,32 @@ let currentCategory = "";
 
 function openSubject(subject){
 
-    currentSubject = subject;
+    currentSubject=subject;
 
 
     if(
-        subject === "Accounting" ||
-        subject === "Business Studies" ||
-        subject === "Economics"
+        subject==="Accounting" ||
+        subject==="Business Studies" ||
+        subject==="Economics"
     ){
 
-        currentCategory = "commercePage";
+        currentCategory="commercePage";
 
     }
 
     else if(
-        subject === "Physics" ||
-        subject === "Chemistry" ||
-        subject === "Biology"
+        subject==="Physics" ||
+        subject==="Chemistry" ||
+        subject==="Biology"
     ){
 
-        currentCategory = "sciencePage";
+        currentCategory="sciencePage";
 
     }
 
     else{
 
-        currentCategory = "technologyPage";
+        currentCategory="technologyPage";
 
     }
 
@@ -1632,18 +1748,18 @@ function openSubject(subject){
 
     document
     .getElementById("subjectTitle")
-    .textContent =
-    getSubjectIcon(subject) + " " + subject;
+    .textContent=
+    getSubjectIcon(subject)+" "+subject;
 
 
-    const lessonList =
+    const lessonList=
     document.getElementById("lessonList");
 
 
     lessonList.innerHTML="";
 
 
-    const lessons =
+    const lessons=
     subjectData[subject];
 
 
@@ -1652,7 +1768,7 @@ function openSubject(subject){
         index
     ){
 
-        const button =
+        const button=
         document.createElement("button");
 
 
@@ -1661,17 +1777,12 @@ function openSubject(subject){
 
         button.innerHTML=
 
-        '<span class="lesson-number">' +
+        '<span class="lesson-number">'+
+        'පාඩම '+(index+1)+
+        '</span>'+
 
-        'පාඩම ' +
-        (index + 1) +
-
-        '</span>' +
-
-        '<span class="lesson-title">' +
-
-        lesson +
-
+        '<span class="lesson-title">'+
+        lesson+
         '</span>';
 
 
@@ -1679,7 +1790,7 @@ function openSubject(subject){
 
             openLesson(
                 subject,
-                index + 1,
+                index+1,
                 lesson
             );
 
@@ -1770,9 +1881,9 @@ function openLesson(
     .getElementById("lessonDetailTitle")
     .textContent=
 
-    "පාඩම " +
-    number +
-    " - " +
+    "පාඩම "+
+    number+
+    " - "+
     title;
 
 
@@ -1815,11 +1926,8 @@ function openNote(){
     ){
 
         window.open(
-
-        "https://drive.google.com/file/d/17gL2uzlz0qjchuP0XUqe55xoBR3V-Ftt/view?usp=drivesdk",
-
-        "_blank"
-
+            "https://drive.google.com/file/d/17gL2uzlz0qjchuP0XUqe55xoBR3V-Ftt/view?usp=drivesdk",
+            "_blank"
         );
 
         return;
@@ -1828,7 +1936,7 @@ function openNote(){
 
 
     alert(
-    "මෙම පාඩමට Notes තවම upload කර නැත."
+        "මෙම පාඩමට Notes තවම upload කර නැත."
     );
 
 }
@@ -1841,7 +1949,7 @@ function openNote(){
 function openVideo(){
 
     alert(
-    "මෙම පාඩමට Video තවම එකතු කර නැත."
+        "මෙම පාඩමට Video තවම එකතු කර නැත."
     );
 
 }
@@ -1854,7 +1962,7 @@ function openVideo(){
 function openPaper(){
 
     alert(
-    "මෙම පාඩමට Papers තවම එකතු කර නැත."
+        "මෙම පාඩමට Papers තවම එකතු කර නැත."
     );
 
 }
@@ -1867,7 +1975,7 @@ function openPaper(){
 function openQuiz(){
 
     alert(
-    "මෙම පාඩමට Quiz තවම එකතු කර නැත."
+        "මෙම පාඩමට Quiz තවම එකතු කර නැත."
     );
 
 }
@@ -1923,9 +2031,4 @@ function showHome(){
 
 }
 
-</script>
-
-
-</body>
-
-</html>
+</script></body></html>

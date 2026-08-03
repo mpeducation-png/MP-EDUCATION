@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -51,7 +53,8 @@ p{
     display:block;
 }
 
-/* LOGIN */
+
+/* ================= LOGIN ================= */
 
 .auth-container{
     min-height:100vh;
@@ -114,7 +117,8 @@ button{
     font-weight:bold;
 }
 
-/* WELCOME */
+
+/* ================= WELCOME ================= */
 
 #welcomeSection{
     display:none;
@@ -134,7 +138,8 @@ button{
     margin:10px 0;
 }
 
-/* USER BAR */
+
+/* ================= USER BAR ================= */
 
 .user-bar{
     max-width:1100px;
@@ -152,7 +157,8 @@ button{
     margin-left:10px;
 }
 
-/* HERO */
+
+/* ================= HERO ================= */
 
 .hero-banner{
     width:100%;
@@ -166,7 +172,8 @@ button{
     display:block;
 }
 
-/* GRID */
+
+/* ================= GRID ================= */
 
 .categories,
 .subjects,
@@ -194,7 +201,8 @@ button{
     background:#eff6ff;
 }
 
-/* BACK */
+
+/* ================= BACK ================= */
 
 .back{
     background:#64748b;
@@ -203,7 +211,8 @@ button{
     margin-bottom:10px;
 }
 
-/* LESSONS */
+
+/* ================= LESSONS ================= */
 
 .lessons{
     display:grid;
@@ -223,7 +232,8 @@ button{
     background:#eff6ff;
 }
 
-/* LESSON DETAIL */
+
+/* ================= LESSON DETAIL ================= */
 
 .lesson-detail{
     background:white;
@@ -232,7 +242,8 @@ button{
     box-shadow:0 5px 18px rgba(0,0,0,.08);
 }
 
-/* FOOTER */
+
+/* ================= FOOTER ================= */
 
 footer{
     margin-top:40px;
@@ -246,7 +257,8 @@ footer a{
     color:white;
 }
 
-/* AI */
+
+/* ================= AI ================= */
 
 #aiChatButton{
     position:fixed;
@@ -336,6 +348,9 @@ footer a{
     padding:10px 15px;
 }
 
+
+/* ================= MOBILE ================= */
+
 @media(max-width:600px){
 
     #welcomeSection h1{
@@ -356,16 +371,25 @@ footer a{
         right:10px;
         bottom:10px;
     }
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<!-- LOGIN -->
+
+<!-- ================================================= -->
+<!-- LOGIN / REGISTER -->
+<!-- ================================================= -->
 
 <div id="loginPage" class="auth-container">
+
+
+    <!-- LOGIN BOX -->
 
     <div id="loginBox" class="auth-box">
 
@@ -384,31 +408,42 @@ footer a{
         <button
             class="auth-button"
             onclick="loginUser()">
+
             Login
+
         </button>
 
         <button
             class="switch-button forgot-button"
             onclick="forgotPassword()">
+
             Forgot Password?
+
         </button>
 
         <p style="text-align:center;">
+
             Don't have an account?
 
             <button
                 class="switch-button"
                 onclick="showRegister()">
+
                 Register
+
             </button>
+
         </p>
 
-        <p id="loginMessage" class="auth-message"></p>
+        <p
+            id="loginMessage"
+            class="auth-message">
+        </p>
 
     </div>
 
 
-    <!-- REGISTER -->
+    <!-- REGISTER BOX -->
 
     <div
         id="registerBox"
@@ -440,48 +475,70 @@ footer a{
         <button
             class="auth-button"
             onclick="registerUser()">
+
             Register
+
         </button>
 
         <p style="text-align:center;">
+
             Already have an account?
 
             <button
                 class="switch-button"
                 onclick="showLogin()">
+
                 Login
+
             </button>
+
         </p>
 
-        <p id="registerMessage" class="auth-message"></p>
+        <p
+            id="registerMessage"
+            class="auth-message">
+        </p>
 
     </div>
 
 </div>
 
 
+<!-- ================================================= -->
 <!-- WELCOME -->
+<!-- ================================================= -->
 
 <div id="welcomeSection">
 
     <h1>WELCOME 👋</h1>
 
-    <h2 id="welcomeName">STUDENT</h2>
+    <h2 id="welcomeName">
+        STUDENT
+    </h2>
 
-    <p>Welcome back to MP Education!</p>
+    <p>
+        Welcome back to MP Education!
+    </p>
 
 </div>
 
 
+<!-- ================================================= -->
 <!-- HOME -->
+<!-- ================================================= -->
 
 <div id="homePage" class="page">
 
+
     <header>
 
-        <h1>📚 MP Education</h1>
+        <h1>
+            📚 MP Education
+        </h1>
 
-        <p>Learn • Study • Improve</p>
+        <p>
+            Learn • Study • Improve
+        </p>
 
     </header>
 
@@ -495,7 +552,9 @@ footer a{
         <button
             id="logoutButton"
             onclick="logoutUser()">
+
             Logout
+
         </button>
 
     </div>
@@ -510,7 +569,9 @@ footer a{
     </div>
 
 
-    <h2>🎓 Choose Your Learning Category</h2>
+    <h2>
+        🎓 Choose Your Learning Category
+    </h2>
 
 
     <div class="categories">
@@ -544,51 +605,97 @@ footer a{
 </div>
 
 
+<!-- ================================================= -->
 <!-- O/L -->
+<!-- ================================================= -->
 
 <div id="olPage" class="page">
 
-    <button class="back" onclick="showHome()">← Back</button>
+    <button
+        class="back"
+        onclick="showHome()">
+
+        ← Back
+
+    </button>
 
     <h2>📘 O/L</h2>
 
     <div class="subjects">
 
-        <button class="subject">📚 Subjects</button>
-        <button class="subject">📝 Notes</button>
-        <button class="subject">📄 Past Papers</button>
-        <button class="subject">🎯 Quizzes</button>
+        <button class="subject">
+            📚 Subjects
+        </button>
+
+        <button class="subject">
+            📝 Notes
+        </button>
+
+        <button class="subject">
+            📄 Past Papers
+        </button>
+
+        <button class="subject">
+            🎯 Quizzes
+        </button>
 
     </div>
 
 </div>
 
 
+<!-- ================================================= -->
 <!-- A/L -->
+<!-- ================================================= -->
 
 <div id="alPage" class="page">
 
-    <button class="back" onclick="showHome()">← Back</button>
+    <button
+        class="back"
+        onclick="showHome()">
+
+        ← Back
+
+    </button>
 
     <h2>📖 A/L</h2>
 
     <div class="subjects">
 
-        <button class="subject">📚 Subjects</button>
-        <button class="subject">📝 Notes</button>
-        <button class="subject">📄 Past Papers</button>
-        <button class="subject">🎯 Quizzes</button>
+        <button class="subject">
+            📚 Subjects
+        </button>
+
+        <button class="subject">
+            📝 Notes
+        </button>
+
+        <button class="subject">
+            📄 Past Papers
+        </button>
+
+        <button class="subject">
+            🎯 Quizzes
+        </button>
 
     </div>
 
 </div>
 
 
+<!-- ================================================= -->
 <!-- COMMERCE -->
+<!-- ================================================= -->
 
 <div id="commercePage" class="page">
 
-    <button class="back" onclick="showHome()">← Back</button>
+    <button
+        class="back"
+        onclick="showHome()">
+
+        ← Back
+
+    </button>
 
     <h2>💼 Commerce</h2>
 
@@ -597,19 +704,25 @@ footer a{
         <button
             class="subject"
             onclick="openSubject('Accounting')">
+
             📘 Accounting
+
         </button>
 
         <button
             class="subject"
             onclick="openSubject('Business Studies')">
+
             📗 Business Studies
+
         </button>
 
         <button
             class="subject"
             onclick="openSubject('Economics')">
+
             📙 Economics
+
         </button>
 
     </div>
@@ -617,11 +730,19 @@ footer a{
 </div>
 
 
+<!-- ================================================= -->
 <!-- SCIENCE -->
+<!-- ================================================= -->
 
 <div id="sciencePage" class="page">
 
-    <button class="back" onclick="showHome()">← Back</button>
+    <button
+        class="back"
+        onclick="showHome()">
+
+        ← Back
+
+    </button>
 
     <h2>🔬 Science</h2>
 
@@ -630,19 +751,25 @@ footer a{
         <button
             class="subject"
             onclick="openSubject('Physics')">
+
             ⚛️ Physics
+
         </button>
 
         <button
             class="subject"
             onclick="openSubject('Chemistry')">
+
             🧪 Chemistry
+
         </button>
 
         <button
             class="subject"
             onclick="openSubject('Biology')">
+
             🧬 Biology
+
         </button>
 
     </div>
@@ -650,11 +777,19 @@ footer a{
 </div>
 
 
+<!-- ================================================= -->
 <!-- TECHNOLOGY -->
+<!-- ================================================= -->
 
 <div id="technologyPage" class="page">
 
-    <button class="back" onclick="showHome()">← Back</button>
+    <button
+        class="back"
+        onclick="showHome()">
+
+        ← Back
+
+    </button>
 
     <h2>⚙️ Technology</h2>
 
@@ -663,25 +798,33 @@ footer a{
         <button
             class="subject"
             onclick="openSubject('Science for Technology')">
+
             🔬 Science for Technology
+
         </button>
 
         <button
             class="subject"
             onclick="openSubject('ICT')">
+
             💻 ICT
+
         </button>
 
         <button
             class="subject"
             onclick="openSubject('Engineering Technology')">
+
             🔧 Engineering Technology
+
         </button>
 
         <button
             class="subject"
             onclick="openSubject('Bio Systems Technology')">
+
             🌱 Bio Systems Technology
+
         </button>
 
     </div>
@@ -689,34 +832,57 @@ footer a{
 </div>
 
 
+<!-- ================================================= -->
 <!-- ARTS -->
+<!-- ================================================= -->
 
 <div id="artsPage" class="page">
 
-    <button class="back" onclick="showHome()">← Back</button>
+    <button
+        class="back"
+        onclick="showHome()">
+
+        ← Back
+
+    </button>
 
     <h2>🎨 Arts</h2>
 
     <div class="subjects">
 
-        <button class="subject">📚 Subjects</button>
-        <button class="subject">📝 Notes</button>
-        <button class="subject">📄 Past Papers</button>
-        <button class="subject">🎯 Quizzes</button>
+        <button class="subject">
+            📚 Subjects
+        </button>
+
+        <button class="subject">
+            📝 Notes
+        </button>
+
+        <button class="subject">
+            📄 Past Papers
+        </button>
+
+        <button class="subject">
+            🎯 Quizzes
+        </button>
 
     </div>
 
 </div>
 
 
+<!-- ================================================= -->
 <!-- SUBJECT LESSONS -->
+<!-- ================================================= -->
 
 <div id="subjectPage" class="page">
 
     <button
         class="back"
         onclick="goBackToCategory()">
+
         ← Back
+
     </button>
 
     <h2 id="subjectTitle"></h2>
@@ -729,14 +895,18 @@ footer a{
 </div>
 
 
-<!-- LESSON DETAIL -->
+<!-- ================================================= -->
+<!-- LESSON -->
+<!-- ================================================= -->
 
 <div id="lessonPage" class="page">
 
     <button
         class="back"
         onclick="goBackToLessons()">
+
         ← Back
+
     </button>
 
     <div class="lesson-detail">
@@ -752,25 +922,33 @@ footer a{
             <button
                 class="resource"
                 onclick="openNote()">
+
                 📝 Notes
+
             </button>
 
             <button
                 class="resource"
                 onclick="openVideo()">
+
                 🎥 Video
+
             </button>
 
             <button
                 class="resource"
                 onclick="openPaper()">
+
                 📄 Papers
+
             </button>
 
             <button
                 class="resource"
                 onclick="openQuiz()">
+
                 🎯 Quiz
+
             </button>
 
         </div>
@@ -780,11 +958,15 @@ footer a{
 </div>
 
 
+<!-- ================================================= -->
 <!-- FOOTER -->
+<!-- ================================================= -->
 
 <footer>
 
-    <p>📞 Contact Us</p>
+    <p>
+        📞 Contact Us
+    </p>
 
     <p>
         📱
@@ -800,29 +982,37 @@ footer a{
         </a>
     </p>
 
-    <p>© 2026 MP Education</p>
+    <p>
+        © 2026 MP Education
+    </p>
 
 </footer>
 
 
-<!-- AI BUTTON -->
+<!-- ================================================= -->
+<!-- AI -->
+<!-- ================================================= -->
 
 <button
     id="aiChatButton"
     onclick="toggleAIChat()">
+
     🤖 AI Tutor
+
 </button>
 
-
-<!-- AI CHAT -->
 
 <div id="aiChatBox">
 
     <div class="ai-header">
 
-        <span>🤖 MP Education AI</span>
+        <span>
+            🤖 MP Education AI
+        </span>
 
-        <button onclick="toggleAIChat()">✕</button>
+        <button onclick="toggleAIChat()">
+            ✕
+        </button>
 
     </div>
 
@@ -853,39 +1043,107 @@ footer a{
             if(event.key === 'Enter')
             sendAIMessage()">
 
-        <button onclick="sendAIMessage()">➤</button>
+        <button onclick="sendAIMessage()">
+            ➤
+        </button>
 
     </div>
 
 </div>
 
 
-<script>
+<!-- ================================================= -->
+<!-- FIREBASE + JAVASCRIPT -->
+<!-- ================================================= -->
+
+<script type="module">
+
+
+/* =====================================================
+   FIREBASE
+===================================================== */
+
+import {
+    initializeApp
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    sendPasswordResetEmail,
+    onAuthStateChanged,
+    updateProfile,
+    signOut
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+
+const firebaseConfig = {
+
+    apiKey:
+        "AIzaSyD1ibHY0BqPEoj8kVG_5KLHiCiclzw7W4",
+
+    authDomain:
+        "mp-education-47e46.firebaseapp.com",
+
+    projectId:
+        "mp-education-47e46",
+
+    storageBucket:
+        "mp-education-47e46.firebasestorage.app",
+
+    messagingSenderId:
+        "225987667440",
+
+    appId:
+        "1:225987667440:web:2943cb26965510c2d4e935",
+
+    measurementId:
+        "G-HD5GPFLQ3N"
+
+};
+
+
+const app =
+    initializeApp(firebaseConfig);
+
+
+const auth =
+    getAuth(app);
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
 
 let currentSubject = "";
 let currentLesson = "";
 
 
-/* =========================
+/* =====================================================
    PAGE CONTROL
-========================= */
+===================================================== */
 
-function hideAllPages(){
+window.hideAllPages = function(){
 
-    document.querySelectorAll(".page").forEach(function(page){
+    document
+        .querySelectorAll(".page")
+        .forEach(function(page){
 
-        page.classList.remove("active");
+            page.classList.remove("active");
 
-    });
+        });
 
-}
+};
 
 
-function showPage(pageId){
+window.showPage = function(pageId){
 
     hideAllPages();
 
-    const page = document.getElementById(pageId);
+    const page =
+        document.getElementById(pageId);
 
     if(page){
 
@@ -893,10 +1151,10 @@ function showPage(pageId){
 
     }
 
-}
+};
 
 
-function showHome(){
+window.showHome = function(){
 
     hideAllPages();
 
@@ -904,10 +1162,10 @@ function showHome(){
         .getElementById("homePage")
         .classList.add("active");
 
-}
+};
 
 
-function goBackToCategory(){
+window.goBackToCategory = function(){
 
     if(
         currentSubject === "Accounting" ||
@@ -935,21 +1193,22 @@ function goBackToCategory(){
 
     }
 
-}
+};
 
 
-function goBackToLessons(){
+window.goBackToLessons = function(){
 
     showPage("subjectPage");
 
-}
+};
 
 
-/* =========================
-   COMPLETE LESSON LIST
-========================= */
+/* =====================================================
+   COMPLETE LESSONS
+===================================================== */
 
 const lessons = {
+
 
 "Accounting":[
 
@@ -1144,163 +1403,205 @@ const lessons = {
 };
 
 
-/* =========================
+/* =====================================================
    OPEN SUBJECT
-========================= */
+===================================================== */
 
-function openSubject(subject){
+window.openSubject = function(subject){
 
     currentSubject = subject;
 
-    document.getElementById("subjectTitle").innerText =
+    document.getElementById(
+        "subjectTitle"
+    ).innerText =
         "📚 " + subject;
+
 
     const lessonList =
         document.getElementById("lessonList");
 
+
     lessonList.innerHTML = "";
 
 
-    if(lessons[subject]){
-
-        lessons[subject].forEach(function(lesson,index){
+    lessons[subject].forEach(
+        function(lesson,index){
 
             const button =
                 document.createElement("button");
 
-            button.className = "lesson-button";
+
+            button.className =
+                "lesson-button";
+
 
             button.innerText =
-                (index + 1) + ". " + lesson;
+                (index + 1) +
+                ". " +
+                lesson;
 
-            button.onclick = function(){
 
-                openLesson(lesson);
+            button.onclick =
+                function(){
 
-            };
+                    openLesson(lesson);
+
+                };
+
 
             lessonList.appendChild(button);
 
-        });
+        }
+    );
 
-    }
 
     showPage("subjectPage");
 
-}
+};
 
 
-/* =========================
+/* =====================================================
    OPEN LESSON
-========================= */
+===================================================== */
 
 function openLesson(lesson){
 
     currentLesson = lesson;
+
 
     document.getElementById(
         "lessonDetailTitle"
     ).innerText =
         "📖 " + lesson;
 
+
     showPage("lessonPage");
 
 }
 
 
-/* =========================
+/* =====================================================
    RESOURCES
-========================= */
+===================================================== */
 
-function openNote(){
+window.openNote = function(){
 
     alert(
         "📝 Notes for " +
         currentLesson +
-        " will be available here."
+        " will be added here."
     );
 
-}
+};
 
 
-function openVideo(){
+window.openVideo = function(){
 
     alert(
         "🎥 Video for " +
         currentLesson +
-        " will be available here."
+        " will be added here."
     );
 
-}
+};
 
 
-function openPaper(){
+window.openPaper = function(){
 
     alert(
         "📄 Papers for " +
         currentLesson +
-        " will be available here."
+        " will be added here."
     );
 
-}
+};
 
 
-function openQuiz(){
+window.openQuiz = function(){
 
     alert(
         "🎯 Quiz for " +
         currentLesson +
-        " will be available here."
+        " will be added here."
     );
 
-}
+};
 
 
-/* =========================
-   LOGIN / REGISTER
-========================= */
+/* =====================================================
+   LOGIN / REGISTER UI
+===================================================== */
 
-function showRegister(){
+window.showRegister = function(){
 
-    document.getElementById("loginBox").style.display =
-        "none";
-
-    document.getElementById("registerBox").style.display =
-        "block";
-
-}
+    document.getElementById(
+        "loginBox"
+    ).style.display = "none";
 
 
-function showLogin(){
+    document.getElementById(
+        "registerBox"
+    ).style.display = "block";
 
-    document.getElementById("registerBox").style.display =
-        "none";
-
-    document.getElementById("loginBox").style.display =
-        "block";
-
-}
+};
 
 
-function registerUser(){
+window.showLogin = function(){
+
+    document.getElementById(
+        "registerBox"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "loginBox"
+    ).style.display = "block";
+
+};
+
+
+/* =====================================================
+   FIREBASE REGISTER
+===================================================== */
+
+window.registerUser = async function(){
 
     const name =
-        document.getElementById("registerName").value.trim();
+        document
+        .getElementById("registerName")
+        .value
+        .trim();
+
 
     const email =
-        document.getElementById("registerEmail").value.trim();
+        document
+        .getElementById("registerEmail")
+        .value
+        .trim();
+
 
     const password =
-        document.getElementById("registerPassword").value;
+        document
+        .getElementById("registerPassword")
+        .value;
+
 
     const confirm =
-        document.getElementById("confirmPassword").value;
+        document
+        .getElementById("confirmPassword")
+        .value;
+
 
     const message =
-        document.getElementById("registerMessage");
+        document.getElementById(
+            "registerMessage"
+        );
 
 
-    if(!name || !email || !password){
+    message.innerText = "";
+
+
+    if(!name || !email || !password || !confirm){
 
         message.innerText =
             "Please fill all fields.";
@@ -1320,170 +1621,396 @@ function registerUser(){
     }
 
 
-    localStorage.setItem(
-        "mpUserName",
-        name
-    );
+    if(password.length < 6){
 
-    localStorage.setItem(
-        "mpUserEmail",
-        email
-    );
+        message.innerText =
+            "Password must be at least 6 characters.";
 
-    localStorage.setItem(
-        "mpUserPassword",
-        password
-    );
+        return;
+
+    }
 
 
-    message.innerText =
-        "Account created successfully!";
+    try{
+
+        const userCredential =
+            await createUserWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
 
 
-    setTimeout(function(){
-
-        showLogin();
-
-    },1000);
-
-}
+        const user =
+            userCredential.user;
 
 
-function loginUser(){
-
-    const email =
-        document.getElementById("loginEmail").value.trim();
-
-    const password =
-        document.getElementById("loginPassword").value;
-
-    const savedEmail =
-        localStorage.getItem("mpUserEmail");
-
-    const savedPassword =
-        localStorage.getItem("mpUserPassword");
-
-    const savedName =
-        localStorage.getItem("mpUserName");
-
-    const message =
-        document.getElementById("loginMessage");
-
-
-    if(
-        email === savedEmail &&
-        password === savedPassword
-    ){
-
-        localStorage.setItem(
-            "mpLoggedIn",
-            "true"
+        await updateProfile(
+            user,
+            {
+                displayName:name
+            }
         );
 
 
-        document.getElementById(
-            "loginPage"
-        ).style.display = "none";
+        message.innerText =
+            "Account created successfully!";
 
 
         document.getElementById(
-            "welcomeSection"
-        ).style.display = "block";
+            "registerName"
+        ).value = "";
 
 
         document.getElementById(
-            "welcomeName"
-        ).innerText =
-            savedName || "STUDENT";
+            "registerEmail"
+        ).value = "";
 
 
         document.getElementById(
-            "userEmail"
-        ).innerText =
-            email;
+            "registerPassword"
+        ).value = "";
 
 
-        /*
-          Show Welcome first.
-          Then automatically go Home.
-        */
+        document.getElementById(
+            "confirmPassword"
+        ).value = "";
 
-        setTimeout(function(){
+
+        setTimeout(
+            function(){
+
+                showLogin();
+
+                document.getElementById(
+                    "loginEmail"
+                ).value = email;
+
+            },
+            1000
+        );
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+
+        if(error.code === "auth/email-already-in-use"){
+
+            message.innerText =
+                "This email is already registered.";
+
+        }
+
+        else if(error.code === "auth/invalid-email"){
+
+            message.innerText =
+                "Invalid email address.";
+
+        }
+
+        else if(error.code === "auth/weak-password"){
+
+            message.innerText =
+                "Password is too weak.";
+
+        }
+
+        else{
+
+            message.innerText =
+                error.message;
+
+        }
+
+    }
+
+};
+
+
+/* =====================================================
+   FIREBASE LOGIN
+===================================================== */
+
+window.loginUser = async function(){
+
+    const email =
+        document
+        .getElementById("loginEmail")
+        .value
+        .trim();
+
+
+    const password =
+        document
+        .getElementById("loginPassword")
+        .value;
+
+
+    const message =
+        document.getElementById(
+            "loginMessage"
+        );
+
+
+    message.innerText = "";
+
+
+    if(!email || !password){
+
+        message.innerText =
+            "Please enter email and password.";
+
+        return;
+
+    }
+
+
+    try{
+
+        const userCredential =
+            await signInWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
+
+
+        const user =
+            userCredential.user;
+
+
+        showWelcome(
+            user
+        );
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+
+        if(
+            error.code ===
+            "auth/invalid-credential"
+        ){
+
+            message.innerText =
+                "Incorrect email or password.";
+
+        }
+
+        else if(
+            error.code ===
+            "auth/user-not-found"
+        ){
+
+            message.innerText =
+                "Account not found.";
+
+        }
+
+        else if(
+            error.code ===
+            "auth/wrong-password"
+        ){
+
+            message.innerText =
+                "Incorrect password.";
+
+        }
+
+        else{
+
+            message.innerText =
+                error.message;
+
+        }
+
+    }
+
+};
+
+
+/* =====================================================
+   WELCOME
+===================================================== */
+
+function showWelcome(user){
+
+    document.getElementById(
+        "loginPage"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "welcomeSection"
+    ).style.display = "block";
+
+
+    const name =
+        user.displayName ||
+        user.email.split("@")[0] ||
+        "STUDENT";
+
+
+    document.getElementById(
+        "welcomeName"
+    ).innerText =
+        name;
+
+
+    document.getElementById(
+        "userEmail"
+    ).innerText =
+        user.email;
+
+
+    /*
+      Welcome එක තත්පර 2.5ක් පෙන්වලා
+      Home එකට යනවා.
+    */
+
+    setTimeout(
+        function(){
 
             document.getElementById(
                 "welcomeSection"
             ).style.display = "none";
 
+
             showHome();
 
-        },2500);
+        },
+        2500
+    );
 
-    }
+}
 
-    else{
+
+/* =====================================================
+   FORGOT PASSWORD
+===================================================== */
+
+window.forgotPassword = async function(){
+
+    const email =
+        document
+        .getElementById("loginEmail")
+        .value
+        .trim();
+
+
+    const message =
+        document.getElementById(
+            "loginMessage"
+        );
+
+
+    if(!email){
 
         message.innerText =
-            "Incorrect email or password.";
+            "Enter your email first.";
+
+        return;
 
     }
 
-}
+
+    try{
+
+        await sendPasswordResetEmail(
+            auth,
+            email
+        );
 
 
-function forgotPassword(){
+        message.innerText =
+            "Password reset email sent.";
 
-    alert(
-        "Please contact MP Education for password assistance."
-    );
+    }
 
-}
+    catch(error){
 
+        console.error(error);
 
-function logoutUser(){
+        message.innerText =
+            error.message;
 
-    localStorage.removeItem(
-        "mpLoggedIn"
-    );
+    }
 
-
-    document.getElementById(
-        "welcomeSection"
-    ).style.display = "none";
+};
 
 
-    hideAllPages();
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+window.logoutUser = async function(){
+
+    try{
+
+        await signOut(auth);
+
+        hideAllPages();
 
 
-    document.getElementById(
-        "loginPage"
-    ).style.display = "flex";
+        document.getElementById(
+            "welcomeSection"
+        ).style.display = "none";
 
 
-    showLogin();
-
-}
-
-
-/* =========================
-   AUTO LOGIN
-========================= */
-
-window.addEventListener(
-    "load",
-    function(){
-
-        const loggedIn =
-            localStorage.getItem("mpLoggedIn");
+        document.getElementById(
+            "loginPage"
+        ).style.display = "flex";
 
 
-        if(loggedIn === "true"){
+        document.getElementById(
+            "loginEmail"
+        ).value = "";
 
-            const name =
-                localStorage.getItem("mpUserName");
 
-            const email =
-                localStorage.getItem("mpUserEmail");
+        document.getElementById(
+            "loginPassword"
+        ).value = "";
 
+
+        document.getElementById(
+            "loginMessage"
+        ).innerText = "";
+
+
+        showLogin();
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+    }
+
+};
+
+
+/* =====================================================
+   AUTH STATE
+===================================================== */
+
+onAuthStateChanged(
+    auth,
+    function(user){
+
+        if(user){
+
+            /*
+              Already logged in.
+              Welcome screen නැවත හැම refresh එකකම
+              පෙන්වන්නේ නැහැ.
+            */
 
             document.getElementById(
                 "loginPage"
@@ -1495,19 +2022,41 @@ window.addEventListener(
             ).style.display = "none";
 
 
+            const name =
+                user.displayName ||
+                user.email.split("@")[0] ||
+                "STUDENT";
+
+
             document.getElementById(
                 "welcomeName"
             ).innerText =
-                name || "STUDENT";
+                name;
 
 
             document.getElementById(
                 "userEmail"
             ).innerText =
-                email || "";
+                user.email;
 
 
             showHome();
+
+        }
+
+        else{
+
+            document.getElementById(
+                "loginPage"
+            ).style.display = "flex";
+
+
+            document.getElementById(
+                "welcomeSection"
+            ).style.display = "none";
+
+
+            hideAllPages();
 
         }
 
@@ -1515,17 +2064,21 @@ window.addEventListener(
 );
 
 
-/* =========================
+/* =====================================================
    AI CHAT UI
-========================= */
+===================================================== */
 
-function toggleAIChat(){
+window.toggleAIChat = function(){
 
     const box =
-        document.getElementById("aiChatBox");
+        document.getElementById(
+            "aiChatBox"
+        );
 
 
-    if(box.style.display === "block"){
+    if(
+        box.style.display === "block"
+    ){
 
         box.style.display = "none";
 
@@ -1535,22 +2088,31 @@ function toggleAIChat(){
 
         box.style.display = "block";
 
+
         document
             .getElementById("aiInput")
             .focus();
 
     }
 
-}
+};
 
 
-function addAIMessage(text,type){
+function addAIMessage(
+    text,
+    type
+){
 
     const messages =
-        document.getElementById("aiMessages");
+        document.getElementById(
+            "aiMessages"
+        );
+
 
     const message =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
 
     message.className =
@@ -1559,10 +2121,13 @@ function addAIMessage(text,type){
         : "ai-message";
 
 
-    message.innerText = text;
+    message.innerText =
+        text;
 
 
-    messages.appendChild(message);
+    messages.appendChild(
+        message
+    );
 
 
     messages.scrollTop =
@@ -1571,10 +2136,13 @@ function addAIMessage(text,type){
 }
 
 
-function sendAIMessage(){
+window.sendAIMessage = function(){
 
     const input =
-        document.getElementById("aiInput");
+        document.getElementById(
+            "aiInput"
+        );
+
 
     const question =
         input.value.trim();
@@ -1596,16 +2164,20 @@ function sendAIMessage(){
     input.value = "";
 
 
-    setTimeout(function(){
+    setTimeout(
+        function(){
 
-        addAIMessage(
-            "🤖 MP Education AI is ready to be connected with Gemini.",
-            "ai"
-        );
+            addAIMessage(
+                "🤖 MP Education AI is ready to be connected with Gemini.",
+                "ai"
+            );
 
-    },500);
+        },
+        500
+    );
 
-}
+};
+
 
 </script>
 

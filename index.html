@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="si">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,479 +8,500 @@
 <title>MP Education | Learn, Study & Improve</title>
 
 <style>
-* {
-    box-sizing: border-box;
+
+*{
+    box-sizing:border-box;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f7fb;
-    color: #172554;
+body{
+    margin:0;
+    font-family:Arial,"Noto Sans Sinhala",sans-serif;
+    background:#f4f7fb;
+    color:#172554;
 }
 
-header {
-    background: #1e3a8a;
-    color: white;
-    text-align: center;
-    padding: 20px;
+header{
+    background:#1e3a8a;
+    color:white;
+    text-align:center;
+    padding:20px;
 }
 
-h1 {
-    margin: 5px 0;
-    font-size: 30px;
+h1{
+    margin:5px 0;
+    font-size:30px;
 }
 
-h2 {
-    text-align: center;
-    margin: 25px 0;
+h2{
+    text-align:center;
+    margin:25px 0;
 }
 
-p {
-    line-height: 1.6;
+p{
+    line-height:1.6;
 }
 
-.page {
-    display: none;
-    padding: 20px;
-    max-width: 1100px;
-    margin: auto;
+.page{
+    display:none;
+    padding:20px;
+    max-width:1100px;
+    margin:auto;
 }
 
-.active {
-    display: block;
+.active{
+    display:block;
 }
 
-/* LOGIN / REGISTER */
 
-.auth-container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+/* LOGIN */
+
+.auth-container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
 }
 
-.auth-box {
-    width: 100%;
-    max-width: 420px;
-    background: white;
-    padding: 25px;
-    border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+.auth-box{
+    width:100%;
+    max-width:420px;
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
 }
 
-.auth-box h2 {
-    margin-top: 0;
+.auth-box h2{
+    margin-top:0;
 }
 
-input {
-    width: 100%;
-    padding: 13px;
-    margin: 8px 0;
-    border: 1px solid #cbd5e1;
-    border-radius: 10px;
-    font-size: 16px;
+input{
+    width:100%;
+    padding:13px;
+    margin:8px 0;
+    border:1px solid #cbd5e1;
+    border-radius:10px;
+    font-size:16px;
 }
 
-button {
-    border: none;
-    cursor: pointer;
-    border-radius: 10px;
-    font-size: 16px;
+button{
+    border:none;
+    cursor:pointer;
+    border-radius:10px;
+    font-size:16px;
 }
 
-.auth-button {
-    width: 100%;
-    padding: 13px;
-    margin-top: 10px;
-    background: #1e3a8a;
-    color: white;
+.auth-button{
+    width:100%;
+    padding:13px;
+    margin-top:10px;
+    background:#1e3a8a;
+    color:white;
 }
 
-.switch-button {
-    background: none;
-    color: #1e3a8a;
-    padding: 5px;
+.switch-button{
+    background:none;
+    color:#1e3a8a;
+    padding:5px;
 }
 
-.forgot-button {
-    display: block;
-    margin: 10px auto;
+.auth-message{
+    text-align:center;
+    font-weight:bold;
 }
 
-.auth-message {
-    text-align: center;
-    font-weight: bold;
-}
 
 /* WELCOME */
 
-#welcomeSection {
-    text-align: center;
-    background: linear-gradient(135deg, #1e3a8a, #2563eb);
-    color: white;
-    padding: 45px 20px;
-    border-radius: 0 0 25px 25px;
+#welcomeSection{
+    display:none;
+    text-align:center;
+    background:linear-gradient(135deg,#1e3a8a,#2563eb);
+    color:white;
+    padding:50px 20px;
+    border-radius:0 0 25px 25px;
 }
 
-#welcomeSection h1 {
-    font-size: 42px;
+#welcomeSection h1{
+    font-size:45px;
 }
 
-#welcomeName {
-    font-size: 38px;
-    margin: 10px 0;
+#welcomeName{
+    font-size:42px;
+    margin:15px 0;
 }
+
 
 /* USER BAR */
 
-.user-bar {
-    max-width: 1100px;
-    margin: 20px auto;
-    padding: 15px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+.user-bar{
+    max-width:1100px;
+    margin:20px auto;
+    padding:15px;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
-#logoutButton {
-    background: #dc2626;
-    color: white;
-    padding: 9px 16px;
-    margin-left: 10px;
+#logoutButton{
+    background:#dc2626;
+    color:white;
+    padding:9px 16px;
+    margin-left:10px;
 }
+
 
 /* HERO */
 
-.hero-banner {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 20px;
-    margin: 20px 0;
+.hero-banner{
+    width:100%;
+    overflow:hidden;
+    border-radius:20px;
+    margin:20px 0;
 }
 
-.hero-banner img {
-    width: 100%;
-    display: block;
+.hero-banner img{
+    width:100%;
+    display:block;
 }
 
-/* CATEGORIES */
+
+/* GRID */
 
 .categories,
 .subjects,
-.resources {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
+.resources{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
 }
 
 .categories button,
 .subject,
-.resource {
-    padding: 20px;
-    background: white;
-    color: #1e3a8a;
-    border: 2px solid #dbeafe;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    transition: 0.2s;
+.resource{
+    padding:20px;
+    background:white;
+    color:#1e3a8a;
+    border:2px solid #dbeafe;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.2s;
 }
 
 .categories button:hover,
 .subject:hover,
-.resource:hover {
-    transform: translateY(-3px);
-    background: #eff6ff;
+.resource:hover{
+    transform:translateY(-3px);
+    background:#eff6ff;
 }
 
-/* BACK BUTTON */
 
-.back {
-    background: #64748b;
-    color: white;
-    padding: 10px 18px;
-    margin-bottom: 10px;
+/* BACK */
+
+.back{
+    background:#64748b;
+    color:white;
+    padding:10px 18px;
+    margin-bottom:10px;
 }
+
 
 /* LESSONS */
 
-.lessons {
-    display: grid;
-    gap: 12px;
+.lessons{
+    display:grid;
+    gap:12px;
 }
 
-.lesson-button {
-    width: 100%;
-    text-align: left;
-    padding: 16px;
-    background: white;
-    border-left: 5px solid #1e3a8a;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+.lesson-button{
+    width:100%;
+    text-align:left;
+    padding:17px;
+    background:white;
+    border-left:5px solid #1e3a8a;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
 }
 
-.lesson-detail {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+.lesson-button:hover{
+    background:#eff6ff;
 }
+
+
+/* DETAIL */
+
+.lesson-detail{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
 
 /* FOOTER */
 
-footer {
-    margin-top: 40px;
-    padding: 30px 20px;
-    background: #172554;
-    color: white;
-    text-align: center;
+footer{
+    margin-top:40px;
+    padding:30px 20px;
+    background:#172554;
+    color:white;
+    text-align:center;
 }
 
-footer a {
-    color: white;
+footer a{
+    color:white;
 }
 
-/* AI BUTTON */
 
-#aiChatButton {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 9999;
-    background: #1e3a8a;
-    color: white;
-    padding: 15px 20px;
-    border-radius: 50px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
-    font-weight: bold;
+/* AI */
+
+#aiChatButton{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:9999;
+    background:#1e3a8a;
+    color:white;
+    padding:15px 20px;
+    border-radius:50px;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+    font-weight:bold;
 }
 
-/* AI CHAT */
-
-#aiChatBox {
-    display: none;
-    position: fixed;
-    right: 20px;
-    bottom: 85px;
-    width: 350px;
-    max-width: calc(100% - 40px);
-    height: 500px;
-    background: white;
-    border-radius: 18px;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.25);
-    z-index: 9998;
-    overflow: hidden;
+#aiChatBox{
+    display:none;
+    position:fixed;
+    right:20px;
+    bottom:85px;
+    width:350px;
+    max-width:calc(100% - 40px);
+    height:500px;
+    background:white;
+    border-radius:18px;
+    box-shadow:0 10px 35px rgba(0,0,0,.25);
+    z-index:9998;
+    overflow:hidden;
 }
 
-.ai-header {
-    background: #1e3a8a;
-    color: white;
-    padding: 16px;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
+.ai-header{
+    background:#1e3a8a;
+    color:white;
+    padding:16px;
+    font-weight:bold;
+    display:flex;
+    justify-content:space-between;
 }
 
-.ai-header button {
-    background: transparent;
-    color: white;
-    font-size: 18px;
+.ai-header button{
+    background:transparent;
+    color:white;
+    font-size:18px;
 }
 
-#aiMessages {
-    height: 390px;
-    overflow-y: auto;
-    padding: 15px;
-    background: #f8fafc;
+#aiMessages{
+    height:390px;
+    overflow-y:auto;
+    padding:15px;
+    background:#f8fafc;
 }
 
 .ai-message,
-.user-message {
-    padding: 10px 12px;
-    margin-bottom: 10px;
-    border-radius: 12px;
-    max-width: 85%;
-    line-height: 1.5;
+.user-message{
+    padding:10px 12px;
+    margin-bottom:10px;
+    border-radius:12px;
+    max-width:85%;
+    line-height:1.5;
 }
 
-.ai-message {
-    background: #e0e7ff;
-    margin-right: auto;
+.ai-message{
+    background:#e0e7ff;
+    margin-right:auto;
 }
 
-.user-message {
-    background: #dbeafe;
-    margin-left: auto;
-    text-align: right;
+.user-message{
+    background:#dbeafe;
+    margin-left:auto;
+    text-align:right;
 }
 
-.ai-input-area {
-    display: flex;
-    padding: 10px;
-    gap: 7px;
-    border-top: 1px solid #ddd;
+.ai-input-area{
+    display:flex;
+    padding:10px;
+    gap:7px;
+    border-top:1px solid #ddd;
 }
 
-.ai-input-area input {
-    margin: 0;
-    flex: 1;
+.ai-input-area input{
+    margin:0;
+    flex:1;
 }
 
-.ai-input-area button {
-    background: #1e3a8a;
-    color: white;
-    padding: 10px 15px;
+.ai-input-area button{
+    background:#1e3a8a;
+    color:white;
+    padding:10px 15px;
 }
 
-@media (max-width: 600px) {
 
-    #welcomeSection h1 {
-        font-size: 32px;
+@media(max-width:600px){
+
+    #welcomeSection h1{
+        font-size:34px;
     }
 
-    #welcomeName {
-        font-size: 30px;
+    #welcomeName{
+        font-size:30px;
     }
 
-    #aiChatBox {
-        right: 10px;
-        bottom: 80px;
-        width: calc(100% - 20px);
+    #aiChatBox{
+        right:10px;
+        bottom:80px;
+        width:calc(100% - 20px);
     }
 
-    #aiChatButton {
-        right: 10px;
-        bottom: 10px;
+    #aiChatButton{
+        right:10px;
+        bottom:10px;
     }
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- LOGIN / REGISTER -->
+
+<!-- LOGIN -->
 
 <div id="loginPage" class="auth-container">
 
-    <!-- LOGIN -->
+<div id="loginBox" class="auth-box">
 
-    <div id="loginBox" class="auth-box">
+<h2>📚 MP Education</h2>
 
-        <h2>📚 MP Education</h2>
+<input
+type="email"
+id="loginEmail"
+placeholder="Email">
 
-        <input
-            type="email"
-            id="loginEmail"
-            placeholder="Email"
-        >
+<input
+type="password"
+id="loginPassword"
+placeholder="Password">
 
-        <input
-            type="password"
-            id="loginPassword"
-            placeholder="Password"
-        >
+<button
+class="auth-button"
+onclick="loginUser()">
 
-        <button
-            class="auth-button"
-            onclick="loginUser()"
-        >
-            Login
-        </button>
+Login
 
-        <button
-            class="switch-button forgot-button"
-            onclick="forgotPassword()"
-        >
-            Forgot Password?
-        </button>
+</button>
 
-        <p style="text-align:center;">
-            Don't have an account?
+<button
+class="switch-button"
+onclick="forgotPassword()">
 
-            <button
-                class="switch-button"
-                onclick="showRegister()"
-            >
-                Register
-            </button>
-        </p>
+Forgot Password?
 
-        <p id="loginMessage" class="auth-message"></p>
+</button>
 
-    </div>
+<p style="text-align:center">
+
+Don't have an account?
+
+<button
+class="switch-button"
+onclick="showRegister()">
+
+Register
+
+</button>
+
+</p>
+
+<p
+id="loginMessage"
+class="auth-message">
+</p>
+
+</div>
 
 
-    <!-- REGISTER -->
+<!-- REGISTER -->
 
-    <div
-        id="registerBox"
-        class="auth-box"
-        style="display:none;"
-    >
+<div
+id="registerBox"
+class="auth-box"
+style="display:none">
 
-        <h2>📝 Create Account</h2>
+<h2>📝 Create Account</h2>
 
-        <input
-            type="text"
-            id="registerName"
-            placeholder="Full Name"
-        >
+<input
+type="text"
+id="registerName"
+placeholder="Full Name">
 
-        <input
-            type="email"
-            id="registerEmail"
-            placeholder="Email"
-        >
+<input
+type="email"
+id="registerEmail"
+placeholder="Email">
 
-        <input
-            type="password"
-            id="registerPassword"
-            placeholder="Password"
-        >
+<input
+type="password"
+id="registerPassword"
+placeholder="Password">
 
-        <input
-            type="password"
-            id="confirmPassword"
-            placeholder="Confirm Password"
-        >
+<input
+type="password"
+id="confirmPassword"
+placeholder="Confirm Password">
 
-        <button
-            class="auth-button"
-            onclick="registerUser()"
-        >
-            Register
-        </button>
+<button
+class="auth-button"
+onclick="registerUser()">
 
-        <p style="text-align:center;">
-            Already have an account?
+Register
 
-            <button
-                class="switch-button"
-                onclick="showLogin()"
-            >
-                Login
-            </button>
-        </p>
+</button>
 
-        <p id="registerMessage" class="auth-message"></p>
+<p style="text-align:center">
 
-    </div>
+Already have an account?
+
+<button
+class="switch-button"
+onclick="showLogin()">
+
+Login
+
+</button>
+
+</p>
+
+<p
+id="registerMessage"
+class="auth-message">
+</p>
+
+</div>
 
 </div>
 
 
 <!-- WELCOME -->
 
-<div id="welcomeSection" style="display:none;">
+<div id="welcomeSection">
 
-    <h1>WELCOME 👋</h1>
+<h1>WELCOME 👋</h1>
 
-    <h2 id="welcomeName">
-        STUDENT
-    </h2>
+<h2 id="welcomeName">
+STUDENT
+</h2>
 
-    <p>
-        Welcome back to MP Education!
-    </p>
+<p>
+Welcome back to MP Education!
+</p>
 
 </div>
 
@@ -488,69 +510,75 @@ footer a {
 
 <div id="homePage" class="page">
 
-    <header>
+<header>
 
-        <h1>📚 MP Education</h1>
+<h1>📚 MP Education</h1>
 
-        <p>Learn • Study • Improve</p>
+<p>
+Learn • Study • Improve
+</p>
 
-    </header>
+</header>
 
-    <div class="user-bar">
 
-        👤 Logged in as:
+<div class="user-bar">
 
-        <strong id="userEmail"></strong>
+👤 Logged in as:
 
-        <button
-            id="logoutButton"
-            onclick="logoutUser()"
-        >
-            Logout
-        </button>
+<strong id="userEmail"></strong>
 
-    </div>
+<button
+id="logoutButton"
+onclick="logoutUser()">
 
-    <div class="hero-banner">
+Logout
 
-        <img
-            src="IMG-20260802-WA0000.jpg"
-            alt="MP Education Banner"
-        >
+</button>
 
-    </div>
+</div>
 
-    <h2>
-        🎓 Choose Your Learning Category
-    </h2>
 
-    <div class="categories">
+<div class="hero-banner">
 
-        <button onclick="showPage('olPage')">
-            📘 O/L
-        </button>
+<img
+src="IMG-20260802-WA0000.jpg"
+alt="MP Education Banner">
 
-        <button onclick="showPage('alPage')">
-            📖 A/L
-        </button>
+</div>
 
-        <button onclick="showPage('commercePage')">
-            💼 Commerce
-        </button>
 
-        <button onclick="showPage('sciencePage')">
-            🔬 Science
-        </button>
+<h2>
+🎓 Choose Your Learning Category
+</h2>
 
-        <button onclick="showPage('artsPage')">
-            🎨 Arts
-        </button>
 
-        <button onclick="showPage('technologyPage')">
-            ⚙️ Technology
-        </button>
+<div class="categories">
 
-    </div>
+<button onclick="showPage('olPage')">
+📘 O/L
+</button>
+
+<button onclick="showPage('alPage')">
+📖 A/L
+</button>
+
+<button onclick="showPage('commercePage')">
+💼 Commerce
+</button>
+
+<button onclick="showPage('sciencePage')">
+🔬 Science
+</button>
+
+<button onclick="showPage('technologyPage')">
+⚙️ Technology
+</button>
+
+<button onclick="showPage('artsPage')">
+🎨 Arts
+</button>
+
+</div>
 
 </div>
 
@@ -559,20 +587,31 @@ footer a {
 
 <div id="olPage" class="page">
 
-    <button class="back" onclick="showHome()">
-        ← Back
-    </button>
+<button class="back" onclick="showHome()">
+← Back
+</button>
 
-    <h2>📘 O/L</h2>
+<h2>📘 O/L</h2>
 
-    <div class="subjects">
+<div class="subjects">
 
-        <button class="subject">📚 Subjects</button>
-        <button class="subject">📝 Notes</button>
-        <button class="subject">📄 Past Papers</button>
-        <button class="subject">🎯 Quizzes</button>
+<button class="subject">
+📚 විෂයයන්
+</button>
 
-    </div>
+<button class="subject">
+📝 සටහන්
+</button>
+
+<button class="subject">
+📄 පසුගිය ප්‍රශ්න පත්‍ර
+</button>
+
+<button class="subject">
+🎯 ප්‍රශ්නාවලි
+</button>
+
+</div>
 
 </div>
 
@@ -581,20 +620,31 @@ footer a {
 
 <div id="alPage" class="page">
 
-    <button class="back" onclick="showHome()">
-        ← Back
-    </button>
+<button class="back" onclick="showHome()">
+← Back
+</button>
 
-    <h2>📖 A/L</h2>
+<h2>📖 A/L</h2>
 
-    <div class="subjects">
+<div class="subjects">
 
-        <button class="subject">📚 Subjects</button>
-        <button class="subject">📝 Notes</button>
-        <button class="subject">📄 Past Papers</button>
-        <button class="subject">🎯 Quizzes</button>
+<button class="subject">
+📚 විෂයයන්
+</button>
 
-    </div>
+<button class="subject">
+📝 සටහන්
+</button>
+
+<button class="subject">
+📄 පසුගිය ප්‍රශ්න පත්‍ර
+</button>
+
+<button class="subject">
+🎯 ප්‍රශ්නාවලි
+</button>
+
+</div>
 
 </div>
 
@@ -603,36 +653,39 @@ footer a {
 
 <div id="commercePage" class="page">
 
-    <button class="back" onclick="showHome()">
-        ← Back
-    </button>
+<button class="back" onclick="showHome()">
+← Back
+</button>
 
-    <h2>💼 Commerce</h2>
+<h2>💼 Commerce</h2>
 
-    <div class="subjects">
+<div class="subjects">
 
-        <button
-            class="subject"
-            onclick="openSubject('Accounting')"
-        >
-            📘 Accounting
-        </button>
+<button
+class="subject"
+onclick="openSubject('Accounting')">
 
-        <button
-            class="subject"
-            onclick="openSubject('Business Studies')"
-        >
-            📗 Business Studies
-        </button>
+📘 ගිණුම්කරණය
 
-        <button
-            class="subject"
-            onclick="openSubject('Economics')"
-        >
-            📙 Economics
-        </button>
+</button>
 
-    </div>
+<button
+class="subject"
+onclick="openSubject('Business Studies')">
+
+📗 ව්‍යාපාර අධ්‍යයනය
+
+</button>
+
+<button
+class="subject"
+onclick="openSubject('Economics')">
+
+📙 ආර්ථික විද්‍යාව
+
+</button>
+
+</div>
 
 </div>
 
@@ -641,36 +694,39 @@ footer a {
 
 <div id="sciencePage" class="page">
 
-    <button class="back" onclick="showHome()">
-        ← Back
-    </button>
+<button class="back" onclick="showHome()">
+← Back
+</button>
 
-    <h2>🔬 Science</h2>
+<h2>🔬 Science</h2>
 
-    <div class="subjects">
+<div class="subjects">
 
-        <button
-            class="subject"
-            onclick="openSubject('Physics')"
-        >
-            ⚛️ Physics
-        </button>
+<button
+class="subject"
+onclick="openSubject('Physics')">
 
-        <button
-            class="subject"
-            onclick="openSubject('Chemistry')"
-        >
-            🧪 Chemistry
-        </button>
+⚛️ භෞතික විද්‍යාව
 
-        <button
-            class="subject"
-            onclick="openSubject('Biology')"
-        >
-            🧬 Biology
-        </button>
+</button>
 
-    </div>
+<button
+class="subject"
+onclick="openSubject('Chemistry')">
+
+🧪 රසායන විද්‍යාව
+
+</button>
+
+<button
+class="subject"
+onclick="openSubject('Biology')">
+
+🧬 ජීව විද්‍යාව
+
+</button>
+
+</div>
 
 </div>
 
@@ -679,43 +735,47 @@ footer a {
 
 <div id="technologyPage" class="page">
 
-    <button class="back" onclick="showHome()">
-        ← Back
-    </button>
+<button class="back" onclick="showHome()">
+← Back
+</button>
 
-    <h2>⚙️ Technology</h2>
+<h2>⚙️ Technology</h2>
 
-    <div class="subjects">
+<div class="subjects">
 
-        <button
-            class="subject"
-            onclick="openSubject('Science for Technology')"
-        >
-            🔬 Science for Technology
-        </button>
+<button
+class="subject"
+onclick="openSubject('Science for Technology')">
 
-        <button
-            class="subject"
-            onclick="openSubject('ICT')"
-        >
-            💻 ICT
-        </button>
+🔬 තාක්ෂණය සඳහා විද්‍යාව
 
-        <button
-            class="subject"
-            onclick="openSubject('Engineering Technology')"
-        >
-            🔧 Engineering Technology
-        </button>
+</button>
 
-        <button
-            class="subject"
-            onclick="openSubject('Bio Systems Technology')"
-        >
-            🌱 Bio Systems Technology
-        </button>
+<button
+class="subject"
+onclick="openSubject('ICT')">
 
-    </div>
+💻 ICT
+
+</button>
+
+<button
+class="subject"
+onclick="openSubject('Engineering Technology')">
+
+🔧 ඉංජිනේරු තාක්ෂණවේදය
+
+</button>
+
+<button
+class="subject"
+onclick="openSubject('Bio Systems Technology')">
+
+🌱 ජෛව පද්ධති තාක්ෂණවේදය
+
+</button>
+
+</div>
 
 </div>
 
@@ -724,20 +784,17 @@ footer a {
 
 <div id="artsPage" class="page">
 
-    <button class="back" onclick="showHome()">
-        ← Back
-    </button>
+<button class="back" onclick="showHome()">
+← Back
+</button>
 
-    <h2>🎨 Arts</h2>
+<h2>🎨 Arts</h2>
 
-    <div class="subjects">
+<p style="text-align:center">
 
-        <button class="subject">📚 Subjects</button>
-        <button class="subject">📝 Notes</button>
-        <button class="subject">📄 Past Papers</button>
-        <button class="subject">🎯 Quizzes</button>
+Arts lessons අපි පසුව එකතු කරමු.
 
-    </div>
+</p>
 
 </div>
 
@@ -746,75 +803,81 @@ footer a {
 
 <div id="subjectPage" class="page">
 
-    <button
-        class="back"
-        onclick="goBackToCategory()"
-    >
-        ← Back
-    </button>
+<button
+class="back"
+onclick="goBackToCategory()">
 
-    <h2 id="subjectTitle"></h2>
+← Back
 
-    <div
-        id="lessonList"
-        class="lessons"
-    ></div>
+</button>
+
+<h2 id="subjectTitle"></h2>
+
+<div
+id="lessonList"
+class="lessons">
+</div>
 
 </div>
 
 
-<!-- LESSON DETAIL -->
+<!-- LESSON -->
 
 <div id="lessonPage" class="page">
 
-    <button
-        class="back"
-        onclick="goBackToLessons()"
-    >
-        ← Back
-    </button>
+<button
+class="back"
+onclick="goBackToLessons()">
 
-    <div class="lesson-detail">
+← Back
 
-        <h3 id="lessonDetailTitle"></h3>
+</button>
 
-        <p>
-            මෙම පාඩමට අදාළ අධ්‍යයන සම්පත්
-        </p>
+<div class="lesson-detail">
 
-        <div class="resources">
+<h3 id="lessonDetailTitle"></h3>
 
-            <button
-                class="resource"
-                onclick="openNote()"
-            >
-                📝 Notes
-            </button>
+<p>
+මෙම පාඩමට අදාළ අධ්‍යයන සම්පත් තෝරන්න.
+</p>
 
-            <button
-                class="resource"
-                onclick="openVideo()"
-            >
-                🎥 Video
-            </button>
+<div class="resources">
 
-            <button
-                class="resource"
-                onclick="openPaper()"
-            >
-                📄 Papers
-            </button>
+<button
+class="resource"
+onclick="openNote()">
 
-            <button
-                class="resource"
-                onclick="openQuiz()"
-            >
-                🎯 Quiz
-            </button>
+📝 සටහන්
 
-        </div>
+</button>
 
-    </div>
+<button
+class="resource"
+onclick="openVideo()">
+
+🎥 වීඩියෝ
+
+</button>
+
+<button
+class="resource"
+onclick="openPaper()">
+
+📄 ප්‍රශ්න පත්‍ර
+
+</button>
+
+<button
+class="resource"
+onclick="openQuiz()">
+
+🎯 ප්‍රශ්නාවලිය
+
+</button>
+
+</div>
+
+</div>
 
 </div>
 
@@ -823,915 +886,1160 @@ footer a {
 
 <footer>
 
-    <p>📞 Contact Us</p>
+<p>📞 Contact Us</p>
 
-    <p>
-        📱
-        <a href="tel:0759205338">
-            0759205338
-        </a>
-    </p>
+<p>
+📱
+<a href="tel:0759205338">
+0759205338
+</a>
+</p>
 
-    <p>
-        📧
-        <a href="mailto:mpeducation4@gmail.com">
-            mpeducation4@gmail.com
-        </a>
-    </p>
+<p>
+📧
+<a href="mailto:mpeducation4@gmail.com">
+mpeducation4@gmail.com
+</a>
+</p>
 
-    <p>
-        © 2026 MP Education
-    </p>
+<p>
+© 2026 MP Education
+</p>
 
 </footer>
 
 
-<!-- AI CHAT BUTTON -->
+<!-- AI -->
 
 <button
-    id="aiChatButton"
-    onclick="toggleAIChat()"
->
-    🤖 AI Tutor
+id="aiChatButton"
+onclick="toggleAIChat()">
+
+🤖 AI Tutor
+
 </button>
 
 
-<!-- AI CHAT BOX -->
-
 <div id="aiChatBox">
 
-    <div class="ai-header">
+<div class="ai-header">
 
-        <span>
-            🤖 MP Education AI
-        </span>
+<span>
+🤖 MP Education AI
+</span>
 
-        <button onclick="toggleAIChat()">
-            ✕
-        </button>
+<button onclick="toggleAIChat()">
+✕
+</button>
 
-    </div>
+</div>
 
-    <div id="aiMessages">
+<div id="aiMessages">
 
-        <div class="ai-message">
+<div class="ai-message">
 
-            👋 Hi! I'm MP Education AI.
+👋 Hi! I'm MP Education AI.
 
-            <br><br>
+<br><br>
 
-            Ask me about your lessons,
-            subjects or studies.
+ඔයාගේ පාඩම්, විෂයයන් හෝ අධ්‍යයනය ගැන මගෙන් අහන්න.
 
-        </div>
+</div>
 
-    </div>
+</div>
 
-    <div class="ai-input-area">
+<div class="ai-input-area">
 
-        <input
-            type="text"
-            id="aiInput"
-            placeholder="Ask your question..."
-            onkeydown="
-                if(event.key === 'Enter')
-                sendAIMessage()
-            "
-        >
+<input
+type="text"
+id="aiInput"
+placeholder="Ask your question..."
+onkeydown="
+if(event.key==='Enter') sendAIMessage()
+">
 
-        <button onclick="sendAIMessage()">
-            ➤
-        </button>
+<button onclick="sendAIMessage()">
+➤
+</button>
 
-    </div>
+</div>
 
 </div>
 
 
-<!-- FIREBASE -->
-
 <script type="module">
 
-import {
-    initializeApp
-} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+/* =================================
+   FIREBASE
+================================= */
 
 import {
-    getAuth,
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-    sendPasswordResetEmail,
-    signOut,
-    onAuthStateChanged,
-    updateProfile
-} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
-/* ============================= */
-/* FIREBASE CONFIG */
-/* ============================= */
+import {
+getAuth,
+createUserWithEmailAndPassword,
+signInWithEmailAndPassword,
+sendPasswordResetEmail,
+signOut,
+onAuthStateChanged,
+updateProfile
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
 
 const firebaseConfig = {
 
-    apiKey: "AIzaSyD1ibHY0BqBPEoj8kVG_5KLHiCiclzw7W4",
+apiKey:
+"AIzaSyD1ibHY0BqBPEoj8kVG_5KLHiCiclzw7W4",
 
-    authDomain: "mp-education-47e46.firebaseapp.com",
+authDomain:
+"mp-education-47e46.firebaseapp.com",
 
-    projectId: "mp-education-47e46",
+projectId:
+"mp-education-47e46",
 
-    storageBucket: "mp-education-47e46.firebasestorage.app",
+storageBucket:
+"mp-education-47e46.firebasestorage.app",
 
-    messagingSenderId: "225987667440",
+messagingSenderId:
+"225987667440",
 
-    appId: "1:225987667440:web:2943cb26965510c2d4e935",
+appId:
+"1:225987667440:web:2943cb26965510c2d4e935",
 
-    measurementId: "G-HD5GPFLQ3N"
-};
-
-
-/* ============================= */
-/* INITIALIZE FIREBASE */
-/* ============================= */
-
-const app = initializeApp(firebaseConfig);
-
-const auth = getAuth(app);
-
-
-/* ============================= */
-/* VARIABLES */
-/* ============================= */
-
-let currentSubject = "";
-let currentLesson = "";
-
-
-/* ============================= */
-/* PAGE CONTROL */
-/* ============================= */
-
-window.hideAllPages = function() {
-
-    document.querySelectorAll(".page").forEach(function(page) {
-
-        page.classList.remove("active");
-
-    });
+measurementId:
+"G-HD5GPFLQ3N"
 
 };
 
 
-window.showPage = function(pageId) {
+const app =
+initializeApp(firebaseConfig);
 
-    hideAllPages();
-
-    const page =
-        document.getElementById(pageId);
-
-    if (page) {
-
-        page.classList.add("active");
-
-    }
-
-};
+const auth =
+getAuth(app);
 
 
-window.showHome = function() {
-
-    hideAllPages();
-
-    document
-        .getElementById("homePage")
-        .classList.add("active");
-
-};
+let currentSubject="";
+let currentLesson="";
 
 
-window.goBackToCategory = function() {
-
-    if (
-        currentSubject === "Accounting" ||
-        currentSubject === "Business Studies" ||
-        currentSubject === "Economics"
-    ) {
-
-        showPage("commercePage");
-
-    }
-
-    else if (
-        currentSubject === "Physics" ||
-        currentSubject === "Chemistry" ||
-        currentSubject === "Biology"
-    ) {
-
-        showPage("sciencePage");
-
-    }
-
-    else {
-
-        showPage("technologyPage");
-
-    }
-
-};
-
-
-window.goBackToLessons = function() {
-
-    showPage("subjectPage");
-
-};
-
-
-/* ============================= */
-/* SUBJECTS */
-/* ============================= */
+/* =================================
+   LESSON DATABASE
+================================= */
 
 const lessons = {
 
-    "Accounting": [
-        "Introduction to Accounting",
-        "Accounting Equation",
-        "Double Entry System",
-        "Journal Entries",
-        "Ledger Accounts",
-        "Trial Balance"
-    ],
 
-    "Business Studies": [
-        "Introduction to Business",
-        "Business Environment",
-        "Entrepreneurship",
-        "Management",
-        "Marketing",
-        "Human Resource Management"
-    ],
+/* ================================
+   ACCOUNTING
+================================ */
 
-    "Economics": [
-        "Introduction to Economics",
-        "Economic Systems",
-        "Production Possibility Frontier",
-        "Demand and Supply",
-        "Elasticity",
-        "Market Equilibrium",
-        "Government Intervention"
-    ],
+"Accounting":[
 
-    "Physics": [
-        "Measurement",
-        "Mechanics",
-        "Waves",
-        "Electricity",
-        "Thermal Physics"
-    ],
+"ගිණුම්කරණය හා එහි අවශ්‍යතාව",
 
-    "Chemistry": [
-        "Basic Chemistry",
-        "Atomic Structure",
-        "Chemical Bonding",
-        "Chemical Reactions"
-    ],
+"ගිණුම්කරණ සමීකරණය",
 
-    "Biology": [
-        "Introduction to Biology",
-        "Cell Biology",
-        "Genetics",
-        "Ecology"
-    ],
+"ද්විත්ව සටහන්",
 
-    "Science for Technology": [
-        "Introduction to Science",
-        "Matter",
-        "Energy",
-        "Technology and Society"
-    ],
+"මූලික සටහන් පොත්",
 
-    "ICT": [
-        "Introduction to ICT",
-        "Computer Systems",
-        "Data Representation",
-        "Networking",
-        "Database Systems",
-        "Web Development"
-    ],
+"පාලන ගිණුම්",
 
-    "Engineering Technology": [
-        "Engineering Basics",
-        "Materials",
-        "Mechanical Systems",
-        "Electrical Systems"
-    ],
+"වැරදි නිවැරදි කිරීම්",
 
-    "Bio Systems Technology": [
-        "Introduction to Bio Systems",
-        "Agricultural Technology",
-        "Food Technology",
-        "Environmental Technology"
-    ]
+"ගිණුම්කරණ සංකල්ප",
+
+"කේවල ස්වාමි ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන",
+
+"නිෂ්පාදන ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන",
+
+"ලාභ අරමුණු කර නොගත් සංවිධානයක මූල්‍ය ප්‍රකාශන",
+
+"අසම්පූර්ණ සටහන්",
+
+"හවුල් ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන",
+
+"ගිණුම්කරණ ප්‍රමිත",
+
+"සමාගම් ගිණුම්කරණය",
+
+"මුදල් ප්‍රවාහ ප්‍රකාශනය",
+
+"අනුපාත විශ්ලේෂණය",
+
+"කළමනාකරණ ගිණුම්කරණය",
+
+"පිරිවැය හැසිරීම හා පිරිවැය පරිමා ලාභ විශ්ලේෂණය",
+
+"ප්‍රාග්ධන ආයෝජන තීරණ"
+
+],
+
+
+/* ================================
+   BUSINESS STUDIES
+================================ */
+
+"Business Studies":[
+
+"ව්‍යාපාර පදනම හා පරිසරය",
+
+"සමාජ වගකීම්",
+
+"රජය හා ව්‍යාපාර",
+
+"ව්‍යාපාර සංවිධාන",
+
+"ව්‍යවසායකත්වය",
+
+"සුළු හා මධ්‍ය පරිමාණ ව්‍යාපාර",
+
+"මුදල් හා මූල්‍ය ආයතන",
+
+"රක්ෂණය හා එහි වැදගත්කම",
+
+"සන්නිවේදනය හා එහි වැදගත්කම",
+
+"ප්‍රවාහනය හා එහි වැදගත්කම",
+
+"වෙළඳාම හා එහි වැදගත්කම",
+
+"කළමනාකරණයේ අවශ්‍යතාව හා එහි වැදගත්කම",
+
+"මෙහෙයුම් කළමනාකරණය",
+
+"අලෙවිකරණය",
+
+"මූල්‍ය කළමනාකරණය",
+
+"මානව සම්පත් කළමනාකරණය",
+
+"තොරතුරු පද්ධති",
+
+"ව්‍යාපාර සැලැස්ම"
+
+],
+
+
+/* ================================
+   ECONOMICS
+================================ */
+
+"Economics":[
+
+"ආර්ථික විද්‍යාව හැඳින්වීම, ආර්ථික පද්ධති, නිෂ්පාදන හැකියා මායිම්",
+
+"ඉල්ලුම, සැපයුම, නම්‍යතාව හා වෙළෙඳපොළ සමතුලිතය",
+
+"වෙළඳපොළට රජය මැදිහත් වීම",
+
+"වෙළෙඳපොළ තුළ නිෂ්පාදන ආයතන තාර්කිකව හැසිරෙන ආකාරය",
+
+"ජාතික ගිණුම්කරණය",
+
+"සර්ව ආර්ථික සමතුලිතය",
+
+"මුදල් හා මිල මට්ටම්, බැංකු පද්ධතිය",
+
+"රාජ්‍ය ආර්ථිකය",
+
+"විදේශීය වෙළඳාම",
+
+"විදේශීය මූල්‍ය",
+
+"ආර්ථික සංවර්ධනය",
+
+"ශ්‍රී ලංකාවේ ආර්ථික ව්‍යුහය හා ප්‍රතිපත්ති"
+
+],
+
+
+/* ================================
+   PHYSICS
+================================ */
+
+"Physics":[
+
+"මිනුම්",
+
+"යාන්ත්‍ර විද්‍යාව",
+
+"චලිතය",
+
+"බලය",
+
+"කාර්යය, ශක්තිය හා බලය",
+
+"ගම්‍යතාව",
+
+"ඝර්ෂණය",
+
+"වෘත්තීය චලිතය",
+
+"ගුරුත්වාකර්ෂණය",
+
+"ද්‍රව ගති විද්‍යාව",
+
+"දෝලන",
+
+"තරංග",
+
+"ශබ්දය",
+
+"තාපය",
+
+"වායු",
+
+"විද්‍යුත් ක්ෂේත්‍ර",
+
+"විද්‍යුත් විභවය හා ධාරිතාව",
+
+"විද්‍යුත් ධාරාව",
+
+"විද්‍යුත් පරිපථ",
+
+"චුම්බක ක්ෂේත්‍ර",
+
+"විද්‍යුත් චුම්බක ප්‍රේරණය",
+
+"ප්‍රත්‍යාවර්ත ධාරාව",
+
+"ඉලෙක්ට්‍රොනික විද්‍යාව",
+
+"අර්ධ සන්නායක",
+
+"න්‍යෂ්ටික භෞතික විද්‍යාව"
+
+],
+
+
+/* ================================
+   CHEMISTRY
+================================ */
+
+"Chemistry":[
+
+"පරමාණුක ව්‍යුහය",
+
+"ව්‍යුහය හා බන්ධන",
+
+"රසායනික ගණනය",
+
+"ද්‍රව්‍යයේ වායු අවස්ථාව",
+
+"ශක්ති විද්‍යාව",
+
+"s, p හා d ගොනුවල මූලද්‍රව්‍ය",
+
+"කාබනික රසායන විද්‍යාවේ මූලික සංකල්ප",
+
+"හයිඩ්‍රොකාබන හා හැලෝ හයිඩ්‍රොකාබන",
+
+"ඔක්සිජන් අඩංගු කාබනික සංයෝග",
+
+"නයිට්‍රජන් අඩංගු කාබනික සංයෝග",
+
+"රසායනික ප්‍රතික්‍රියා වේගය",
+
+"රසායනික සමතුලිතය",
+
+"විද්‍යුත් රසායනය",
+
+"කාර්මික රසායන විද්‍යාව හා පාරිසරික දූෂණය"
+
+],
+
+
+/* ================================
+   BIOLOGY
+================================ */
+
+"Biology":[
+
+"ජීව විද්‍යාව හැඳින්වීම",
+
+"ජීවයේ රසායනික හා සෛලීය පදනම",
+
+"ජීවීන්ගේ පරිණාමය හා විවිධත්වය",
+
+"ශාක ආකෘතිය හා ක්‍රියාකාරිත්වය",
+
+"සත්ත්ව ආකෘතිය හා ක්‍රියාකාරිත්වය",
+
+"ප්‍රවේණි විද්‍යාව",
+
+"අණුක ජීව විද්‍යාව හා ප්‍රතිසංයෝජක DNA තාක්ෂණය",
+
+"පාරිසරික ජීව විද්‍යාව",
+
+"ක්ෂුද්‍රජීව විද්‍යාව",
+
+"ව්‍යවහාරික ජීව විද්‍යාව"
+
+],
+
+
+/* ================================
+   SFT
+================================ */
+
+"Science for Technology":[
+
+"විද්‍යාව හා තාක්ෂණය හැඳින්වීම",
+
+"මිනුම් හා ඒකක",
+
+"ද්‍රව්‍ය හා ඒවායේ ගුණ",
+
+"බලය හා චලිතය",
+
+"ශක්තිය",
+
+"තාපය",
+
+"විද්‍යුත් විද්‍යාවේ මූලික සංකල්ප",
+
+"විද්‍යුත් පරිපථ",
+
+"චුම්බකත්වය",
+
+"තරංග හා ආලෝකය",
+
+"රසායනික මූලධර්ම",
+
+"කාබනික සංයෝග",
+
+"ජීව විද්‍යාත්මක මූලධර්ම",
+
+"පරිසරය හා තාක්ෂණය",
+
+"තාක්ෂණික යෙදුම්"
+
+],
+
+
+/* ================================
+   ICT
+================================ */
+
+"ICT":[
+
+"ICT හි මූලික සංකල්ප",
+
+"පරිගණකයට හැඳින්වීම",
+
+"දත්ත නිරූපණය",
+
+"ඩිජිටල් පරිපථවල මූලික කරුණු",
+
+"පරිගණක මෙහෙයුම් පද්ධති",
+
+"දත්ත සන්නිවේදනය හා ජාලකරණය",
+
+"පද්ධති විශ්ලේෂණය හා සැලසුම්කරණය",
+
+"දත්ත සමුදා කළමනාකරණය",
+
+"ක්‍රමලේඛනය",
+
+"වෙබ් සංවර්ධනය",
+
+"Internet of Things (IoT)",
+
+"ව්‍යාපාර තුළ ICT",
+
+"නව ප්‍රවණතා හා අනාගත දිශානති",
+
+"ව්‍යාපෘතිය"
+
+],
+
+
+/* ================================
+   ENGINEERING TECHNOLOGY
+================================ */
+
+"Engineering Technology":[
+
+"ඉංජිනේරු තාක්ෂණය හැඳින්වීම",
+
+"තාක්ෂණික ඇඳීම්",
+
+"මිනුම් හා මිනුම් උපකරණ",
+
+"ඉංජිනේරු ද්‍රව්‍ය",
+
+"යාන්ත්‍රික පද්ධති",
+
+"යාන්ත්‍රික බල සම්ප්‍රේෂණය",
+
+"ද්‍රව බල පද්ධති",
+
+"විදුලි පද්ධති",
+
+"ඉලෙක්ට්‍රොනික පද්ධති",
+
+"පාලන පද්ධති",
+
+"ස්වයංක්‍රීයකරණය",
+
+"නිෂ්පාදන ක්‍රියාවලි",
+
+"යන්ත්‍රෝපකරණ",
+
+"ඉදිකිරීම් හා සිවිල් ඉංජිනේරු මූලික කරුණු",
+
+"නඩත්තු හා ආරක්ෂාව",
+
+"ඉංජිනේරු ව්‍යාපෘති"
+
+],
+
+
+/* ================================
+   BIO SYSTEMS TECHNOLOGY
+================================ */
+
+"Bio Systems Technology":[
+
+"ජෛව පද්ධති තාක්ෂණය හැඳින්වීම",
+
+"කෘෂිකාර්මික පද්ධති",
+
+"පාංශු හා ජල සම්පත්",
+
+"බෝග නිෂ්පාදන තාක්ෂණය",
+
+"සත්ත්ව නිෂ්පාදන තාක්ෂණය",
+
+"ජලජ සම්පත්",
+
+"ආහාර නිෂ්පාදන තාක්ෂණය",
+
+"ආහාර සංරක්ෂණය",
+
+"පශ්චාත් අස්වනු තාක්ෂණය",
+
+"පරිසර කළමනාකරණය",
+
+"අපද්‍රව්‍ය කළමනාකරණය",
+
+"පුනර්ජනනීය බලශක්තිය",
+
+"ජෛව තාක්ෂණය",
+
+"කෘෂි යන්ත්‍රෝපකරණ",
+
+"ජෛව පද්ධති ව්‍යාපෘති"
+
+]
 
 };
 
 
-window.openSubject = function(subject) {
+/* =================================
+   PAGE FUNCTIONS
+================================= */
 
-    currentSubject = subject;
+window.hideAllPages=function(){
 
-    document.getElementById(
-        "subjectTitle"
-    ).innerText =
-        "📚 " + subject;
-
-    const lessonList =
-        document.getElementById("lessonList");
-
-    lessonList.innerHTML = "";
-
-    if (lessons[subject]) {
-
-        lessons[subject].forEach(function(lesson, index) {
-
-            const button =
-                document.createElement("button");
-
-            button.className =
-                "lesson-button";
-
-            button.innerText =
-                (index + 1) + ". " + lesson;
-
-            button.onclick = function() {
-
-                openLesson(lesson);
-
-            };
-
-            lessonList.appendChild(button);
-
-        });
-
-    }
-
-    showPage("subjectPage");
+document
+.querySelectorAll(".page")
+.forEach(page=>{
+page.classList.remove("active");
+});
 
 };
 
 
-window.openLesson = function(lesson) {
+window.showPage=function(id){
 
-    currentLesson = lesson;
+hideAllPages();
 
-    document.getElementById(
-        "lessonDetailTitle"
-    ).innerText =
-        "📖 " + lesson;
-
-    showPage("lessonPage");
+document
+.getElementById(id)
+.classList.add("active");
 
 };
 
 
-/* ============================= */
-/* RESOURCE BUTTONS */
-/* ============================= */
+window.showHome=function(){
 
-window.openNote = function() {
+hideAllPages();
 
-    alert(
-        "📝 Notes for " +
-        currentLesson +
-        " will be available here."
-    );
+document
+.getElementById("homePage")
+.classList.add("active");
 
 };
 
 
-window.openVideo = function() {
+window.goBackToCategory=function(){
 
-    alert(
-        "🎥 Video for " +
-        currentLesson +
-        " will be available here."
-    );
+if(
+currentSubject==="Accounting" ||
+currentSubject==="Business Studies" ||
+currentSubject==="Economics"
+){
 
-};
+showPage("commercePage");
 
+}
 
-window.openPaper = function() {
+else if(
+currentSubject==="Physics" ||
+currentSubject==="Chemistry" ||
+currentSubject==="Biology"
+){
 
-    alert(
-        "📄 Past Papers for " +
-        currentLesson +
-        " will be available here."
-    );
+showPage("sciencePage");
 
-};
+}
 
+else{
 
-window.openQuiz = function() {
+showPage("technologyPage");
 
-    alert(
-        "🎯 Quiz for " +
-        currentLesson +
-        " will be available here."
-    );
+}
 
 };
 
 
-/* ============================= */
-/* LOGIN UI */
-/* ============================= */
+window.goBackToLessons=function(){
 
-window.showRegister = function() {
-
-    document.getElementById(
-        "loginBox"
-    ).style.display = "none";
-
-    document.getElementById(
-        "registerBox"
-    ).style.display = "block";
+showPage("subjectPage");
 
 };
 
 
-window.showLogin = function() {
+/* =================================
+   SUBJECT
+================================= */
 
-    document.getElementById(
-        "registerBox"
-    ).style.display = "none";
+window.openSubject=function(subject){
 
-    document.getElementById(
-        "loginBox"
-    ).style.display = "block";
+currentSubject=subject;
+
+document
+.getElementById("subjectTitle")
+.innerText="📚 "+subject;
+
+const list=
+document.getElementById("lessonList");
+
+list.innerHTML="";
+
+
+lessons[subject].forEach(
+(lesson,index)=>{
+
+const button=
+document.createElement("button");
+
+button.className=
+"lesson-button";
+
+button.innerText=
+(index+1)+". "+lesson;
+
+button.onclick=
+function(){
+
+openLesson(lesson);
+
+};
+
+list.appendChild(button);
+
+});
+
+showPage("subjectPage");
 
 };
 
 
-/* ============================= */
-/* REGISTER */
-/* ============================= */
+/* =================================
+   LESSON
+================================= */
 
-window.registerUser = async function() {
+window.openLesson=function(lesson){
 
-    const name =
-        document.getElementById(
-            "registerName"
-        ).value.trim();
+currentLesson=lesson;
 
-    const email =
-        document.getElementById(
-            "registerEmail"
-        ).value.trim();
+document
+.getElementById("lessonDetailTitle")
+.innerText=
+"📖 "+lesson;
 
-    const password =
-        document.getElementById(
-            "registerPassword"
-        ).value;
-
-    const confirm =
-        document.getElementById(
-            "confirmPassword"
-        ).value;
-
-    const message =
-        document.getElementById(
-            "registerMessage"
-        );
-
-
-    message.innerText = "";
-
-
-    if (!name || !email || !password || !confirm) {
-
-        message.innerText =
-            "Please fill all fields.";
-
-        return;
-
-    }
-
-
-    if (password !== confirm) {
-
-        message.innerText =
-            "Passwords do not match.";
-
-        return;
-
-    }
-
-
-    if (password.length < 6) {
-
-        message.innerText =
-            "Password must be at least 6 characters.";
-
-        return;
-
-    }
-
-
-    try {
-
-        const userCredential =
-            await createUserWithEmailAndPassword(
-                auth,
-                email,
-                password
-            );
-
-
-        await updateProfile(
-            userCredential.user,
-            {
-                displayName: name
-            }
-        );
-
-
-        message.innerText =
-            "Account created successfully!";
-
-
-        document.getElementById(
-            "registerName"
-        ).value = "";
-
-        document.getElementById(
-            "registerEmail"
-        ).value = "";
-
-        document.getElementById(
-            "registerPassword"
-        ).value = "";
-
-        document.getElementById(
-            "confirmPassword"
-        ).value = "";
-
-
-        setTimeout(function() {
-
-            showLogin();
-
-            document.getElementById(
-                "loginEmail"
-            ).value = email;
-
-        }, 1000);
-
-
-    } catch (error) {
-
-        console.error(error);
-
-        if (
-            error.code ===
-            "auth/email-already-in-use"
-        ) {
-
-            message.innerText =
-                "This email is already registered.";
-
-        }
-
-        else if (
-            error.code ===
-            "auth/invalid-email"
-        ) {
-
-            message.innerText =
-                "Invalid email address.";
-
-        }
-
-        else {
-
-            message.innerText =
-                error.message;
-
-        }
-
-    }
+showPage("lessonPage");
 
 };
 
 
-/* ============================= */
-/* LOGIN */
-/* ============================= */
+/* =================================
+   RESOURCE BUTTONS
+================================= */
 
-window.loginUser = async function() {
+window.openNote=function(){
 
-    const email =
-        document.getElementById(
-            "loginEmail"
-        ).value.trim();
-
-    const password =
-        document.getElementById(
-            "loginPassword"
-        ).value;
-
-    const message =
-        document.getElementById(
-            "loginMessage"
-        );
-
-
-    message.innerText = "";
-
-
-    if (!email || !password) {
-
-        message.innerText =
-            "Please enter email and password.";
-
-        return;
-
-    }
-
-
-    try {
-
-        await signInWithEmailAndPassword(
-            auth,
-            email,
-            password
-        );
-
-    } catch (error) {
-
-        console.error(error);
-
-        if (
-            error.code ===
-            "auth/invalid-credential"
-        ) {
-
-            message.innerText =
-                "Incorrect email or password.";
-
-        }
-
-        else if (
-            error.code ===
-            "auth/user-not-found"
-        ) {
-
-            message.innerText =
-                "No account found with this email.";
-
-        }
-
-        else {
-
-            message.innerText =
-                error.message;
-
-        }
-
-    }
+alert(
+"📝 "+currentLesson+
+" සඳහා Notes එක මෙහි connect කරන්න පුළුවන්."
+);
 
 };
 
 
-/* ============================= */
-/* FORGOT PASSWORD */
-/* ============================= */
+window.openVideo=function(){
 
-window.forgotPassword = async function() {
-
-    const email =
-        document.getElementById(
-            "loginEmail"
-        ).value.trim();
-
-
-    if (!email) {
-
-        alert(
-            "Please enter your email address first."
-        );
-
-        return;
-
-    }
-
-
-    try {
-
-        await sendPasswordResetEmail(
-            auth,
-            email
-        );
-
-        alert(
-            "Password reset email sent. Please check your email."
-        );
-
-    } catch (error) {
-
-        console.error(error);
-
-        alert(
-            "Unable to send password reset email."
-        );
-
-    }
+alert(
+"🎥 "+currentLesson+
+" සඳහා Video එක මෙහි connect කරන්න පුළුවන්."
+);
 
 };
 
 
-/* ============================= */
-/* LOGOUT */
-/* ============================= */
+window.openPaper=function(){
 
-window.logoutUser = async function() {
-
-    try {
-
-        await signOut(auth);
-
-    } catch (error) {
-
-        console.error(error);
-
-    }
+alert(
+"📄 "+currentLesson+
+" සඳහා Past Papers මෙහි connect කරන්න පුළුවන්."
+);
 
 };
 
 
-/* ============================= */
-/* FIREBASE AUTH STATE */
-/* ============================= */
+window.openQuiz=function(){
 
-onAuthStateChanged(
-    auth,
-    function(user) {
+alert(
+"🎯 "+currentLesson+
+" සඳහා Quiz එක මෙහි connect කරන්න පුළුවන්."
+);
 
-        if (user) {
-
-            /* Hide Login */
-
-            document.getElementById(
-                "loginPage"
-            ).style.display = "none";
+};
 
 
-            /* Show Welcome */
+/* =================================
+   LOGIN UI
+================================= */
 
-            document.getElementById(
-                "welcomeSection"
-            ).style.display = "block";
+window.showRegister=function(){
 
+document
+.getElementById("loginBox")
+.style.display="none";
 
-            /* User Name */
+document
+.getElementById("registerBox")
+.style.display="block";
 
-            document.getElementById(
-                "welcomeName"
-            ).innerText =
-                user.displayName || "STUDENT";
-
-
-            /* Email */
-
-            document.getElementById(
-                "userEmail"
-            ).innerText =
-                user.email || "";
+};
 
 
-            /* Show Home */
+window.showLogin=function(){
 
-            showHome();
+document
+.getElementById("registerBox")
+.style.display="none";
 
+document
+.getElementById("loginBox")
+.style.display="block";
 
-        } else {
-
-            /* Hide Welcome */
-
-            document.getElementById(
-                "welcomeSection"
-            ).style.display = "none";
-
-
-            /* Hide Pages */
-
-            hideAllPages();
+};
 
 
-            /* Show Login */
+/* =================================
+   REGISTER
+================================= */
 
-            document.getElementById(
-                "loginPage"
-            ).style.display = "flex";
+window.registerUser=async function(){
 
-        }
+const name=
+document
+.getElementById("registerName")
+.value.trim();
 
-    }
+const email=
+document
+.getElementById("registerEmail")
+.value.trim();
+
+const password=
+document
+.getElementById("registerPassword")
+.value;
+
+const confirm=
+document
+.getElementById("confirmPassword")
+.value;
+
+const message=
+document
+.getElementById("registerMessage");
+
+
+if(!name||!email||!password||!confirm){
+
+message.innerText=
+"කරුණාකර සියලු තොරතුරු පුරවන්න.";
+
+return;
+
+}
+
+
+if(password!==confirm){
+
+message.innerText=
+"Passwords match වෙන්නේ නැහැ.";
+
+return;
+
+}
+
+
+if(password.length<6){
+
+message.innerText=
+"Password එක අවම වශයෙන් අකුරු 6ක් විය යුතුයි.";
+
+return;
+
+}
+
+
+try{
+
+const result=
+await createUserWithEmailAndPassword(
+auth,
+email,
+password
 );
 
 
-/* ============================= */
-/* AI CHAT */
-/* ============================= */
-
-window.toggleAIChat = function() {
-
-    const box =
-        document.getElementById(
-            "aiChatBox"
-        );
+await updateProfile(
+result.user,
+{
+displayName:name
+}
+);
 
 
-    if (box.style.display === "block") {
+message.innerText=
+"Account එක සාර්ථකව සාදන ලදී!";
 
-        box.style.display = "none";
 
-    } else {
+setTimeout(
+function(){
 
-        box.style.display = "block";
+showLogin();
 
-        document
-            .getElementById("aiInput")
-            .focus();
+document
+.getElementById("loginEmail")
+.value=email;
 
-    }
+},
+1000
+);
+
+
+}catch(error){
+
+console.error(error);
+
+message.innerText=
+error.message;
+
+}
+
+};
+
+
+/* =================================
+   LOGIN
+================================= */
+
+window.loginUser=async function(){
+
+const email=
+document
+.getElementById("loginEmail")
+.value.trim();
+
+const password=
+document
+.getElementById("loginPassword")
+.value;
+
+const message=
+document
+.getElementById("loginMessage");
+
+
+if(!email||!password){
+
+message.innerText=
+"Email සහ Password ඇතුළත් කරන්න.";
+
+return;
+
+}
+
+
+try{
+
+await signInWithEmailAndPassword(
+auth,
+email,
+password
+);
+
+}catch(error){
+
+console.error(error);
+
+message.innerText=
+"Email හෝ Password වැරදියි.";
+
+}
+
+};
+
+
+/* =================================
+   FORGOT PASSWORD
+================================= */
+
+window.forgotPassword=async function(){
+
+const email=
+document
+.getElementById("loginEmail")
+.value.trim();
+
+
+if(!email){
+
+alert(
+"මුලින් Email එක ඇතුළත් කරන්න."
+);
+
+return;
+
+}
+
+
+try{
+
+await sendPasswordResetEmail(
+auth,
+email
+);
+
+alert(
+"Password reset email එක යවා ඇත."
+);
+
+}catch(error){
+
+alert(
+"Password reset email යැවීමට නොහැකි විය."
+);
+
+}
+
+};
+
+
+/* =================================
+   LOGOUT
+================================= */
+
+window.logoutUser=async function(){
+
+await signOut(auth);
+
+};
+
+
+/* =================================
+   AUTH STATE
+================================= */
+
+onAuthStateChanged(
+auth,
+function(user){
+
+if(user){
+
+document
+.getElementById("loginPage")
+.style.display="none";
+
+
+const welcome=
+document.getElementById(
+"welcomeSection"
+);
+
+welcome.style.display="block";
+
+
+document
+.getElementById("welcomeName")
+.innerText=
+user.displayName||
+"STUDENT";
+
+
+document
+.getElementById("userEmail")
+.innerText=
+user.email||"";
+
+
+hideAllPages();
+
+
+/*
+WELCOME එක තත්පර 3ක්
+පෙන්වලා Home එකට යනවා.
+*/
+
+setTimeout(
+function(){
+
+welcome.style.display="none";
+
+showHome();
+
+},
+3000
+);
+
+
+}else{
+
+document
+.getElementById("welcomeSection")
+.style.display="none";
+
+
+hideAllPages();
+
+
+document
+.getElementById("loginPage")
+.style.display="flex";
+
+}
+
+});
+
+
+/* =================================
+   AI CHAT
+================================= */
+
+window.toggleAIChat=function(){
+
+const box=
+document.getElementById(
+"aiChatBox"
+);
+
+
+if(box.style.display==="block"){
+
+box.style.display="none";
+
+}else{
+
+box.style.display="block";
+
+document
+.getElementById("aiInput")
+.focus();
+
+}
 
 };
 
 
 function addAIMessage(
-    text,
-    type
-) {
+text,
+type
+){
 
-    const messages =
-        document.getElementById(
-            "aiMessages"
-        );
+const messages=
+document.getElementById(
+"aiMessages"
+);
 
-    const message =
-        document.createElement("div");
+const message=
+document.createElement("div");
 
+message.className=
+type==="user"
+?"user-message"
+:"ai-message";
 
-    message.className =
-        type === "user"
-        ? "user-message"
-        : "ai-message";
+message.innerText=text;
 
+messages.appendChild(message);
 
-    message.innerText = text;
-
-    messages.appendChild(message);
-
-    messages.scrollTop =
-        messages.scrollHeight;
+messages.scrollTop=
+messages.scrollHeight;
 
 }
 
 
-window.sendAIMessage = function() {
+window.sendAIMessage=function(){
 
-    const input =
-        document.getElementById(
-            "aiInput"
-        );
+const input=
+document.getElementById(
+"aiInput"
+);
 
-    const question =
-        input.value.trim();
-
-
-    if (!question) {
-
-        return;
-
-    }
+const question=
+input.value.trim();
 
 
-    addAIMessage(
-        question,
-        "user"
-    );
+if(!question)return;
 
 
-    input.value = "";
+addAIMessage(
+question,
+"user"
+);
+
+input.value="";
 
 
-    setTimeout(function() {
+setTimeout(
+function(){
 
-        addAIMessage(
-            "🤖 MP Education AI is being connected to Gemini. Please wait for the AI connection setup.",
-            "ai"
-        );
+addAIMessage(
+"🤖 MP Education AI එක Gemini සමඟ connect කිරීමේ ඊළඟ පියවර අපි කරමු.",
+"ai"
+);
 
-    }, 500);
+},
+500
+);
 
 };
 

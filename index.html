@@ -7,9 +7,7 @@
 <title>MP Education | Learn, Study & Improve</title>
 
 <style>
-*{
-    box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
     margin:0;
@@ -18,8 +16,7 @@ body{
     color:#172554;
 }
 
-/* ================= LOGIN ================= */
-
+/* LOGIN */
 #loginPage{
     min-height:100vh;
     display:flex;
@@ -27,7 +24,7 @@ body{
     align-items:center;
     padding:20px;
     background:
-    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+    linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
     url("mp-education-background.png");
     background-size:cover;
     background-position:center;
@@ -36,8 +33,8 @@ body{
 .auth-box{
     width:100%;
     max-width:420px;
-    background:rgba(255,255,255,.96);
-    padding:28px;
+    background:rgba(255,255,255,.97);
+    padding:30px;
     border-radius:20px;
     box-shadow:0 10px 35px rgba(0,0,0,.3);
 }
@@ -58,7 +55,7 @@ input{
 }
 
 button{
-    border:none;
+    border:0;
     cursor:pointer;
     border-radius:10px;
     font-size:16px;
@@ -82,18 +79,13 @@ button{
     padding:5px;
 }
 
-.forgot-button{
-    display:block;
-    margin:10px auto;
-}
-
 .auth-message{
     text-align:center;
     font-weight:bold;
+    min-height:22px;
 }
 
-/* ================= WELCOME ================= */
-
+/* WELCOME */
 #welcomeSection{
     display:none;
     min-height:100vh;
@@ -105,23 +97,37 @@ button{
     padding:30px;
 }
 
+.welcome-content{
+    animation:welcomeAnimation 1s ease;
+}
+
 #welcomeSection h1{
-    font-size:52px;
+    font-size:58px;
     margin:10px 0;
 }
 
 #welcomeName{
-    font-size:45px;
+    font-size:48px;
     margin:15px 0;
     font-weight:bold;
 }
 
 #welcomeSection p{
-    font-size:20px;
+    font-size:21px;
 }
 
-/* ================= PAGES ================= */
+@keyframes welcomeAnimation{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
 
+/* PAGES */
 .page{
     display:none;
     padding:20px;
@@ -129,12 +135,11 @@ button{
     margin:auto;
 }
 
-.active{
+.page.active{
     display:block;
 }
 
-/* ================= HEADER ================= */
-
+/* HEADER */
 header{
     background:#1e3a8a;
     color:white;
@@ -148,12 +153,7 @@ header h1{
     font-size:30px;
 }
 
-header p{
-    margin:5px;
-}
-
-/* ================= USER BAR ================= */
-
+/* USER BAR */
 .user-bar{
     margin:20px auto;
     padding:15px;
@@ -166,11 +166,10 @@ header p{
     background:#dc2626;
     color:white;
     padding:9px 16px;
-    margin-left:10px;
+    float:right;
 }
 
-/* ================= HERO ================= */
-
+/* HERO */
 .hero-banner{
     width:100%;
     overflow:hidden;
@@ -183,8 +182,7 @@ header p{
     display:block;
 }
 
-/* ================= GRID ================= */
-
+/* GRID */
 .categories,
 .subjects,
 .resources{
@@ -201,6 +199,7 @@ header p{
     color:#1e3a8a;
     border:2px solid #dbeafe;
     box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.2s;
 }
 
 .categories button:hover,
@@ -210,17 +209,15 @@ header p{
     background:#eff6ff;
 }
 
-/* ================= BACK ================= */
-
+/* BACK */
 .back{
     background:#64748b;
     color:white;
     padding:10px 18px;
-    margin-bottom:10px;
+    margin-bottom:15px;
 }
 
-/* ================= LESSONS ================= */
-
+/* LESSONS */
 .lessons{
     display:grid;
     gap:12px;
@@ -235,8 +232,11 @@ header p{
     box-shadow:0 3px 10px rgba(0,0,0,.08);
 }
 
-/* ================= LESSON DETAIL ================= */
+.lesson-button:hover{
+    background:#eff6ff;
+}
 
+/* LESSON DETAIL */
 .lesson-detail{
     background:white;
     padding:25px;
@@ -244,8 +244,7 @@ header p{
     box-shadow:0 5px 18px rgba(0,0,0,.08);
 }
 
-/* ================= FOOTER ================= */
-
+/* FOOTER */
 footer{
     margin-top:40px;
     padding:30px 20px;
@@ -258,8 +257,7 @@ footer a{
     color:white;
 }
 
-/* ================= AI ================= */
-
+/* AI */
 #aiChatButton{
     position:fixed;
     right:20px;
@@ -300,6 +298,7 @@ footer a{
 .ai-header button{
     background:transparent;
     color:white;
+    font-size:18px;
 }
 
 #aiMessages{
@@ -348,16 +347,14 @@ footer a{
     padding:10px 15px;
 }
 
-/* ================= MOBILE ================= */
-
 @media(max-width:600px){
 
     #welcomeSection h1{
-        font-size:38px;
+        font-size:40px;
     }
 
     #welcomeName{
-        font-size:32px;
+        font-size:34px;
     }
 
     #aiChatBox{
@@ -369,6 +366,12 @@ footer a{
     #aiChatButton{
         right:10px;
         bottom:10px;
+    }
+
+    #logoutButton{
+        float:none;
+        margin-top:10px;
+        margin-left:0;
     }
 }
 </style>
@@ -384,89 +387,77 @@ footer a{
 
         <h2>📚 MP Education</h2>
 
-        <input
-            type="email"
-            id="loginEmail"
-            placeholder="Email">
+        <input type="email"
+               id="loginEmail"
+               placeholder="Email">
 
-        <input
-            type="password"
-            id="loginPassword"
-            placeholder="Password">
+        <input type="password"
+               id="loginPassword"
+               placeholder="Password">
 
-        <button
-            class="auth-button"
-            onclick="loginUser()">
+        <button class="auth-button"
+                onclick="loginUser()">
             Login
         </button>
 
-        <button
-            class="switch-button forgot-button"
-            onclick="forgotPassword()">
+        <button class="switch-button"
+                onclick="forgotPassword()"
+                style="display:block;margin:10px auto;">
             Forgot Password?
         </button>
 
         <p style="text-align:center;">
             Don't have an account?
-
-            <button
-                class="switch-button"
-                onclick="showRegister()">
+            <button class="switch-button"
+                    onclick="showRegister()">
                 Register
             </button>
         </p>
 
-        <p id="loginMessage" class="auth-message"></p>
+        <p id="loginMessage"
+           class="auth-message"></p>
 
     </div>
 
-
     <!-- REGISTER -->
 
-    <div
-        id="registerBox"
-        class="auth-box"
-        style="display:none;">
+    <div id="registerBox"
+         class="auth-box"
+         style="display:none;">
 
         <h2>📝 Create Account</h2>
 
-        <input
-            type="text"
-            id="registerName"
-            placeholder="Full Name">
+        <input type="text"
+               id="registerName"
+               placeholder="Full Name">
 
-        <input
-            type="email"
-            id="registerEmail"
-            placeholder="Email">
+        <input type="email"
+               id="registerEmail"
+               placeholder="Email">
 
-        <input
-            type="password"
-            id="registerPassword"
-            placeholder="Password">
+        <input type="password"
+               id="registerPassword"
+               placeholder="Password">
 
-        <input
-            type="password"
-            id="confirmPassword"
-            placeholder="Confirm Password">
+        <input type="password"
+               id="confirmPassword"
+               placeholder="Confirm Password">
 
-        <button
-            class="auth-button"
-            onclick="registerUser()">
+        <button class="auth-button"
+                onclick="registerUser()">
             Register
         </button>
 
         <p style="text-align:center;">
             Already have an account?
-
-            <button
-                class="switch-button"
-                onclick="showLogin()">
+            <button class="switch-button"
+                    onclick="showLogin()">
                 Login
             </button>
         </p>
 
-        <p id="registerMessage" class="auth-message"></p>
+        <p id="registerMessage"
+           class="auth-message"></p>
 
     </div>
 
@@ -477,7 +468,7 @@ footer a{
 
 <div id="welcomeSection">
 
-    <div>
+    <div class="welcome-content">
 
         <h1>WELCOME 👋</h1>
 
@@ -499,13 +490,8 @@ footer a{
 <div id="homePage" class="page">
 
     <header>
-
         <h1>📚 MP Education</h1>
-
-        <p>
-            Learn • Study • Improve
-        </p>
-
+        <p>Learn • Study • Improve</p>
     </header>
 
     <div class="user-bar">
@@ -513,25 +499,23 @@ footer a{
         👤 Logged in as:
         <strong id="userEmail"></strong>
 
-        <button
-            id="logoutButton"
-            onclick="logoutUser()">
+        <button id="logoutButton"
+                onclick="logoutUser()">
             Logout
         </button>
+
+        <div style="clear:both;"></div>
 
     </div>
 
     <div class="hero-banner">
 
-        <img
-            src="IMG-20260802-WA0000.jpg"
-            alt="MP Education Banner">
+        <img src="IMG-20260802-WA0000.jpg"
+             alt="MP Education Banner">
 
     </div>
 
-    <h2>
-        🎓 Choose Your Learning Category
-    </h2>
+    <h2>🎓 Choose Your Learning Category</h2>
 
     <div class="categories">
 
@@ -568,7 +552,8 @@ footer a{
 
 <div id="olPage" class="page">
 
-    <button class="back" onclick="showHome()">
+    <button class="back"
+            onclick="showHome()">
         ← Back
     </button>
 
@@ -590,7 +575,8 @@ footer a{
 
 <div id="alPage" class="page">
 
-    <button class="back" onclick="showHome()">
+    <button class="back"
+            onclick="showHome()">
         ← Back
     </button>
 
@@ -612,7 +598,8 @@ footer a{
 
 <div id="commercePage" class="page">
 
-    <button class="back" onclick="showHome()">
+    <button class="back"
+            onclick="showHome()">
         ← Back
     </button>
 
@@ -620,21 +607,18 @@ footer a{
 
     <div class="subjects">
 
-        <button
-            class="subject"
-            onclick="openSubject('Accounting')">
+        <button class="subject"
+                onclick="openSubject('Accounting')">
             📘 Accounting
         </button>
 
-        <button
-            class="subject"
-            onclick="openSubject('Business Studies')">
+        <button class="subject"
+                onclick="openSubject('Business Studies')">
             📗 Business Studies
         </button>
 
-        <button
-            class="subject"
-            onclick="openSubject('Economics')">
+        <button class="subject"
+                onclick="openSubject('Economics')">
             📙 Economics
         </button>
 
@@ -647,7 +631,8 @@ footer a{
 
 <div id="sciencePage" class="page">
 
-    <button class="back" onclick="showHome()">
+    <button class="back"
+            onclick="showHome()">
         ← Back
     </button>
 
@@ -655,21 +640,18 @@ footer a{
 
     <div class="subjects">
 
-        <button
-            class="subject"
-            onclick="openSubject('Physics')">
+        <button class="subject"
+                onclick="openSubject('Physics')">
             ⚛️ Physics
         </button>
 
-        <button
-            class="subject"
-            onclick="openSubject('Chemistry')">
+        <button class="subject"
+                onclick="openSubject('Chemistry')">
             🧪 Chemistry
         </button>
 
-        <button
-            class="subject"
-            onclick="openSubject('Biology')">
+        <button class="subject"
+                onclick="openSubject('Biology')">
             🧬 Biology
         </button>
 
@@ -682,7 +664,8 @@ footer a{
 
 <div id="technologyPage" class="page">
 
-    <button class="back" onclick="showHome()">
+    <button class="back"
+            onclick="showHome()">
         ← Back
     </button>
 
@@ -690,21 +673,23 @@ footer a{
 
     <div class="subjects">
 
-        <button
-            class="subject"
-            onclick="openSubject('ICT')">
+        <button class="subject"
+                onclick="openSubject('Science for Technology')">
+            🔬 Science for Technology
+        </button>
+
+        <button class="subject"
+                onclick="openSubject('ICT')">
             💻 ICT
         </button>
 
-        <button
-            class="subject"
-            onclick="openSubject('Engineering Technology')">
+        <button class="subject"
+                onclick="openSubject('Engineering Technology')">
             🔧 Engineering Technology
         </button>
 
-        <button
-            class="subject"
-            onclick="openSubject('Bio Systems Technology')">
+        <button class="subject"
+                onclick="openSubject('Bio Systems Technology')">
             🌱 Bio Systems Technology
         </button>
 
@@ -717,7 +702,8 @@ footer a{
 
 <div id="artsPage" class="page">
 
-    <button class="back" onclick="showHome()">
+    <button class="back"
+            onclick="showHome()">
         ← Back
     </button>
 
@@ -739,17 +725,15 @@ footer a{
 
 <div id="subjectPage" class="page">
 
-    <button
-        class="back"
-        onclick="goBackToCategory()">
+    <button class="back"
+            onclick="goBackToCategory()">
         ← Back
     </button>
 
     <h2 id="subjectTitle"></h2>
 
-    <div
-        id="lessonList"
-        class="lessons">
+    <div id="lessonList"
+         class="lessons">
     </div>
 
 </div>
@@ -759,9 +743,8 @@ footer a{
 
 <div id="lessonPage" class="page">
 
-    <button
-        class="back"
-        onclick="goBackToLessons()">
+    <button class="back"
+            onclick="goBackToLessons()">
         ← Back
     </button>
 
@@ -775,19 +758,23 @@ footer a{
 
         <div class="resources">
 
-            <button class="resource">
+            <button class="resource"
+                    onclick="openNote()">
                 📝 Notes
             </button>
 
-            <button class="resource">
+            <button class="resource"
+                    onclick="openVideo()">
                 🎥 Video
             </button>
 
-            <button class="resource">
+            <button class="resource"
+                    onclick="openPaper()">
                 📄 Papers
             </button>
 
-            <button class="resource">
+            <button class="resource"
+                    onclick="openQuiz()">
                 🎯 Quiz
             </button>
 
@@ -818,31 +805,23 @@ footer a{
         </a>
     </p>
 
-    <p>
-        © 2026 MP Education
-    </p>
+    <p>© 2026 MP Education</p>
 
 </footer>
 
 
-<!-- ================= AI BUTTON ================= -->
+<!-- ================= AI ================= -->
 
-<button
-    id="aiChatButton"
-    onclick="toggleAIChat()">
+<button id="aiChatButton"
+        onclick="toggleAIChat()">
     🤖 AI Tutor
 </button>
-
-
-<!-- ================= AI CHAT ================= -->
 
 <div id="aiChatBox">
 
     <div class="ai-header">
 
-        <span>
-            🤖 MP Education AI
-        </span>
+        <span>🤖 MP Education AI</span>
 
         <button onclick="toggleAIChat()">
             ✕
@@ -855,21 +834,21 @@ footer a{
         <div class="ai-message">
             👋 Hi! I'm MP Education AI.
             <br><br>
-            Ask me about your studies.
+            Ask me about your lessons,
+            subjects or studies.
         </div>
 
     </div>
 
     <div class="ai-input-area">
 
-        <input
-            type="text"
-            id="aiInput"
-            placeholder="Ask your question..."
-            onkeydown="
-            if(event.key==='Enter'){
-                sendAIMessage()
-            }">
+        <input type="text"
+               id="aiInput"
+               placeholder="Ask your question..."
+               onkeydown="
+               if(event.key==='Enter'){
+                   sendAIMessage();
+               }">
 
         <button onclick="sendAIMessage()">
             ➤
@@ -921,20 +900,22 @@ const firebaseConfig = {
 
     measurementId:
     "G-HD5GPFLQ3N"
+
 };
+
 
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 
 
-/* ================= PAGE FUNCTIONS ================= */
+/* ================= PAGE ================= */
 
 window.hideAllPages = function(){
 
     document
     .querySelectorAll(".page")
-    .forEach(page => {
+    .forEach(page=>{
         page.classList.remove("active");
     });
 
@@ -966,26 +947,30 @@ window.showHome = function(){
 };
 
 
-/* ================= LOGIN / REGISTER ================= */
+/* ================= REGISTER / LOGIN ================= */
 
 window.showRegister = function(){
 
-    document.getElementById("loginBox")
-    .style.display = "none";
+    document
+    .getElementById("loginBox")
+    .style.display="none";
 
-    document.getElementById("registerBox")
-    .style.display = "block";
+    document
+    .getElementById("registerBox")
+    .style.display="block";
 
 };
 
 
 window.showLogin = function(){
 
-    document.getElementById("registerBox")
-    .style.display = "none";
+    document
+    .getElementById("registerBox")
+    .style.display="none";
 
-    document.getElementById("loginBox")
-    .style.display = "block";
+    document
+    .getElementById("loginBox")
+    .style.display="block";
 
 };
 
@@ -1059,19 +1044,28 @@ window.registerUser = async function(){
         );
 
 
+        localStorage.setItem(
+            "mpUserName",
+            name
+        );
+
+
         message.innerText =
         "Account created successfully!";
+
 
         await signOut(auth);
 
 
-        setTimeout(() => {
+        setTimeout(()=>{
 
             showLogin();
 
-            document.getElementById(
-                "loginEmail"
-            ).value = email;
+            document
+            .getElementById("loginEmail")
+            .value=email;
+
+            message.innerText="";
 
         },1000);
 
@@ -1105,6 +1099,9 @@ window.loginUser = async function(){
     document.getElementById("loginMessage");
 
 
+    message.innerText="";
+
+
     if(!email || !password){
 
         message.innerText =
@@ -1124,42 +1121,61 @@ window.loginUser = async function(){
         );
 
 
-        const user = result.user;
+        const user =
+        result.user;
+
 
         let userName =
-        user.displayName || "STUDENT";
+        user.displayName;
 
 
-        document.getElementById(
-            "loginPage"
-        ).style.display = "none";
+        if(!userName){
+
+            userName =
+            localStorage.getItem("mpUserName");
+
+        }
 
 
-        document.getElementById(
-            "welcomeSection"
-        ).style.display = "flex";
+        if(!userName){
+
+            userName="STUDENT";
+
+        }
 
 
-        document.getElementById(
-            "welcomeName"
-        ).innerText = userName;
+        document
+        .getElementById("loginPage")
+        .style.display="none";
 
 
-        setTimeout(() => {
-
-            document.getElementById(
-                "welcomeSection"
-            ).style.display = "none";
+        document
+        .getElementById("welcomeSection")
+        .style.display="flex";
 
 
-            document.getElementById(
-                "userEmail"
-            ).innerText = user.email || "";
+        document
+        .getElementById("welcomeName")
+        .innerText =
+        userName.toUpperCase();
 
+
+        document
+        .getElementById("userEmail")
+        .innerText =
+        user.email || email;
+
+
+        setTimeout(()=>{
+
+            document
+            .getElementById("welcomeSection")
+            .style.display="none";
 
             showHome();
 
         },2500);
+
 
     }
     catch(error){
@@ -1174,7 +1190,7 @@ window.loginUser = async function(){
 };
 
 
-/* ================= FORGOT PASSWORD ================= */
+/* ================= FORGOT ================= */
 
 window.forgotPassword = async function(){
 
@@ -1220,46 +1236,63 @@ window.forgotPassword = async function(){
 
 window.logoutUser = async function(){
 
-    await signOut(auth);
+    try{
 
-    hideAllPages();
+        await signOut(auth);
 
-    document.getElementById(
-        "welcomeSection"
-    ).style.display = "none";
+        hideAllPages();
 
-    document.getElementById(
-        "loginPage"
-    ).style.display = "flex";
+        document
+        .getElementById("welcomeSection")
+        .style.display="none";
 
-    document.getElementById(
-        "loginMessage"
-    ).innerText = "";
+        document
+        .getElementById("loginPage")
+        .style.display="flex";
 
-    showLogin();
+        document
+        .getElementById("loginEmail")
+        .value="";
+
+        document
+        .getElementById("loginPassword")
+        .value="";
+
+        document
+        .getElementById("loginMessage")
+        .innerText="";
+
+        showLogin();
+
+    }
+    catch(error){
+
+        console.error(error);
+
+    }
 
 };
 
 
-/* ================= AUTO LOGIN ================= */
+/* ================= AUTH STATE ================= */
 
 onAuthStateChanged(
     auth,
-    user => {
+    user=>{
 
         if(user){
 
-            document.getElementById(
-                "loginPage"
-            ).style.display = "none";
+            document
+            .getElementById("loginPage")
+            .style.display="none";
 
-            document.getElementById(
-                "welcomeSection"
-            ).style.display = "none";
+            document
+            .getElementById("welcomeSection")
+            .style.display="none";
 
-            document.getElementById(
-                "userEmail"
-            ).innerText =
+            document
+            .getElementById("userEmail")
+            .innerText =
             user.email || "";
 
             showHome();
@@ -1267,9 +1300,11 @@ onAuthStateChanged(
         }
         else{
 
-            document.getElementById(
-                "loginPage"
-            ).style.display = "flex";
+            document
+            .getElementById("loginPage")
+            .style.display="flex";
+
+            hideAllPages();
 
         }
 
@@ -1277,319 +1312,346 @@ onAuthStateChanged(
 );
 
 
-/* ================= ERRORS ================= */
+/* ================= ERROR ================= */
 
 function friendlyError(error){
 
-    if(error.code === "auth/invalid-credential")
-        return "Incorrect email or password.";
+    switch(error.code){
 
-    if(error.code === "auth/email-already-in-use")
-        return "This email is already registered.";
+        case "auth/invalid-api-key":
+            return "Firebase API key is invalid.";
 
-    if(error.code === "auth/weak-password")
-        return "Password must be at least 6 characters.";
+        case "auth/invalid-credential":
+            return "Incorrect email or password.";
 
-    if(error.code === "auth/invalid-email")
-        return "Invalid email address.";
+        case "auth/email-already-in-use":
+            return "This email is already registered.";
 
-    if(error.code === "auth/network-request-failed")
-        return "Please check your internet connection.";
+        case "auth/weak-password":
+            return "Password must be at least 6 characters.";
 
-    return error.message || "Something went wrong.";
+        case "auth/invalid-email":
+            return "Invalid email address.";
+
+        case "auth/network-request-failed":
+            return "Please check your internet connection.";
+
+        case "auth/operation-not-allowed":
+            return "Email/Password Login is not enabled in Firebase.";
+
+        default:
+            return error.message || "Something went wrong.";
+
+    }
 
 }
 
 
-/* ================= LESSONS ================= */
+/* ================= LESSON DATA ================= */
 
 const lessons = {
 
-    "Accounting":[
-        "ගිණුම්කරණය හා එහි අවශ්‍යතාව",
-        "ගිණුම්කරණ සමීකරණය",
-        "ද්විත්ව සටහන්",
-        "මූලික සටහන් පොත්",
-        "පාලන ගිණුම්",
-        "වැරදි නිවැරදි කිරීම්",
-        "ගිණුම්කරණ සංකල්ප",
-        "කේවල ස්වාමි ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන",
-        "නිෂ්පාදන ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන",
-        "ලාභ අරමුණු කර නොගත් සංවිධානයක මූල්‍ය ප්‍රකාශන",
-        "අසම්පූර්ණ සටහන්",
-        "හවුල් ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන",
-        "ගිණුම්කරණ ප්‍රමිත",
-        "සමාගම් ගිණුම්කරණය",
-        "මුදල් ප්‍රවාහ ප්‍රකාශනය",
-        "අනුපාත විශ්ලේෂණය",
-        "කළමනාකරණ ගිණුම්කරණය",
-        "පිරිවැය හැසිරීම හා පිරිවැය පරිමා ලාභ විශ්ලේෂණය",
-        "ප්‍රාග්ධන ආයෝජන තීරණ"
-    ],
+"Accounting":[
+"ගිණුම්කරණය හා එහි අවශ්‍යතාව",
+"ගිණුම්කරණ සමීකරණය",
+"ද්විත්ව සටහන්",
+"මූලික සටහන් පොත්",
+"පාලන ගිණුම්",
+"වැරදි නිවැරදි කිරීම්",
+"ගිණුම්කරණ සංකල්ප",
+"කේවල ස්වාමි ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන",
+"නිෂ්පාදන ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන",
+"ලාභ අරමුණු කර නොගත් සංවිධානයක මූල්‍ය ප්‍රකාශන",
+"අසම්පූර්ණ සටහන්",
+"හවුල් ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන",
+"ගිණුම්කරණ ප්‍රමිත",
+"සමාගම් ගිණුම්කරණය",
+"මුදල් ප්‍රවාහ ප්‍රකාශනය",
+"අනුපාත විශ්ලේෂණය",
+"කළමනාකරණ ගිණුම්කරණය",
+"පිරිවැය හැසිරීම හා පිරිවැය පරිමා ලාභ විශ්ලේෂණය",
+"ප්‍රාග්ධන ආයෝජන තීරණ"
+],
 
-    "Business Studies":[
-        "ව්‍යාපාර පදනම හා පරිසරය",
-        "සමාජ වගකීම්",
-        "රජය හා ව්‍යාපාර",
-        "ව්‍යාපාර සංවිධාන",
-        "ව්‍යවසායකත්වය",
-        "සුළු හා මධ්‍ය පරිමාණ ව්‍යාපාර",
-        "මුදල් හා මූල්‍ය ආයතන",
-        "රක්ෂණය හා එහි වැදගත්කම",
-        "සන්නිවේදනය හා එහි වැදගත්කම",
-        "ප්‍රවාහනය හා එහි වැදගත්කම",
-        "වෙළඳාම හා එහි වැදගත්කම",
-        "කළමනාකරණයේ අවශ්‍යතාව හා එහි වැදගත්කම",
-        "මෙහෙයුම් කළමනාකරණය",
-        "අලෙවිකරණය",
-        "මූල්‍ය කළමනාකරණය",
-        "මානව සම්පත් කළමනාකරණය",
-        "තොරතුරු පද්ධති",
-        "ව්‍යාපාර සැලැස්ම"
-    ],
+"Business Studies":[
+"ව්‍යාපාර පදනම හා පරිසරය",
+"සමාජ වගකීම්",
+"රජය හා ව්‍යාපාර",
+"ව්‍යාපාර සංවිධාන",
+"ව්‍යවසායකත්වය",
+"සුළු හා මධ්‍ය පරිමාණ ව්‍යාපාර",
+"මුදල් හා මූල්‍ය ආයතන",
+"රක්ෂණය හා එහි වැදගත්කම",
+"සන්නිවේදනය හා එහි වැදගත්කම",
+"ප්‍රවාහනය හා එහි වැදගත්කම",
+"වෙළඳාම හා එහි වැදගත්කම",
+"කළමනාකරණයේ අවශ්‍යතාව හා එහි වැදගත්කම",
+"මෙහෙයුම් කළමනාකරණය",
+"අලෙවිකරණය",
+"මූල්‍ය කළමනාකරණය",
+"මානව සම්පත් කළමනාකරණය",
+"තොරතුරු පද්ධති",
+"ව්‍යාපාර සැලැස්ම"
+],
 
-    "Economics":[
-        "ආර්ථික විද්‍යාව හැඳින්වීම, ආර්ථික පද්ධති, නිෂ්පාදන හැකියා මායිම්",
-        "ඉල්ලුම, සැපයුම, නම්‍යතාව හා වෙළෙඳපොළ සමතුලිතය",
-        "වෙළඳපොළට රජය මැදිහත් වීම",
-        "වෙළඳපොළ තුළ නිෂ්පාදන ආයතන තාර්කිකව හැසිරෙන ආකාරය",
-        "ජාතික ගිණුම්කරණය",
-        "සර්ව ආර්ථික සමතුලිතය",
-        "මුදල් හා මිල මට්ටම්, බැංකු පද්ධතිය",
-        "රාජ්‍ය ආර්ථිකය",
-        "විදේශීය වෙළඳාම",
-        "විදේශීය මූල්‍ය",
-        "ආර්ථික සංවර්ධනය",
-        "ශ්‍රී ලංකාවේ ආර්ථික ව්‍යුහය හා ප්‍රතිපත්ති"
-    ],
+"Economics":[
+"ආර්ථික විද්‍යාව හැඳින්වීම, ආර්ථික පද්ධති, නිෂ්පාදන හැකියා මායිම්",
+"ඉල්ලුම, සැපයුම, නම්‍යතාව හා වෙළෙඳපොළ සමතුලිතය",
+"වෙළඳපොළට රජය මැදිහත් වීම",
+"වෙළඳපොළ තුළ නිෂ්පාදන ආයතන තාර්කිකව හැසිරෙන ආකාරය",
+"ජාතික ගිණුම්කරණය",
+"සර්ව ආර්ථික සමතුලිතය",
+"මුදල් හා මිල මට්ටම්, බැංකු පද්ධතිය",
+"රාජ්‍ය ආර්ථිකය",
+"විදේශීය වෙළඳාම",
+"විදේශීය මූල්‍ය",
+"ආර්ථික සංවර්ධනය",
+"ශ්‍රී ලංකාවේ ආර්ථික ව්‍යුහය හා ප්‍රතිපත්ති"
+],
 
-    "Physics":[
-        "මිනුම්",
-        "යාන්ත්‍ර විද්‍යාව",
-        "තරංග",
-        "විදුලිය",
-        "තාප භෞතික විද්‍යාව",
-        "ද්‍රව්‍යවල යාන්ත්‍රික ගුණ",
-        "ගුරුත්වාකර්ෂණය",
-        "චලනය",
-        "විද්‍යුත් ක්ෂේත්‍ර",
-        "චුම්බක ක්ෂේත්‍ර",
-        "ධාරා විදුලිය",
-        "ඉලෙක්ට්‍රොනික විද්‍යාව"
-    ],
+"Physics":[
+"මිනුම්",
+"යාන්ත්‍ර විද්‍යාව",
+"තරංග",
+"විදුලිය",
+"තාප භෞතික විද්‍යාව",
+"ද්‍රව්‍යවල යාන්ත්‍රික ගුණ",
+"ගුරුත්වාකර්ෂණය",
+"චලනය",
+"විද්‍යුත් ක්ෂේත්‍ර",
+"චුම්බක ක්ෂේත්‍ර",
+"ධාරා විදුලිය",
+"ඉලෙක්ට්‍රොනික විද්‍යාව"
+],
 
-    "Chemistry":[
-        "මූලික රසායන විද්‍යාව",
-        "පරමාණුක ව්‍යුහය",
-        "රසායනික බන්ධන",
-        "ද්‍රව්‍යයේ වායුමය තත්ත්වය",
-        "ද්‍රව්‍යයේ ද්‍රව තත්ත්වය",
-        "ද්‍රව්‍යයේ ඝන තත්ත්වය",
-        "රසායනික ප්‍රතික්‍රියා",
-        "රසායනික සමතුලිතය",
-        "අම්ල, භස්ම හා ලවණ",
-        "කාබනික රසායන විද්‍යාව"
-    ],
+"Chemistry":[
+"මූලික රසායන විද්‍යාව",
+"පරමාණුක ව්‍යුහය",
+"රසායනික බන්ධන",
+"ද්‍රව්‍යයේ වායුමය තත්ත්වය",
+"ද්‍රව්‍යයේ ද්‍රව තත්ත්වය",
+"ද්‍රව්‍යයේ ඝන තත්ත්වය",
+"රසායනික ප්‍රතික්‍රියා",
+"රසායනික සමතුලිතය",
+"අම්ල, භෂ්ම හා ලවණ",
+"කාබනික රසායන විද්‍යාව",
+"විද්‍යුත් රසායන විද්‍යාව",
+"කාර්මික රසායන විද්‍යාව"
+],
 
-    "Biology":[
-        "ජීව විද්‍යාව හැඳින්වීම",
-        "සෛල ව්‍යුහය",
-        "ජීවීන්ගේ සංවිධාන මට්ටම්",
-        "ශාක ව්‍යුහය",
-        "සත්ව ව්‍යුහය",
-        "ප්‍රවේණි විද්‍යාව",
-        "පරිසර විද්‍යාව"
-    ],
+"Biology":[
+"ජීව විද්‍යාව හැඳින්වීම",
+"සෛලය",
+"ජීව විද්‍යාත්මක අණු",
+"ශාක ව්‍යුහය",
+"සත්ත්ව ව්‍යුහය",
+"ප්‍රවේණි විද්‍යාව",
+"පරිණාමය",
+"පරිසර විද්‍යාව",
+"ප්‍රජනනය",
+"ක්ෂුද්‍ර ජීව විද්‍යාව"
+],
 
-    "ICT":[
-        "තොරතුරු හා සන්නිවේදන තාක්ෂණය",
-        "පරිගණක පද්ධති",
-        "දත්ත සමුදා",
-        "ක්‍රමලේඛනය",
-        "වෙබ් සංවර්ධනය",
-        "ජාලකරණය",
-        "තොරතුරු ආරක්ෂාව"
-    ],
+"Science for Technology":[
+"විද්‍යාවේ මූලික සංකල්ප",
+"ද්‍රව්‍ය හා එහි ගුණ",
+"ශක්තිය",
+"විදුලිය",
+"තාක්ෂණික යෙදුම්"
+],
 
-    "Engineering Technology":[
-        "තාක්ෂණික සංකල්ප",
-        "යාන්ත්‍රික තාක්ෂණය",
-        "විදුලි තාක්ෂණය",
-        "ඉදිකිරීම් තාක්ෂණය"
-    ],
+"ICT":[
+"තොරතුරු හා සන්නිවේදන තාක්ෂණය",
+"පරිගණක පද්ධති",
+"දත්ත සමුදා",
+"ක්‍රමලේඛනය",
+"ජාලකරණය",
+"වෙබ් තාක්ෂණය"
+],
 
-    "Bio Systems Technology":[
-        "ජෛව පද්ධති",
-        "කෘෂි තාක්ෂණය",
-        "ආහාර තාක්ෂණය",
-        "පරිසර තාක්ෂණය"
-    ]
+"Engineering Technology":[
+"ඉංජිනේරු තාක්ෂණය හැඳින්වීම",
+"යාන්ත්‍රික තාක්ෂණය",
+"විදුලි තාක්ෂණය",
+"ඉදිකිරීම් තාක්ෂණය"
+],
+
+"Bio Systems Technology":[
+"ජෛව පද්ධති",
+"කෘෂිකාර්මික තාක්ෂණය",
+"ආහාර තාක්ෂණය",
+"පරිසර තාක්ෂණය"
+]
+
 };
 
 
-let currentSubject = "";
-let previousCategory = "commercePage";
+let currentSubject="";
+let currentLesson="";
+let previousCategory="commercePage";
 
+
+/* ================= SUBJECT ================= */
 
 window.openSubject = function(subject){
 
-    currentSubject = subject;
+    currentSubject=subject;
 
-    document.getElementById(
-        "subjectTitle"
-    ).innerText = subject;
+    document
+    .getElementById("subjectTitle")
+    .innerText="📚 "+subject;
 
     const list =
     document.getElementById("lessonList");
 
-    list.innerHTML = "";
+    list.innerHTML="";
 
-    const subjectLessons =
-    lessons[subject] || [];
+    if(lessons[subject]){
 
-    subjectLessons.forEach(
-        (lesson,index) => {
+        lessons[subject].forEach(
+            (lesson,index)=>{
 
-            const button =
-            document.createElement("button");
+                const button =
+                document.createElement("button");
 
-            button.className =
-            "lesson-button";
+                button.className="lesson-button";
 
-            button.innerText =
-            (index + 1) + ". " + lesson;
+                button.innerText =
+                (index+1)+". "+lesson;
 
-            button.onclick = function(){
+                button.onclick=()=>{
 
-                openLesson(lesson);
+                    openLesson(lesson);
 
-            };
+                };
 
-            list.appendChild(button);
+                list.appendChild(button);
 
-        }
-    );
+            }
+        );
 
-    hideAllPages();
+    }
 
-    document.getElementById(
-        "subjectPage"
-    ).classList.add("active");
+    if(
+        ["Physics","Chemistry","Biology"]
+        .includes(subject)
+    ){
+
+        previousCategory="sciencePage";
+
+    }
+    else if(
+        [
+            "Science for Technology",
+            "ICT",
+            "Engineering Technology",
+            "Bio Systems Technology"
+        ].includes(subject)
+    ){
+
+        previousCategory="technologyPage";
+
+    }
+    else{
+
+        previousCategory="commercePage";
+
+    }
+
+    showPage("subjectPage");
 
 };
 
+
+/* ================= LESSON ================= */
 
 window.openLesson = function(lesson){
 
-    document.getElementById(
-        "lessonDetailTitle"
-    ).innerText = lesson;
+    currentLesson=lesson;
 
-    hideAllPages();
+    document
+    .getElementById("lessonDetailTitle")
+    .innerText=lesson;
 
-    document.getElementById(
-        "lessonPage"
-    ).classList.add("active");
-
-};
-
-
-window.goBackToLessons = function(){
-
-    hideAllPages();
-
-    document.getElementById(
-        "subjectPage"
-    ).classList.add("active");
+    showPage("lessonPage");
 
 };
 
 
 window.goBackToCategory = function(){
 
-    hideAllPages();
-
-    if(
-        currentSubject === "Physics" ||
-        currentSubject === "Chemistry" ||
-        currentSubject === "Biology"
-    ){
-
-        document.getElementById(
-            "sciencePage"
-        ).classList.add("active");
-
-    }
-    else if(
-        currentSubject === "ICT" ||
-        currentSubject === "Engineering Technology" ||
-        currentSubject === "Bio Systems Technology"
-    ){
-
-        document.getElementById(
-            "technologyPage"
-        ).classList.add("active");
-
-    }
-    else{
-
-        document.getElementById(
-            "commercePage"
-        ).classList.add("active");
-
-    }
+    showPage(previousCategory);
 
 };
 
 
-/* ================= AI ================= */
+window.goBackToLessons = function(){
 
-const AI_BACKEND_URL =
-"https://script.google.com/macros/s/AKfycbys7-peWxfvTOHfYVK9dbmNLKYKOT7vDws35I-JbadOl-oe4MKUbfGtCD0iRrxp6II6Xw/exec";
+    openSubject(currentSubject);
 
+};
+
+
+/* ================= RESOURCES ================= */
+
+window.openNote = function(){
+
+    alert(
+        "📝 Notes for: "+currentLesson+
+        "\n\nPDF notes will be connected here."
+    );
+
+};
+
+window.openVideo = function(){
+
+    alert(
+        "🎥 Video for: "+currentLesson+
+        "\n\nVideo will be connected here."
+    );
+
+};
+
+window.openPaper = function(){
+
+    alert(
+        "📄 Papers for: "+currentLesson+
+        "\n\nPast papers will be connected here."
+    );
+
+};
+
+window.openQuiz = function(){
+
+    alert(
+        "🎯 Quiz for: "+currentLesson+
+        "\n\nQuiz will be connected here."
+    );
+
+};
+
+
+/* ================= AI CHAT ================= */
 
 window.toggleAIChat = function(){
 
     const box =
     document.getElementById("aiChatBox");
 
-    if(box.style.display === "block"){
+    if(box.style.display==="block"){
 
-        box.style.display = "none";
+        box.style.display="none";
 
     }
     else{
 
-        box.style.display = "block";
+        box.style.display="block";
 
-        document.getElementById(
-            "aiInput"
-        ).focus();
+        document
+        .getElementById("aiInput")
+        .focus();
 
     }
-
-};
-
-
-window.addAIMessage = function(text,type){
-
-    const messages =
-    document.getElementById("aiMessages");
-
-    const div =
-    document.createElement("div");
-
-    div.className =
-    type === "user"
-    ? "user-message"
-    : "ai-message";
-
-    div.innerText = text;
-
-    messages.appendChild(div);
-
-    messages.scrollTop =
-    messages.scrollHeight;
 
 };
 
@@ -1602,47 +1664,53 @@ window.sendAIMessage = async function(){
     const question =
     input.value.trim();
 
-    if(!question) return;
+    if(!question){
+        return;
+    }
 
 
-    addAIMessage(
-        question,
-        "user"
-    );
-
-    input.value = "";
+    const messages =
+    document.getElementById("aiMessages");
 
 
-    const thinking =
+    const userMessage =
     document.createElement("div");
 
-    thinking.className =
-    "ai-message";
+    userMessage.className="user-message";
 
-    thinking.innerText =
-    "🤖 Thinking...";
+    userMessage.innerText=question;
 
-    thinking.id =
-    "thinkingMessage";
+    messages.appendChild(userMessage);
 
-    document.getElementById(
-        "aiMessages"
-    ).appendChild(thinking);
+
+    input.value="";
+
+
+    const loading =
+    document.createElement("div");
+
+    loading.className="ai-message";
+
+    loading.innerText=
+    "🤔 Thinking...";
+
+    messages.appendChild(loading);
+
+    messages.scrollTop=
+    messages.scrollHeight;
 
 
     try{
 
         const response =
         await fetch(
-            AI_BACKEND_URL,
+            "https://script.google.com/macros/s/AKfycbys7-peWxfvTOHfYVK9dbmNLKYKOT7vDws35I-JbadOl-oe4MKUbfGtCD0iRrxp6II6Xw/exec",
             {
                 method:"POST",
-
                 headers:{
                     "Content-Type":
-                    "text/plain;charset=utf-8"
+                    "application/json"
                 },
-
                 body:JSON.stringify({
                     question:question
                 })
@@ -1654,71 +1722,23 @@ window.sendAIMessage = async function(){
         await response.text();
 
 
-        let data;
+        loading.innerText=
+        text || "No response received.";
 
-        try{
-
-            data = JSON.parse(text);
-
-        }
-        catch(e){
-
-            data = {
-                answer:text
-            };
-
-        }
-
-
-        const thinkingElement =
-        document.getElementById(
-            "thinkingMessage"
-        );
-
-        if(thinkingElement){
-            thinkingElement.remove();
-        }
-
-
-        if(data.answer){
-
-            addAIMessage(
-                data.answer,
-                "ai"
-            );
-
-        }
-        else{
-
-            addAIMessage(
-                "❌ AI response එකක් ලැබුණේ නැහැ.",
-                "ai"
-            );
-
-        }
 
     }
     catch(error){
 
         console.error(error);
 
-
-        const thinkingElement =
-        document.getElementById(
-            "thinkingMessage"
-        );
-
-        if(thinkingElement){
-            thinkingElement.remove();
-        }
-
-
-        addAIMessage(
-            "❌ AI Tutor එකට connect වෙන්න බැරි වුණා. Backend URL එක සහ deployment එක check කරන්න.",
-            "ai"
-        );
+        loading.innerText=
+        "❌ AI connection failed.";
 
     }
+
+
+    messages.scrollTop=
+    messages.scrollHeight;
 
 };
 

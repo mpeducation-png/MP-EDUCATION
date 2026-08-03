@@ -1,366 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MP Education | Learn, Study & Improve</title>
+<title>MP Education | Learn, Study & Improve</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f7fb;
-            color: #172554;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #172554;
+}
 
-        header {
-            background: #1e3a8a;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+header {
+    background: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
 
-        h1 {
-            margin: 5px 0;
-            font-size: 30px;
-        }
+h1 {
+    margin: 5px 0;
+    font-size: 30px;
+}
 
-        h2 {
-            text-align: center;
-            margin: 25px 0;
-        }
+h2 {
+    text-align: center;
+    margin: 25px 0;
+}
 
-        p {
-            line-height: 1.6;
-        }
+p {
+    line-height: 1.6;
+}
 
-        .page {
-            display: none;
-            padding: 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
+.page {
+    display: none;
+    padding: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
 
-        .active {
-            display: block;
-        }
+.active {
+    display: block;
+}
 
-        /* LOGIN / REGISTER */
+/* LOGIN / REGISTER */
 
-        .auth-container {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
 
-        .auth-box {
-            width: 100%;
-            max-width: 420px;
-            background: white;
-            padding: 25px;
-            border-radius: 18px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-        }
+.auth-box {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
 
-        .auth-box h2 {
-            margin-top: 0;
-        }
+.auth-box h2 {
+    margin-top: 0;
+}
 
-        input {
-            width: 100%;
-            padding: 13px;
-            margin: 8px 0;
-            border: 1px solid #cbd5e1;
-            border-radius: 10px;
-            font-size: 16px;
-        }
+input {
+    width: 100%;
+    padding: 13px;
+    margin: 8px 0;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 16px;
+}
 
-        button {
-            border: none;
-            cursor: pointer;
-            border-radius: 10px;
-            font-size: 16px;
-        }
+button {
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 16px;
+}
 
-        .auth-button {
-            width: 100%;
-            padding: 13px;
-            margin-top: 10px;
-            background: #1e3a8a;
-            color: white;
-        }
+.auth-button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 10px;
+    background: #1e3a8a;
+    color: white;
+}
 
-        .switch-button {
-            background: none;
-            color: #1e3a8a;
-            padding: 5px;
-        }
+.switch-button {
+    background: none;
+    color: #1e3a8a;
+    padding: 5px;
+}
 
-        .forgot-button {
-            display: block;
-            margin: 10px auto;
-        }
+.forgot-button {
+    display: block;
+    margin: 10px auto;
+}
 
-        .auth-message {
-            text-align: center;
-            font-weight: bold;
-        }
+.auth-message {
+    text-align: center;
+    font-weight: bold;
+}
 
-        /* WELCOME */
+/* WELCOME */
 
-        #welcomeSection {
-            text-align: center;
-            background: linear-gradient(135deg, #1e3a8a, #2563eb);
-            color: white;
-            padding: 45px 20px;
-            border-radius: 0 0 25px 25px;
-        }
+#welcomeSection {
+    text-align: center;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: white;
+    padding: 45px 20px;
+    border-radius: 0 0 25px 25px;
+}
 
-        #welcomeSection h1 {
-            font-size: 42px;
-        }
+#welcomeSection h1 {
+    font-size: 42px;
+}
 
-        #welcomeName {
-            font-size: 38px;
-            margin: 10px 0;
-        }
+#welcomeName {
+    font-size: 38px;
+    margin: 10px 0;
+}
 
-        /* USER BAR */
+/* USER BAR */
 
-        .user-bar {
-            max-width: 1100px;
-            margin: 20px auto;
-            padding: 15px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-        }
+.user-bar {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
 
-        #logoutButton {
-            background: #dc2626;
-            color: white;
-            padding: 9px 16px;
-            margin-left: 10px;
-        }
+#logoutButton {
+    background: #dc2626;
+    color: white;
+    padding: 9px 16px;
+    margin-left: 10px;
+}
 
-        /* HERO */
+/* HERO */
 
-        .hero-banner {
-            width: 100%;
-            overflow: hidden;
-            border-radius: 20px;
-            margin: 20px 0;
-        }
+.hero-banner {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 20px 0;
+}
 
-        .hero-banner img {
-            width: 100%;
-            display: block;
-        }
+.hero-banner img {
+    width: 100%;
+    display: block;
+}
 
-        /* CATEGORIES */
+/* CATEGORIES */
 
-        .categories,
-        .subjects,
-        .resources {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-        }
+.categories,
+.subjects,
+.resources {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
 
-        .categories button,
-        .subject,
-        .resource {
-            padding: 20px;
-            background: white;
-            color: #1e3a8a;
-            border: 2px solid #dbeafe;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: 0.2s;
-        }
+.categories button,
+.subject,
+.resource {
+    padding: 20px;
+    background: white;
+    color: #1e3a8a;
+    border: 2px solid #dbeafe;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: 0.2s;
+}
 
-        .categories button:hover,
-        .subject:hover,
-        .resource:hover {
-            transform: translateY(-3px);
-            background: #eff6ff;
-        }
+.categories button:hover,
+.subject:hover,
+.resource:hover {
+    transform: translateY(-3px);
+    background: #eff6ff;
+}
 
-        /* BACK BUTTON */
+/* BACK BUTTON */
 
-        .back {
-            background: #64748b;
-            color: white;
-            padding: 10px 18px;
-            margin-bottom: 10px;
-        }
+.back {
+    background: #64748b;
+    color: white;
+    padding: 10px 18px;
+    margin-bottom: 10px;
+}
 
-        /* LESSONS */
+/* LESSONS */
 
-        .lessons {
-            display: grid;
-            gap: 12px;
-        }
+.lessons {
+    display: grid;
+    gap: 12px;
+}
 
-        .lesson-button {
-            width: 100%;
-            text-align: left;
-            padding: 16px;
-            background: white;
-            border-left: 5px solid #1e3a8a;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-        }
+.lesson-button {
+    width: 100%;
+    text-align: left;
+    padding: 16px;
+    background: white;
+    border-left: 5px solid #1e3a8a;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
 
-        .lesson-detail {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-        }
+.lesson-detail {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+}
 
-        /* FOOTER */
+/* FOOTER */
 
-        footer {
-            margin-top: 40px;
-            padding: 30px 20px;
-            background: #172554;
-            color: white;
-            text-align: center;
-        }
+footer {
+    margin-top: 40px;
+    padding: 30px 20px;
+    background: #172554;
+    color: white;
+    text-align: center;
+}
 
-        footer a {
-            color: white;
-        }
+footer a {
+    color: white;
+}
 
-        /* AI BUTTON */
+/* AI BUTTON */
 
-        #aiChatButton {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            z-index: 9999;
-            background: #1e3a8a;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 50px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
-            font-weight: bold;
-        }
+#aiChatButton {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    background: #1e3a8a;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    font-weight: bold;
+}
 
-        /* AI CHAT */
+/* AI CHAT */
 
-        #aiChatBox {
-            display: none;
-            position: fixed;
-            right: 20px;
-            bottom: 85px;
-            width: 350px;
-            max-width: calc(100% - 40px);
-            height: 500px;
-            background: white;
-            border-radius: 18px;
-            box-shadow: 0 10px 35px rgba(0,0,0,0.25);
-            z-index: 9998;
-            overflow: hidden;
-        }
+#aiChatBox {
+    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 85px;
+    width: 350px;
+    max-width: calc(100% - 40px);
+    height: 500px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+    z-index: 9998;
+    overflow: hidden;
+}
 
-        .ai-header {
-            background: #1e3a8a;
-            color: white;
-            padding: 16px;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-        }
+.ai-header {
+    background: #1e3a8a;
+    color: white;
+    padding: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
 
-        .ai-header button {
-            background: transparent;
-            color: white;
-            font-size: 18px;
-        }
+.ai-header button {
+    background: transparent;
+    color: white;
+    font-size: 18px;
+}
 
-        #aiMessages {
-            height: 390px;
-            overflow-y: auto;
-            padding: 15px;
-            background: #f8fafc;
-        }
+#aiMessages {
+    height: 390px;
+    overflow-y: auto;
+    padding: 15px;
+    background: #f8fafc;
+}
 
-        .ai-message,
-        .user-message {
-            padding: 10px 12px;
-            margin-bottom: 10px;
-            border-radius: 12px;
-            max-width: 85%;
-            line-height: 1.5;
-        }
+.ai-message,
+.user-message {
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    max-width: 85%;
+    line-height: 1.5;
+}
 
-        .ai-message {
-            background: #e0e7ff;
-            margin-right: auto;
-        }
+.ai-message {
+    background: #e0e7ff;
+    margin-right: auto;
+}
 
-        .user-message {
-            background: #dbeafe;
-            margin-left: auto;
-            text-align: right;
-        }
+.user-message {
+    background: #dbeafe;
+    margin-left: auto;
+    text-align: right;
+}
 
-        .ai-input-area {
-            display: flex;
-            padding: 10px;
-            gap: 7px;
-            border-top: 1px solid #ddd;
-        }
+.ai-input-area {
+    display: flex;
+    padding: 10px;
+    gap: 7px;
+    border-top: 1px solid #ddd;
+}
 
-        .ai-input-area input {
-            margin: 0;
-            flex: 1;
-        }
+.ai-input-area input {
+    margin: 0;
+    flex: 1;
+}
 
-        .ai-input-area button {
-            background: #1e3a8a;
-            color: white;
-            padding: 10px 15px;
-        }
+.ai-input-area button {
+    background: #1e3a8a;
+    color: white;
+    padding: 10px 15px;
+}
 
-        @media (max-width: 600px) {
+@media (max-width: 600px) {
 
-            #welcomeSection h1 {
-                font-size: 32px;
-            }
+    #welcomeSection h1 {
+        font-size: 32px;
+    }
 
-            #welcomeName {
-                font-size: 30px;
-            }
+    #welcomeName {
+        font-size: 30px;
+    }
 
-            #aiChatBox {
-                right: 10px;
-                bottom: 80px;
-                width: calc(100% - 20px);
-            }
+    #aiChatBox {
+        right: 10px;
+        bottom: 80px;
+        width: calc(100% - 20px);
+    }
 
-            #aiChatButton {
-                right: 10px;
-                bottom: 10px;
-            }
-        }
-    </style>
+    #aiChatButton {
+        right: 10px;
+        bottom: 10px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<!-- ================================================= -->
-<!-- LOGIN PAGE -->
-<!-- ================================================= -->
+<!-- LOGIN / REGISTER -->
 
 <div id="loginPage" class="auth-container">
+
+    <!-- LOGIN -->
 
     <div id="loginBox" class="auth-box">
 
@@ -403,10 +403,7 @@
             </button>
         </p>
 
-        <p
-            id="loginMessage"
-            class="auth-message"
-        ></p>
+        <p id="loginMessage" class="auth-message"></p>
 
     </div>
 
@@ -463,19 +460,14 @@
             </button>
         </p>
 
-        <p
-            id="registerMessage"
-            class="auth-message"
-        ></p>
+        <p id="registerMessage" class="auth-message"></p>
 
     </div>
 
 </div>
 
 
-<!-- ================================================= -->
 <!-- WELCOME -->
-<!-- ================================================= -->
 
 <div id="welcomeSection" style="display:none;">
 
@@ -492,24 +484,17 @@
 </div>
 
 
-<!-- ================================================= -->
-<!-- HOME PAGE -->
-<!-- ================================================= -->
+<!-- HOME -->
 
 <div id="homePage" class="page">
 
     <header>
 
-        <h1>
-            📚 MP Education
-        </h1>
+        <h1>📚 MP Education</h1>
 
-        <p>
-            Learn • Study • Improve
-        </p>
+        <p>Learn • Study • Improve</p>
 
     </header>
-
 
     <div class="user-bar">
 
@@ -526,7 +511,6 @@
 
     </div>
 
-
     <div class="hero-banner">
 
         <img
@@ -536,11 +520,9 @@
 
     </div>
 
-
     <h2>
         🎓 Choose Your Learning Category
     </h2>
-
 
     <div class="categories">
 
@@ -573,9 +555,7 @@
 </div>
 
 
-<!-- ================================================= -->
 <!-- O/L -->
-<!-- ================================================= -->
 
 <div id="olPage" class="page">
 
@@ -587,30 +567,17 @@
 
     <div class="subjects">
 
-        <button class="subject">
-            📚 Subjects
-        </button>
-
-        <button class="subject">
-            📝 Notes
-        </button>
-
-        <button class="subject">
-            📄 Past Papers
-        </button>
-
-        <button class="subject">
-            🎯 Quizzes
-        </button>
+        <button class="subject">📚 Subjects</button>
+        <button class="subject">📝 Notes</button>
+        <button class="subject">📄 Past Papers</button>
+        <button class="subject">🎯 Quizzes</button>
 
     </div>
 
 </div>
 
 
-<!-- ================================================= -->
 <!-- A/L -->
-<!-- ================================================= -->
 
 <div id="alPage" class="page">
 
@@ -622,30 +589,17 @@
 
     <div class="subjects">
 
-        <button class="subject">
-            📚 Subjects
-        </button>
-
-        <button class="subject">
-            📝 Notes
-        </button>
-
-        <button class="subject">
-            📄 Past Papers
-        </button>
-
-        <button class="subject">
-            🎯 Quizzes
-        </button>
+        <button class="subject">📚 Subjects</button>
+        <button class="subject">📝 Notes</button>
+        <button class="subject">📄 Past Papers</button>
+        <button class="subject">🎯 Quizzes</button>
 
     </div>
 
 </div>
 
 
-<!-- ================================================= -->
 <!-- COMMERCE -->
-<!-- ================================================= -->
 
 <div id="commercePage" class="page">
 
@@ -683,9 +637,7 @@
 </div>
 
 
-<!-- ================================================= -->
 <!-- SCIENCE -->
-<!-- ================================================= -->
 
 <div id="sciencePage" class="page">
 
@@ -723,9 +675,7 @@
 </div>
 
 
-<!-- ================================================= -->
 <!-- TECHNOLOGY -->
-<!-- ================================================= -->
 
 <div id="technologyPage" class="page">
 
@@ -770,9 +720,7 @@
 </div>
 
 
-<!-- ================================================= -->
 <!-- ARTS -->
-<!-- ================================================= -->
 
 <div id="artsPage" class="page">
 
@@ -784,30 +732,17 @@
 
     <div class="subjects">
 
-        <button class="subject">
-            📚 Subjects
-        </button>
-
-        <button class="subject">
-            📝 Notes
-        </button>
-
-        <button class="subject">
-            📄 Past Papers
-        </button>
-
-        <button class="subject">
-            🎯 Quizzes
-        </button>
+        <button class="subject">📚 Subjects</button>
+        <button class="subject">📝 Notes</button>
+        <button class="subject">📄 Past Papers</button>
+        <button class="subject">🎯 Quizzes</button>
 
     </div>
 
 </div>
 
 
-<!-- ================================================= -->
 <!-- SUBJECT LESSONS -->
-<!-- ================================================= -->
 
 <div id="subjectPage" class="page">
 
@@ -828,9 +763,7 @@
 </div>
 
 
-<!-- ================================================= -->
 <!-- LESSON DETAIL -->
-<!-- ================================================= -->
 
 <div id="lessonPage" class="page">
 
@@ -886,15 +819,11 @@
 </div>
 
 
-<!-- ================================================= -->
 <!-- FOOTER -->
-<!-- ================================================= -->
 
 <footer>
 
-    <p>
-        📞 Contact Us
-    </p>
+    <p>📞 Contact Us</p>
 
     <p>
         📱
@@ -917,9 +846,7 @@
 </footer>
 
 
-<!-- ================================================= -->
 <!-- AI CHAT BUTTON -->
-<!-- ================================================= -->
 
 <button
     id="aiChatButton"
@@ -929,9 +856,7 @@
 </button>
 
 
-<!-- ================================================= -->
 <!-- AI CHAT BOX -->
-<!-- ================================================= -->
 
 <div id="aiChatBox">
 
@@ -947,7 +872,6 @@
 
     </div>
 
-
     <div id="aiMessages">
 
         <div class="ai-message">
@@ -962,7 +886,6 @@
         </div>
 
     </div>
-
 
     <div class="ai-input-area">
 
@@ -985,11 +908,59 @@
 </div>
 
 
-<!-- ================================================= -->
-<!-- JAVASCRIPT -->
-<!-- ================================================= -->
+<!-- FIREBASE -->
 
-<script>
+<script type="module">
+
+import {
+    initializeApp
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    sendPasswordResetEmail,
+    signOut,
+    onAuthStateChanged,
+    updateProfile
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+
+/* ============================= */
+/* FIREBASE CONFIG */
+/* ============================= */
+
+const firebaseConfig = {
+
+    apiKey: "AIzaSyD1ibHY0BqBPEoj8kVG_5KLHiCiclzw7W4",
+
+    authDomain: "mp-education-47e46.firebaseapp.com",
+
+    projectId: "mp-education-47e46",
+
+    storageBucket: "mp-education-47e46.firebasestorage.app",
+
+    messagingSenderId: "225987667440",
+
+    appId: "1:225987667440:web:2943cb26965510c2d4e935",
+
+    measurementId: "G-HD5GPFLQ3N"
+};
+
+
+/* ============================= */
+/* INITIALIZE FIREBASE */
+/* ============================= */
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+
+/* ============================= */
+/* VARIABLES */
+/* ============================= */
 
 let currentSubject = "";
 let currentLesson = "";
@@ -999,7 +970,7 @@ let currentLesson = "";
 /* PAGE CONTROL */
 /* ============================= */
 
-function hideAllPages() {
+window.hideAllPages = function() {
 
     document.querySelectorAll(".page").forEach(function(page) {
 
@@ -1007,14 +978,15 @@ function hideAllPages() {
 
     });
 
-}
+};
 
 
-function showPage(pageId) {
+window.showPage = function(pageId) {
 
     hideAllPages();
 
-    const page = document.getElementById(pageId);
+    const page =
+        document.getElementById(pageId);
 
     if (page) {
 
@@ -1022,10 +994,10 @@ function showPage(pageId) {
 
     }
 
-}
+};
 
 
-function showHome() {
+window.showHome = function() {
 
     hideAllPages();
 
@@ -1033,10 +1005,10 @@ function showHome() {
         .getElementById("homePage")
         .classList.add("active");
 
-}
+};
 
 
-function goBackToCategory() {
+window.goBackToCategory = function() {
 
     if (
         currentSubject === "Accounting" ||
@@ -1064,14 +1036,14 @@ function goBackToCategory() {
 
     }
 
-}
+};
 
 
-function goBackToLessons() {
+window.goBackToLessons = function() {
 
     showPage("subjectPage");
 
-}
+};
 
 
 /* ============================= */
@@ -1163,11 +1135,13 @@ const lessons = {
 };
 
 
-function openSubject(subject) {
+window.openSubject = function(subject) {
 
     currentSubject = subject;
 
-    document.getElementById("subjectTitle").innerText =
+    document.getElementById(
+        "subjectTitle"
+    ).innerText =
         "📚 " + subject;
 
     const lessonList =
@@ -1182,7 +1156,8 @@ function openSubject(subject) {
             const button =
                 document.createElement("button");
 
-            button.className = "lesson-button";
+            button.className =
+                "lesson-button";
 
             button.innerText =
                 (index + 1) + ". " + lesson;
@@ -1201,10 +1176,10 @@ function openSubject(subject) {
 
     showPage("subjectPage");
 
-}
+};
 
 
-function openLesson(lesson) {
+window.openLesson = function(lesson) {
 
     currentLesson = lesson;
 
@@ -1215,14 +1190,14 @@ function openLesson(lesson) {
 
     showPage("lessonPage");
 
-}
+};
 
 
 /* ============================= */
 /* RESOURCE BUTTONS */
 /* ============================= */
 
-function openNote() {
+window.openNote = function() {
 
     alert(
         "📝 Notes for " +
@@ -1230,10 +1205,10 @@ function openNote() {
         " will be available here."
     );
 
-}
+};
 
 
-function openVideo() {
+window.openVideo = function() {
 
     alert(
         "🎥 Video for " +
@@ -1241,10 +1216,10 @@ function openVideo() {
         " will be available here."
     );
 
-}
+};
 
 
-function openPaper() {
+window.openPaper = function() {
 
     alert(
         "📄 Past Papers for " +
@@ -1252,10 +1227,10 @@ function openPaper() {
         " will be available here."
     );
 
-}
+};
 
 
-function openQuiz() {
+window.openQuiz = function() {
 
     alert(
         "🎯 Quiz for " +
@@ -1263,66 +1238,75 @@ function openQuiz() {
         " will be available here."
     );
 
-}
+};
 
 
 /* ============================= */
 /* LOGIN UI */
 /* ============================= */
 
-function showRegister() {
+window.showRegister = function() {
 
-    document.getElementById("loginBox").style.display =
-        "none";
+    document.getElementById(
+        "loginBox"
+    ).style.display = "none";
 
-    document.getElementById("registerBox").style.display =
-        "block";
+    document.getElementById(
+        "registerBox"
+    ).style.display = "block";
 
-}
+};
 
 
-function showLogin() {
+window.showLogin = function() {
 
-    document.getElementById("registerBox").style.display =
-        "none";
+    document.getElementById(
+        "registerBox"
+    ).style.display = "none";
 
-    document.getElementById("loginBox").style.display =
-        "block";
+    document.getElementById(
+        "loginBox"
+    ).style.display = "block";
 
-}
+};
 
 
 /* ============================= */
-/* DEMO LOGIN SYSTEM */
+/* REGISTER */
 /* ============================= */
 
-/*
-   Firebase Authentication connection
-   can be connected here.
-
-   For now this keeps the website
-   interface working.
-*/
-
-function registerUser() {
+window.registerUser = async function() {
 
     const name =
-        document.getElementById("registerName").value.trim();
+        document.getElementById(
+            "registerName"
+        ).value.trim();
 
     const email =
-        document.getElementById("registerEmail").value.trim();
+        document.getElementById(
+            "registerEmail"
+        ).value.trim();
 
     const password =
-        document.getElementById("registerPassword").value;
+        document.getElementById(
+            "registerPassword"
+        ).value;
 
     const confirm =
-        document.getElementById("confirmPassword").value;
+        document.getElementById(
+            "confirmPassword"
+        ).value;
 
     const message =
-        document.getElementById("registerMessage");
+        document.getElementById(
+            "registerMessage"
+        );
 
 
-    if (!name || !email || !password) {
+    message.innerText = "";
+
+
+    if (!name || !email || !password || !confirm) {
 
         message.innerText =
             "Please fill all fields.";
@@ -1342,177 +1326,311 @@ function registerUser() {
     }
 
 
-    localStorage.setItem(
-        "mpUserName",
-        name
-    );
-
-    localStorage.setItem(
-        "mpUserEmail",
-        email
-    );
-
-    localStorage.setItem(
-        "mpUserPassword",
-        password
-    );
-
-
-    message.innerText =
-        "Account created successfully!";
-
-    setTimeout(function() {
-
-        showLogin();
-
-    }, 1000);
-
-}
-
-
-function loginUser() {
-
-    const email =
-        document.getElementById("loginEmail").value.trim();
-
-    const password =
-        document.getElementById("loginPassword").value;
-
-    const savedEmail =
-        localStorage.getItem("mpUserEmail");
-
-    const savedPassword =
-        localStorage.getItem("mpUserPassword");
-
-    const savedName =
-        localStorage.getItem("mpUserName");
-
-    const message =
-        document.getElementById("loginMessage");
-
-
-    if (
-        email === savedEmail &&
-        password === savedPassword
-    ) {
-
-        localStorage.setItem(
-            "mpLoggedIn",
-            "true"
-        );
-
-        document.getElementById(
-            "loginPage"
-        ).style.display = "none";
-
-
-        document.getElementById(
-            "welcomeSection"
-        ).style.display = "block";
-
-
-        document.getElementById(
-            "welcomeName"
-        ).innerText =
-            savedName || "STUDENT";
-
-
-        document.getElementById(
-            "userEmail"
-        ).innerText =
-            email;
-
-
-        showHome();
-
-
-    }
-
-    else {
+    if (password.length < 6) {
 
         message.innerText =
-            "Incorrect email or password.";
+            "Password must be at least 6 characters.";
+
+        return;
 
     }
 
-}
+
+    try {
+
+        const userCredential =
+            await createUserWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
 
 
-function forgotPassword() {
+        await updateProfile(
+            userCredential.user,
+            {
+                displayName: name
+            }
+        );
 
-    alert(
-        "Please contact MP Education for password assistance."
-    );
 
-}
+        message.innerText =
+            "Account created successfully!";
 
 
-function logoutUser() {
+        document.getElementById(
+            "registerName"
+        ).value = "";
 
-    localStorage.removeItem(
-        "mpLoggedIn"
-    );
+        document.getElementById(
+            "registerEmail"
+        ).value = "";
 
-    document.getElementById(
-        "welcomeSection"
-    ).style.display = "none";
+        document.getElementById(
+            "registerPassword"
+        ).value = "";
 
-    document.getElementById(
-        "homePage"
-    ).classList.remove("active");
+        document.getElementById(
+            "confirmPassword"
+        ).value = "";
 
-    document.getElementById(
-        "loginPage"
-    ).style.display = "flex";
 
-    showLogin();
+        setTimeout(function() {
 
-}
+            showLogin();
+
+            document.getElementById(
+                "loginEmail"
+            ).value = email;
+
+        }, 1000);
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        if (
+            error.code ===
+            "auth/email-already-in-use"
+        ) {
+
+            message.innerText =
+                "This email is already registered.";
+
+        }
+
+        else if (
+            error.code ===
+            "auth/invalid-email"
+        ) {
+
+            message.innerText =
+                "Invalid email address.";
+
+        }
+
+        else {
+
+            message.innerText =
+                error.message;
+
+        }
+
+    }
+
+};
 
 
 /* ============================= */
-/* AUTO LOGIN */
+/* LOGIN */
 /* ============================= */
 
-window.addEventListener(
-    "load",
-    function() {
+window.loginUser = async function() {
 
-        const loggedIn =
-            localStorage.getItem("mpLoggedIn");
+    const email =
+        document.getElementById(
+            "loginEmail"
+        ).value.trim();
 
-        if (loggedIn === "true") {
+    const password =
+        document.getElementById(
+            "loginPassword"
+        ).value;
 
-            const name =
-                localStorage.getItem("mpUserName");
+    const message =
+        document.getElementById(
+            "loginMessage"
+        );
 
-            const email =
-                localStorage.getItem("mpUserEmail");
 
+    message.innerText = "";
+
+
+    if (!email || !password) {
+
+        message.innerText =
+            "Please enter email and password.";
+
+        return;
+
+    }
+
+
+    try {
+
+        await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
+
+    } catch (error) {
+
+        console.error(error);
+
+        if (
+            error.code ===
+            "auth/invalid-credential"
+        ) {
+
+            message.innerText =
+                "Incorrect email or password.";
+
+        }
+
+        else if (
+            error.code ===
+            "auth/user-not-found"
+        ) {
+
+            message.innerText =
+                "No account found with this email.";
+
+        }
+
+        else {
+
+            message.innerText =
+                error.message;
+
+        }
+
+    }
+
+};
+
+
+/* ============================= */
+/* FORGOT PASSWORD */
+/* ============================= */
+
+window.forgotPassword = async function() {
+
+    const email =
+        document.getElementById(
+            "loginEmail"
+        ).value.trim();
+
+
+    if (!email) {
+
+        alert(
+            "Please enter your email address first."
+        );
+
+        return;
+
+    }
+
+
+    try {
+
+        await sendPasswordResetEmail(
+            auth,
+            email
+        );
+
+        alert(
+            "Password reset email sent. Please check your email."
+        );
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Unable to send password reset email."
+        );
+
+    }
+
+};
+
+
+/* ============================= */
+/* LOGOUT */
+/* ============================= */
+
+window.logoutUser = async function() {
+
+    try {
+
+        await signOut(auth);
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+
+};
+
+
+/* ============================= */
+/* FIREBASE AUTH STATE */
+/* ============================= */
+
+onAuthStateChanged(
+    auth,
+    function(user) {
+
+        if (user) {
+
+            /* Hide Login */
 
             document.getElementById(
                 "loginPage"
             ).style.display = "none";
 
 
+            /* Show Welcome */
+
             document.getElementById(
                 "welcomeSection"
             ).style.display = "block";
 
 
+            /* User Name */
+
             document.getElementById(
                 "welcomeName"
             ).innerText =
-                name || "STUDENT";
+                user.displayName || "STUDENT";
 
+
+            /* Email */
 
             document.getElementById(
                 "userEmail"
             ).innerText =
-                email || "";
+                user.email || "";
 
+
+            /* Show Home */
 
             showHome();
+
+
+        } else {
+
+            /* Hide Welcome */
+
+            document.getElementById(
+                "welcomeSection"
+            ).style.display = "none";
+
+
+            /* Hide Pages */
+
+            hideAllPages();
+
+
+            /* Show Login */
+
+            document.getElementById(
+                "loginPage"
+            ).style.display = "flex";
 
         }
 
@@ -1524,18 +1642,19 @@ window.addEventListener(
 /* AI CHAT */
 /* ============================= */
 
-function toggleAIChat() {
+window.toggleAIChat = function() {
 
     const box =
-        document.getElementById("aiChatBox");
+        document.getElementById(
+            "aiChatBox"
+        );
+
 
     if (box.style.display === "block") {
 
         box.style.display = "none";
 
-    }
-
-    else {
+    } else {
 
         box.style.display = "block";
 
@@ -1545,7 +1664,7 @@ function toggleAIChat() {
 
     }
 
-}
+};
 
 
 function addAIMessage(
@@ -1554,15 +1673,19 @@ function addAIMessage(
 ) {
 
     const messages =
-        document.getElementById("aiMessages");
+        document.getElementById(
+            "aiMessages"
+        );
 
     const message =
         document.createElement("div");
+
 
     message.className =
         type === "user"
         ? "user-message"
         : "ai-message";
+
 
     message.innerText = text;
 
@@ -1574,10 +1697,12 @@ function addAIMessage(
 }
 
 
-function sendAIMessage() {
+window.sendAIMessage = function() {
 
     const input =
-        document.getElementById("aiInput");
+        document.getElementById(
+            "aiInput"
+        );
 
     const question =
         input.value.trim();
@@ -1599,13 +1724,6 @@ function sendAIMessage() {
     input.value = "";
 
 
-    /*
-       Firebase AI Logic / Gemini
-       connection will be added here.
-
-       For now we show a temporary message.
-    */
-
     setTimeout(function() {
 
         addAIMessage(
@@ -1615,7 +1733,7 @@ function sendAIMessage() {
 
     }, 500);
 
-}
+};
 
 </script>
 
